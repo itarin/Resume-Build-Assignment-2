@@ -2,8 +2,9 @@
 */
 body{
   background-color: #333333;
-  padding: 25px 0;
-  margin: 10px 0;
+  padding: 0;
+  padding-bottom: 15px;
+  margin: 0;
   font-family: 'Jaldi', sans-serif;
 }
 img{
@@ -38,18 +39,20 @@ ul{
 .pageContainer{
   margin: auto;
   padding: 5px 45px;
+  border-radius: 3.5px;
+  box-shadow: 8.5px 1.5px #101f38;
   width: 45%;
   background-color: white;
 }
 /* HEADER DIV STYLES */
 .headStyle{
   background-color:#fcfcfc;
-  border-radius: 25px;
+  border-radius: 3.5px;
   box-shadow: 0.5px 0.2px #101f38;
   height: 15%;
   width: 41%;
-  padding-top: 10px;
-  margin: auto;
+  padding: 1px 0;
+  margin: 5px auto;
 }
 /*  CONTACT INFO DIV*/
 .contactInfo{
@@ -60,10 +63,20 @@ ul{
 }
 
 /* HR BREAKING SECTION TITLES */
-.break{
+.hrStyles{
   margin-top: 0px;
   margin-left: 0px;
   color: #bf0d33;
+  border-radius: 15px;
+}
+.educationBox{
+    width: 35%;
+}
+.languageBox{
+  width: 50%;
+}
+.experienceBox{
+  width:62%;
 }
 .educationHR{
   width: 35%;
