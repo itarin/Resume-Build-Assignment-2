@@ -1,3 +1,102 @@
-.test{
-  color: blue;
+/*  MAIN TAGS
+*/
+body{
+  background-color: grey;
+  padding: 25px 0;
+  margin: 10px 0;
+  font-family: 'Jaldi', sans-serif;
+}
+img{
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    border: #101f38 3px solid;
+}
+hr{
+  color:black;
+  margin-top: 0px;
+}
+h1{
+  text-align: center;
+  color: #101f38;
+}
+h2{
+  margin: 0.5px 1px;
+}
+h4{
+  margin: 0px;
+}
+ul{
+  line-height: 1.5;
+}
+/* PAGE CONTAINER WHITE SPACE */
+.pageContainer{
+  margin: auto;
+  padding: 5px 45px;
+  width: 45%;
+  background-color: white;
+}
+/*  CONTACT INFO DIV*/
+.contactInfo{
+  margin: 4px 0px 4px 32px;
+  padding-bottom: 0px;
+}
+
+/* HR BREAKING SECTION TITLES */
+.break{
+  margin-top: 0px;
+  margin-left: 0px;
+  color: #bf0d33;
+}
+.educationHR{
+  width: 35%;
+}
+.languagesHR{
+  width: 50%;
+}
+.recentExperienceHR{
+  width: 62%;
+}
+/* TEXT ALIGNMENT */
+
+.gradYear{
+  padding-left: 285px;
+}
+.centerSpaceEmail{
+  padding:0 100px;
+  color: DodgerBlue;
+  text-decoration:  underline;
+}
+.centerSpaceBLG{
+  padding:0 56px;
+}
+.centerSpaceCls{
+  padding:0 44px;
+}
+.centerSpaceBs{
+  padding:0 92px;
+}
+.centerSpaceTrla{
+  padding:0 33px;
+}
+.centerSpaceWfs{
+  padding:0 19px;
+}
+.centerSpaceAc{
+  padding:0 127px;
+}
+/* ICONS */
+.fa-graduation-cap{
+  padding: 0 3px;
+  color: #101f38;
+}
+.fa-language{
+  padding: 0 3px;
+  color: #101f38;
+}
+.fa-address-card{
+  padding: 0 3px;
+  color: #101f38;
 }
