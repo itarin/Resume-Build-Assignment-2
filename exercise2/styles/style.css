@@ -1,0 +1,5 @@
+body{
+  /* background-image: url(..\images\prototype_0007s_0005_Layer-15.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0001s_0006_Rectangle-2.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0008s_0007_Layer-16.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0005s_0001s_0002s_0004_Rectangle-4-copy-6.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0005s_0002s_0000_Layer-18.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0006s_0001_Rectangle-14-copy.png); */
+  background-image: url("../images/prototype_0007s_0005_Layer-15.png");
+  background-color: blue;
+}
