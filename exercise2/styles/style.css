@@ -1,52 +1,67 @@
 body{
   /* background-image: url(..\images\prototype_0007s_0005_Layer-15.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0001s_0006_Rectangle-2.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0008s_0007_Layer-16.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0005s_0001s_0002s_0004_Rectangle-4-copy-6.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0005s_0002s_0000_Layer-18.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0006s_0001_Rectangle-14-copy.png); */
 
-
+  background-image: url(../exercise2/images/mainPrototype.png);
+  margin: 0;
+  max-width: 100%;
   font-size: 16px;
 }
 .rainKissBlock{
-  background:  linear-gradient(black, grey, white);
+  background-color:  black;
   opacity: 0.9;
-    /* Scale */
-    height: 1696px;
-    width: 100%;
-    margin: 0;
+  /* Scale */
+  max-width: 100%;
+  margin: 0;
+  border: 0;
+}
+.unityLogo{
+  text-align: center;
+  font-size: 2em;
+  font-style: sans-serif;
+  width: 6em;
+  color: white;
+  margin: auto;
+  padding: 1px 1px;
+  border: white solid 0.5px;
 }
 .rainKissPicture{
+  border:0;
   width: 100%;
   margin: 0;
   filter: {-webkit-filter: brightness(250%);filter: brightness(250%);}
   /* background-image: url("../exercise2/images/prototype_0007s_0005_Layer-15.png")
   , url("../exercise2/images/prototype_0007s_0005_Layer-15.png"); */
-  opacity:0.3;
- background-blend-mode: multiply;
+  opacity:0.2;
+  background-blend-mode: multiply;
   /* Center and sale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
 }
 .blueBlock{
-  height: 1340px;
+  border:0;
+  max-width: 100%;
 }
 .bluePicture{
+  border: 0;
   width: 100%;
   float: left;
 }
 .buildingLandscapeBlock{
-  height: 882px;
-  background: white;
+  max-width: 100%;
+  padding-top: 1100px;
+  background: #CACACA;
 }
 .buildingLandscapePicture{
-  width: 100%;
-  float: left;
+  max-width: 100%;
 }
 .whiteBlock{
-  height: 580px;
+  max-width: 100%;
 }
 .whiteBlockPicture{
   width: 100%;
 }
 .forrestBlock{
-
+  max-width: 100%;
 }
 .forrestBlockPicture{
   width: 100%;
