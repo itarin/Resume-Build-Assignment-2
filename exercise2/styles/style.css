@@ -30,12 +30,6 @@ header{
   padding-top: 10%;
   max-width: 100%;
 }
-.navLink{
-  margin: 0px 2em;
-  float: left;
-  color: white;
-  list-style: none;
-}
 .unityLogo{
   text-align: center;
   font-size: 2em;
@@ -45,6 +39,12 @@ header{
   margin: auto;
   padding: 1px 1px;
   border: white solid 0.5px;
+}
+.navLink{
+  margin: 0px 2em;
+  float: left;
+  color: white;
+  list-style: none;
 }
 .honorDetail{
   padding-top: 20%;
@@ -63,6 +63,7 @@ header{
 .rectIcon{
   display:block;
   margin: auto;
+  padding-top: 27%;
 }
 .scroll{
   color: white;
@@ -110,6 +111,19 @@ header{
   border: 0;
   /* Font */
   font-family: 'Lato', sans-serif;
+}
+.zero1{
+  font-size: 10em;
+  color: yellow;
+  margin: 0;
+  padding-top: 13%;
+  padding-left: 8%;
+}
+.invites{
+  font-size: 5em;
+  color: white;
+  margin-left: 29%;
+  line-height: 0;
 }
 .buildingLandscapeBlock{
   max-width: 100%;
