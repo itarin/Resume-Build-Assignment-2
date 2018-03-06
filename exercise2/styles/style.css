@@ -10,7 +10,9 @@ body{
   /* font-family: 'Lato', sans-serif;
   font-family: 'Poppins', sans-serif; */
 }
-/* RAINKISS CONTENT */
+
+/* (1)FIRST SECTION */
+/* RAINKISS BLOCK */
 .rainKissBlock{
   background-image: url("../images/snow_bg.png");
   background-color: #161616;
@@ -19,6 +21,7 @@ body{
   border:0;
   margin: 0;
   height: 1696px;
+
   /* Scale */
   max-width: 100% ;
   margin: 0;
@@ -94,7 +97,8 @@ header{
   top: 253%;
   right: -2%;
 }
-/* BLUE BOX CONTENT */
+/*(2) NEXT SECTION */
+/* BLUE BOX SECTION */
 .blueBlock{
   clear: both;
   background-image: url("../images/prototype_0001s_0006_Rectangle-2.png");
@@ -103,8 +107,8 @@ header{
   background-position: center top;
   border:0;
   margin: 0;
-  padding-bottom:150px;
-  height: 1696px;
+  padding: 0;
+  height: 1340px;
   /* Scale */
   max-width: 100% ;
   margin: 0;
@@ -120,25 +124,71 @@ header{
   padding-left: 8%;
 }
 .invites{
-  font-size: 5em;
+  font-size: 3.5em;
   color: white;
-  margin-left: 29%;
+  margin-left: 28%;
+  margin-bottom: 3%;
   line-height: 0;
 }
+  .invent{
+    font-size: 1.2em;
+    color: yellow;
+    margin: 0 0 0 27%;
+  }
+  /* NEXT SECTION */
+  /*BUILDING LANDSCAPE BLOCK  */
 .buildingLandscapeBlock{
-  max-width: 100%;
-  padding-top: 1100px;
-  background: #CACACA;
+  background-image: url("../images/buildingLandscape.png");
+  background-color: #CACACA;
+  background-repeat:no-repeat;
+  background-position: center ;
+  border:0;
+  margin: 0;
+  padding: 0;
+  height: 1468px;
+  /* Scale */
+  max-width: 100% ;
+  margin: 0;
+  border: 0;
+  /* Font */
+  font-family: 'Lato', sans-serif;
 }
-.buildingLandscapePicture{
-  max-width: 100%;
+.unity{
+  letter-spacing: -6px;
+  padding-top: 15%;
+  font-size: 15em;
+  color: white;
+  position: absolute;
+  z-index: 0;
+  margin: 0;
 }
+.loveClients{
+  position: absolute;
+  z-index: 1;
+  top: 527%;
+  font-size: 5.5em;
+  color: black;
+  margin: 0;
+}
+.takePride{
+  padding-top: 33%;
+  z-index: 1;
+  top: 545%;
+  font-size: 1.5em;
+  color: black;
+  margin-bottom: 3%;
+  line-height: 0;
+}
+  /* NEXT SECTION */
+  /* WHITE BLOCK */
 .whiteBlock{
   max-width: 100%;
 }
 .whiteBlockPicture{
   width: 100%;
 }
+/* NEXT SECTION */
+/* FORREST BLOCK */
 .forrestBlock{
   max-width: 100%;
 }
