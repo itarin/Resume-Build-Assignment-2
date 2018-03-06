@@ -176,6 +176,7 @@ header{
   top: 545%;
   font-size: 1.5em;
   color: black;
+  margin-top: 0; /*this line needed to remove white space between blue & landscapeBlock*/
   margin-bottom: 3%;
   line-height: 0;
 }
