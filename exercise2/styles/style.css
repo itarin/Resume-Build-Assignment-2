@@ -1,6 +1,4 @@
 body{
-  /* background-image: url(..\images\prototype_0007s_0005_Layer-15.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0001s_0006_Rectangle-2.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0008s_0007_Layer-16.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0005s_0001s_0002s_0004_Rectangle-4-copy-6.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0005s_0002s_0000_Layer-18.png), url(Resume Build-Assignment 2\exercise2\images\prototype_0006s_0001_Rectangle-14-copy.png); */
-
   margin: 0;
   padding:0;
   max-width: 100%;
@@ -50,7 +48,6 @@ header{
   list-style: none;
 }
 .honorDetail{
-  padding-top: 20%;
   clear: both;
   text-align: center;
   color:yellow;
@@ -77,7 +74,7 @@ header{
 }
 /* WHITE RECTANGLE DIV  */
 .whiteRectDiv{
-  padding-top: 40%;
+  padding-top: 21%;
   padding-left: 25%;
   margin: auto;
 }
@@ -135,7 +132,38 @@ header{
     color: yellow;
     margin: 0 0 0 27%;
   }
-  /* NEXT SECTION */
+  .complexity{
+    font-size: 3.5em;
+    color: white;
+    width: 38%;
+    margin: 0;
+    display: inline-block;
+    float: left;
+    padding-top: 0%;
+  }
+  .story2Tell{
+    float: left;
+    font-size: 1em;
+    color: white;
+    display: inline-block;
+  }
+  .handmadeLayouts{
+    clear: both;
+  }
+  .shareIcon{
+    position: absolute;
+    clip: rect(0, 10%, 10%,0);
+    width: 4%;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+  }
+  .creativeDesigns{
+    float:left;
+  }
+  .oneHundredSupport{
+    float:left;
+  }
+  /* (3)NEXT SECTION */
   /*BUILDING LANDSCAPE BLOCK  */
 .buildingLandscapeBlock{
   background-image: url("../images/buildingLandscape.png");
@@ -170,8 +198,11 @@ header{
   color: black;
   margin: 0;
 }
-.takePride{
+/* .pushDown  MOVES .takePride down w/out separating both h4*/
+.pushDown{
   padding-top: 33%;
+}
+.takePride{
   z-index: 1;
   top: 545%;
   font-size: 1.5em;
@@ -180,21 +211,114 @@ header{
   margin-bottom: 3%;
   line-height: 0;
 }
-  /* NEXT SECTION */
-  /* WHITE BLOCK */
-.whiteBlock{
-  max-width: 100%;
+/* PLAY BUTTON AND CONTAINING GREY CIRCLES */
+.transparentCircle{
+  position: relative;
+  height: 10%;
+  width: 10%;
+  background-color: transparent;
+  border: black solid 1px;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 12%;
+  z-index: 9;
 }
-.whiteBlockPicture{
-  width: 100%;
+.outerCircle{
+  position: absolute;
+  top: -11%;
+  left: 9%;
+  height: 80%;
+  width: 80%;
+  background-color: #d0d0d1;
+  border: black  solid 1px;
+  border-radius: 50%;
+  margin-top: 25%;
 }
-/* NEXT SECTION */
+.innerCircle{
+  position: absolute;
+  top: 16%;
+  right: 17%;
+  height: 65%;
+  width: 65%;
+  background-color: #d0d0d1;
+  border: black solid 1px;
+  border-radius: 50%;
+}
+.fa-play{
+  position: absolute;
+  top: 40%;
+  right: 38%;
+  color:black;
+}
+.blackRectangle02{
+  margin-top: 23%;
+  margin-left: 24%;
+  color:black;
+}
+.pencilBox{
+
+}
+.blackBoxHonorDetails{
+  font-size: 8em;
+  margin: 0;
+}
+.globalService{
+  font-size: 3em;
+}
+.zero3{
+  font-size: 20em;
+  color: black;
+  margin: 0;
+  padding-top: 13%;
+  padding-left: 8%;
+}
+.zero3Menu{
+  color:black;
+  font-size: 1em;
+  padding-left: 142%;
+}
+.tableIcons{
+  padding:0 6%;
+}
+.zero3Menu td{
+  white-space: nowrap;
+  padding-right: 11%;
+}
+/* (4) NEXT SECTION */
 /* FORREST BLOCK */
-.forrestBlock{
-  max-width: 100%;
+.blackRectangle03{
+  position: relative;
+  top: 10%;
+  width: 700px;
 }
-.forrestBlockPicture{
-  width: 100%;
-  opacity: 1;
-  filter: {-webkit-filter: brightness(250%);filter: brightness(250%);}
+.hipsterHoldingLeaves{
+  position: absolute;
+  top: 32%;
+  left: 80%;
+  bottom: 7%;
+  left: 7%;
+  height: 572px;
+}
+.smallBlueBox{
+  position: absolute;
+  background-color: #694fca;
+  width: 600px;
+  height: 280px;
+}
+.forrestBlock{
+  height: 3653px;
+  background-image: url("../images/forrestLandscape.png");
+  background-color: #ffffff;
+  background-repeat:no-repeat;
+  background-position: center ;
+  border:0;
+  margin: 0;
+  padding: 0;
+  height: 3649px;
+  /* Scale */
+  max-width: 100% ;
+  margin: 0;
+  border: 0;
+  /* Font */
+  font-family: 'Lato', sans-serif;
 }
