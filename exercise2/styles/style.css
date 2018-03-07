@@ -350,17 +350,21 @@ header{
 }
 .verticalLine{
   border-left: solid 2px black;
-  padding: 10%;
-  margin-left: 90%;
+  padding: 5%;
+  margin-top: 32%;
+  margin-left: 50%;
 }
 .whatCustomersSay{
   text-align: center;
-  margin-bottom: 8%;
+  margin: 5% 0;
+}
+.testimonialContainer{
+  margin-left: 15%;
 }
 .testimonials{
-  width: 18em;
-  height: 25em;
-  margin-left: 15%;
+  width: 14em;
+  height: 27em;
+  /* margin-left: 15%; */
   text-align: center;
 }
 .customerPicture{
@@ -372,6 +376,7 @@ header{
 }
 .gregoryBradley{
   background-color: #ffffff;
+  float: left;
 }
 .jonathanKraus{
   background-color: #694fca;
@@ -379,5 +384,21 @@ header{
 }
 .carolineDeSmet{
   background-color: #ffffff;
+  float: left;
+}
+footer{
+  clear: both;
+  height: 8%;
+  background-color: #212121;
+}
+.callNow{
+  padding-top: 5%;
+  color: #ffffff;
+}
+.fa-phone{
+  /* NOT NEEDED YET */
+}
+.footerUnityStyle{
+  margin-top 1%;
   float: left;
 }
