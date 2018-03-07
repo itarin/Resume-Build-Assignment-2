@@ -19,7 +19,6 @@ body{
   border:0;
   margin: 0;
   height: 1696px;
-
   /* Scale */
   max-width: 100% ;
   margin: 0;
@@ -32,14 +31,17 @@ header{
   max-width: 100%;
 }
 .unityLogo{
+  /* POSITION */
+  margin: auto;
+  padding: 1px 1px;
+  border: white solid 0.5px;
+  /* FONT */
   text-align: center;
   font-size: 2em;
   font-style: sans-serif;
   width: 6em;
   color: white;
-  margin: auto;
-  padding: 1px 1px;
-  border: white solid 0.5px;
+
 }
 .navLink{
   margin: 0px 2em;
@@ -66,17 +68,22 @@ header{
   padding-top: 27%;
 }
 .scroll{
-  color: white;
   text-align: center;
   padding-top:0;
   margin-top:0;
+  /* FONT */
   font-size: 1.5em;
+  color: white;
 }
 /* WHITE RECTANGLE DIV  */
 .whiteRectDiv{
-  padding-top: 21%;
+  /* POSITION */
+  position: relative;
+  padding-top: 29%;
   padding-left: 25%;
   margin: auto;
+  /* FONT */
+  color: white;
 }
 .whiteRectangle{
   height: 680px;
@@ -85,7 +92,7 @@ header{
 .brushBox{
   position: absolute;
   z-index: 1;
-  top: 276%;
+  top: 78%;
   right: 10%;
 }
 .brushBoxShadow{
@@ -97,11 +104,13 @@ header{
 /*(2) NEXT SECTION */
 /* BLUE BOX SECTION */
 .blueBlock{
-  clear: both;
+  /* BACKGROUND IMAGE */
   background-image: url("../images/prototype_0001s_0006_Rectangle-2.png");
   background-color: #161616;
   background-repeat:no-repeat;
   background-position: center top;
+  /* POSITION */
+  clear: both;
   border:0;
   margin: 0;
   padding: 0;
@@ -114,54 +123,64 @@ header{
   font-family: 'Lato', sans-serif;
 }
 .zero1{
+  /* POSITION */
+  margin: 0;
+  padding-top: 2%;
+  padding-left: 8%;
+  /* FONT */
   font-size: 10em;
   color: yellow;
-  margin: 0;
-  padding-top: 13%;
-  padding-left: 8%;
 }
 .invites{
-  font-size: 3.5em;
-  color: white;
+  /* POSITION */
+  position: absolute;
+  top: 262%;
   margin-left: 28%;
   margin-bottom: 3%;
   line-height: 0;
+  /* FONT STYLES */
+  font-size: 3.5em;
+  color: white;
 }
   .invent{
+    margin: 0 0 0 28%;
     font-size: 1.2em;
     color: yellow;
-    margin: 0 0 0 27%;
   }
   .complexity{
-    font-size: 3.5em;
-    color: white;
+    /* POSITION */
     width: 38%;
     margin: 0;
     display: inline-block;
     float: left;
-    padding-top: 0%;
+    padding-top: 6%;
+    padding-left: 8%;
+    /* FONT */
+    font-size: 3.5em;
+    color: white;
   }
   .story2Tell{
+    /* POSITION */
     float: left;
+    display: inline-block;
+    padding-top: 15%;
+    /* FONT */
     font-size: 1em;
     color: white;
-    display: inline-block;
   }
   .handmadeLayouts{
     clear: both;
   }
   .shareIcon{
-    position: absolute;
-    clip: rect(0, 10%, 10%,0);
     width: 4%;
     -webkit-filter: invert(100%);
     filter: invert(100%);
   }
   .creativeDesigns{
-    float:left;
+    /* float:left; */
   }
   .oneHundredSupport{
-    float:left;
+    /* float:left; */
   }
   /* (3)NEXT SECTION */
   /*BUILDING LANDSCAPE BLOCK  */
@@ -286,6 +305,24 @@ header{
 }
 /* (4) NEXT SECTION */
 /* FORREST BLOCK */
+.forrestBlock{
+
+  /* BACKGROUND IMAGE */
+  background-image: url("../images/forrestLandscape.png");
+  background-color: #ffffff;
+  background-repeat:no-repeat;
+  background-position: center ;
+  height: 3649px;
+  /* POSITION */
+  border:0;
+  margin: 0;
+  padding: 0;
+  /* Scale */
+  max-width: 100% ;
+  margin: 0;
+  /* Font */
+  font-family: 'Lato', sans-serif;
+}
 .blackRectangle03{
   position: relative;
   top: 10%;
@@ -305,20 +342,42 @@ header{
   width: 600px;
   height: 280px;
 }
-.forrestBlock{
-  height: 3653px;
-  background-image: url("../images/forrestLandscape.png");
+.globalCompany{
+  padding-top: 120%;
+}
+.forwardThinking{
+
+}
+.verticalLine{
+  border-left: solid 2px black;
+  padding: 10%;
+  margin-left: 90%;
+}
+.whatCustomersSay{
+  text-align: center;
+  margin-bottom: 8%;
+}
+.testimonials{
+  width: 18em;
+  height: 25em;
+  margin-left: 15%;
+  text-align: center;
+}
+.customerPicture{
+  padding-left: 1%;
+}
+.stars{
+  padding-left: 31%;
+  display: block;
+}
+.gregoryBradley{
   background-color: #ffffff;
-  background-repeat:no-repeat;
-  background-position: center ;
-  border:0;
-  margin: 0;
-  padding: 0;
-  height: 3649px;
-  /* Scale */
-  max-width: 100% ;
-  margin: 0;
-  border: 0;
-  /* Font */
-  font-family: 'Lato', sans-serif;
+}
+.jonathanKraus{
+  background-color: #694fca;
+  float: left;
+}
+.carolineDeSmet{
+  background-color: #ffffff;
+  float: left;
 }
