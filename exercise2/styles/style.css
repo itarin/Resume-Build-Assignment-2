@@ -51,6 +51,7 @@ header{
 }
 .honorDetail{
   clear: both;
+  margin-top: 30%;
   text-align: center;
   color:yellow;
   font-size: 3em;
@@ -79,7 +80,7 @@ header{
 .whiteRectDiv{
   /* POSITION */
   position: relative;
-  padding-top: 29%;
+  padding-top: 16%;
   padding-left: 25%;
   margin: auto;
   /* FONT */
@@ -98,7 +99,7 @@ header{
 .brushBoxShadow{
   position: absolute;
   z-index: 0;
-  top: 253%;
+  top: 64%;
   right: -2%;
 }
 /*(2) NEXT SECTION */
@@ -166,9 +167,12 @@ header{
     font-size: 1em;
     color: white;
   }
-  .handmadeLayouts{
+  .curibaturBox{
+    width: 20%;
+  }
+  .Title{
     clear: both;
-
+    color: #ffa800;
   }
   .shareIcon{
     width: 4%;
