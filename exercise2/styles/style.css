@@ -391,6 +391,10 @@ footer{
   height: 8%;
   background-color: #212121;
 }
+/* FOOTER HEADER CONTAINS LOGO AND CONTACT INFO WITH BOTTOM WHITE BORDER */
+.footerHeader{
+  border-bottom: solid white 1px;
+}
 .callNow{
   padding-top: 5%;
   color: #ffffff;
@@ -401,4 +405,8 @@ footer{
 .footerUnityStyle{
   margin-top 1%;
   float: left;
+}
+.eMail{
+  padding-top: 5%;
+  color: #ffffff;
 }
