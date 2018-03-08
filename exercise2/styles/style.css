@@ -53,6 +53,28 @@ header{
   color: white;
   list-style: none;
 }
+.phoneStuff{
+
+}
+.phoneLine{
+  border-left: solid rgba(192,192,192,0.3) 1px;
+  padding: 1%;
+  width: 2%;
+  border-radius: 50%;
+}
+.phoneBall{
+  background-color: #ffa800;
+  padding: 1%;
+  width: 2%;
+  border-radius: 50%;
+}
+.rotatedSocialMediaMenu{
+  transform: rotate(-90deg);
+  margin-top: 36%;
+  margin-left: 48%;
+  /* SCALE */
+  width: 93%;/*WIDTH HAS TO BE THIS LARGE OR ROTATED NAV GETS SQUEEZED*/
+}
 .honorDetail{
   clear: both;
   margin-top: 30%;
@@ -84,7 +106,7 @@ header{
 .whiteRectDiv{
   /* POSITION */
   position: relative;
-  padding-top: 16%;
+  padding-top: 0%;
   padding-left: 25%;
   margin: auto;
   /* FONT */
@@ -166,26 +188,26 @@ header{
     /* POSITION */
     margin-top: 25%;
     /* SIZE */
-    width: 40%;
+
     /* FONT */
     font-size: 1em;
     color: white;
   }
   .curbaturContainer{
     clear: both;
+    margin-top: 10%;
     margin-left: 15%;
   }
-  .curibaturBox{
+  .curabiturBox{
     width: 20%;
+    margin-right: 5%;
+  }
+  .icon{
+    border-bottom: solid #ffffff 1px;
+    width: 21%;
   }
   .Title{
-    clear: both;
     color: #ffa800;
-  }
-  .shareIcon{
-    width: 4%;
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
   }
   .creativeDesigns{
     /* float:left; */
@@ -196,12 +218,13 @@ header{
   /* (3)NEXT SECTION */
   /*BUILDING LANDSCAPE BLOCK  */
 .buildingLandscapeBlock{
+  clear: both;
+  /* BACKGROUND */
   background-image: url("../images/buildingLandscape.png");
   background-color: #CACACA;
   background-repeat:no-repeat;
   background-position: center ;
-  border:0;
-  margin: 0;
+  /* POSITION */
   padding: 0;
   height: 1468px;
   /* Scale */
@@ -212,13 +235,15 @@ header{
   font-family: 'Lato', sans-serif;
 }
 .unity{
-  letter-spacing: -6px;
-  padding-top: 15%;
-  font-size: 15em;
-  color: white;
+  /* POSITION */
   position: absolute;
   z-index: 0;
+  padding-top: 15%;
   margin: 0;
+  /* FONT */
+  letter-spacing: -6px;
+  font-size: 15em;
+  color: white;
 }
 .loveClients{
   position: absolute;
