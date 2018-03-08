@@ -8,7 +8,11 @@ body{
   /* font-family: 'Lato', sans-serif;
   font-family: 'Poppins', sans-serif; */
 }
-
+/* POSITION CLASSES */
+.inlineBlockFloatLeft{
+  display: inline-block;
+  float:left;
+}
 /* (1)FIRST SECTION */
 /* RAINKISS BLOCK */
 .rainKissBlock{
@@ -135,7 +139,7 @@ header{
 .invites{
   /* POSITION */
   position: absolute;
-  top: 262%;
+  top: 291%;
   margin-left: 28%;
   margin-bottom: 3%;
   line-height: 0;
@@ -144,7 +148,7 @@ header{
   color: white;
 }
   .invent{
-    margin: 0 0 0 28%;
+    margin: 10% 0 0 28%;
     font-size: 1.2em;
     color: yellow;
   }
@@ -152,20 +156,24 @@ header{
     /* POSITION */
     width: 38%;
     margin: 0;
-    padding-top: 6%;
-    padding-left: 8%;
+    padding-top: 15%;
+    line-height: 2.5%;
     /* FONT */
     font-size: 3.5em;
     color: white;
   }
   .story2Tell{
-    /* SIZE */
-    width: 60%;
     /* POSITION */
-
+    margin-top: 25%;
+    /* SIZE */
+    width: 40%;
     /* FONT */
     font-size: 1em;
     color: white;
+  }
+  .curbaturContainer{
+    clear: both;
+    margin-left: 15%;
   }
   .curibaturBox{
     width: 20%;
