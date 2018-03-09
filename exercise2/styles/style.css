@@ -109,7 +109,7 @@ header{
 .rectIcon{
   display:block;
   margin: auto;
-  padding-top: 3%;
+  padding-top: 10%;
 }
 .scroll{
   text-align: center;
@@ -177,18 +177,25 @@ header{
   padding-top: 2%;
   padding-left: 8%;
   /* FONT */
-  font-size: 10em;
+  font-size: 15em;
   color: yellow;
+  font-family: "AbrahamLincoln";
+  color: rgb(255, 168, 0);
+  letter-spacing: -40px;
+  font-weight: 100;
 }
 .invites{
   /* POSITION */
   position: absolute;
-  top: 268%;
-  margin-left: 28%;
-  margin-bottom: 3%;
-  line-height: 0;
+  text-align: left;
+  top: 216%;
+  line-height: 96%;
+  left: 28%;
   /* FONT STYLES */
-  font-size: 3.5em;
+  line-spacing:-8px;
+  font-size: 6em;
+  font-family: "AbrahamLincoln";
+  line-height: 0.9;
   color: white;
 }
   .invent{
@@ -208,12 +215,11 @@ header{
   }
   .story2Tell{
     /* POSITION */
-    margin-top: 25%;
-    /* SIZE */
-
+    margin-top: 20%;
     /* FONT */
-    font-size: 1em;
-    color: white;
+    font-family: "Poppins";
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
   }
   .curabiturContainer{
     clear: both;
@@ -280,7 +286,7 @@ header{
   /* POSITION */
   position: absolute;
   z-index: 1;
-  top: 515%;
+  top: 550%;
   left: 25%;
   margin: 0;
   /* FONT */
