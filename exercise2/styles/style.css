@@ -1,3 +1,23 @@
+/* FONT */
+@font-face {
+    font-family: 'Abraham Lincoln';
+    src: url('fonts/abrahamlincoln-webfont.woff2') format('woff2'),
+         url('fonts/abrahamlincoln-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham Black';
+    src: url('fonts/GothamBlack.woff2') format('woff2'),
+        url('fonts/GothamBlack.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+  /* POSITION CLASSES */
+  .inlineBlockFloatLeft{
+    display: inline-block;
+    float:left;
+  }
 body{
   margin: 0;
   padding:0;
@@ -7,11 +27,6 @@ body{
   font-family: 'Roboto', sans-serif;
   /* font-family: 'Lato', sans-serif;
   font-family: 'Poppins', sans-serif; */
-}
-/* POSITION CLASSES */
-.inlineBlockFloatLeft{
-  display: inline-block;
-  float:left;
 }
 /* (1)FIRST SECTION */
 /* RAINKISS BLOCK */
@@ -31,12 +46,12 @@ body{
   font-family: 'Lato', sans-serif;
 }
 header{
-  padding-top: 10%;
+  padding-left: 15%;
   max-width: 100%;
 }
 .unityLogo{
   /* POSITION */
-  margin: auto;
+  margin-left: 30%;
   padding: 1px 1px;
   border: white solid 0.5px;
   /* FONT */
@@ -45,7 +60,6 @@ header{
   font-style: sans-serif;
   width: 6em;
   color: white;
-
 }
 .navLink{
   margin: 0px 2em;
@@ -53,24 +67,25 @@ header{
   color: white;
   list-style: none;
 }
-.phoneStuff{
-
-}
 .phoneLine{
-  border-left: solid rgba(192,192,192,0.3) 1px;
-  padding: 1%;
-  width: 2%;
-  border-radius: 50%;
+  clear: both;
+  border-right: solid rgba(192,192,192,0.2) .09em;
+  height: 15%;
+  width: 5%;
+  margin-left: 90%;
 }
 .phoneBall{
   background-color: #ffa800;
+  /*POSITION*/
+  margin-left: 93%;
   padding: 1%;
+  /*SCALE*/
   width: 2%;
   border-radius: 50%;
 }
 .rotatedSocialMediaMenu{
   transform: rotate(-90deg);
-  margin-top: 36%;
+  margin-top: 30%;
   margin-left: 48%;
   /* SCALE */
   width: 93%;/*WIDTH HAS TO BE THIS LARGE OR ROTATED NAV GETS SQUEEZED*/
@@ -81,18 +96,20 @@ header{
   text-align: center;
   color:yellow;
   font-size: 3em;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Abraham Lincoln';
+  color: rgb(255, 168, 0);
 }
+
 .honorDetailDescription{
   color: white;
   text-align: center;
   font-size: 2em;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Abraham Lincoln';
 }
 .rectIcon{
   display:block;
   margin: auto;
-  padding-top: 27%;
+  padding-top: 3%;
 }
 .scroll{
   text-align: center;
@@ -101,6 +118,11 @@ header{
   /* FONT */
   font-size: 1.5em;
   color: white;
+}
+.downArrow{
+  width: 2%;
+  display: block;
+  margin: 5% auto;
 }
 /* WHITE RECTANGLE DIV  */
 .whiteRectDiv{
@@ -161,7 +183,7 @@ header{
 .invites{
   /* POSITION */
   position: absolute;
-  top: 291%;
+  top: 268%;
   margin-left: 28%;
   margin-bottom: 3%;
   line-height: 0;
@@ -170,7 +192,7 @@ header{
   color: white;
 }
   .invent{
-    margin: 10% 0 0 28%;
+    margin: 1% 0 0 28%;
     font-size: 1.2em;
     color: yellow;
   }
@@ -193,21 +215,25 @@ header{
     font-size: 1em;
     color: white;
   }
-  .curbaturContainer{
+  .curabiturContainer{
     clear: both;
     margin-top: 10%;
     margin-left: 15%;
   }
   .curabiturBox{
-    width: 20%;
+    width: 25%;
     margin-right: 5%;
+    color: #ffffff;
   }
   .icon{
-    border-bottom: solid #ffffff 1px;
     width: 21%;
   }
   .Title{
     color: #ffa800;
+  }
+  .horizontalWhiteLine{
+    border-bottom: solid #ffffff 1px;
+    width: 21%;
   }
   .creativeDesigns{
     /* float:left; */
@@ -221,7 +247,7 @@ header{
   clear: both;
   /* BACKGROUND */
   background-image: url("../images/buildingLandscape.png");
-  background-color: #CACACA;
+  background-color: #c4c4c5;
   background-repeat:no-repeat;
   background-position: center ;
   /* POSITION */
@@ -234,67 +260,82 @@ header{
   /* Font */
   font-family: 'Lato', sans-serif;
 }
-.unity{
+.weAreUnity{
   /* POSITION */
   position: absolute;
   z-index: 0;
   padding-top: 15%;
   margin: 0;
+  /* SCALE */
+  width: 100%;
   /* FONT */
-  letter-spacing: -6px;
-  font-size: 15em;
-  color: white;
+  font-family: "AbrahamLincoln";
+  color: rgba(0, 0, 0, 0.102);
+  letter-spacing: -16px;
+  font-size: 14em;
+  word-spacing: -38px;
+  font-weight: 100;
 }
-.loveClients{
+.weLoveClients{
+  /* POSITION */
   position: absolute;
   z-index: 1;
-  top: 527%;
-  font-size: 5.5em;
-  color: black;
+  top: 515%;
+  left: 25%;
   margin: 0;
+  /* FONT */
+  font-size: 3.5em;
+  font-family: "AbrahamLincoln";
+  color: rgb(0, 0, 0);
 }
 /* .pushDown  MOVES .takePride down w/out separating both h4*/
 .pushDown{
-  padding-top: 33%;
+  padding-top: 27%;
 }
 .takePride{
+  /* POSITION */
+  text-align: center;
   z-index: 1;
   top: 545%;
-  font-size: 1.5em;
-  color: black;
   margin-top: 0; /*this line needed to remove white space between blue & landscapeBlock*/
   margin-bottom: 3%;
   line-height: 0;
+  /* FONT */
+  font-family: "Poppins";
+  font-size: 1.5em;
+  color: black;
+
 }
+
 /* PLAY BUTTON AND CONTAINING GREY CIRCLES */
 .transparentCircle{
   position: relative;
-  height: 10%;
-  width: 10%;
+  height: 15%;
+  width: 15%;
   background-color: transparent;
   border: black solid 1px;
   border-radius: 50%;
   margin: auto;
-  margin-top: 12%;
+  margin-top: -3%;
   z-index: 9;
 }
 .outerCircle{
   position: absolute;
-  top: -11%;
-  left: 9%;
-  height: 80%;
-  width: 80%;
+  top: -4%;
+  left: 17%;
+  height: 65%;
+  width: 65%;
   background-color: #d0d0d1;
   border: black  solid 1px;
   border-radius: 50%;
-  margin-top: 25%;
+  margin-top: 19%;
 }
 .innerCircle{
   position: absolute;
-  top: 16%;
-  right: 17%;
-  height: 65%;
-  width: 65%;
+  top: 25%;
+  right: 25%;
+  height: 45%;
+  width: 45%;
   background-color: #d0d0d1;
   border: black solid 1px;
   border-radius: 50%;
@@ -305,20 +346,25 @@ header{
   right: 38%;
   color:black;
 }
+.blackRectangleContainer{
+    position: relative;
+}
 .blackRectangle02{
-  margin-top: 23%;
+  margin-top: 30%;
   margin-left: 24%;
   color:black;
 }
 .pencilBox{
 
 }
+/* (3)FORREST BLOCK */
 .blackBoxHonorDetails{
   font-size: 8em;
   margin: 0;
 }
 .globalService{
   font-size: 3em;
+  margin: 0 0 0 25%;
 }
 .zero3{
   font-size: 20em;
@@ -338,6 +384,10 @@ header{
 .zero3Menu td{
   white-space: nowrap;
   padding-right: 11%;
+}
+.borderLine{
+  border-top: solid red 1px;
+  border-bottom: solid blue 1px;
 }
 /* (4) NEXT SECTION */
 /* FORREST BLOCK */
@@ -375,7 +425,7 @@ header{
 .smallBlueBox{
   position: absolute;
   background-color: #694fca;
-  width: 600px;
+  width: 550px;
   height: 280px;
 }
 .globalCompany{
@@ -430,6 +480,7 @@ footer{
 /* FOOTER HEADER CONTAINS LOGO AND CONTACT INFO WITH BOTTOM WHITE BORDER */
 .footerHeader{
   border-bottom: solid rgba(192,192,192,0.3) 1px;
+  height: 40%;
 }
 .callNow{
   padding-top: 5%;
@@ -439,10 +490,15 @@ footer{
   /* NOT NEEDED YET */
 }
 .footerUnityStyle{
-  margin-top 1%;
-  float: left;
+  margin-top: -4%;
+  margin-bottom: 0;
+}
+.fa-envelope{
+  color: white;
 }
 .eMail{
-  padding-top: 5%;
-  color: #ffffff;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  color: #5f49b3;
 }
