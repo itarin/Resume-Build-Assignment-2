@@ -1,8 +1,8 @@
 /* FONT */
 @font-face {
     font-family: 'Abraham Lincoln';
-    src: url('fonts/abrahamlincoln-webfont.woff2') format('woff2'),
-         url('fonts/abrahamlincoln-webfont.woff') format('woff');
+    src: url('../fonts/abrahamlincoln-webfont.woff2') format('woff2'),
+         url('../fonts/abrahamlincoln-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -174,81 +174,87 @@ header{
 .zero1{
   /* POSITION */
   margin: 0;
-  padding-top: 2%;
-  padding-left: 8%;
+  padding-top: 10%;
+    padding-left: 15%;
   /* FONT */
   font-size: 15em;
   color: yellow;
-  font-family: "AbrahamLincoln";
+  font-family: "Abraham Lincoln";
   color: rgb(255, 168, 0);
-  letter-spacing: -40px;
+  letter-spacing: -9px;
   font-weight: 100;
 }
-.invites{
+.invitesContainer{
   /* POSITION */
   position: absolute;
   text-align: left;
-  top: 216%;
-  line-height: 96%;
+  top: 270%;
   left: 28%;
   /* FONT STYLES */
-  line-spacing:-8px;
-  font-size: 6em;
-  font-family: "AbrahamLincoln";
-  line-height: 0.9;
+  font-family: "Abraham Lincoln";
+  font-weight: 100;
   color: white;
 }
-  .invent{
-    margin: 1% 0 0 28%;
-    font-size: 1.2em;
-    color: yellow;
-  }
-  .complexity{
-    /* POSITION */
-    width: 38%;
-    margin: 0;
-    padding-top: 15%;
-    line-height: 2.5%;
-    /* FONT */
-    font-size: 3.5em;
-    color: white;
-  }
-  .story2Tell{
-    /* POSITION */
-    margin-top: 20%;
-    /* FONT */
-    font-family: "Poppins";
-    color: rgb(255, 255, 255);
-    font-size: 1.5em;
-  }
-  .curabiturContainer{
-    clear: both;
-    margin-top: 10%;
-    margin-left: 15%;
-  }
-  .curabiturBox{
-    width: 25%;
-    margin-right: 5%;
-    color: #ffffff;
-  }
-  .icon{
-    width: 21%;
-  }
-  .Title{
-    color: #ffa800;
-  }
-  .horizontalWhiteLine{
-    border-bottom: solid #ffffff 1px;
-    width: 21%;
-  }
-  .creativeDesigns{
-    /* float:left; */
-  }
-  .oneHundredSupport{
-    /* float:left; */
-  }
-  /* (3)NEXT SECTION */
-  /*BUILDING LANDSCAPE BLOCK  */
+.invites{
+  margin: 0;
+  /* FONT  */
+  font-size: 6em;
+  font-weight: 100;
+}
+.invites h3{
+  text-align: right;
+}
+.invent{
+  margin-right: 5%;
+  font-size: 1.5em;
+  color: yellow;
+}
+.complexity{
+  /* POSITION */
+  width: 38%;
+  margin: 0;
+  padding-top: 15%;
+  line-height: 2.5%;
+  /* FONT */
+  font-size: 3.5em;
+  color: white;
+}
+.story2Tell{
+  /* POSITION */
+  margin-top: 20%;
+  /* FONT */
+  font-family: "Poppins";
+  color: rgb(255, 255, 255);
+  font-size: 1.5em;
+}
+.curabiturContainer{
+  clear: both;
+  margin-top: 10%;
+  margin-left: 15%;
+}
+.curabiturBox{
+  width: 25%;
+  margin-right: 5%;
+  color: #ffffff;
+}
+.icon{
+  width: 21%;
+}
+.Title{
+  color: #ffa800;
+}
+.horizontalWhiteLine{
+  border-bottom: solid #ffffff 1px;
+  width: 21%;
+}
+.creativeDesigns{
+  /* float:left; */
+}
+.oneHundredSupport{
+  /* float:left; */
+}
+/* (3)NEXT SECTION */
+/*BUILDING LANDSCAPE BLOCK  */
 .buildingLandscapeBlock{
   clear: both;
   /* BACKGROUND */
@@ -275,7 +281,7 @@ header{
   /* SCALE */
   width: 100%;
   /* FONT */
-  font-family: "AbrahamLincoln";
+  font-family: "Abraham Lincoln";
   color: rgba(0, 0, 0, 0.102);
   letter-spacing: -16px;
   font-size: 14em;
@@ -286,7 +292,7 @@ header{
   /* POSITION */
   position: absolute;
   z-index: 1;
-  top: 550%;
+  top: 515%;
   left: 25%;
   margin: 0;
   /* FONT */
@@ -303,14 +309,12 @@ header{
   text-align: center;
   z-index: 1;
   top: 545%;
-  margin-top: 0; /*this line needed to remove white space between blue & landscapeBlock*/
-  margin-bottom: 3%;
+  margin-top: 0;
   line-height: 0;
   /* FONT */
   font-family: "Poppins";
   font-size: 1.5em;
   color: black;
-
 }
 
 /* PLAY BUTTON AND CONTAINING GREY CIRCLES */
@@ -322,7 +326,7 @@ header{
   border: black solid 1px;
   border-radius: 50%;
   margin: auto;
-  margin-top: -3%;
+  margin-top: -1%;
   z-index: 9;
 }
 .outerCircle{
@@ -352,26 +356,49 @@ header{
   right: 38%;
   color:black;
 }
-.blackRectangleContainer{
-    position: relative;
-}
 .blackRectangle02{
-  margin-top: 30%;
+  border: solid 30px black;
+  margin-top: 33%;
   margin-left: 24%;
-  color:black;
+  height: 700px;
+  width: 700px;
+  color: black;
 }
-.pencilBox{
-
+.blackBoxHonorContainer{
+  margin-top: 20%;
+  font-family: "Abraham Lincoln";
 }
-/* (3)FORREST BLOCK */
 .blackBoxHonorDetails{
-  font-size: 8em;
+  letter-spacing: -1px;
+  text-align: right;
+  font-size: 6em;
   margin: 0;
+  margin-right: 5%;
 }
 .globalService{
-  font-size: 3em;
-  margin: 0 0 0 25%;
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  margin: 0;
+  margin-left: 50%;
 }
+.pencilBox{
+  position: relative;
+  bottom: -72%;
+  left: -33%;
+}
+.zero2Box{
+  /* POSITION */
+  position: relative;
+  bottom: 66%;
+  left: 105%;
+}
+.zero2{
+  /* FONT */
+  color: black;
+  font-size: 20em;
+  font-family: Abraham Lincoln;
+}
+/* (3)FORREST BLOCK */
 .zero3{
   font-size: 20em;
   color: black;
