@@ -67,6 +67,9 @@ header{
   color: white;
   list-style: none;
 }
+.copyright{
+  padding-right: 10%;
+}
 .phoneLine{
   clear: both;
   border-right: solid rgba(192,192,192,0.2) .09em;
@@ -357,7 +360,7 @@ header{
   color:black;
 }
 .blackRectangle02{
-  border: solid 30px black;
+  border: solid 25px black;
   margin-top: 33%;
   margin-left: 24%;
   height: 700px;
@@ -365,7 +368,7 @@ header{
   color: black;
 }
 .blackBoxHonorContainer{
-  margin-top: 20%;
+  margin-top: 0;
   font-family: "Abraham Lincoln";
 }
 .blackBoxHonorDetails{
@@ -386,6 +389,11 @@ header{
   bottom: -72%;
   left: -33%;
 }
+.twoPencilsCropped{
+  position: relative;
+  top: 75%;
+  right: 25%;
+}
 .zero2Box{
   /* POSITION */
   position: relative;
@@ -396,20 +404,33 @@ header{
   /* FONT */
   color: black;
   font-size: 20em;
-  font-family: Abraham Lincoln;
+  font-family: 'Abraham Lincoln';
+  font-weight: 100;
+  letter-spacing: -10px;
 }
 /* (3)FORREST BLOCK */
+.zero3Box{
+  /* POSITION */
+  position: relative;
+  bottom: 66%;
+  left: 105%;
+}
 .zero3{
-  font-size: 20em;
+  padding-top: 1%;
+  padding-left: 29%;
+  /* FONT */
   color: black;
-  margin: 0;
-  padding-top: 13%;
-  padding-left: 8%;
+  font-size: 20em;
+  font-family: 'Abraham Lincoln';
+  font-weight: 100;
+  letter-spacing: -10px;
 }
 .zero3Menu{
+  position: relative;
+  bottom: 61%;
+  left: 160%;
   color:black;
   font-size: 1em;
-  padding-left: 142%;
 }
 .tableIcons{
   padding:0 6%;
@@ -443,29 +464,72 @@ header{
   font-family: 'Lato', sans-serif;
 }
 .blackRectangle03{
-  position: relative;
-  top: 10%;
+  border: solid 25px black;
+  margin-top: 33%;
+  margin-left: 5%;
+  height: 700px;
   width: 700px;
+  color: black;
 }
+.chevronIcon{
+  padding: 0;
+  margin: 0 1%;
+}
+.prevNext{
+  padding: 5%;
+  font-family: 'Abraham Lincoln';
+  font-size: 3em;
+}
+.prev{
+  display: inline-block;
+  display: inline-block;
+  margin-right: 5%;
+}
+
 .hipsterHoldingLeaves{
-  position: absolute;
-  top: 32%;
-  left: 80%;
-  bottom: 7%;
-  left: 7%;
+  /* PICTURE POSITION */
+  background-image: url("../images/hipsterHoldingLeaves.png");
+  position: relative;
+  left: 5%;
+  margin-top: 5%;
+  /* PICTURE SIZE */
   height: 572px;
+  width: 890px;
 }
 .smallBlueBox{
-  position: absolute;
+  position: relative;
+  left: 57%;
+  top: 3%;
   background-color: #694fca;
   width: 550px;
   height: 280px;
 }
+.whatWeDoBox{
+  padding: 5% 0 0 5%;
+}
+.whatWeDo{
+  margin-bottom: 0;
+  font-family: 'Abraham Lincoln';
+  font-size: 3em;
+  color: #ffa800;
+}
+.althoughBox{
+  padding-left: 5%;
+  font-family: poppins;
+  color: white;
+  width: 81%;
+  line-height: 167%;
+}
 .globalCompany{
-  padding-top: 120%;
+  padding-top: 99%;
+  font-family: 'Abraham Lincoln';
+  font-weight: 100;
+  font-size: 6em;
 }
 .forwardThinking{
-
+  font-family: 'Abraham Lincoln';
+  font-weight: 100;
+  font-size: 1.5em;
 }
 .verticalLine{
   border-left: solid 2px black;
@@ -478,13 +542,14 @@ header{
   margin: 5% 0;
 }
 .testimonialContainer{
-  margin-left: 15%;
+  margin-left: 20%;
 }
 .testimonials{
-  width: 14em;
+  width: 17em;
   height: 27em;
   /* margin-left: 15%; */
   text-align: center;
+  margin-right: 2%;
 }
 .customerPicture{
   padding-left: 1%;
