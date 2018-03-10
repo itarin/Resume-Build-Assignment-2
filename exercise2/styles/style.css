@@ -412,8 +412,8 @@ header{
 .zero3Box{
   /* POSITION */
   position: relative;
-  bottom: 66%;
-  left: 105%;
+  bottom: 78%;
+  left: 107%;
 }
 .zero3{
   padding-top: 1%;
@@ -426,8 +426,9 @@ header{
   letter-spacing: -10px;
 }
 .zero3Menu{
+  border-collapse: collapse;
   position: relative;
-  bottom: 61%;
+  bottom: 58%;
   left: 160%;
   color:black;
   font-size: 1em;
@@ -439,9 +440,9 @@ header{
   white-space: nowrap;
   padding-right: 11%;
 }
-.borderLine{
-  border-top: solid red 1px;
-  border-bottom: solid blue 1px;
+.borderLine {
+    border-top: solid rgba(192,192,192,0.8) 0.8px;
+    border-bottom: solid rgba(192,192,192,0.8) 1px;
 }
 /* (4) NEXT SECTION */
 /* FORREST BLOCK */
@@ -552,7 +553,7 @@ header{
   margin-right: 2%;
 }
 .customerPicture{
-  padding-left: 1%;
+  padding: 10% 0 15% 1%;
 }
 .stars{
   padding-left: 31%;
@@ -569,6 +570,14 @@ header{
 .carolineDeSmet{
   background-color: #ffffff;
   float: left;
+}
+.amarillo{
+  clear: both;
+  color: #ffa800;
+}
+.customerNameLocation{
+  color: black;
+  letter-spacing: 0.2em;
 }
 footer{
   clear: both;
