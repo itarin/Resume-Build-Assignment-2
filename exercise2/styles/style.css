@@ -230,20 +230,20 @@ header{
   color: rgb(255, 255, 255);
   font-size: 1.5em;
 }
-.curabiturContainer{
+.cureContainer{
   clear: both;
   margin-top: 10%;
   margin-left: 15%;
 }
-.curabiturBox{
+.cureBox{
   width: 25%;
   margin-right: 5%;
   color: #ffffff;
 }
-.icon{
+.cureIcon{
   width: 21%;
 }
-.Title{
+.cureTitle{
   color: #ffa800;
 }
 .horizontalWhiteLine{
@@ -255,6 +255,23 @@ header{
 }
 .oneHundredSupport{
   /* float:left; */
+}
+.yellowDash{
+  border-bottom: yellow 0.8em solid;
+  width: 5%;
+  border-radius: 20%;
+  position: relative;
+  top: 20%;
+  left: 45%;
+}
+.whiteDashMedium{
+  border-bottom: white 2% solid;
+  width: 3%
+  
+}
+.whiteDashSmall{
+  border-bottom: white 2% solid;
+  width: 3%
 }
 /* (3)NEXT SECTION */
 /*BUILDING LANDSCAPE BLOCK  */
