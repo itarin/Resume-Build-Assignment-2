@@ -40,7 +40,7 @@ body{
 header{
   padding-top: 5%;
   padding-left: 5%;
-  background-color: rgba(0,0,0, 0.1);
+  background-color: rgba(0,0,0, 0.01);
   height: 25%;
 
 }
@@ -153,20 +153,24 @@ li{
   padding-bottom: 30%;
 }
 /* WHITE RECTANGLE DIV  */
+.whiteRectangleDiv{
+  /*Only used to help align .whiteRectangle
+  Otherwise elements scrolled with page*/
+}
 .whiteRectangle{
   position: absolute;
   bottom: -19%;
-  left: 25%;
+  left: 23%;
   border: solid 25px white;
-  height: 38%;
+  height: 30%;
   width: 50%;
   color: white;
 }
 .brushBox{
   position: absolute;
   z-index: 1;
-  top: 10%;
-  right: 4%;
+  top: 107%;
+  right: -3%;
 }
 .brushBoxShadow{
   position: absolute;
@@ -321,11 +325,12 @@ li{
   background-repeat:no-repeat;
   background-position: center ;
   /* POSITION */
-  padding: 0;
+  position: relative;
+  padding-top: 5%;
   margin: 0;
   border: 0;
   /* Scale */
-  height: 100%;
+  height: 68em;
   /* Font */
   font-family: 'Lato', sans-serif;
 }
@@ -337,34 +342,32 @@ li{
   /* FONT */
   font-family: "Abraham Lincoln";
   color: rgba(0, 0, 0, 0.102);
-  letter-spacing: -16px;
-  font-size: 14em;
-  word-spacing: -38px;
+  font-size: 20em;
+  word-spacing: 0.01em;
   font-weight: 100;
 }
 .weLoveClients{
   /* POSITION */
-  position: relative;
+  position: absolute;
   z-index: 1;
-  bottom: 20%;
-  left: 25%;
+  bottom: 77.3%;
+  left: 33%;
   margin: 0;
   /* FONT */
-  font-size: 3.5em;
-  font-family: "AbrahamLincoln";
+  font-size: 5em;
+  font-family: "Abraham Lincoln";
+  font-weight: 100;
   color: rgb(0, 0, 0);
 }
-/* .pushDown  MOVES .takePride down w/out separating both h4*/
-.pushDown{
-  padding-top: 27%;
-}
 .takePride{
+  width: 65%;
   /* POSITION */
+  position: absolute;
+  top: 22%;
+  left: 25%;
   text-align: center;
   z-index: 1;
-  top: 545%;
   margin-top: 0;
-  line-height: 0;
   /* FONT */
   font-family: "Poppins";
   font-size: 1.5em;
@@ -373,22 +376,22 @@ li{
 
 /* PLAY BUTTON AND CONTAINING GREY CIRCLES */
 .transparentCircle{
-  position: relative;
+  position: absolute;
+  bottom: 54.4%;
+  left: 40%;
   height: 15%;
   width: 15%;
   background-color: transparent;
   border: black solid 1px;
   border-radius: 50%;
-  margin: auto;
-  margin-top: -1%;
   z-index: 9;
 }
 .outerCircle{
   position: absolute;
   top: -4%;
   left: 17%;
-  height: 65%;
-  width: 65%;
+  height: 55%;
+  width: 55%;
   background-color: #d0d0d1;
   border: black  solid 1px;
   border-radius: 50%;
@@ -411,23 +414,28 @@ li{
   color:black;
 }
 .blackRectangle02{
+  position: absolute;
+  top: 65%;
+  right: 20%;
+  height: 68em;
+  padding: 0;
   border: solid 25px black;
-  margin-top: 17%;
-  margin-left: 24%;
-  height: 70%;
+  height: 50%;
   width: 50%;
   color: black;
 }
 .blackBoxHonorContainer{
-  margin-top: 0;
-  font-family: "Abraham Lincoln";
+ /* position: absolute;
+  top: 35%;
+  right: 45%;*/
 }
 .blackBoxHonorDetails{
+  position: absolute;
+  width: 50%;
   letter-spacing: -1px;
   text-align: right;
   font-size: 6em;
-  margin: 0;
-  margin-right: 5%;
+  font-family: "Abraham Lincoln";
 }
 .globalService{
   font-size: 1.5em;
@@ -436,19 +444,19 @@ li{
   margin-left: 50%;
 }
 .pencilBox{
-  position: relative;
+  position: absolute;
   bottom: -72%;
   left: -33%;
 }
 .twoPencilsCropped{
-  position: relative;
+  position: absolute;
   top: 75%;
   right: 25%;
 }
 .zero2Box{
   /* POSITION */
-  position: relative;
-  bottom: 66%;
+  position: absolute;
+  top: 12%;
   left: 105%;
 }
 .zero2{
@@ -471,6 +479,7 @@ li{
   background-position: center ;
   height: 3649px;
   /* POSITION */
+  position: relative;
   border:0;
   margin: 0;
   padding: 0;
@@ -480,11 +489,12 @@ li{
 }
 .zero3Box{
   /* POSITION */
-  position: relative;
+  position: absolute;
   bottom: 78%;
   left: 107%;
 }
 .zero3{
+  position: absolute;;
   padding-top: 1%;
   padding-left: 29%;
   /* FONT */
@@ -496,7 +506,7 @@ li{
 }
 .zero3Menu{
   border-collapse: collapse;
-  position: relative;
+  position: absolute;
   bottom: 58%;
   left: 160%;
   color:black;
