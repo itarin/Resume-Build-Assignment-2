@@ -1,3 +1,4 @@
+
 /* FONT */
 @font-face {
     font-family: 'Abraham Lincoln';
@@ -18,40 +19,59 @@
     display: inline-block;
     float:left;
   }
-body{
+html,body{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+.mainContainer{
+  position: absolute;
+  height: 100%;
   margin: 0;
-  padding:0;
-  max-width: 100%;
-  font-size: 16px;
-
+  padding: 0;
+}
+body{
+  font-size: 16px; /*16px=1em*/
   font-family: 'Roboto', sans-serif;
   /* font-family: 'Lato', sans-serif;
   font-family: 'Poppins', sans-serif; */
 }
+header{
+  padding-top: 5%;
+  padding-left: 5%;
+  background-color: rgba(0,0,0, 0.1);
+  height: 25%;
+
+}
+.noWidth{
+  height: 0;
+  width: 0;
+}
 /* (1)FIRST SECTION */
 /* RAINKISS BLOCK */
 .rainKissBlock{
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  
   background-image: url("../images/snow_bg.png");
   background-color: #161616;
-  background-repeat:no-repeat;
-  background-position: center top;
   border:0;
   margin: 0;
-  height: 1696px;
-  /* Scale */
-  max-width: 100% ;
-  margin: 0;
-  border: 0;
+  padding: 0;
+  /*FULL HEIGHT*/
+  height: 100%;
+  /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   /* Font */
   font-family: 'Lato', sans-serif;
 }
-header{
-  padding-left: 15%;
-  max-width: 100%;
-}
 .unityLogo{
   /* POSITION */
-  margin-left: 30%;
+  margin: auto;
   padding: 1px 1px;
   border: white solid 0.5px;
   /* FONT */
@@ -61,9 +81,12 @@ header{
   width: 6em;
   color: white;
 }
-.navLink{
+.topMenu{
+  padding-left: 20%;
+}
+li{
   margin: 0px 2em;
-  float: left;
+  display: inline;
   color: white;
   list-style: none;
 }
@@ -89,9 +112,10 @@ header{
 .rotatedSocialMediaMenu{
   transform: rotate(-90deg);
   margin-top: 30%;
-  margin-left: 48%;
+  margin-left: 50%;
   /* SCALE */
   width: 93%;/*WIDTH HAS TO BE THIS LARGE OR ROTATED NAV GETS SQUEEZED*/
+  font-size: 1em;
 }
 .honorDetail{
   clear: both;
@@ -126,61 +150,56 @@ header{
   width: 2%;
   display: block;
   margin: 5% auto;
+  padding-bottom: 30%;
 }
 /* WHITE RECTANGLE DIV  */
-.whiteRectDiv{
-  /* POSITION */
-  position: relative;
-  padding-top: 0%;
-  padding-left: 25%;
-  margin: auto;
-  /* FONT */
-  color: white;
-}
 .whiteRectangle{
-  height: 680px;
-  width: 680px;
+  position: absolute;
+  bottom: -19%;
+  left: 25%;
+  border: solid 25px white;
+  height: 38%;
+  width: 50%;
+  color: white;
 }
 .brushBox{
   position: absolute;
   z-index: 1;
-  top: 78%;
-  right: 10%;
+  top: 10%;
+  right: 4%;
 }
 .brushBoxShadow{
   position: absolute;
   z-index: 0;
-  top: 64%;
-  right: -2%;
+  left: 52%;
 }
 /*(2) NEXT SECTION */
 /* BLUE BOX SECTION */
+/********PLEASE READ MOST OF THE BLUE BACKGROUND IS IN .story2Tell**************/
 .blueBlock{
-  /* BACKGROUND IMAGE */
-  background-image: url("../images/prototype_0001s_0006_Rectangle-2.png");
-  background-color: #161616;
-  background-repeat:no-repeat;
-  background-position: center top;
+  /* BACKGROUND*/
+  background-color: #694fca;
   /* POSITION */
+  position: relative;
   clear: both;
+  z-index: -1;
   border:0;
   margin: 0;
   padding: 0;
-  height: 1340px;
+  height: 100%;
   /* Scale */
-  max-width: 100% ;
-  margin: 0;
-  border: 0;
+  /*FULL HEIGHT*/
+  height: 68em;
   /* Font */
   font-family: 'Lato', sans-serif;
 }
 .zero1{
   /* POSITION */
+  display: inline-block;
   margin: 0;
-  padding-top: 10%;
-    padding-left: 15%;
+  padding-left: 8%;
   /* FONT */
-  font-size: 15em;
+  font-size: 26em;
   color: yellow;
   font-family: "Abraham Lincoln";
   color: rgb(255, 168, 0);
@@ -189,10 +208,9 @@ header{
 }
 .invitesContainer{
   /* POSITION */
-  position: absolute;
-  text-align: left;
-  top: 270%;
-  left: 28%;
+  position: relative;
+  top: 57%;
+  left: 7%;
   /* FONT STYLES */
   font-family: "Abraham Lincoln";
   font-weight: 100;
@@ -201,54 +219,71 @@ header{
 .invites{
   margin: 0;
   /* FONT  */
-  font-size: 6em;
+  font-size: 7em;
   font-weight: 100;
 }
 .invites h3{
   text-align: right;
 }
 .invent{
-  margin-right: 5%;
-  font-size: 1.5em;
-  color: yellow;
+  margin:0;
+  font-size: 2em;
+  color: white;
 }
 .complexity{
   /* POSITION */
-  width: 38%;
   margin: 0;
-  padding-top: 15%;
+  padding-left: 10%;
+  padding-right: 0;
   line-height: 2.5%;
+  /*SCALE*/
+  width: 20%;
   /* FONT */
-  font-size: 3.5em;
+  font-family: "Abraham Lincoln";
+  font-weight: 100;
+  font-size: 3em;
   color: white;
 }
 .story2Tell{
+  clear: both;
+  position: absolute;
+    
+  width: 100%;
+  height: 65%;
+  background-color: #694fca;
   /* POSITION */
-  margin-top: 20%;
+  top: 50%;
+  left: 30%;
+
+  padding-left: 0;
   /* FONT */
   font-family: "Poppins";
   color: rgb(255, 255, 255);
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
-.cureContainer{
+.cureOuterBox{
   clear: both;
-  margin-top: 10%;
-  margin-left: 15%;
+  position: relative;
+  top: 5%;
+  left: 10%;
+
 }
 .cureBox{
-  width: 25%;
+  width: 23%;
   margin-right: 5%;
+  background-color: #694fca;
   color: #ffffff;
 }
 .cureIcon{
-  width: 21%;
+  width: 15%;
 }
 .cureTitle{
   color: #ffa800;
 }
 .horizontalWhiteLine{
+  clear: both;
   border-bottom: solid #ffffff 1px;
-  width: 21%;
+  width: 15%;
 }
 .creativeDesigns{
   /* float:left; */
@@ -257,26 +292,29 @@ header{
   /* float:left; */
 }
 .yellowDash{
-  border-bottom: yellow 0.8em solid;
-  width: 5%;
+  clear: both;
+  border-bottom: yellow 0.3em solid;
+  margin-right: 1%;
+  width: 3%;
   border-radius: 20%;
   position: relative;
+  margin-top: 2%;
   top: 20%;
-  left: 45%;
-}
-.whiteDashMedium{
-  border-bottom: white 2% solid;
-  width: 3%
-  
+  left: 35%;
 }
 .whiteDashSmall{
-  border-bottom: white 2% solid;
-  width: 3%
+  border-bottom: white 0.3em solid;
+  width: 1%;
+  margin-right: 1%;
+  border-radius: 20%;
+  margin-top: 2%;
+  position: relative;
+  top: 20%;
+  left: 35%;
 }
 /* (3)NEXT SECTION */
 /*BUILDING LANDSCAPE BLOCK  */
 .buildingLandscapeBlock{
-  clear: both;
   /* BACKGROUND */
   background-image: url("../images/buildingLandscape.png");
   background-color: #c4c4c5;
@@ -284,22 +322,18 @@ header{
   background-position: center ;
   /* POSITION */
   padding: 0;
-  height: 1468px;
-  /* Scale */
-  max-width: 100% ;
   margin: 0;
   border: 0;
+  /* Scale */
+  height: 100%;
   /* Font */
   font-family: 'Lato', sans-serif;
 }
 .weAreUnity{
   /* POSITION */
-  position: absolute;
+  text-align: center;
   z-index: 0;
-  padding-top: 15%;
   margin: 0;
-  /* SCALE */
-  width: 100%;
   /* FONT */
   font-family: "Abraham Lincoln";
   color: rgba(0, 0, 0, 0.102);
@@ -310,9 +344,9 @@ header{
 }
 .weLoveClients{
   /* POSITION */
-  position: absolute;
+  position: relative;
   z-index: 1;
-  top: 515%;
+  bottom: 20%;
   left: 25%;
   margin: 0;
   /* FONT */
@@ -378,10 +412,10 @@ header{
 }
 .blackRectangle02{
   border: solid 25px black;
-  margin-top: 33%;
+  margin-top: 17%;
   margin-left: 24%;
-  height: 700px;
-  width: 700px;
+  height: 70%;
+  width: 50%;
   color: black;
 }
 .blackBoxHonorContainer{
@@ -425,7 +459,25 @@ header{
   font-weight: 100;
   letter-spacing: -10px;
 }
-/* (3)FORREST BLOCK */
+/* (4)FORREST BLOCK */
+/* NEXT SECTION */
+/* FORREST BLOCK */
+.forrestBlock{
+
+  /* BACKGROUND IMAGE */
+  background-image: url("../images/forrestLandscape.png");
+  background-color: background-color: #E4E8EB;
+  background-repeat:no-repeat;
+  background-position: center ;
+  height: 3649px;
+  /* POSITION */
+  border:0;
+  margin: 0;
+  padding: 0;
+  /* Scale */
+  height: 100% ;
+  /* Font */
+}
 .zero3Box{
   /* POSITION */
   position: relative;
@@ -461,32 +513,14 @@ header{
     border-top: solid rgba(192,192,192,0.8) 0.8px;
     border-bottom: solid rgba(192,192,192,0.8) 1px;
 }
-/* (4) NEXT SECTION */
-/* FORREST BLOCK */
-.forrestBlock{
-
-  /* BACKGROUND IMAGE */
-  background-image: url("../images/forrestLandscape.png");
-  background-color: #ffffff;
-  background-repeat:no-repeat;
-  background-position: center ;
-  height: 3649px;
-  /* POSITION */
-  border:0;
-  margin: 0;
-  padding: 0;
-  /* Scale */
-  max-width: 100% ;
-  margin: 0;
-  /* Font */
-  font-family: 'Lato', sans-serif;
+font-family: 'Lato', sans-serif;
 }
 .blackRectangle03{
   border: solid 25px black;
-  margin-top: 33%;
+  margin-top: 57%;
   margin-left: 5%;
-  height: 700px;
-  width: 700px;
+  height: 70%;
+  width: 50%;
   color: black;
 }
 .chevronIcon{
@@ -517,55 +551,69 @@ header{
 .smallBlueBox{
   position: relative;
   left: 57%;
-  top: 3%;
+  bottom: 7%;
   background-color: #694fca;
-  width: 550px;
-  height: 280px;
-}
-.whatWeDoBox{
-  padding: 5% 0 0 5%;
+  width: 50%;
+  height: 40%;
 }
 .whatWeDo{
+  padding: 5% 0 0 5%;
+
   margin-bottom: 0;
   font-family: 'Abraham Lincoln';
   font-size: 3em;
   color: #ffa800;
 }
-.althoughBox{
+.although{
+  /*POSITION*/
   padding-left: 5%;
-  font-family: poppins;
-  color: white;
   width: 81%;
   line-height: 167%;
+  /*FONT*/
+  font-family: poppins;
+  font-size: 0.8em;
+  color: white;
 }
 .globalCompany{
-  padding-top: 99%;
+  padding: 40% 15%;
+  display: inline-block;
+  width: 144%;
   font-family: 'Abraham Lincoln';
   font-weight: 100;
   font-size: 6em;
 }
 .forwardThinking{
+  width: 155%;
+  margin: 0;
+  position: relative;
+  bottom: 45%;
+  text-align: center;
+
   font-family: 'Abraham Lincoln';
   font-weight: 100;
-  font-size: 1.5em;
+  font-size: 3em;
 }
 .verticalLine{
   border-left: solid 2px black;
   padding: 5%;
-  margin-top: 32%;
-  margin-left: 50%;
+  padding-top: 55%;
+  padding-left-left: 50%;
 }
 .whatCustomersSay{
   text-align: center;
-  margin: 5% 0;
+  padding: 5% 0;
+}
+.forrestBackgroundColorApplied{
+  background-color: #E4E8EB;
 }
 .testimonialContainer{
   margin-left: 20%;
+  margin-bottom: 25%;
+  height: 25%;
 }
 .testimonials{
-  width: 17em;
-  height: 27em;
-  /* margin-left: 15%; */
+  width: 30%;
+  height: 130%;
   text-align: center;
   margin-right: 2%;
 }
@@ -596,14 +644,15 @@ header{
   color: black;
   letter-spacing: 0.2em;
 }
+/*FOOTER*/
 footer{
   clear: both;
   height: 8%;
   background-color: #212121;
 }
-/* FOOTER HEADER CONTAINS LOGO AND CONTACT INFO WITH BOTTOM WHITE BORDER */
+  /* .footerHeader CONTAINS LOGO AND CONTACT INFO WITH BOTTOM WHITE BORDER */
 .footerHeader{
-  border-bottom: solid rgba(192,192,192,0.3) 1px;
+  border-bottom: solid rgba(192,192,192,0.1) 1px;
   height: 40%;
 }
 .callNow{
