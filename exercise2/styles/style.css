@@ -415,13 +415,13 @@ li{
 }
 .blackRectangle02{
   position: absolute;
-  top: 65%;
-  right: 20%;
+  top: 75%;
+  right: 25%;
   height: 68em;
   padding: 0;
   border: solid 25px black;
-  height: 50%;
-  width: 50%;
+  height: 55%;
+  width: 40%;
   color: black;
 }
 .blackBoxHonorContainer{
@@ -430,9 +430,11 @@ li{
   right: 45%;*/
 }
 .blackBoxHonorDetails{
-  position: absolute;
   width: 50%;
+  padding-left: 25%;
+  padding-top: 30%;
   letter-spacing: -1px;
+  line-height: 0;
   text-align: right;
   font-size: 6em;
   font-family: "Abraham Lincoln";
@@ -445,13 +447,13 @@ li{
 }
 .pencilBox{
   position: absolute;
-  bottom: -72%;
-  left: -33%;
+  bottom: -8%;
+  left: -30%;
 }
 .twoPencilsCropped{
   position: absolute;
-  top: 75%;
-  right: 25%;
+  top: 107%;
+  right: 65%;
 }
 .zero2Box{
   /* POSITION */
@@ -526,10 +528,10 @@ li{
 font-family: 'Lato', sans-serif;
 }
 .blackRectangle03{
+  position: absolute;
+  top: 15%;
   border: solid 25px black;
-  margin-top: 57%;
-  margin-left: 5%;
-  height: 70%;
+  height: 50%;
   width: 50%;
   color: black;
 }
@@ -547,16 +549,15 @@ font-family: 'Lato', sans-serif;
   display: inline-block;
   margin-right: 5%;
 }
-
 .hipsterHoldingLeaves{
   /* PICTURE POSITION */
   background-image: url("../images/hipsterHoldingLeaves.png");
-  position: relative;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 35%;
   left: 5%;
-  margin-top: 5%;
-  /* PICTURE SIZE */
-  height: 572px;
-  width: 890px;
+  height: 27.6%;
+  width: 61.5%;
 }
 .smallBlueBox{
   position: relative;
@@ -605,9 +606,6 @@ font-family: 'Lato', sans-serif;
 }
 .verticalLine{
   border-left: solid 2px black;
-  padding: 5%;
-  padding-top: 55%;
-  padding-left-left: 50%;
 }
 .whatCustomersSay{
   text-align: center;
@@ -684,4 +682,7 @@ footer{
   margin: 0;
   padding: 0;
   color: #5f49b3;
+}
+input{
+  background-color: black;
 }
