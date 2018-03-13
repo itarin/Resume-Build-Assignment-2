@@ -59,8 +59,9 @@ header{
   border:0;
   margin: 0;
   padding: 0;
-  /*FULL HEIGHT*/
+  /*FULL HEIGHT and WIDTH NEEDED*/
   height: 100%;
+  width: 100%;
   /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
@@ -120,19 +121,27 @@ li{
 }
 .honorDetail{
   clear: both;
-  margin-top: 30%;
+  padding: 0;
+  position: absolute;
+  top: 35%;
+  left: 31%;
+  margin-top: 0%;
+  margin-bottom: 0;
   text-align: center;
   color:yellow;
-  font-size: 3em;
+  font-size: 6em;
   font-family: 'Abraham Lincoln';
+  font-weight: 100;
   color: rgb(255, 168, 0);
 }
 
 .honorDetailDescription{
+  margin: 0;
   color: white;
   text-align: center;
-  font-size: 2em;
+  font-size: 3em;
   font-family: 'Abraham Lincoln';
+  font-weight: 100;
 }
 .rectIcon{
   display:block;
@@ -163,20 +172,15 @@ li{
   bottom: -19%;
   left: 23%;
   border: solid 25px white;
-  height: 30%;
+  height: 38%;
   width: 50%;
   color: white;
 }
 .brushBox{
   position: absolute;
   z-index: 1;
-  top: 107%;
+  top: 103%;
   right: -3%;
-}
-.brushBoxShadow{
-  position: absolute;
-  z-index: 0;
-  left: 52%;
 }
 /*(2) NEXT SECTION */
 /* BLUE BOX SECTION */
@@ -204,7 +208,7 @@ li{
   margin: 0;
   padding-left: 8%;
   /* FONT */
-  font-size: 26em;
+  font-size: 22em;
   color: yellow;
   font-family: "Abraham Lincoln";
   color: rgb(255, 168, 0);
@@ -223,9 +227,9 @@ li{
 }
 .invites{
   margin: 0;
-  /* FONT  */
-  font-size: 7em;
+  font-size: 6em;
   font-weight: 100;
+  line-height: 85%;
 }
 .invites h3{
   text-align: right;
@@ -641,23 +645,21 @@ the .histerHoldingLeaves*/
   font-size: 2em;
   font-weight: 100;
 }
-.forrestBackgroundColorApplied{
-  background-color: #E4E8EB;
-}
 /*MOVES TESTIMONIALS*/
 .testimonialContainer{
   position: absolute;
   top: 87%;
-  margin-left: 20%;
-  margin-bottom: 25%;
+  right: -5%;
+  width: 90%;
   height: 11.5%;
 }
 /*STYLING FOR ALL TESTIMONIAL BOXES*/
 .testimonials{
-  width: 30%;
-  height: 130%;
+  width: 26%;
+  height: 100%;
   text-align: center;
   margin-right: 2%;
+}
 }
 .customerPicture{
   padding: 10% 0 15% 1%;
@@ -673,7 +675,7 @@ the .histerHoldingLeaves*/
 .jonathanKraus{
   float: left;
   background-color: #694fca;
-  box-shadow: 5px 10px rgba(0,0,0 0.1);
+  box-shadow: 0.5em 0.5em 0.8em;
 }
 .carolineDeSmet{
   float: left;
@@ -683,20 +685,30 @@ the .histerHoldingLeaves*/
   clear: both;
   color: #ffa800;
 }
-.customerNameLocation{
+.customerName{
+  margin-bottom: 0.3em;
   color: black;
   letter-spacing: 0.2em;
 }
+.customerLocation{
+  margin: 0;
+  font-size: 0.7em;
+}
 .spacerBlock{
-  clear: both;
   position: absolute;
-  bottom: 10%;
+  bottom: -7%;
+  z-index: -1;
+  width: 100%;
   background-color: #E3E7EA;
-  height: 6em;
+  height: 15em;
 }
 /*FOOTER*/
 footer{
+  /*ADDED COLOR OF LANDSCAPE DIV*/
+  border-top: 10em solid #E5E9EC;
+  padding-top: 5%;
   clear: both;
+  margin-top: 0%;
   height: 8%;
   background-color: #212121;
 }
@@ -735,6 +747,37 @@ footer{
   padding: 0;
   color: #5f49b3;
 }
+.footerFooter{
+  position: relative;
+  height: 22em;
+  width: 115em;
+  background-color: #212121;
+  width: 90%;
+  font-size: .8em;
+  color: white;
+}
+.aboutUs{
+  background-color: #212121;
+  width: 40%;
+  float: left;
+}
+.newsletter{
+  background-color: #212121;
+  width: 40%;
+  float: left;
+}
+.fromBlog{
+  position: absolute;
+  right: 5%;
+  background-color: #212121;
+  width: 25%;
+  float: left;
+}
+.fromBlog ul{
+  width: 30em;
+  padding: 0;
+  margin: 0;
+}
 input{
-  background-color: black;
+  background-color: #212121;
 }
