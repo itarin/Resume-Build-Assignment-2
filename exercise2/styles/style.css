@@ -100,7 +100,7 @@ li{
   top: 0;
   left: 96%;
   border-right: solid rgba(192,192,192,0.2) .09em;
-  height: 9%;
+  height: 89%;
   width: 1%;
 }
 .phoneBall{
@@ -120,6 +120,10 @@ li{
   width: 93%;/*WIDTH HAS TO BE THIS LARGE OR ROTATED NAV GETS SQUEEZED*/
   font-size: 1em;
 }
+.honorContainer{
+  height: 25%;
+  width: 100%;
+}
 .honorDetail{
   clear: both;
   padding: 0;
@@ -129,7 +133,6 @@ li{
   margin-top: 0%;
   margin-bottom: 0;
   text-align: center;
-  color:yellow;
   font-size: 6em;
   font-family: 'Abraham Lincoln';
   font-weight: 100;
@@ -182,6 +185,7 @@ li{
   z-index: 1;
   top: 103%;
   right: -3%;
+  height: 26%;
 }
 /*(2) NEXT SECTION */
 /* BLUE BOX SECTION */
@@ -203,14 +207,20 @@ li{
   /* Font */
   font-family: 'Lato', sans-serif;
 }
+.zero1Cont{
+  width: 15%;
+  height: 24em;
+  margin-right: 1%;
+  margin-left: 8%;
+}
 .zero1{
   /* POSITION */
   display: inline-block;
   margin: 0;
   padding-left: 8%;
+  padding-right: 1%;
   /* FONT */
   font-size: 22em;
-  color: yellow;
   font-family: "Abraham Lincoln";
   color: rgb(255, 168, 0);
   letter-spacing: -9px;
@@ -218,6 +228,9 @@ li{
 }
 .invitesContainer{
   /* POSITION */
+  white-space: nowrap;
+  width: 72%;
+  height: 31%;
   position: relative;
   top: 57%;
   left: 7%;
@@ -247,7 +260,8 @@ li{
   padding-right: 0;
   line-height: 2.5%;
   /*SCALE*/
-  width: 20%;
+  height: 14%;
+  width: 18%;
   /* FONT */
   font-family: "Abraham Lincoln";
   font-weight: 100;
@@ -255,16 +269,12 @@ li{
   color: white;
 }
 .story2Tell{
-  clear: both;
   position: absolute;
-    
-  width: 100%;
-  height: 65%;
+  width: 52%;
   background-color: #694fca;
   /* POSITION */
-  top: 50%;
+  top: 39%;
   left: 30%;
-
   padding-left: 0;
   /* FONT */
   font-family: "Poppins";
@@ -340,6 +350,11 @@ li{
   /* Font */
   font-family: 'Lato', sans-serif;
 }
+.unityBlock{
+  position: relative;
+  width: 100%;
+  height: 76%;
+}
 .weAreUnity{
   /* POSITION */
   text-align: center;
@@ -381,6 +396,12 @@ li{
 }
 
 /* PLAY BUTTON AND CONTAINING GREY CIRCLES */
+.circleContainer{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: -80%;
+}
 .transparentCircle{
   position: absolute;
   bottom: 60.4%;
@@ -471,14 +492,17 @@ the .histerHoldingLeaves*/
 }
 .zero2Box{
   /* POSITION */
-  position: absolute;
+  position: relative;
   top: 12%;
   left: 105%;
+  /*SCALE*/
+  height: 49%;
+  width: 44%;
 }
 .zero2{
   /* FONT */
   color: black;
-  font-size: 2em;
+  font-size: 22em;
   font-family: 'Abraham Lincoln';
   font-weight: 100;
   letter-spacing: -10px;
@@ -509,6 +533,9 @@ the .histerHoldingLeaves*/
 .zero3Box{
   /* POSITION */
   position: absolute;
+  bottom: 55.5%;
+  right: -15%;
+  /*SCALE*/
   height: 18%;
   width: 46%;
 }
@@ -547,13 +574,11 @@ the .histerHoldingLeaves*/
 /*IMPORTANT-THE margin:bottom spaces .blackSquare03 and
 the .histerHoldingLeaves*/
 .blackSquare03{
-  float: clear;
   position: absolute;
-  height: 18%;
-  width: 46%;
-  margin-bottom: 26%;
+  bottom: 61%;
+  left: 5%;
   border: solid 25px black;
-  height: 20%;
+  height: 18%;
   width: 50%;
   color: black;
 }
@@ -721,6 +746,7 @@ footer{
   clear: both;
   border-bottom: solid rgba(192,192,192,0.1) 1px;
   height: 40%;
+  padding: 0 0 3% 6%;
 }
 .callNow{
   display: inline-block;
@@ -732,10 +758,7 @@ footer{
 }
 .footerUnityStyle{
   display: inline;
-  float: left;
-  margin-left: 40%;
-  margin-top: -4%;
-  margin-bottom: 0;
+  margin: 2% 22%;
 }
 .fa-envelope{
   display: inline;
@@ -744,8 +767,7 @@ footer{
   color: white;
 }
 .eMail{
-  clear: both;
-  float: left;
+  white-space: nowrap;
   display: inline-block;
   margin: 0;
   padding: 0;
@@ -781,6 +803,9 @@ footer{
   width: 40%;
   float: left;
 }
+button{
+  background-color: #694FCA;
+}
 .fromBlog{
   position: absolute;
   right: 5%;
@@ -797,13 +822,20 @@ footer{
   padding-bottom: 5%;
   width: 48%;
   line-height: 1.4;
+  background-color: #212121;
 }
 }
-input{
+.signUp input{
   background-color: #212121;
   border: 0.2em solid rgba(192,192,192,0.1);
   width: 45%;
   height: 40%;
   font-size: 1.3em;
   color: white;
+}
+/*BACKGROUND COLOR IN INPUT*/
+input[type="text"], textarea {
+
+  background-color:#212121;
+
 }
