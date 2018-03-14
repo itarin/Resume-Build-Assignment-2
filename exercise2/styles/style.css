@@ -29,7 +29,7 @@ html,body{
   position: absolute;
   height: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0.2%;
 }
 body{
   font-size: 16px; /*16px=1em*/
@@ -38,6 +38,7 @@ body{
   font-family: 'Poppins', sans-serif; */
 }
 header{
+  position: relative;
   padding-top: 5%;
   padding-left: 5%;
   background-color: rgba(0,0,0, 0.01);
@@ -439,20 +440,23 @@ the .histerHoldingLeaves*/
 }
 .blackBoxHonorDetails{
   position: absolute;
-  top: 10%;
-  width: 50%;
-  padding-left: 25%;
+  top: 55%;
+  width: 55%;
+  padding-left: 40%;
   letter-spacing: -1px;
-  line-height: 0;
+  line-height: 76px;
   text-align: right;
   font-size: 6em;
   font-family: "Abraham Lincoln";
 }
 .globalService{
-  font-size: 1.5em;
+  position: absolute;
+  top: 91%;
+  right: 8%;
+  font-size: 1em;
+  font-weight: 100;
   letter-spacing: -1px;
   margin: 0;
-  margin-left: 50%;
 }
 .pencilBox{
   position: absolute;
@@ -474,7 +478,7 @@ the .histerHoldingLeaves*/
 .zero2{
   /* FONT */
   color: black;
-  font-size: 20em;
+  font-size: 2em;
   font-family: 'Abraham Lincoln';
   font-weight: 100;
   letter-spacing: -10px;
@@ -505,9 +509,8 @@ the .histerHoldingLeaves*/
 .zero3Box{
   /* POSITION */
   position: absolute;
-  position: absolute;
-  top: 27%;
-  left: 70%;
+  height: 18%;
+  width: 46%;
 }
 .zero3{
   /* FONT */
@@ -546,8 +549,8 @@ the .histerHoldingLeaves*/
 .blackSquare03{
   float: clear;
   position: absolute;
-  top: 20%;
-  left: 5%;
+  height: 18%;
+  width: 46%;
   margin-bottom: 26%;
   border: solid 25px black;
   height: 20%;
@@ -579,6 +582,7 @@ the .histerHoldingLeaves*/
   left: 10%;
   height: 15%;
   width: 60%;
+  box-shadow: 0.5em 0.5em 0.8em; /*RH*/
 }
 .smallBlueBox{
   position: absolute;
@@ -752,7 +756,8 @@ footer{
   height: 22em;
   width: 115em;
   background-color: #212121;
-  width: 90%;
+  width: 75%;
+  left: 10%;
   font-size: .8em;
   color: white;
 }
@@ -760,6 +765,16 @@ footer{
   background-color: #212121;
   width: 40%;
   float: left;
+  margin-right: 2%;
+}
+.aboutUs p{
+  float: right;
+  width: 59%;
+  line-height: 2;
+}
+.footerTitle{
+  padding: 2% 0;
+  font-size: 1em;
 }
 .newsletter{
   background-color: #212121;
@@ -778,6 +793,17 @@ footer{
   padding: 0;
   margin: 0;
 }
+.signUp{
+  padding-bottom: 5%;
+  width: 48%;
+  line-height: 1.4;
+}
+}
 input{
   background-color: #212121;
+  border: 0.2em solid rgba(192,192,192,0.1);
+  width: 45%;
+  height: 40%;
+  font-size: 1.3em;
+  color: white;
 }
