@@ -688,11 +688,10 @@ the .histerHoldingLeaves*/
 /*FOOTER*/
 footer{
   /*ADDED COLOR OF LANDSCAPE DIV*/
-  border-top: 10em solid #E5E9EC;
-  padding-top: 5%;
   clear: both;
+  border-top: 8em solid #E5E9EC;
+  padding-top: 0%;
   margin-top: 0%;
-  height: 8%;
   background-color: #212121;
 }
   /* .footerHeader CONTAINS LOGO AND CONTACT INFO WITH BOTTOM WHITE BORDER */
@@ -700,7 +699,7 @@ footer{
   clear: both;
   border-bottom: solid rgba(192,192,192,0.1) 1px;
   height: 40%;
-  padding: 0 0 3% 6%;
+  padding: 0 0 2% 6%;
 }
 .callNow{
   display: inline-block;
