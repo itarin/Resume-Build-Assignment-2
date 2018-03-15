@@ -214,12 +214,11 @@ li{
   margin-left: 8%;
 }
 .zero1{
-  /* POSITION */
   display: inline-block;
   margin: 0;
   padding-left: 8%;
   padding-right: 1%;
-  /* FONT */
+
   font-size: 22em;
   font-family: "Abraham Lincoln";
   color: rgb(255, 168, 0);
@@ -227,14 +226,14 @@ li{
   font-weight: 100;
 }
 .invitesContainer{
-  /* POSITION */
+
   white-space: nowrap;
   width: 72%;
   height: 31%;
   position: relative;
   top: 57%;
   left: 7%;
-  /* FONT STYLES */
+
   font-family: "Abraham Lincoln";
   font-weight: 100;
   color: white;
@@ -245,7 +244,7 @@ li{
   font-weight: 100;
   line-height: 85%;
 }
-.invites h3{
+.invites h3 {
   text-align: right;
 }
 .invent{
@@ -254,15 +253,15 @@ li{
   color: white;
 }
 .complexity{
-  /* POSITION */
+
   margin: 0;
   padding-left: 10%;
   padding-right: 0;
   line-height: 2.5%;
-  /*SCALE*/
+
   height: 14%;
   width: 18%;
-  /* FONT */
+
   font-family: "Abraham Lincoln";
   font-weight: 100;
   font-size: 3em;
@@ -272,11 +271,11 @@ li{
   position: absolute;
   width: 52%;
   background-color: #694fca;
-  /* POSITION */
+
   top: 39%;
   left: 30%;
   padding-left: 0;
-  /* FONT */
+
   font-family: "Poppins";
   color: rgb(255, 255, 255);
   font-size: 1.2em;
@@ -305,12 +304,6 @@ li{
   border-bottom: solid #ffffff 1px;
   width: 15%;
 }
-.creativeDesigns{
-  /* float:left; */
-}
-.oneHundredSupport{
-  /* float:left; */
-}
 .yellowDash{
   clear: both;
   border-bottom: yellow 0.3em solid;
@@ -335,19 +328,19 @@ li{
 /* (3)NEXT SECTION */
 /*BUILDING LANDSCAPE BLOCK  */
 .buildingLandscapeBlock{
-  /* BACKGROUND */
+
   background-image: url("../images/buildingLandscape.png");
   background-color: #c4c4c5;
   background-repeat:no-repeat;
   background-position: center ;
-  /* POSITION */
+
   position: relative;
   padding-top: 5%;
   margin: 0;
   border: 0;
-  /* Scale */
+
   height: 87em;
-  /* Font */
+
   font-family: 'Lato', sans-serif;
 }
 .unityBlock{
@@ -356,11 +349,9 @@ li{
   height: 76%;
 }
 .weAreUnity{
-  /* POSITION */
   text-align: center;
   z-index: 0;
   margin: 0;
-  /* FONT */
   font-family: "Abraham Lincoln";
   color: rgba(0, 0, 0, 0.102);
   font-size: 20em;
@@ -368,13 +359,11 @@ li{
   font-weight: 100;
 }
 .weLoveClients{
-  /* POSITION */
   position: absolute;
   z-index: 1;
   bottom: 81.3%;
   left: 33%;
   margin: 0;
-  /* FONT */
   font-size: 5em;
   font-family: "Abraham Lincoln";
   font-weight: 100;
@@ -382,14 +371,12 @@ li{
 }
 .takePride{
   width: 65%;
-  /* POSITION */
   position: absolute;
   top: 18%;
   left: 25%;
   text-align: center;
   z-index: 1;
   margin-top: 0;
-  /* FONT */
   font-family: "Poppins";
   font-size: 1.5em;
   color: black;
@@ -455,9 +442,11 @@ the .histerHoldingLeaves*/
   color: black;
 }
 .blackBoxHonorContainer{
- /* position: absolute;
-  top: 35%;
-  right: 45%;*/
+
+
+
+
+
 }
 .blackBoxHonorDetails{
   position: absolute;
@@ -558,9 +547,6 @@ the .histerHoldingLeaves*/
 }
 .tableIcons{
   padding: 3% 1% 3% 0;
-}
-.menuWordPadding{
-  /*NOT NEEDED*/
 }
 .zero3Menu td{
   white-space: nowrap;
@@ -834,8 +820,6 @@ button{
   color: white;
 }
 /*BACKGROUND COLOR IN INPUT*/
-input[type="text"], textarea {
-
-  background-color:#212121;
-
+input[type="Email"], textarea {
+  background-color: #212121;
 }
