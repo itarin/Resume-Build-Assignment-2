@@ -54,32 +54,26 @@ header{
 .rainKissBlock{
   display: inline-block;
   position: relative;
-  
   background-image: url("../images/snow_bg.png");
   background-color: #161616;
   border:0;
   margin: 0;
   padding: 0;
-  /*FULL HEIGHT and WIDTH NEEDED*/
   height: 100%;
   width: 100%;
-  /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  /* Font */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Lato', sans-serif;
 }
 .unityLogo{
-  /* POSITION */
   margin: auto;
-  padding: 1px 1px;
+  padding: 1% 1%;
   border: white solid 0.005em;
-  /* FONT */
+
   text-align: center;
   font-size: 2em;
-  font-style: sans-serif;
-  width: 6em;
+  width: 4em;
   color: white;
 }
 .topMenu{
@@ -490,8 +484,8 @@ the .histerHoldingLeaves*/
 .zero3Box{
   /* POSITION */
   position: absolute;
-  bottom: 55.5%;
-  right: -15%;
+      bottom: 39.7%;
+    right: -16%;
   /*SCALE*/
   height: 18%;
   width: 46%;
@@ -651,18 +645,14 @@ the .histerHoldingLeaves*/
   padding-left: 31%;
   display: block;
 }
-.gregoryBradley{
+.oddReview{
   background-color: #ffffff;
   float: left;
 }
-.jonathanKraus{
+.evenReview{
   float: left;
   background-color: #694fca;
   box-shadow: 0.5em 0.5em 0.8em;
-}
-.carolineDeSmet{
-  float: left;
-  background-color: #ffffff;
 }
 .amarillo{
   clear: both;
@@ -712,6 +702,7 @@ footer{
 .footerUnityStyle{
   display: inline;
   margin: 2% 22%;
+  padding-top: 2% 2%;
 }
 .fa-envelope{
   display: inline;
@@ -728,7 +719,7 @@ footer{
 }
 .footerFooter{
   position: relative;
-  height: 22em;
+  height: 28em;
   width: 115em;
   background-color: #212121;
   width: 75%;
@@ -782,10 +773,10 @@ input[type="Email"], textarea {
   margin-top: 5%;
 }
 button{
-  background-color: #694FCA;
   width: 23%;
   background-color: #694FCA;
   padding: 3% 5%;
+  margin-bottom: 2%;
 }
 .fromBlog{
   position: absolute;
