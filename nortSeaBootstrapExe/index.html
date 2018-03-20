@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>NortSea Index</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Open+Sans" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
   </head>
   <body>
 <!-- FIRST SECTION -->
@@ -33,39 +34,79 @@
             <i class="fas fa-envelope"></i>
           </li>
         </ul>
-      </div>
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About Us</a>
-        </li>
-        <li class="nav-item dropdown">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Services
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Action</a>
               <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
+              <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="products" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Services</a>
-            <a class="dropdown-item" href="#">Products</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Gallery</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Products
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fas fa-search"></i>
+            </a>
+          </li>
+        </ul>
+
+
+      </div>
+      <div class="col-md-10 sale">
+        <h2 class="thirtyFive">35% Sale</h2>
+        <h1 class="youEnter">YOU ENTER SUMMER WITH<br> REFRESHIHNG RATES</h1>
+        <button type="button" name="button">EXPLORE IT</button>
+      </div>
+      <div class="col-md-2">
+        <div class="card text-white greece mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5>Greece</h5>
+            <img src="assets/sunny.png" alt="">
+            <h5 class="card-title">26°/19°</h5>
+            <p class="card-text">Sunny</p>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-      </ul>
+        </div>
+        <div class="card text-white gallery mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5>Gallery</h5>
+            <img src="assets/imgIcon.png" alt="">
+          </div>
+        </div>
+        <div class="card virtualTour mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5>360° Virtual Tour</h5>
+            <img src="assets/pineTreeIcon.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        
+      </div>
     </div>
+
   </div>
 
   </body>
