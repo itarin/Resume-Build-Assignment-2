@@ -7,6 +7,10 @@ body{
 .container-fluid{
   padding: 0 15%;
 }
+.logo{
+  background-color: white;
+  padding-top: 2%;
+}
 .topBar li{
   display: inline;
 }
@@ -20,6 +24,12 @@ input[placeholder]{
 .thirtyFive, .youEnter{
   color: white;
 }
+.thirtyFive{
+  padding-top: 10%;
+}
+.exploreButton{
+  padding: 1% 3%;
+}
 .greece{
   background-color:#ebc661;
   color: white;
@@ -31,4 +41,8 @@ input[placeholder]{
 .virtualTour{
   background-color: white;
   color: #6c6c6c;
+}
+.hotelForm{
+  background-color: white;
+  padding: 2% 5%;
 }
