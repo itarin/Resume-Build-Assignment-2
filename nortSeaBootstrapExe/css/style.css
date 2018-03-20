@@ -7,6 +7,10 @@ body{
 .container-fluid{
   padding: 0 15%;
 }
+.section2{
+  background-color: #fdfdfd;
+  margin-top: 2%;
+}
 .logo{
   background-color: white;
   padding-top: 2%;
