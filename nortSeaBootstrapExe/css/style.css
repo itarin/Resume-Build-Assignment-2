@@ -50,3 +50,16 @@ input[placeholder]{
   background-color: white;
   padding: 2% 5%;
 }
+.largeIcons{
+  text-align: center;
+}
+.largeIcons img{
+  width: 40%;
+}
+.aboutHotelArea{
+  text-align: center;
+}
+.hotelAmenities{
+  outline: 1em solid black;
+  text-align: center;
+}
