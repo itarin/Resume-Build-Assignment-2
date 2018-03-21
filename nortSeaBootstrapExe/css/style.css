@@ -60,6 +60,36 @@ input[placeholder]{
   text-align: center;
 }
 .hotelAmenities{
-  outline: 1em solid black;
   text-align: center;
+  border-color: black;
+  border-width: .8em; 
+  margin: 2%; 
+  padding: 3% 3% 0 3% ;
+}
+.news{
+  padding: 1%;
+}
+.newsImg{
+  height: 12em;
+  width: 15em;
+}
+.fa-caret-right{
+  padding-left: .19em;
+  font-size: 1.5em;
+}
+.footer{
+  background-color: #313131;
+  color: #acacac;
+}
+.footer .card, .footer li, .footNav a{
+  background-color: #313131;
+  color: #acacac;
+}
+.logoFooter{
+  background-color: #313131;
+  padding-top: 10%;
+}
+.contactTitle{
+  padding-right: 3%;
+  color: #c0a878;
 }

@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>NortSea Index</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Open+Sans" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
@@ -156,7 +160,7 @@
     </div>
 <!-- SECOND SECTION -->
     <div class="row section2">
-      <div class="card col-md-3 largeIcons" style="width: 18rem;">
+      <div class="card col-md-3 largeIcons border-0" style="width: 18rem;">
         <div class="card-body">
           <img class="card-img-top" src="assets/carryOnIcon.png" alt="Card image cap">
           <h5 class="card-title">Amazing Travel</h5>
@@ -165,10 +169,13 @@
             Lorem ipsum dolor sit amet,
             consectetur adipisicing elit, sed
           </p>
-          <a href="#" class="card-link">Read More</a>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Read More 
+            <i class="fas fa-caret-right"></i>
+          </h6>
         </div>
       </div>
-      <div class="card col-md-3 largeIcons" style="width: 18rem;">
+      <div class="card col-md-3 largeIcons border-0" style="width: 18rem;">
         <div class="card-body">
           <img class="card-img-top" src="assets/mapIcon.png" alt="Card image cap">
           <h5 class="card-title">Discover</h5>
@@ -177,10 +184,13 @@
             Lorem ipsum dolor sit amet,
             consectetur adipisicing elit, sed
           </p>
-          <a href="#" class="card-link">Read More</a>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Read More 
+            <i class="fas fa-caret-right"></i>
+          </h6>
         </div>
       </div>
-      <div class="card col-md-3 largeIcons" style="width: 18rem;">
+      <div class="card col-md-3 largeIcons border-0" style="width: 18rem;">
         <div class="card-body">
           <img class="card-img-top" src="assets/worldIcon.png" alt="Card image cap">
           <h5 class="card-title">Book Your Trip</h5>
@@ -189,10 +199,13 @@
             Lorem ipsum dolor sit amet,
             consectetur adipisicing elit, sed
           </p>
-          <a href="#" class="card-link">Read More</a>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Read More 
+            <i class="fas fa-caret-right"></i>
+          </h6>
         </div>
       </div>
-      <div class="card col-md-3 largeIcons" style="width: 18rem;">
+      <div class="card col-md-3 largeIcons border-0" style="width: 18rem;">
         <div class="card-body">
           <img class="card-img-top" src="assets/wordBubbleIcon.png" alt="Card image cap">
           <h5 class="card-title">Nice Support</h5>
@@ -201,67 +214,286 @@
             Lorem ipsum dolor sit amet,
             consectetur adipisicing elit, sed
           </p>
-          <a href="#" class="card-link">Read More</a>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Read More 
+            <i class="fas fa-caret-right"></i>
+          </h6>
         </div>
       </div>
+<!-- col-md-2 added for spacing -->
       <div class="col-md-2"></div>
       <div class="col-md-8 middle aboutHotelArea">
         <h2>About hotel</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim venlam,quis nostrud exercitation ulamco laboris.</p>
       </div>
       <div class="col-md-2"></div>
+<!-- HOTEL AMENITIES -->
+      <div class="card-deck">
+        <div class="card card-outline-muted col-md-4 hotelAmenities">
+        <div class="card-block">
+          <h5 class="card-title">RESTAURANT & BANQUETS</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit, sed
+          </h6>
+          <a href="#" class="card-link">Read More</a>
+        </div>
+      </div>
+      <div class="card col-md-12 hotelAmenities">
+        <div class="card-block">
+          <h5 class="card-title">ROOMS</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit, sed
+          </h6>
+          <a href="#" class="card-link">Read More</a>
+        </div>
+      </div>
+      <div card="card-deck">
+        </div>
+        <div class="card col-md-4 hotelAmenities">
+          <div class="card-block">
+            <h5 class="card-title">BAR</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+            Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit, sed
+            </h6>
+            <a href="#" class="card-link">Read More</a>
+          </div>
+        </div>
+      </div>
 
-      <div class="card col-md-4 hotelAmenities" style="width: 18rem;">
-        <div class="card-body">
-          <h3 class="card-title">RESTAURANT & BANQUETS</h3>
-          <h6 class="card-subtitle mb-2 text-muted">Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim venlam,quis nostrud exercitation ulamco laboris.</h6>
-          <a href="#" class="card-link">Read More</a>
+      <div class="card-deck ">
+        <div class="card col-md-4 hotelAmenities">
+          <div class="card-block">
+            <h5 class="card-title">GYM</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+            Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit, sed
+            </h6>
+            <a href="#" class="card-link">Read More</a>
+          </div>
+        </div>
+        <div class="card col-md-4 hotelAmenities">
+          <div class="card-block">
+            <h5 class="card-title">SPA</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+            Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit, sed
+            </h6>
+            <a href="#" class="card-link">Read More</a>
+          </div>
+        </div>
+        <div class="card col-md-4 hotelAmenities">
+          <div class="card-block">
+            <h5 class="card-title">CAR PARKING</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+            Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit, sed
+            </h6>
+            <h6 class="card-subtitle mb-2 text-muted">
+                Read More <i class="fas fa-caret-right"></i>
+              </h6>
+          </div>
         </div>
       </div>
-      <div class="card col-md-4 hotelAmenities" style="width: 18rem;">
-        <div class="card-body">
-          <h3 class="card-title">ROOMS</h3>
-          <h6 class="card-subtitle mb-2 text-muted">Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim venlam,quis nostrud exercitation ulamco laboris.</h6>
-          <a href="#" class="card-link">Read More</a>
+  <!-- NEWS AND ANNOUNCEMENTS ROW-->
+    <div class="row">
+      <div class="card col-md-8 news">
+        <h2 class="card-title">News</h2>
+
+        <div class="card-deck border-0 no-gutters">
+          <div class="card">
+            <img src="assets/loremIpsum.jpg" class="newsImg w-50 card-img-left alt="...">
+          </div>
+            <div class="card">
+              <div class="card-body">
+                
+                <h5 class="card-title">Lorem ipsum dolar sit amet</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt
+                </p>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  Read More <i class="fas fa-caret-right"></i>
+                </h6>
+              </div>
+            </div>
         </div>
-      </div>
-      <div class="card col-md-4 hotelAmenities" style="width: 18rem;">
-        <div class="card-body">
-          <h3 class="card-title">BAR</h3>
-          <h6 class="card-subtitle mb-2 text-muted">Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim venlam,quis nostrud exercitation ulamco laboris.</h6>
-          <a href="#" class="card-link">Read More</a>
+        <div class="card-deck no-gutters">
+          <div class="card">
+            <img src="assets/loremIpsum.jpg" class="newsImg w-50 card-img-left alt="...">
+          </div>
+            <div class="card">
+              <div class="card-body">
+                
+                <h5 class="card-title">Lorem ipsum dolar sit amet</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt
+                </p>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  Read More <i class="fas fa-caret-right"></i>
+                </h6>
+              </div>
+            </div>
         </div>
-      </div>
-      <div class="card col-md-4 hotelAmenities" style="width: 18rem;">
-        <div class="card-body">
-          <h3 class="card-title">GYM</h3>
-          <h6 class="card-subtitle mb-2 text-muted">Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim venlam,quis nostrud exercitation ulamco laboris.</h6>
-          <a href="#" class="card-link">Read More</a>
+        <div class="card-deck no-gutters">
+          <div class="card">
+            <img src="assets/loremIpsum.jpg" class="newsImg w-50 card-img-left alt="...">
+          </div>
+            <div class="card">
+              <div class="card-body">
+                
+                <h5 class="card-title">Lorem ipsum dolar sit amet</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt
+                </p>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  Read More <i class="fas fa-caret-right"></i>
+                </h6>
+              </div>
+            </div>
         </div>
-      </div>
-      <div class="card col-md-4 hotelAmenities" style="width: 18rem;">
-        <div class="card-body">
-          <h3 class="card-title">SPA</h3>
-          <h6 class="card-subtitle mb-2 text-muted">Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim venlam,quis nostrud exercitation ulamco laboris.</h6>
-          <a href="#" class="card-link">Read More</a>
+        <button type="button" class="btn btn-secondary btn-lg btn-block">
+          View All &gt;
+        </button> 
+          <!-- END .news CARDS -->
         </div>
-      </div>
-      <div class="card col-md-4 hotelAmenities" style="width: 18rem;">
-        <div class="card-body">
-          <h3 class="card-title">CAR PARKING</h3>
-          <h6 class="card-subtitle mb-2 text-muted">Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim venlam,quis nostrud exercitation ulamco laboris.</h6>
-          <a href="#" class="card-link">Read More</a>
+      <div class="card col-md-4">
+        <h2>Announcements</h2>
+        <div class="card-group ">
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">
+                Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor
+              </h4>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt ut labore et dolore magna
+              </p>
+              <h6 class="card-subtitle mb-2 text-muted">
+                Read More <i class="fas fa-caret-right"></i>
+              </h6>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">
+                Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor
+              </h4>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt ut labore et dolore magna
+              </p>
+              <h6 class="card-subtitle mb-2 text-muted">
+                Read More <i class="fas fa-caret-right"></i>
+              </h6>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class=" col-md-8 news">
-        <h2>News</h2>
-      </div>
-      <div class="col-md-4 announcements">
-        
-      </div>
+
+        <div class="card">
+          <div class="card-block">
+            <h4 class="card-title">Products</h4>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod
+            </p>
+            <h6 class="card-subtitle mb-2 text-muted">
+                Read More <i class="fas fa-caret-right"></i>
+            </h6>
+          </div>
+        </div>
+        <!-- END ANNOUNCEMENTS -->
+      </div>    
+<!-- .news END -->
+        </div>
+
 <!-- S.2 END -->
     </div>
+    <div class="row footer">
+      <div class="card-group col-md-9">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">NortSea About</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            </p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">NortSea Hotel</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">About Us</li>
+              <li class="list-group-item">Services</li>
+              <li class="list-group-item">Contact</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Contact us</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <span class="contactTitle">
+                  <i class="fas fa-map-marker-alt"></i>
+                  Address:
+                </span>
+                1100 Pico Blvd<br>
+                Santa Monica, CA 90405<br>
+                United States
+              </li>
+              <li class="list-group-item">
+                <span class="contactTitle">
+                  <i class="fas fa-phone" data-fa-transform="flip-h"></i>
+                  Phone:
+                </span>
+                +440 1233123208
+              </li>
+              <li class="list-group-item">
+                <span class="contactTitle">
+                  <i class="fas fa-paper-plane"></i>
+                  Email:
+                </span>
+                support@nortsea.com
+              </li>
+              <li class="list-group-item">
+                <span class="contactTitle">
+                  <i class="fas fa-compass"></i>
+                  GPS:
+                </span>
+                12.021211-118.469009
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
+      <div class="col-md-3 logoFooter">
+        <img src="assets/nortseaFooter.png" alt="">
+      </div>
+      <nav class="navbar navbar-expand-lg footNav">
+        <a class="navbar-brand" href="#">Copyright c 2015 NORTSEA</a>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item ">
+              <a class="nav-link" href="#">About NORTSEA <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Support</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </div>
+   
   <!-- CONTAINER-FLUID DIV -->
   </div>
 
