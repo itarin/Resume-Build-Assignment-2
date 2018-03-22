@@ -62,7 +62,7 @@ input[placeholder]{
 .hotelTopTab{
   color: #6c6c6c;
   background-color: white;
-  padding: 2% 0 0 2%;
+  padding: .8% 0 0 5%;
 }
 .hotelForm{
   background-color: white;
@@ -93,7 +93,7 @@ input[placeholder]{
   padding: 2% 3% 0 3% ;
 }
 .news{
-  padding: 1%;
+  padding: 1% 2%;
 }
 .newsImg{
   height: 12em;
