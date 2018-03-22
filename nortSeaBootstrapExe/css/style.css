@@ -90,7 +90,7 @@ input[placeholder]{
   border-color: black;
   border-width: .8em; 
   margin: 2%; 
-  padding: 1% 3% 0 3% ;
+  padding: 2% 3% 0 3% ;
 }
 .news{
   padding: 1%;
@@ -98,6 +98,19 @@ input[placeholder]{
 .newsImg{
   height: 12em;
   width: 15em;
+}
+.announcements{
+  padding: 1%;
+}
+.products{
+  margin-top: 5%;
+  padding: 5% 20% 0 1%;
+}
+.products .card-subtitle{
+  padding-top: 5%;
+}
+.products .card-title{
+  color: #009fe3;
 }
 .fa-caret-right{
   padding-left: .19em;
