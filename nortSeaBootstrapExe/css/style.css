@@ -1,5 +1,5 @@
 * {
-  border-radius: 0 !important;
+  border-radius: 0;
 }
 body{
   font-family: 'Cinzel Decorative', cursive;
@@ -213,3 +213,4 @@ input[placeholder]{
 .faith34{
   margin-left: 33%;
 }
+/*ABOUTUS.HTML STYLES*/
