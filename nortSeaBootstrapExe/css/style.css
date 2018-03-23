@@ -28,13 +28,17 @@ body{
 ul .nav-tabs{
   margin-top: 2%;
 }
-.dropTop ,.dropdown-toggle, .dropdown-menu{
+.enSelect ,.dropdown-toggle, .dropdown-menu{
   display: inline-block;
   width: 4em;
   background-color: #313131;
   color: white;
 }
 input[placeholder]{
+  background-color: #313131;
+  color: #919191;
+}
+.homeBar li a{
   background-color: #313131;
   color: #919191;
 }
@@ -45,10 +49,13 @@ input[placeholder]{
   color: white;
 }
 .thirtyFive{
-  padding-top: 10%;
+  padding-top: 15%;
 }
 .exploreButton{
   padding: 1% 3%;
+}
+.greece h5{
+  padding-top: 5%;
 }
 .greece{
   background-color:#ebc661;
@@ -57,10 +64,21 @@ input[placeholder]{
 .gallery{
   background-color: #6c6c6c;
   color: white;
+  height: 6em;
 }
 .virtualTour{
   background-color: white;
   color: #6c6c6c;
+  height: 6em;
+}
+.circleTab{
+  margin-top: 5%;
+  background-color: #313131;
+  color: white;
+}
+.fa-circle{
+  padding: 0 6% 6% 0;
+  font-size: 1.4em;
 }
 .hotelTopTab{
   color: #6c6c6c;
@@ -71,14 +89,16 @@ input[placeholder]{
   background-color: white;
   padding: 2% 5%;
 }
-.hotelForm input{
+.hotelForm input, .hotelForm select{
   background-color: white;
 }
 .hotelForm label{
   display: block;
 }
+/*SEARCH BOOK*/
 .hotelForm button{
   margin-top: 20%;
+  margin-left: 10%;
   background-color: #7b7b7b;
 }
 .largeIcons{
@@ -105,15 +125,53 @@ input[placeholder]{
   margin: 2%; 
   padding: 2% 3% 0 3% ;
 }
+/*NEWS*/
 .news{
-  padding: 1% 2%;
+  padding: 1% 2% 0 0;
+  margin-bottom: 5%;
+}
+.dateBlock{
+  background-color: #d3deea;
+  font-size: 2em;
+  font-weight: 800;
+  color: white;
+  width: 35%;
+  height: 100%;
+}
+.dateBlock:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 80%;
+  width: 0;
+  height: 0;
+  border: 11px solid transparent;
+  border-left-color: #d3deea;
+  border-right: 0;
+  margin-top: -11px;
+  margin-right: -11px;
 }
 .newsImg{
   height: 12em;
   width: 15em;
 }
+.news .fa-circle, .announcements .fa-circle{
+  color: #cbcbcb;
+  font-size: .5em;
+  padding: 0;
+}
+.pushCircles{
+  margin-left: 78%;
+}
+.news button{
+  margin-top: 8%;
+}
 .announcements{
   padding: 1%;
+}
+.announcements h2{
+  padding: 1%;
+  color: #72c493;
 }
 .products{
   margin-top: 5%;
@@ -142,6 +200,16 @@ input[placeholder]{
   padding-top: 10%;
 }
 .contactTitle{
-  padding-right: 3%;
+  padding-right: 10%;
+  text-align: right;
   color: #c0a878;
+}
+.contactInfo{
+  text-align: left;
+}
+.footNav, .footNav a{
+  background-color: #3f3f3f;
+}
+.faith34{
+  margin-left: 33%;
 }

@@ -21,14 +21,14 @@
         <img src="assets/nortsea.png" alt="">
       </div>
       <div class="col-md-9 topBar">
-        <ul>
+        <ul class="col-md-12">
           <li>info@hellohelp.com</li>
           <li>+440 875369208</li>
           <li>
             <input type="text" name="" value="" placeholder="LOG IN &gt;">
           </li>
           <li>
-            <div class="dropdown dropTop">
+            <div class="dropdown enSelect">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 EN
               </button>
@@ -47,9 +47,9 @@
             <i class="fas fa-envelope"></i>
           </li>
         </ul>
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs .justify-content-center homeBar col-md-12">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About Us</a>
@@ -77,6 +77,9 @@
             </div>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#">Gallery</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
           </li>
           <li class="nav-item">
@@ -94,19 +97,19 @@
       <div class="col-md-2 text-center">
         <div class="card text-white greece mb-3" style="max-width: 18rem;">
           <div class="card-body">
-            <h5>Greece</h5>
+            <h5 class="text-left">Greece</h5>
             <img src="assets/sunny.png" alt="">
-            <h5 class="card-title">26°/19°</h5>
-            <p class="card-text">Sunny</p>
+            <h5 class="card-title text-left">26°/19°</h5>
+            <p class="card-text text-left">Sunny</p>
           </div>
         </div>
         <div class="card text-white gallery mb-3" style="max-width: 18rem;">
           <div class="card-body">
-            <h5>Gallery</h5>
+            <h5 class="text-left">Gallery</h5>
             <img src="assets/imgIcon.png" alt="">
           </div>
         </div>
-        <div class="card virtualTour mb-3" style="max-width: 18rem;">
+        <div class="card virtualTour mb-3 text" style="max-width: 18rem;">
           <div class="card-body">
             <h5>360° Virtual Tour</h5>
             <img src="assets/pineTreeIcon.png" alt="">
@@ -114,13 +117,21 @@
         </div>
       </div>
       <!-- MIDDLE MENU BAR -->
+      <div class="card col-md-12 border-0 circleTab">
+        <h5 class="card-title col-md-3">
+          <i class="fas fa-circle"></i>
+          <i class="far fa-circle"></i>
+          <i class="fas fa-circle"></i>
+          <i class="fas fa-circle"></i>
+          <i class="fas fa-circle"></i>
+        </h5>
+      </div>
       <div class="card col-md-2 border-0 rounded-0 hotelTopTab">
         <h5 class="card-title">
           <i class="fas fa-building"></i>
           Hotel
         </h5>
-      </div>
-        
+      </div>  
       <div class="col-md-12 hotelForm rounded-0">
         <form>
           <div class="form-group row rounded-0">
@@ -323,19 +334,25 @@
     <div class="row">
 
       <div class="card col-md-8 news">
-        <h2 class="card-title">News</h2>
+        <h2 class="card-title">
+          News
+          <span class="pushCircles">
+            <i class="far fa-circle"></i>
+            <i class="fas fa-circle"></i>
+            <i class="fas fa-circle"></i>
+          </span>
+        </h2>
 
         <div class="card-deck border-0 no-gutters">
           <div class="card border-0">
-            <img src="assets/loremIpsum.jpg" class="newsImg w-50 card-img-left card-img-top alt="...">
-            <div class="card-body">
-              <p class="card-text flex-md-row-reverse">
-                <i class="far fa-calendar-alt"></i><br>
-                25<br>
-                JAN
-              </p>
-            </div>
+            <p class="card-img-overlay dateBlock">
+              <i class="far fa-calendar-alt"></i><br>
+              29<br>
+              Jan
+            </p>
+            <img src="assets/loremIpsum.jpg" class="newsImg w-100 card-img-left alt="..."> 
           </div>
+
             <div class="card border-0">
               <div class="card-body">
                 
@@ -351,8 +368,14 @@
         </div>
         <div class="card-deck border-0 no-gutters">
           <div class="card border-0">
-            <img src="assets/loremIpsum.jpg" class="newsImg w-50 card-img-left alt="...">
+            <p class="card-img-overlay dateBlock">
+              <i class="far fa-calendar-alt"></i><br>
+              15<br>
+              Feb
+            </p>
+            <img src="assets/loremIpsum.jpg" class="newsImg w-100 card-img-left alt="..."> 
           </div>
+
             <div class="card border-0">
               <div class="card-body">
                 
@@ -365,33 +388,50 @@
                 </h6>
               </div>
             </div>
-        </div>
-        <div class="card-deck no-gutters border-0">
-          <div class="card border-0">
-            <img src="assets/loremIpsum.jpg" class="newsImg w-50 card-img-left alt="...">
-          </div>
+
+            <div class="card-deck border-0 ">
             <div class="card border-0">
-              <div class="card-body">
-                
-                <h5 class="card-title">Lorem ipsum dolar sit amet</h5>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt
-                </p>
-                <h6 class="card-subtitle mb-2 text-muted">
-                  Read More <i class="fas fa-caret-right"></i>
-                </h6>
-              </div>
+              <p class="card-img-overlay dateBlock">
+                <i class="far fa-calendar-alt"></i><br>
+                2<br>
+                Mar
+              </p>
+              <img src="assets/loremIpsum.jpg" class="newsImg w-100 card-img-left alt="..."> 
             </div>
+
+              <div class="card border-0">
+                <div class="card-body">
+                  
+                  <h5 class="card-title">Lorem ipsum dolar sit amet</h5>
+                  <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt
+                  </p>
+                  <h6 class="card-subtitle mb-2 text-muted">
+                    Read More <i class="fas fa-caret-right"></i>
+                  </h6>
+                </div>
+            </div>
+          </div>
         </div>
+        
+
         <button type="button" class="btn btn-secondary btn-lg btn-block">
           View All &gt;
         </button> 
           <!-- END .news CARDS -->
-        </div>
+      </div>
+
+
+
   <!-- ANNOUNCEMENTS -->
     <div class="col-md-4">
       <div class="card announcements">
-        <h2>Announcements</h2>
+        <h2>
+          Announcements
+          <i class="far fa-circle"></i>
+          <i class="fas fa-circle"></i>
+          <i class="fas fa-circle"></i>
+        </h2>
         <div class="card">
             <div class="card-block">
               <h4 class="card-title">
@@ -439,8 +479,8 @@
 <!-- S.2 END -->
     </div>
     <div class="row footer">
-      <div class="card-group col-md-9">
-        <div class="card" style="width: 18rem;">
+      <div class="card-group col-md-8">
+        <div class="card col-md-4">
           <div class="card-body">
             <h5 class="card-title">NortSea About</h5>
             <p class="card-text">
@@ -448,7 +488,7 @@
             </p>
           </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card col-md-2">
           <div class="card-body">
             <h5 class="card-title">NortSea Hotel</h5>
             <ul class="list-group list-group-flush">
@@ -458,7 +498,7 @@
             </ul>
           </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card col-md-6">
           <div class="card-body">
             <h5 class="card-title">Contact us</h5>
             <ul class="list-group list-group-flush">
@@ -467,65 +507,74 @@
                   <i class="fas fa-map-marker-alt"></i>
                   Address:
                 </span>
-                1100 Pico Blvd<br>
-                Santa Monica, CA 90405<br>
-                United States
+                <span class="contactInfo">
+                  1100 Pico Blvd<br>
+                  Santa Monica, CA 90405<br>
+                  United States
+                </span>
               </li>
               <li class="list-group-item">
                 <span class="contactTitle">
                   <i class="fas fa-phone" data-fa-transform="flip-h"></i>
                   Phone:
                 </span>
-                +440 1233123208
+                <span class="contactInfo">
+                  +440 1233123208
+                </span>
               </li>
               <li class="list-group-item">
                 <span class="contactTitle">
                   <i class="fas fa-paper-plane"></i>
                   Email:
                 </span>
-                support@nortsea.com
+                <span class="contactInfo">
+                  support@nortsea.com
+                </span>
               </li>
               <li class="list-group-item">
                 <span class="contactTitle">
                   <i class="fas fa-compass"></i>
                   GPS:
                 </span>
-                12.021211-118.469009
+                <span class="contactInfo">
+                  12.021211-118.469009
+                </span>
               </li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3 logoFooter">
+      <div class="col-md-4 logoFooter">
         <img src="assets/nortseaFooter.png" alt="">
       </div>
-      <nav class="navbar navbar-expand-lg footNav">
-        <a class="navbar-brand" href="#">
-          Copyright <i class="far fa-copyright"></i> 2015 NORTSEA
-        </a>
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <div class="col-md-12">
+        <ul class="nav footNav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              Copyright <i class="far fa-copyright"></i> 2015 NORTSEA |
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              About NORTSEA |
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Contact Support |
+            </a>
+          </li>
+          <li class="nav-item faith34">
+            <a class="nav-link" href="#">
+              Designed by Faith34
+            </a>
+          </li>
+        </ul>
+      </div>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item ">
-              <a class="nav-link" href="#">About NORTSEA <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact Support</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-    </div>
+<!--  END ROW .footer-->
+      </div>
    
   <!-- CONTAINER-FLUID DIV -->
   </div>
