@@ -214,3 +214,7 @@ input[placeholder]{
   margin-left: 33%;
 }
 /*ABOUTUS.HTML STYLES*/
+.johnDoeFooter{
+  background-color: white;
+  font-size: 1.3em;
+}
