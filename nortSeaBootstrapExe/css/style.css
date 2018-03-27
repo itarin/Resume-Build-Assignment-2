@@ -110,13 +110,13 @@ input[placeholder]{
   margin-top: 10%;
 
 }
-.aboutHotelArea{
-  text-align: center;
-  padding: 8% 0 5% 0;
-}
 .aboutHeading{
   color: #c0a878;
   padding-bottom: 2%;
+}
+.aboutHotelArea{
+  text-align: center;
+  padding: 8% 0 5% 0;
 }
 .hotelAmenities{
   text-align: center;
@@ -200,13 +200,12 @@ input[placeholder]{
   padding-top: 10%;
 }
 .contactTitle{
-  padding-right: 10%;
   text-align: right;
   color: #c0a878;
 }
-.contactInfo{
+/*.contactInfo{
   text-align: left;
-}
+}*/
 .footNav, .footNav a{
   background-color: #3f3f3f;
 }
@@ -218,10 +217,18 @@ input[placeholder]{
   background-color: white;
   font-size: 1.3em;
 }
-
 .feedBack input{
   background-color: white;
 }
  .btn-primary{
   background-color: #7d7d7d;
+}
+/*NEWS.HTML STYLE*/
+/*.carousel-indicators li{
+  border-radius: 100%;
+  width: 5px;
+  height: 5px;
+}*/
+.card ul li .recent{
+  background-color: #363636;
 }
