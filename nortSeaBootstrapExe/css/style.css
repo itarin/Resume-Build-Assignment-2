@@ -19,8 +19,14 @@ body{
   padding-top: 4%;
   height: 8em;
 }
-.topIcons{
+/*BORDER FOR VERY TOP BOTTON GROUP*/
+input[type=text],.topIcons, .enSelect{
   border: solid .09rem #909090;
+  } 
+.btn-secondary{
+  border: none;
+  background-color: #313131;
+  color: #c8c8c8;
 }
 /*MODIFY .ACTIVE*/
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
@@ -29,7 +35,10 @@ body{
   background-color: #313131;
   color: #c8c8c8;
 }
-
+/*Eliminate Bottom Border on Navbar*/
+.nav-tabs {
+    border-bottom: 0;
+}
 /*MAIN HEADING FOR MOST PAGES*/
 .mainHeading{
   font-family: "Georgia";
@@ -241,6 +250,9 @@ input[placeholder]{
   background-color: #7d7d7d;
 }
 /*NEWS.HTML STYLE*/
+.newsImg{
+  max-height: 50%;
+}
 /*.carousel-indicators li{
   border-radius: 100%;
   width: 5px;
