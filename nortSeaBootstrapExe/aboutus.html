@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <title>NortSea ABOUT US</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
 
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Open+Sans" rel="stylesheet">
@@ -21,13 +19,13 @@
         <img src="assets/nortsea.png" alt="">
       </div>
       <div class="col-md-9 topBar">
-        <ul class="col-md-12">
-          <li>info@hellohelp.com</li>
-          <li>+440 875369208</li>
-          <li>
+        <ul class="nav col-md-12">
+          <li class="col nav-item">info@hellohelp.com</li>
+          <li class="col nav-item">+440 875369208</li>
+          <li class="col nav-item">
             <input type="text" name="" value="" placeholder="LOG IN &gt;">
           </li>
-          <li>
+          <li class="col nav-item">
             <div class="dropdown enSelect">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 EN
@@ -39,7 +37,7 @@
               </div>
             </div>
           </li>
-          <li>
+          <li class="col nav-item">
             ICONS
             <i class="fab fa-facebook"></i>
             <i class="fab fa-twitter"></i>
@@ -47,47 +45,53 @@
             <i class="fas fa-envelope"></i>
           </li>
         </ul>
-        <ul class="nav nav-tabs .justify-content-center homeBar col-md-12">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Services
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Products
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-search"></i>
-            </a>
-          </li>
-        </ul>
+<!-- TOP NAVIGATION ie-home, about us etc. -->
+        <div class="col-md-12">
+          <ul class="nav nav-tabs homeBar col-md-12">
+            <li class="nav-item col">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link active" href="#">About Us</a>
+            </li>
+            <!-- 1st DROPDOWN -->
+            <li class="nav-item dropdown col">
+              <a class="nav-link dropdown-toggle hide" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <!-- 2nd DROPDOWN -->
+            <li class="nav-item dropdown col">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Products
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link" href="#">Gallery</a>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link" href="#">
+                <i class="fas fa-search"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+<!-- END .topBar col-MD-9 -->
       </div>
 
       <div class="col-md-2">
@@ -112,23 +116,22 @@
                 Pages
               </a>
             </li>
-            <li class="breadcrumb-item " aria-current="page">
+            <li class="breadcrumb-item active" aria-current="page">
               About Us
             </li>
           </ol>
         </nav>
       </div>
-      <div class="col-md-2"></div>
-      <div class="col-md-8 align-content-center">
+      <!-- MAIN TEXT and HEADER -->
+      <div class="col-md-8 offset-md-2 align-content-center">
         <h2 class="mainHeading text-center">ABOUT US</h2>
-        <p class="text-center">
+        <p class="text-center font-weight-bold">
           This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis
         </p>
         <p>
           Nom nec telllus a odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conumbianostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nune. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
         </p>      
       </div>
-      <div class="col-md-2"></div>
 <!-- END 1st MAIN ROW -->
     </div>
 
@@ -195,15 +198,12 @@
         </div>
       </div>
 <!-- col-md-2 added for spacing -->
-      <div class="col-md-2"></div>
-      <div class="col-md-8 middle aboutHotelArea">
+      <div class="col-md-8 offset-md-2 middle aboutHotelArea">
         <h2 class ="aboutHeading">Team</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor inci-<br> dunt ut labore et dolore magna aliqua. Ut enim ad minim venlam.</p>
       </div>
-      <div class="col-md-2"></div>
 <!-- JOHN DOE CARD GROUP  -->
-      <div class="card-deck"> 
-
+      <div class="card-deck col-12"> 
         <div class="card col-md-3 border-0 text-center">
           <img class="card-img-top rounded-circle w-50 mx-auto" src="assets/batman.png" alt="Card image cap">
           <div class="card-body">            
@@ -291,7 +291,6 @@
           
        <!-- END JOHN DOE CARD GROUP/DIV -->
       </div>
-
 
 <!-- S.2 END -->
     </div>
@@ -405,6 +404,9 @@
 <!--  END ROW .footer-->
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   </body>
 </html>
 <!-- BATMAN IMG PROVIDED BY: By Source, Fair use, https://en.wikipedia.org/w/index.php?curid=11316087 -->

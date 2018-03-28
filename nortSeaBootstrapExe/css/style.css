@@ -22,15 +22,27 @@ body{
 .topbar{
   padding-top: 2%;
 }
-.topBar li{
-  display: inline;
+/*MODIFY .ACTIVE*/
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+  border: 0px dotted blue;
+  border-bottom: white .3rem solid;
+  background-color: #313131;
+  color: #c8c8c8;
 }
 ul .nav-tabs{
   margin-top: 2%;
 }
+/*MAIN HEADING FOR MOST PAGES*/
+.mainHeading{
+  font-family: "Georgia";
+  color: #c0a878;
+}
+/*TEXT UNDER MAIN HEADING*/
+.col-md-8 p{
+  font-family: "Georgia";
+  color: #c8c8c8;
+}
 .enSelect ,.dropdown-toggle, .dropdown-menu{
-  display: inline-block;
-  width: 4em;
   background-color: #313131;
   color: white;
 }
@@ -80,6 +92,7 @@ input[placeholder]{
   padding: 0 6% 6% 0;
   font-size: 1.4em;
 }
+/*WHITE MIDDLE HOTEL MENU IN INDEX.HTML*/
 .hotelTopTab{
   color: #6c6c6c;
   background-color: white;
