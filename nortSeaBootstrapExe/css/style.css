@@ -8,7 +8,7 @@ body{
   color: #919191;
 }
 .container-fluid{
-  padding: 0 10%;
+  /*margin: 0 10%;*/
 }
 .section2{
   background-color: #fdfdfd;
@@ -187,6 +187,7 @@ input[placeholder]{
   padding-left: .19em;
   font-size: 1.5em;
 }
+/*FOOTER STYLIN'*/
 .footer{
   background-color: #313131;
   color: #acacac;
@@ -211,6 +212,11 @@ input[placeholder]{
 }
 .faith34{
   margin-left: 33%;
+}
+/*GALLERY and PRODUCTS STYLES*/
+.breadcrumb, .breadcrumb li, .breadcrumb a{
+  background-color: #313131;
+  color: #acacac; 
 }
 /*ABOUTUS.HTML STYLES*/
 .johnDoeFooter{
