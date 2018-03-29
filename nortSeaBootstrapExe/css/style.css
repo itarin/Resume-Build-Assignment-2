@@ -21,7 +21,8 @@ body{
 }
 /*BORDER FOR VERY TOP BOTTON GROUP*/
 input[type=text],.topIcons, .enSelect{
-  border: solid .09rem #909090;
+  border: solid .09em #909090;
+  color: #c8c8c8;
   } 
 .btn-secondary{
   border: none;
