@@ -4,91 +4,121 @@
     <meta charset="utf-8">
     <title>NortSea Index</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    
 
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Open+Sans" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
-
+    <!-- META -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
 <!-- FIRST SECTION -->
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-3 logo">
+      <div class="col-md-3 logo pt-4">
         <img src="assets/nortsea.png" alt="">
       </div>
-      <div class="col-md-9 topBar">
-        <ul class="col-md-12">
-          <li>info@hellohelp.com</li>
-          <li>+440 875369208</li>
-          <li>
-            <input type="text" name="" value="" placeholder="LOG IN &gt;">
+      <div class="col-md-9 topBar pt-4">
+        <ul class="nav col-md-12">
+          <li class=" nav-item">
+            <i class="fas fa-envelope"></i>
+            info@hellohelp.com
           </li>
-          <li>
-            <div class="dropdown enSelect">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                EN
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+          <li class="nav-item">
+            <i class="fas fa-phone-volume" data-fa-transform="rotate--45"></i>
+            +440 875369208
+          </li>     
+
+          <li class="nav-item">
+            <div class="btn-toolbar" role="group" aria-label="Button group with nested dropdown">
+              <div class="btn-group ">
+                 <div class="input-group">
+                  <input type="text" class="form-control" placeholder="LOG IN" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                </div> 
+              </div>
+                         
+              <div class="btn-group enSelect" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle enSelect btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="pr-5">EN</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <a class="dropdown-item" href="#">Dropdown link</a>
+                  <a class="dropdown-item" href="#">Dropdown link</a>
+                </div>
+              </div>
+              <div class=" btn-group topIcons nav-item border rounded-0 text-center" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary">
+                  <i class="fab fa-facebook"></i>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  <i class="fab fa-twitter"></i>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  <i class="fab fa-instagram"></i>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  <i class="fas fa-envelope"></i>
+                </button>
               </div>
             </div>
           </li>
-          <li>
-            ICONS
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fas fa-envelope"></i>
-          </li>
         </ul>
-        <ul class="nav nav-tabs .justify-content-center homeBar col-md-12">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Services
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Products
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-search"></i>
-            </a>
-          </li>
-        </ul>
+<!-- TOP NAVIGATION ie-home, about us etc. -->
+        
+        <div class="col-12 mt-3">
+          <ul class="nav nav-tabs homeBar col-md-12 pb-0">
+            <li class="nav-item col">
+              <a class="nav-link" href="#">
+                Home
+              </a>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link active pb-5" href="#">
+                About Us
+              </a>
+            </li>
+            <!-- 1st DROPDOWN -->
+            <li class="nav-item dropdown col">
+              <a class="nav-link dropdown-toggle hide" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown col">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Products
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link" href="#">Gallery</a>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link" href="#">
+                <i class="fas fa-search"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+<!-- END .topBar col-MD-9 -->
       </div>
+
+
       <div class="col-md-10 sale">
         <h2 class="thirtyFive">35% Sale</h2>
         <h1 class="youEnter">YOU ENTER SUMMER WITH<br> REFRESHIHNG RATES</h1>
@@ -126,7 +156,7 @@
           <i class="fas fa-circle"></i>
         </h5>
       </div>
-      <div class="card col-md-2 border-0 rounded-0 hotelTopTab">
+      <div class="card col-md-2 col-sm-6 border-0 rounded-0 hotelTopTab">
         <h5 class="card-title">
           <i class="fas fa-building"></i>
           Hotel
@@ -135,15 +165,16 @@
       <div class="col-md-12 hotelForm rounded-0">
         <form>
           <div class="form-group row rounded-0">
-            <div class="col-2">
+            <div class="col-md-2 col-xs-12 col-sm-12">
               <label for="arrival">Arrival</label>
+
               <input type="email" class="form-control" id="arrival" placeholder="16.07.2015">
             </div>
-            <div class="col-2 ">
+            <div class="col-md-2 col-xs-12 col-sm-12">
                 <label for="going">Going</label>
                 <input type="email" class="form-control" id="going" placeholder="28.07.2015">
             </div>
-            <div class="col-1">
+            <div class="col-md-1 col-xs-6 col-sm-6">
                 <label for="room">Room</label>
                 <select class="form-control" id="room">
                   <option>1</option>
@@ -153,7 +184,7 @@
                   <option>5</option>
                 </select>
             </div>
-            <div class="col-1">
+            <div class="col-md-1 col-xs-6 col-sm-6">
               <label for="person">Person</label>
               <select class="form-control" id="person">
                     <option>1</option>
@@ -163,7 +194,7 @@
                     <option>5</option>
               </select>
             </div>
-            <div class="col-1">
+            <div class="col-md-1 col-xs-6 col-sm-6">
               <label for="child">Child</label>
               <select class="form-control" id="child">
                     <option>1</option>
@@ -173,7 +204,7 @@
                     <option>5</option>
               </select>
             </div>
-            <div class=" col-1">
+            <div class="col-md-1 col-xs-6 col-sm-6">
               <label for="day">Day</label>
               <select class="form-control" id="day">
                     <option>1</option>
@@ -183,7 +214,7 @@
                     <option>5</option>
               </select>
             </div>
-            <div class="form-group col-2">
+            <div class="form-group col-md-2 col-xs-12 col-sm-12 ">
               <button type="submit" class="btn btn-primary mb-2">SEARCH BOOK</button>
             </div>            
           </div>
@@ -195,7 +226,7 @@
     </div>
 <!-- SECOND SECTION -->
     <div class="row section2">
-      <div class="card col-md-3 largeIcons border-0" style="width: 18rem;">
+      <div class="card col-md-3 col-xs-12 col-sm-12 largeIcons border-0" style="width: 18rem;">
         <div class="card-body">
           <img class="card-img-top" src="assets/carryOnIcon.png" alt="Card image cap">
           <h5 class="card-title">Amazing Travel</h5>
@@ -210,7 +241,7 @@
           </h6>
         </div>
       </div>
-      <div class="card col-md-3 largeIcons border-0" style="width: 18rem;">
+      <div class="card col-md-3 col-xs-12 col-sm-12  largeIcons border-0" style="width: 18rem;">
         <div class="card-body">
           <img class="card-img-top" src="assets/mapIcon.png" alt="Card image cap">
           <h5 class="card-title">Discover</h5>
@@ -225,7 +256,7 @@
           </h6>
         </div>
       </div>
-      <div class="card col-md-3 largeIcons border-0" style="width: 18rem;">
+      <div class="card col-md-3 col-xs-12 col-sm-12  largeIcons border-0" style="width: 18rem;">
         <div class="card-body">
           <img class="card-img-top" src="assets/worldIcon.png" alt="Card image cap">
           <h5 class="card-title">Book Your Trip</h5>
@@ -240,7 +271,7 @@
           </h6>
         </div>
       </div>
-      <div class="card col-md-3 largeIcons border-0" style="width: 18rem;">
+      <div class="card col-md-3 col-xs-12 col-sm-12  largeIcons border-0" style="width: 18rem;">
         <div class="card-body">
           <img class="card-img-top" src="assets/wordBubbleIcon.png" alt="Card image cap">
           <h5 class="card-title">Nice Support</h5>
@@ -256,12 +287,10 @@
         </div>
       </div>
 <!-- col-md-2 added for spacing -->
-      <div class="col-md-2"></div>
-      <div class="col-md-8 middle aboutHotelArea">
+      <div class="col-8 offset-2 middle aboutHotelArea">
         <h2 class ="aboutHeading">About Hotel</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim venlam,quis nostrud exercitation ulamco laboris.</p>
       </div>
-      <div class="col-md-2"></div>
 <!-- HOTEL AMENITIES -->
       <div class="card-deck">
         <div class="card card-outline-muted col-md-4 hotelAmenities">
@@ -274,7 +303,7 @@
           <a href="#" class="card-link">Read More</a>
         </div>
       </div>
-      <div class="card col-md-12 hotelAmenities">
+      <div class="card col-md-4 col-xs-12 col-sm-12 hotelAmenities">
         <div class="card-block">
           <h5 class="card-title">ROOMS</h5>
           <h6 class="card-subtitle mb-2 text-muted">
@@ -284,7 +313,7 @@
           <a href="#" class="card-link">Read More</a>
         </div>
       </div>
-        <div class="card col-md-4 hotelAmenities">
+        <div class="card col-md-3 col-xs-12 col-sm-12 hotelAmenities">
           <div class="card-block">
             <h5 class="card-title">BAR</h5>
             <h6 class="card-subtitle mb-2 text-muted">
@@ -297,7 +326,7 @@
       </div>
 
       <div class="card-deck ">
-        <div class="card col-md-4 hotelAmenities">
+        <div class="card col-md-3 col-xs-12 col-sm-12  hotelAmenities">
           <div class="card-block">
             <h5 class="card-title">GYM</h5>
             <h6 class="card-subtitle mb-2 text-muted">
@@ -307,7 +336,7 @@
             <a href="#" class="card-link">Read More</a>
           </div>
         </div>
-        <div class="card col-md-4 hotelAmenities">
+        <div class="card col-md-3 col-xs-12 col-sm-12  hotelAmenities">
           <div class="card-block">
             <h5 class="card-title">SPA</h5>
             <h6 class="card-subtitle mb-2 text-muted">
@@ -317,7 +346,7 @@
             <a href="#" class="card-link">Read More</a>
           </div>
         </div>
-        <div class="card col-md-4 hotelAmenities">
+        <div class="card col-md-3 col-xs-12 col-sm-12  hotelAmenities">
           <div class="card-block">
             <h5 class="card-title">CAR PARKING</h5>
             <h6 class="card-subtitle mb-2 text-muted">
@@ -333,7 +362,7 @@
   <!-- NEWS AND ANNOUNCEMENTS ROW-->
     <div class="row">
 
-      <div class="card col-md-8 news">
+      <div class="card col-md-8 news m-1">
         <h2 class="card-title">
           News
           <span class="pushCircles">
@@ -342,7 +371,6 @@
             <i class="fas fa-circle"></i>
           </span>
         </h2>
-
         <div class="card-deck no-gutters">
           <div class="card border-0">
             <p class="card-img-overlay dateBlock">
@@ -350,7 +378,7 @@
               29<br>
               Jan
             </p>
-            <img src="assets/loremIpsum.jpg" class="newsImg w-100 card-img-left alt="..."> 
+            <img src="assets/loremIpsum.jpg" class="newsJan w-100 card-img-left alt="..."> 
           </div>
 
             <div class="card border-0">
@@ -366,14 +394,14 @@
               </div>
             </div>
         </div>
-        <div class="card-deck border-0 no-gutters">
+        <div class="card-deck no-gutters">
           <div class="card border-0">
             <p class="card-img-overlay dateBlock">
               <i class="far fa-calendar-alt"></i><br>
-              15<br>
-              Feb
+              29<br>
+              Jan
             </p>
-            <img src="assets/loremIpsum.jpg" class="newsImg w-100 card-img-left alt="..."> 
+            <img src="assets/loremIpsum.jpg" class="newsJan w-100 card-img-left alt="..."> 
           </div>
 
             <div class="card border-0">
@@ -388,34 +416,31 @@
                 </h6>
               </div>
             </div>
-
-            <div class="card-deck border-0 ">
-            <div class="card border-0">
-              <p class="card-img-overlay dateBlock">
-                <i class="far fa-calendar-alt"></i><br>
-                2<br>
-                Mar
-              </p>
-              <img src="assets/loremIpsum.jpg" class="newsImg w-100 card-img-left alt="..."> 
-            </div>
-
-              <div class="card border-0">
-                <div class="card-body">
-                  
-                  <h5 class="card-title">Lorem ipsum dolar sit amet</h5>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt
-                  </p>
-                  <h6 class="card-subtitle mb-2 text-muted">
-                    Read More <i class="fas fa-caret-right"></i>
-                  </h6>
-                </div>
-            </div>
-          </div>
         </div>
-        
+        <div class="card-deck no-gutters">
+          <div class="card border-0">
+            <p class="card-img-overlay dateBlock">
+              <i class="far fa-calendar-alt"></i><br>
+              29<br>
+              Jan
+            </p>
+            <img src="assets/loremIpsum.jpg" class="newsJan w-100 card-img-left alt="..."> 
+          </div>
 
-        <button type="button" class="btn btn-secondary btn-lg btn-block">
+            <div class="card border-0">
+              <div class="card-body">
+                
+                <h5 class="card-title">Lorem ipsum dolar sit amet</h5>
+                <p class="card-text">
+                  Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do elusmod tempor incidunt
+                </p>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  Read More <i class="fas fa-caret-right"></i>
+                </h6>
+              </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-lg btn-block border-dark">
           View All &gt;
         </button> 
           <!-- END .news CARDS -->
@@ -427,11 +452,11 @@
     <div class="col-md-4">
       <div class="card announcements">
         <h2>
-          Announcements
-          <i class="far fa-circle"></i>
+          Announcements  
+          <i class="far fa-circle ml-5"></i>
           <i class="fas fa-circle"></i>
-          <i class="fas fa-circle"></i>
-        </h2>
+          <i class="fas fa-circle mr-0"></i>        
+        </h2>          
         <div class="card">
             <div class="card-block">
               <h4 class="card-title">
@@ -591,5 +616,9 @@
   <!-- CONTAINER-FLUID DIV -->
   </div>
 
+  <!-- BOOTSTRAP SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   </body>
 </html>
