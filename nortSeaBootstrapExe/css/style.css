@@ -21,7 +21,7 @@ body{
 }
 /*BORDER FOR VERY TOP BOTTON GROUP*/
 input[type=text],.topIcons, .enSelect{
-  border: solid .09em #909090;
+  border: solid .09rem #909090;
   color: #c8c8c8;
   } 
 .btn-secondary{
@@ -212,10 +212,12 @@ input[placeholder]{
 .footer{
   background-color: #313131;
   color: #acacac;
+  border: none;
 }
 .footer .card, .footer li, .footNav a{
   background-color: #313131;
   color: #acacac;
+  border: none;
 }
 .logoFooter{
   background-color: #313131;
@@ -261,4 +263,10 @@ input[placeholder]{
 }*/
 .card ul li .recent{
   background-color: #363636;
+}
+/*SERVICES.HTML STYLE*/
+.col-md-8 .card-group li, .col-md-8 .card-group .card{
+  background-color: #313131;
+  color: #acacac;
+  border: none;
 }
