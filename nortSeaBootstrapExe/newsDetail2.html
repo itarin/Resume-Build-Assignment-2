@@ -2,24 +2,30 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>NortSea ABOUT US</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <title>NortSea Index</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/style.css">
+    
     <!-- FONTS -->
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Open+Sans" rel="stylesheet">
-
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <!-- META -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
-<!-- FIRST SECTION -->
   <div class="container-fluid">
+    <!-- FIRST ROW -->
     <div class="row">
-      <div class="col-md-3 logo pt-4">
+      <div class="col-12 col-md-3 logo pt-4">
         <img src="assets/nortsea.png" alt="">
       </div>
       <div class="col-md-9 topBar pt-4">
@@ -35,15 +41,15 @@
 
           <li class="nav-item">
             <div class="btn-toolbar" role="group" aria-label="Button group with nested dropdown">
-              <div class="btn-group btn-block">
+              <div class="btn-group ">
                  <div class="input-group">
-                <input type="text" class="form-control" placeholder="Input group example" aria-label="Input group example" aria-describedby="btnGroupAddon">
-              </div> 
+                  <input type="text" class="form-control" placeholder="LOG IN" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                </div> 
               </div>
                          
-              <div class="btn-group btn-block enSelect" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle enSelect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  EN
+              <div class="btn-group enSelect" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle enSelect btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="pr-5">EN</span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                   <a class="dropdown-item" href="#">Dropdown link</a>
@@ -66,31 +72,11 @@
               </div>
             </div>
           </li>
-          <!-- 
-           <li class="col nav-item rounded-0">
-            <input type="text" name="" value="" placeholder="LOG IN &gt;">
-          </li>
-          <li class="col nav-item">
-            <div class="dropdown enSelect">
-              <button class="btn btn-secondary dropdown-toggle rounded-0 px-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                EN
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-          </li>
-          <li class="topIcons col nav-item border rounded-0 text-center">
-            <i class="fab fa-facebook mr-1"></i>
-            <i class="fab fa-twitter mr-1"></i>
-            <i class="fab fa-instagram mr-1"></i>
-            <i class="fas fa-envelope mr-1"></i>
-          </li> -->
         </ul>
-<!-- TOP NAVIGATION ie-home, about us etc. -->
-        <div class="col-md-12 mt-3">
+
+<!-- TOP NAVIGATION LOWER (2) ie-home, about us etc. -->
+        
+        <div class="col-12 mt-3">
           <ul class="nav nav-tabs homeBar col-md-12 pb-0">
             <li class="nav-item col">
               <a class="nav-link" href="#">
@@ -114,7 +100,6 @@
                 <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li>
-            <!-- 2nd DROPDOWN -->
             <li class="nav-item dropdown col">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Products
@@ -139,161 +124,103 @@
             </li>
           </ul>
         </div>
+
 <!-- END .topBar col-MD-9 -->
       </div>
 
-      <div class="col-md-2">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item" aria-current="page">
-              About Us
-            </li>
-          </ol>
-        </nav>
-      </div>
-      <div class="col-md-10 text-right">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="#">
-                Home
-              </a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="#">
-                Pages
-              </a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">
-              About Us
-            </li>
-          </ol>
-        </nav>
-      </div>
-      <!-- MAIN TEXT and HEADER -->
-      <div class="col-md-8 offset-md-2 align-content-center">
-        <h2 class="mainHeading text-center">
-          P R E F E R E N C E S
-        </h2>
-        <p class="text-center font-weight-bold">
-          This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis
-        </p>
-        <p>
-          Nom nec telllus a odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conumbianostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nune. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
-        </p>      
-      </div>
-<!-- HOTEL FACILITITES -->
-<div class="col-md-8 offset-md-2 align-content-center">
-        <h2 class="mainHeading text-center">
-          Hotel Facilities
-        </h2>
-        <div class="card-group">
-          <div class="card border-0 text-center">
-            <ul class="list-group list-group-flush text-center">
-              <li class="list-group-item">
-                <button type="button" class="btn facilityBttn rounded-0 mr-2">
-                  <i class="fas fa-wifi"></i>
-                </button>
-                High-speed Internet
-              </li>
-              <li class="list-group-item">
-                <button type="button" class="btn facilityBttn rounded-0 mr-2">
-                  <i class="fas fa-snowflake"></i>
-                </button>                
-                Air conditioning
-              </li>
-              <li class="list-group-item">
-                <button type="button" class="btn facilityBttn rounded-0 mr-2 p-2">
-                  <i class="material-icons">pool</i>
-                </button>                
-                Swimming pool
-              </li>
-              <li class="list-group-item">
-                <button type="button" class="btn facilityBttn rounded-0 mr-2">
-                  <i class="fas fa-child"></i>
-                </button>                
-                Childcare
-              </li>
-              <li class="list-group-item">
-                <button type="button" class="btn facilityBttn rounded-0 mr-2">
-                  <i class="material-icons">fitness_center</i>
-                </button>
-                Fitness equipment
-              </li>
-            </ul>
-          </div>
-          <div class="card border-0 text-center">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
-                 <button type="button" class="btn facilityBttn rounded-0 mr-2">
-                  <i class="fas fa-archive"></i>
-                </button>
-                Fridge
-              </li>
-              <li class="list-group-item">
-                <button type="button" class="btn facilityBttn rounded-0 mr-2">
-                  <i class="material-icons">local_laundry_service</i>
-                </button>                
-                Washing machine
-              </li>
-              <li class="list-group-item">
-                <button type="button" class="btn facilityBttn rounded-0 mr-2">
-                  <i class="material-icons">room_service</i>
-                </button>
-                Room service
-              </li>
-              <li class="list-group-item">
-                <button type="button" class="btn facilityBttn rounded-0 mr-2">
-                  <i class="material-icons">child_friendly</i>
-                </button>
-                Even More Childcare
-              </li>
-              <li class="list-group-item">
-                <button type="button" class="btn facilityBttn rounded-0 mr-2">
-                  <i class="fas fa-archive"></i>
-                </button>
-                Reception Safe
-              </li>
-            </ul>
-          </div>
-          <div class="card border-0 text-center">
-            <li class="list-group-item">
-              <button type="button" class="btn facilityBttn rounded-0 mr-2">
-                  <i class="material-icons">
-                    <i class="fas fa-utensils"></i>
-                  </i>
-                </button>
-                Free breakfast
-              </li>
-              <li class="list-group-item">
-                <button type="button" class="btn facilityBttn rounded-0 mr-2">
-                  <i class="material-icons">directions_car</i>
-                </button>
-                Free parking
-              </li>
-              <li class="list-group-item">
-                <button type="button" class="btn facilityBttn rounded-0 mr-2">
-                  <i class="material-icons">child_friendly</i>
-                </button>
-                Hair dryer
-              </li>
-              <li class="list-group-item">
-                <button type="button" class="btn facilityBttn rounded-0 mr-2">
-                  <i class="material-icons">local_bar</i>
-                </button>
-                Bar
-              </li>
-              <li class="list-group-item">
-                <button type="button" class="btn facilityBttn rounded-0 mr-2 text-center">
-                  <i class="fas fa-tv"></i>
-                </button>
-                TV
-              </li>
-          </div>
-        </div>      
-      </div>
-
 <!-- END 1st MAIN ROW -->
+    </div>
+
+<!-- SECOND SECTION -->
+    <div class="row section2 mt-0">
+  <!-- CARROUSEL -->
+      <h2 class="col-md-12 text-dark">News</h2>
+      <div class="col-md-9">
+        <div class="col-md-12 aboutHotelArea pt-0 mr-0 text-dark">
+          <h2 class= "text-left ">
+            Duis autem vel eum iriure dolor in hendrerit
+          </h2>
+          <div class="col-md-12 text-left">
+            <h4>
+              <button type="button" class="btn btn-success rounded-0">Jun 16, 2014</button>
+                Share:
+                <i class="fab fa-facebook text-success"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-google-plus-g"></i> 
+            </h4>
+          </div>
+          <p class="text-justify">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien et ligula ullamcorper malesuada proin libero. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Vitae ultricies leo integer malesuada nunc vel. Sed arcu non odio euismod lacinia at quis. Et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Arcu odio ut sem nulla pharetra diam sit. Non curabitur gravida arcu ac tortor dignissim. Lorem sed risus ultricies tristique nulla aliquet enim tortor. Mattis molestie a iaculis at erat pellentesque adipiscing commodo elit. Malesuada fames ac turpis egestas sed tempus urna. Mauris pharetra et ultrices neque ornare aenean euismod elementum nisi. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Auctor neque vitae tempus quam. Faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Sagittis id consectetur purus ut faucibus pulvinar. Metus aliquam eleifend mi in nulla posuere. Sed lectus vestibulum mattis ullamcorper velit. Suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse.
+            </p>
+          <p class="text-justify">
+            Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus et. Et leo duis ut diam quam nulla porttitor massa. Velit scelerisque in dictum non consectetur a erat nam at. Est velit egestas dui id ornare. Egestas purus viverra accumsan in nisl nisi. Ut tellus elementum sagittis vitae et leo duis. Nisi porta lorem mollis aliquam ut. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum. Sit amet commodo nulla facilisi. In pellentesque massa placerat duis ultricies lacus sed. Magna eget est lorem ipsum dolor sit amet consectetur adipiscing. At quis risus sed vulputate odio ut enim blandit. Elit duis tristique sollicitudin nibh sit amet commodo nulla. Aliquam nulla facilisi cras fermentum odio eu feugiat pretium. At urna condimentum mattis pellentesque id nibh tortor id. Tellus mauris a diam maecenas. Nulla at volutpat diam ut venenatis. Cursus risus at ultrices mi tempus imperdiet nulla malesuada.
+          </p>
+          <p class="text-justify">
+            Egestas purus viverra accumsan in. Integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque. Faucibus nisl tincidunt eget nullam non nisi est. Ac felis donec et odio pellentesque. Scelerisque viverra mauris in aliquam sem fringilla ut. Eros donec ac odio tempor orci. Nisi quis eleifend quam adipiscing vitae proin sagittis. Feugiat scelerisque varius morbi enim nunc. Vitae semper quis lectus nulla at volutpat diam ut. Habitasse platea dictumst vestibulum rhoncus est. Magnis dis parturient montes nascetur ridiculus mus mauris. Amet consectetur adipiscing elit ut aliquam purus. Dapibus ultrices in iaculis nunc sed. Urna porttitor rhoncus dolor purus non enim praesent elementum facilisis. Quam pellentesque nec nam aliquam sem et tortor consequat id. Id aliquet lectus proin nibh nisl. Est sit amet facilisis magna etiam tempor. Auctor elit sed vulputate mi sit amet mauris commodo. Purus ut faucibus pulvinar elementum.
+          </p>
+        </div>
+      <!-- end COL9 DIV -->
+      </div>
+      
+       <!-- POPULAR/RECENT BAR -->
+      <div class="col-md-3 card text-left rounded-0">
+        <div class="card">
+          <div class="card-header text-center pt-0">
+          <ul class="nav nav-tabs card-header-tabs ">
+            <li class="nav-item w-50 rounded-0">
+              <a class="nav-link text-dark" href="#">Popular</a>
+            </li>
+            <li class="nav-item w-50 rounded-0">
+              <a class="recent nav-link text-white" href="#">Recent</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            Lorem ipsom dolor sit amet, consec- <br>
+            tetuer adipiscing elit
+          </p>
+          <h6 class="card-subtitle mb-2 text-muted">Date: 05 June 2014</h6>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            Lorem ipsom dolor sit amet, consec- <br>
+            tetuer adipiscing elit
+          </p>
+          <h6 class="card-subtitle mb-2 text-muted">Date: 05 June 2014</h6>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            Lorem ipsom dolor sit amet, consec- <br>
+            tetuer adipiscing elit
+          </p>
+          <h6 class="card-subtitle mb-2 text-muted">Date: 05 June 2014</h6>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            Lorem ipsom dolor sit amet, consec- <br>
+            tetuer adipiscing elit
+          </p>
+          <h6 class="card-subtitle mb-2 text-muted">Date: 05 June 2014</h6>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            Lorem ipsom dolor sit amet, consec- <br>
+            tetuer adipiscing elit
+          </p>
+          <h6 class="card-subtitle mb-2 text-muted">Date: 05 June 2014</h6>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            Lorem ipsom dolor sit amet, consec- <br>
+            tetuer adipiscing elit
+          </p>
+          <h6 class="card-subtitle mb-2 text-muted">Date: 05 June 2014</h6>
+        </div>
+        </div>
+        
+      </div>
+<!-- S.2 END -->
     </div>
 
     <div class="row footer mt-4">
@@ -404,6 +331,8 @@
 
 <!--  END ROW .footer-->
     </div>
+   
+
 
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>

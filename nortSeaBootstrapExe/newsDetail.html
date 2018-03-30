@@ -2,90 +2,130 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>NortSea ABOUT US</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    
+    <title>NortSea Index</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    
+    <!-- FONTS -->
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Open+Sans" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <!-- META -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
-<!-- FIRST SECTION -->
   <div class="container-fluid">
+    <!-- FIRST ROW -->
     <div class="row">
-      <div class="col-md-3 logo">
+      <div class="col-12 col-md-3 logo pt-4">
         <img src="assets/nortsea.png" alt="">
       </div>
-      <div class="col-md-9 topBar">
-        <ul class="col-md-12">
-          <li>info@hellohelp.com</li>
-          <li>+440 875369208</li>
-          <li>
-            <input type="text" name="" value="" placeholder="LOG IN &gt;">
+      <div class="col-md-9 topBar pt-4">
+        <ul class="nav col-md-12">
+          <li class=" nav-item">
+            <i class="fas fa-envelope"></i>
+            info@hellohelp.com
           </li>
-          <li>
-            <div class="dropdown enSelect">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                EN
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+          <li class="nav-item">
+            <i class="fas fa-phone-volume" data-fa-transform="rotate--45"></i>
+            +440 875369208
+          </li>     
+
+          <li class="nav-item">
+            <div class="btn-toolbar" role="group" aria-label="Button group with nested dropdown">
+              <div class="btn-group ">
+                 <div class="input-group">
+                  <input type="text" class="form-control" placeholder="LOG IN" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                </div> 
+              </div>
+                         
+              <div class="btn-group enSelect" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle enSelect btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="pr-5">EN</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <a class="dropdown-item" href="#">Dropdown link</a>
+                  <a class="dropdown-item" href="#">Dropdown link</a>
+                </div>
+              </div>
+              <div class=" btn-group topIcons nav-item border rounded-0 text-center" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary">
+                  <i class="fab fa-facebook"></i>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  <i class="fab fa-twitter"></i>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  <i class="fab fa-instagram"></i>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  <i class="fas fa-envelope"></i>
+                </button>
               </div>
             </div>
           </li>
-          <li>
-            ICONS
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fas fa-envelope"></i>
-          </li>
         </ul>
-        <ul class="nav nav-tabs .justify-content-center homeBar col-md-12">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Services
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Products
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-search"></i>
-            </a>
-          </li>
-        </ul>
+
+<!-- TOP NAVIGATION LOWER (2) ie-home, about us etc. -->
+        
+        <div class="col-12 mt-3">
+          <ul class="nav nav-tabs homeBar col-md-12 pb-0">
+            <li class="nav-item col">
+              <a class="nav-link" href="#">
+                Home
+              </a>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link active pb-5" href="#">
+                About Us
+              </a>
+            </li>
+            <!-- 1st DROPDOWN -->
+            <li class="nav-item dropdown col">
+              <a class="nav-link dropdown-toggle hide" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown col">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Products
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link" href="#">Gallery</a>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link" href="#">
+                <i class="fas fa-search"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+<!-- END .topBar col-MD-9 -->
       </div>
 
 <!-- END 1st MAIN ROW -->
@@ -154,10 +194,10 @@
         <div class="card">
           <div class="card-header text-center pt-0">
           <ul class="nav nav-tabs card-header-tabs ">
-            <li class="nav-item w-100">
-              <a class="nav-link active" href="#">Popular</a>
+            <li class="nav-item w-50 rounded-0">
+              <a class="nav-link text-dark" href="#">Popular</a>
             </li>
-            <li class="nav-item w-100">
+            <li class="nav-item w-50 rounded-0">
               <a class="recent nav-link text-white" href="#">Recent</a>
             </li>
           </ul>
