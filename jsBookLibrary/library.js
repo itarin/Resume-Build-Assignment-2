@@ -1,15 +1,31 @@
 
 //Library Constructor
-var Library =  funciton(){};
+var Library =  function(){
+  this.bookList = [];
+};
 //Book Object
-var book = functino(title, author, numPages, pubDate){
+var book = function(title, author, numPages, pubDate){
   this.title = title;
   this.author = author;
   this.numberOfPages = numPages;
   this.publishDate = new Date(pubDate);
 };
 //Library instance
-var gLib = new library();
+var gLib = new Library();
+
+//Add a New Book to the Library
+gLib.prototype.addBook = function (book) {
+  var newBook = book;
+
+  for( var i; i < bookList.length; i++){
+    if(newBook == bookList[i]){
+      return false;
+    } else {
+      booksList.push( book(title, author, numPages, pubDate) );
+      return true;
+    }
+  }
+};
 
 //Book Instance
 var gIT = new book("IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
