@@ -32,13 +32,13 @@ Library.prototype.removeBookByTitle = function( title ) {
 };
 //Remove Book By authorName
 Library.prototype.removeBookByAuthor = function( authorName ) {
-  for( var i = 0 ; i < this.bookList.length; i++){
+  for( var i = this.bookList.length - 1 ; i >= 0; i--){
       if( authorName.toLowerCase() === this.bookList[i].author.toLowerCase() ){
-        this.bookList.splice( this.bookList[i], 1 );//remove matched book
-        return true;
+        this.bookList.splice( i, 1 );//remove matched book
+        // return true;
       }
     }
-  return false;//No match
+  // return false;//No match
 };
 //Get Random Book and Return, otherwise return null
 Library.prototype.getRandomBook = function() {
@@ -57,8 +57,6 @@ Library.prototype.getBookByTitle = function( title ) {
     var titleRegEx = new RegExp(title, "i","g", "\S");
     if( titleRegEx.test(this.bookList[i].title) ) {
       matched.push( this.bookList[i] );
-    } else {
-      return null;
     }
   }
   return matched;
@@ -71,11 +69,10 @@ Library.prototype.getBooksByAuthor = function( authorName ) {
     var authorRegEx = new RegExp(authorName, "i", "g", "\S");
     if( authorRegEx.test(this.bookList[i].author) ) {
       matched.push( this.bookList[i] );
-    } else {
-      return null;
     }
   }
   return matched;
+
 };
 //addBooks(books)Purpose: Takes multiple books, in the form of an array of book objects, and adds the objects to your books array
 Library.prototype.addBooks= function( books ) {
@@ -91,16 +88,14 @@ Library.prototype.addBooks= function( books ) {
   return numBooks;
 };
 
-//getAuthors()Purpose: Find the distinct authors’ names from all books in your libraryReturn: array of strings the names of all distinct authors, empty array if no books exist or if no authors exist
+//getAuthors()Purpose: Find the distinct authors’ names from all books in your library. Return: array of strings the names of all distinct authors, empty array if no books exist or if no authors exist
 Library.prototype.getAuthors = function(){
   var matched = [];
-  for( var i = 0; i < this.bookList.length; i++) {
+  for( var i = 1; i < this.bookList.length; i++) {
    //same as: authorInLibrary = /currentAuthor\;
    var authorRegEx = new RegExp(this.bookList[i].author, "i", "g", "\S");
-   if( authorRegEx.test(this.bookList[i].author) ) {
+   if( !authorRegEx.test(this.bookList[i-1].author) ) {
      matched.push( this.bookList[i].author );
-   } else {
-     return null;
    }
  }
  return matched;
@@ -122,8 +117,11 @@ var gLib = new Library();
 //Book Instance
 var gIT = new Book("IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
 var gCatcherIntheRye = new Book("Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');
-var gCatInTheHat = new Book("Cat In The Hat", "Dr.Sues", 20, 'December 17, 1995 03:24:00' )
+var gCatInTheHat = new Book("Cat In The Hat", "Dr.Sues", 20, 'December 17, 1995 03:24:00' );
+var book1 = new Book("one", "Stephen King", 3, 'December 17, 1995 03:24:00');
+bookArray = [{title:"one",author:"two",numPages: 3,pubDate: 4}, {title:"ofne",author:"twfo",numPages: 3,pubDate: 4}];
 //Books added to Array for testing for faster testing
 gLib.addBook( gIT );
 gLib.addBook( gCatcherIntheRye );
 gLib.addBook( gCatInTheHat );
+gLib.addBook( book1 );
