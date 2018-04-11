@@ -114,6 +114,16 @@ Library.prototype.getRandomAuthorName = function() {
 
 //Library instance
 var gLib = new Library();
+
+// Put the object into storage
+localStorage.setItem('gLib.bookList', JSON.stringify(gLib.bookList) );
+
+// Retrieve the object from storage
+var retrievedObject = localStorage.getItem('gLib.bookList');
+
+console.log('retrievedObject: ', retrievedObject);
+
+
 //Book Instance
 var gIT = new Book("IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
 var gCatcherIntheRye = new Book("Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');

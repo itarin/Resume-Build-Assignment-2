@@ -6,65 +6,137 @@
     <!-- <link rel="stylesheet" href="css/library.css"> -->
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
   </head>
   <body class="bg-info">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-8 offset-2">
+        <div class="col-6 offset-3 bg-dark text-center border-light mt-3">
+          <div class="btn-group">
+            <button type="button" class="btn btn-warning btn-lg  dropdown-toggle-split mt-5 mb-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Open Library
+            </button>
+            <div class="dropdown-menu">
+              <h6 class="dropdown-header">Dropdown header</h6>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <h6 class="dropdown-header">Dropdown header</h6>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-8 offset-3 mt-5 mb-5">
+            <img class="w-75 text-center" src="assets/nightLib.jpg" alt="">
+        </div>
+        <div class="card-columns bg-transparent border-light col-6 offset-3">
+            <div class="card-body text-white text-left">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <div class="card bg-transparent border-bottom border-light">
+              <div class="card-body text-white border-light">
+                Music is the movement of sound to reach the soul for the education of its virtue.
+              </div>
+            </div>
+            <div class="card bg-transparent border-0">
+              <div class="card-body text-right text-white">
+                <i class="fas fa-quote-right"></i>
+              </div>
+            </div>
+            <div class="card bg-transparent border-0">
+              <div class="card-body w-75 ">
+                <img class="card-img-top" src="assets/plato.jpg" alt="">
+              </div>
+            </div>
+            <div class="card  text-bottom bg-transparent border-light">
+              <div class="card-body">
+                <h2 class="text-white ml-3">
+                 - Plato
+               </h2>
+              </div>
+            </div>
+
+            <div class="card">
+              <img class="w-100" src="assets/tree.jpg" alt="">
+            </div>
+          </div>
+
+        </div>
+        <div class="col-6 offset-3">
             <div class="card mt-5 mb-3">
                <img class="card-img-top" src="assets/library5.jpg" alt="Card image cap">
-               <div class="card-body">
-                 <h1 class="card-title text-center text-info border-round">
-                   Welcome to the Techtonic Library
-                 </h1>
-                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    <div class="input-group input-group-lg">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text bg-info text-white" id="inputGroup-sizing-lg">
-                          Book Title
-                        </span>
-                      </div>
-                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-                    </div>
-                  </li>
-                  <li class="list-group-item">
-                    <div class="input-group input-group-lg">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text bg-info text-white" id="inputGroup-sizing-lg">
-                          Book Author
-                        </span>
-                      </div>
-                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-                    </div>
-                  </li>
-                  <li class="list-group-item">
-                    <div class="input-group input-group-lg">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text bg-info text-white" id="inputGroup-sizing-lg">
-                          Number of Pages In Book
-                        </span>
-                      </div>
-                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-                    </div>
-                  </li>
-                  <li class="list-group-item">
-                    <div class="input-group input-group-lg">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text bg-info text-white" id="inputGroup-sizing-lg">
-                          Date Published
-                        </span>
-                      </div>
-                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-                    </div>
-                  </li>
-                </ul>
+               <div class="card-body jumbotron-fluid">
+                 <div class="container-fluid">
+                   <h1 class="card-title text-center h-100 w-100 text-info border border-secondary border-right rounded-top container-fluid p-4  ">
+                     Welcome to the Techtonic Library
+                   </h1>
+                   <div class="card-body">
+                     <h3 class="card-title bg-info text-white text-center border-round">
+                       Create A New Book
+                     </h3>
+                     <ul class="list-group list-group-flush col-12">
+                      <li class="list-group-item">
+                        <div class="input-group input-group-lg">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-info text-white" id="inputGroup-sizing-lg">
+                              <i class="fas fa-book mr-2"></i>
+                              Book Title
+                            </span>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="input-group input-group-lg">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-info text-white" id="inputGroup-sizing-lg">               <i class="far fa-address-book mr-2"></i>
+                              Book Author
+                            </span>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="input-group input-group-lg">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-info text-white" id="inputGroup-sizing-lg">
+                              <i class="far fa-file mr-2"></i>
+                              Page Total
+                            </span>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                      </li>
+                      <li class="list-group-item">
+                        <div class="input-group input-group-lg">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text bg-info text-white" id="inputGroup-sizing-lg">
+                              <i class="far fa-calendar-alt mr-2"></i>
+                              Date Published
+                            </span>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                      </li>
+                      <li class="list-group-item text-center">
+                        <button type="button" class="btn btn-warning btn-lg text-dark border-dark">
+                          Add Book
+                          <i class="fas fa-plus-circle ml-2 "></i>
+                        </button>
+                      </li>
+                    </ul>
+                   </div>
+                 </div>
                </div>
             </div>
           </div>
       </div>
     </div>
 
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   <script type="text/javascript" src="library.js">
   </script>
   </body>
