@@ -63,7 +63,7 @@ Library.prototype.getBookByTitle = function( title ) {
 };
 //Get Book by Title, return all that match title whole/partially
 Library.prototype.getBooksByAuthor = function( authorName ) {
-   var matched = [];
+  var matched = [];
   for( var i = 0; i < this.bookList.length; i++) {
     //same as: authorInLibrary = /currentAuthor\;
     var authorRegEx = new RegExp(authorName, "i", "g", "\S");
@@ -72,7 +72,6 @@ Library.prototype.getBooksByAuthor = function( authorName ) {
     }
   }
   return matched;
-
 };
 //addBooks(books)Purpose: Takes multiple books, in the form of an array of book objects, and adds the objects to your books array
 Library.prototype.addBooks= function( books ) {
@@ -110,19 +109,32 @@ Library.prototype.getRandomAuthorName = function() {
   }
 };
 
-//Use localstorage (http://www.w3schools.com/html/html5_webstorage.asp) and JSON.stringify to save the state of your library ●Add a more robust search function to your app to allow you to filter by one or more book properties ○the search function should return an array of book instances ●Make your library a singleton ○A prototyped book class should also be made, with each ‘book’ in your li-brary being an instance of the book class.
-
-//Library instance
+//Library instance to store
 var gLib = new Library();
 
-// Put the object into storage
-localStorage.setItem('gLib.bookList', JSON.stringify(gLib.bookList) );
+//Use localstorage (http://www.w3schools.com/html/html5_webstorage.asp) and JSON.stringify to save the state of your library ●
+Library.prototype.storeLocal = function(){
 
-// Retrieve the object from storage
-var retrievedObject = localStorage.getItem('gLib.bookList');
-
-console.log('retrievedObject: ', retrievedObject);
-
+  for(var i=0; i<this.bookList.length; i++){
+    // Put the object into storage
+    localStorage.setItem('gLibKey', JSON.stringify(gLib) );
+  }
+  // Retrieve the object from storage
+  var retrievedObject = JSON.parse(localStorage.getItem('gLibKey'));
+  console.log('retrievedObject: ', retrievedObject);
+};
+// Add a more robust search function to your app to allow you to filter by one or more book properties ○the search function should return an array of book instances ●Make your library a singleton ○A prototyped book class should also be made, with each ‘book’ in your li-brary being an instance of the book class.
+Library.prototype.searchLibrary = function(searchValue){
+  var matched = [];
+  for( var i = 0; i < this.bookList.length; i++) {
+    //same as: authorInLibrary = /currentAuthor\;
+    var authorRegEx = new RegExp(searchValue, "i", "g", "\S");
+    if( authorRegEx.test(this.bookList[i].author)||authorRegEx.test(this.bookList[i].title)||authorRegEx.test(this.bookList[i].numPages)||authorRegEx.test(this.bookList[i].pubDate) ) {
+      matched.push( this.bookList[i] );
+    }
+  }
+  return matched;
+};
 
 //Book Instance
 var gIT = new Book("IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
@@ -135,3 +147,12 @@ gLib.addBook( gIT );
 gLib.addBook( gCatcherIntheRye );
 gLib.addBook( gCatInTheHat );
 gLib.addBook( book1 );
+//GOOGLE AAPI
+google.books.load();
+
+function initialize() {
+  var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+  viewer.load('ISBN:0738531367');
+}
+
+google.books.setOnLoadCallback(initialize);
