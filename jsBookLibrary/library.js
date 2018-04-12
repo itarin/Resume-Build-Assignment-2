@@ -147,12 +147,30 @@ gLib.addBook( gIT );
 gLib.addBook( gCatcherIntheRye );
 gLib.addBook( gCatInTheHat );
 gLib.addBook( book1 );
-//GOOGLE AAPI
+
+Library.prototype.newBook = function(title, author, numPages, pubDate){
+  var bookCreated = new Book( title, author, numPages, pubDate);
+  this.addBook(bookCreated.title);
+};
+Library.prototype.displayBook = function() {
+  dataTitle = document.getElementById("titleInput").value;
+  dataAuthor = document.getElementById("authorInput").value;
+  dataNumPages = document.getElementById("numPagesInput").value;
+  dataPubDate = document.getElementById("pubDateInput").value;
+  gLib.newBook(dataTitle, dataAuthor, dataNumPages, dataPubDate);
+
+  //Display Book
+  document.getElementById("bookTitle").innerHTML = "Title : " + dataTitle;
+  document.getElementById("bookAuthor").innerHTML = "Author : " + dataAuthor;
+  document.getElementById("bookNumPages").innerHTML ="Total Pgs : " + dataNumPages;
+  document.getElementById("bookPubDate").innerHTML = "Publication Date : " + dataPubDate;
+};
+//GOOGLE BOOKS API
 google.books.load();
 
 function initialize() {
   var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
-  viewer.load('ISBN:0738531367');
+  viewer.load('ISBN:0521093597');
 }
 
 google.books.setOnLoadCallback(initialize);
