@@ -1,8 +1,33 @@
 
 //Library Constructor and Main Obj Creation
-var Library =  function(){
+var Library =  (function () {
+  var instance;
   this.bookList = [];
-};
+
+  function init() {
+    //singleton
+    //Private methods and variables
+    function privateMethod(){
+      console.log( "I am private")
+    }
+    return {
+        //Public Methods and Variables
+        publicMethod: function(){
+
+        },
+    };
+    return {
+    // Get the Singleton instance if one exists
+    // or create one if it doesn't
+    getInstance: function () {
+        if ( !instance ) {
+          instance = init();
+        }
+        return instance;
+      }
+    };
+  };
+})();
 //Book Object Constructor
 var Book = function(title, author, numPages, pubDate){
   this.title = title;
