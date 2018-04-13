@@ -1,5 +1,6 @@
 
 //Library Constructor and Main Obj Creation
+<<<<<<< HEAD
 var Library =  (function () {
     // Instance stores a reference to the Singleton
     var instance;
@@ -163,6 +164,117 @@ var Library =  (function () {
       }
     };
   })();
+=======
+var Library =  function(){
+  this.bookList = [];
+};
+//Book Object Constructor
+var Book = function(title, author, numPages, pubDate){
+  this.title = title;
+  this.author = author;
+  this.numbPages = numPages;
+  this.pubDate = new Date(pubDate);
+};
+//Add a New Book to the Library
+Library.prototype.addBook = function ( book ) {
+  for( var i = 0; i < this.bookList.length; i++){
+      if( book.title === this.bookList[i].title ){
+        return false; //If added return false
+      }
+    }
+    this.bookList.push( book );
+    return true;
+};
+//Remove Book By title
+Library.prototype.removeBookByTitle = function( title ) {
+  for( var i = 0 ; i < this.bookList.length; i++){
+      if( title === this.bookList[i].title ){
+        this.bookList.splice( this.bookList[i], 1 );//remove matched book
+        return true;
+      }
+    }
+  return false;//No match
+};
+//Remove Book By authorName
+Library.prototype.removeBookByAuthor = function( authorName ) {
+  for( var i = this.bookList.length - 1 ; i >= 0; i--){
+      if( authorName.toLowerCase() === this.bookList[i].author.toLowerCase() ){
+        this.bookList.splice( i, 1 );//remove matched book
+        // return true;
+      }
+    }
+  // return false;//No match
+};
+//Get Random Book and Return, otherwise return null
+Library.prototype.getRandomBook = function() {
+  if(this.bookList === []){
+    return null
+  } else {
+    randomIndex = Math.floor( Math.random()*this.bookList.length ) ;
+    return this.bookList[ randomIndex ];
+  }
+};
+//Get Book by Title, return all that match title whole/partially
+Library.prototype.getBookByTitle = function( title ) {
+  var matched = [];
+  for( var i = 0; i < this.bookList.length; i++) {
+    //same as: authorInLibrary = /currentAuthor\;
+    var titleRegEx = new RegExp(title, "i","g", "\S");
+    if( titleRegEx.test(this.bookList[i].title) ) {
+      matched.push( this.bookList[i] );
+    }
+  }
+  return matched;
+};
+//Get Book by Title, return all that match title whole/partially
+Library.prototype.getBooksByAuthor = function( authorName ) {
+  var matched = [];
+  for( var i = 0; i < this.bookList.length; i++) {
+    //same as: authorInLibrary = /currentAuthor\;
+    var authorRegEx = new RegExp(authorName, "i", "g", "\S");
+    if( authorRegEx.test(this.bookList[i].author) ) {
+      matched.push( this.bookList[i] );
+    }
+  }
+  return matched;
+};
+//addBooks(books)Purpose: Takes multiple books, in the form of an array of book objects, and adds the objects to your books array
+Library.prototype.addBooks= function( books ) {
+  var numBooks = 0;
+  for( var i = 0; i < this.bookList.length; i++){
+      if( books[i] === this.bookList[i] ){
+        return numBooks; //If added return false
+        } else {
+          numBooks++;
+          this.bookList.push( books[i] );
+      }
+  }
+  return numBooks;
+};
+
+//getAuthors()Purpose: Find the distinct authors’ names from all books in your library. Return: array of strings the names of all distinct authors, empty array if no books exist or if no authors exist
+Library.prototype.getAuthors = function(){
+  var matched = [];
+  for( var i = 1; i < this.bookList.length; i++) {
+   //same as: authorInLibrary = /currentAuthor\;
+   var authorRegEx = new RegExp(this.bookList[i].author, "i", "g", "\S");
+   if( !authorRegEx.test(this.bookList[i-1].author) ) {
+     matched.push( this.bookList[i].author );
+   }
+ }
+ return matched;
+}
+//getRandomAuthorName()Purpose: Retrieves a random author name from your books collectionReturn: string author name, null if no books e
+Library.prototype.getRandomAuthorName = function() {
+  if(this.bookList === []){
+    return null
+  } else {
+    randomIndex = Math.floor( Math.random()*this.bookList.length ) ;
+    return this.bookList[ randomIndex ].author;
+  }
+};
+
+>>>>>>> parent of 0786069... have a mock of a singleton
 //Library instance to store
 var gLib = new Library();
 //Book Instance
