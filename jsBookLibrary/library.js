@@ -73,17 +73,15 @@ Library.prototype.getBooksByAuthor = function( authorName ) {
   return matched;
 };
 //addBooks(books)Purpose: Takes multiple books, in the form of an array of book objects, and adds the objects to your books array
-Library.prototype.addBooks= function( books ) {
+Library.prototype.addBooks = function( books ) {
   var numBooks = 0;
-  for( var i = 0; i < this.bookList.length; i++){
-      if( books[i] === this.bookList[i] ){
-        return numBooks; //If added return false
-        } else {
-          numBooks++;
-          this.bookList.push( books[i] );
-      }
+  if( books.length>0 ){
+    numBooks = books.length;
+    this.bookList.concat( books );
+    return numBooks;
+  }else{
+    return numBooks;
   }
-  return numBooks;
 };
 
 //getAuthors()Purpose: Find the distinct authors’ names from all books in your library. Return: array of strings the names of all distinct authors, empty array if no books exist or if no authors exist
@@ -140,7 +138,10 @@ var gIT = new Book("IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
 var gCatcherIntheRye = new Book("Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');
 var gCatInTheHat = new Book("Cat In The Hat", "Dr.Sues", 20, 'December 17, 1995 03:24:00' );
 var book1 = new Book("one", "Stephen King", 3, 'December 17, 1995 03:24:00');
-bookArray = [{title:"one",author:"two",numPages: 3,pubDate: 4}, {title:"ofne",author:"twfo",numPages: 3,pubDate: 4}];
+var quixote= new Book("Don Quixote", "Miguel de Cervantes Saavedra", 234, 'Dec 31, 1999');
+var q= new Book("Don te", "Miguel vantesra", 23, 'Dec 1, 1999');
+var q1= new Book("Don te1", "Miguel11 vantesra", 213, 'Dec 111, 1999');
+var bookArray = [quixote, q, q1];
 //Books added to Array for testing for faster testing
 gLib.addBook( gIT );
 gLib.addBook( gCatcherIntheRye );
@@ -149,7 +150,7 @@ gLib.addBook( book1 );
 
 Library.prototype.newBook = function(title, author, numPages, pubDate){
   var bookCreated = new Book( title, author, numPages, pubDate);
-  this.addBook(bookCreated.title);
+  this.addBooks(bookCreated);
 };
 Library.prototype.displayBook = function() {
   dataTitle = document.getElementById("titleInput").value;
