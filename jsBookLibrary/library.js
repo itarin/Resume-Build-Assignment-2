@@ -77,8 +77,8 @@ Library.prototype.addBooks = function( books ) {
   var numBooks = 0;
   if( books.length>0 ){
     numBooks = books.length;
-    this.bookList.concat( books );
-    return numBooks;
+    this.bookList = this.bookList.concat( books );
+    return this.bookList;
   }else{
     return numBooks;
   }
