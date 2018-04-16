@@ -1,7 +1,17 @@
 //Library Constructor and Main Obj Creation
-var Library =  function(){
-  this.bookList = [];
-};
+var Library;
+
+(function(){
+  var libInstance;
+  Library = function () {
+    //return instance if it already exists
+    if(libInstance) {
+      return libInstance;
+    }
+    libInstance = this;
+    this.bookList = [];
+  }
+})();
 //Book Object Constructor
 var Book = function(title, author, numPages, pubDate){
   this.title = title;
