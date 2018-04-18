@@ -13,12 +13,11 @@ var Library;
   }
 })();
 //Book Object Constructor
-var Book = function(title, author, numPages, pubDate, isbn){
+var Book = function(title, author, numPages, pubDate){
   this.title = title;
   this.author = author;
   this.numbPages = numPages;
   this.pubDate = new Date(pubDate);
-  this.isbn = isbn;
 };
 //Add a New Book to the Library
 Library.prototype.addBook = function ( book ) {
@@ -144,6 +143,21 @@ Library.prototype.searchLibrary = function(searchValue){
   return matched;
 };
 
+//Book Instance
+var gIT = new Book("IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
+var gCatcherIntheRye = new Book("Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');
+var gCatInTheHat = new Book("Cat In The Hat", "Dr.Sues", 20, 'December 17, 1995 03:24:00' );
+var book1 = new Book("one", "Stephen King", 3, 'December 17, 1995 03:24:00');
+var quixote= new Book("Don Quixote", "Miguel de Cervantes Saavedra", 234, 'Dec 31, 1999');
+var q= new Book("Don te", "Miguel vantesra", 23, 'Dec 1, 1999');
+var q1= new Book("Don te1", "Miguel11 vantesra", 213, 'Dec 111, 1999');
+var bookArray = [quixote, q, q1];
+//Books added to Array for testing for faster testing
+gLib.addBook( gIT );
+gLib.addBook( gCatcherIntheRye );
+gLib.addBook( gCatInTheHat );
+gLib.addBook( book1 );
+
 Library.prototype.newBook = function(title, author, numPages, pubDate){
   var bookCreated = new Book( title, author, numPages, pubDate);
   this.addBooks(bookCreated);
@@ -161,28 +175,8 @@ Library.prototype.displayBook = function() {
   document.getElementById("bookNumPages").innerHTML ="Total Pgs : " + dataNumPages;
   document.getElementById("bookPubDate").innerHTML = "Publication Date : " + dataPubDate;
 };
-Library.prototype.populateUiLibrary = function(){
-  for(var i = 0; i<this.bookList.length; i++){
-      var currentData = this.bookList[i].title +" "+ this.bookList[i].author+" "+this.bookList[i].numPages +" "+ this.bookList[i].pubDate;
-      //if i>0<4
-      $('table tr').append("<td><div class='card bg-transparent'><div class='card-body'> "+currentData+"</div></div></td>");
-      //else while
-  };
-};
-//Book Instance
-var gIT = new Book("IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
-var gCatcherIntheRye = new Book("Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');
-var gCatInTheHat = new Book("Cat In The Hat", "Dr.Sues", 20, 'December 17, 1995 03:24:00' );
-var book1 = new Book("one", "Stephen King", 3, 'December 17, 1995 03:24:00');
-var quixote= new Book("Don Quixote", "Miguel de Cervantes Saavedra", 234, 'Dec 31, 1999');
-var q= new Book("Don te", "Miguel vantesra", 23, 'Dec 1, 1999');
-var q1= new Book("Don te1", "Miguel11 vantesra", 213, 'Dec 111, 1999');
-var bookArray = [quixote, q, q1];
-//Books added to Array for testing for faster testing
-gLib.addBook( gIT );
-gLib.addBook( gCatcherIntheRye );
-gLib.addBook( gCatInTheHat );
-gLib.addBook( book1 );
+
+$('table tr').append(<td>Test</td>);
 
 //GOOGLE BOOKS API
 google.books.load();
