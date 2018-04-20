@@ -13,11 +13,23 @@
   <body class="bg-info">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-8 offset-2 bg-dark text-center border-light mt-3">
-          <h1 class="card-title text-center text-info border border-0 container-fluid p-4 font-monospace">
-            Welcome to the Techtonic Library
-          </h1>
-          <div class="btn-group">
+        <div class="col-3 offset-9 fixed-top align-items-end border-0 p-2">
+          <div class="card bg-transparent text-white mt-5 ml-5 border-bottom">
+            <h2 class="card-heading">
+              <i class="fa fa-book mr-2" aria-hidden="true"></i>
+              Menu
+            </h2>
+          </div>
+          <nav class="navbar navbar-dark bg-transparent mt-3 ml-5">
+            <form class="form-inline">
+              <input class="form-control mr-sm-2 border rounded-0" type="search" placeholder="Search Library" aria-label="Search">
+              <button class="btn bg-light btn-outline-success my-2 my-sm-0 border rounded-0 ml-4" type="submit">
+                Search
+                <i class="fas fa-search text-info ml-2"></i>
+              </button>
+            </form>
+          </nav>
+          <div class="btn-group ml-5 align-items-end">
             <button type="button" class="btn btn-light btn-lg  dropdown-toggle-split mt-5 mb-4 rounded-bottom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="far fa-folder-open"></i>
               Open Library
@@ -62,6 +74,15 @@
             </div>
           </div>
         </div>
+        <div class="col-4 offset-4 bg-dark text-center border border-light mt-5">
+          <h1 class="card-title text-center text-light border border-0 container-fluid p-4 mt-5 font-monospace">
+            <strong>Welcome</strong><br>
+            to the <br>
+            <strong>Techtonic Library</strong><br>
+            <i class="fa fa-book mt-2" aria-hidden="true"></i>
+          </h1>
+
+        </div>
         <div class="col-8 offset-3 mt-5 mb-5">
             <img class="w-75 text-center" src="assets/nightLib.jpg" alt="">
         </div>
@@ -88,9 +109,9 @@
                   <img class="card-img-top w-75" src="assets/plato.jpg" alt="">
                 </div>
               </div>
-              <div class="card w-75 h-100 bg-transparent border-0 mt-5">
+              <div class="card h-100 bg-transparent border-0 mt-5 ">
                 <div class="card-body bg-transparent">
-                   <img class="w-100 " src="assets/tree.jpg" alt="">
+                   <img class="w-75" src="assets/tree.jpg" alt="">
               </div>
             </div>
           </div>
@@ -109,12 +130,11 @@
             <h3 class="card-title bg-info font-monospace text-white text-center rounded-0 border-dark mt-3">
           </div>
         </div>
-        <div class="col-4" id="newBook">
+        <div class="col-3" id="newBook">
             <div class="card mt-5 mb-0">
                <div class="card-body jumbotron-fluid">
                  <div class="container-fluid">
                    <div class="card-body">
-
                      <ul class="list-group list-group-flush col-12">
                       <li class="list-group-item">
                         <div class="input-group input-group-lg">
@@ -161,50 +181,7 @@
                           Add Book
                           <i class="fas fa-plus-circle ml-2 "></i>
                         </button>
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-light btn-lg  dropdown-toggle-split mt-5 mb-4 rounded-bottom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="far fa-folder-open"></i>
-                            Open Library
-                          </button>
-                          <div class="dropdown-menu">
-                            <h6 class="dropdown-header font-weight-bold">
-                              <i class="fas fa-sliders-h mr-2"></i>
-                              Modify Library
-                            </h6>
-                            <a class="dropdown-item" href="#viewerCanvas">
-                              <i class="fas fa-dot-circle"></i>
-                              Current Book
-                            </a>
-                            <a class="dropdown-item" href="#getAuthors">
-                              Authors in Library
-                            </a>
-                            <a class="dropdown-item" href="#newBook">
-                              Add A Book
-                            </a>
-                            <a class="dropdown-item" href="#newBook">
-                              Add A List of Books
-                            </a>
-                            <a class="dropdown-item" href="#viewerCanvas #getRandomBook">
-                              Get A Random Book
-                            </a>
-                            <a class="dropdown-item" href="#getBooksByAuthor">
-                              Get Books By Author
-                            </a>
-                            <a class="dropdown-item" href="#getRandomAuthorName">
-                              Get A Random Author
-                            </a>
-                            <h6 class="dropdown-header font-weight-bold">
-                              <i class="fas fa-trash mr-2"></i>
-                              Delete From Library
-                            </h6>
-                            <a class="dropdown-item" href="#removeBookByTitle">
-                              Delete By Title
-                            </a>
-                            <a class="dropdown-item" href="#removeBookByAuthor">
-                              Delete By Author
-                            </a>
-                          </div>
-                        </div>
+
                       </li>
                     </ul>
                    </div>
@@ -244,7 +221,7 @@
               <div class="table-responsive">
                 <table class="table">
                   <tbody>
-                    <tr class="flex-wrap">
+                    <tr class="flex-wrap align-content-between">
                       <!-- Books added by JS func populateUiLibrary -->
                     </tr>
                     <tr>

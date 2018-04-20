@@ -163,9 +163,8 @@ Library.prototype.displayBook = function() {
 };
 Library.prototype.populateUiLibrary = function(){
   for(var i = 0; i<this.bookList.length; i++){
-      var currentData = this.bookList[i].title +" "+ this.bookList[i].author+" "+this.bookList[i].numPages +" "+ this.bookList[i].pubDate;
-      $('table tr').append("<td><div class='card bg-transparent'><div class='card-body'> "+currentData+"</div></div></td>");
-      //else while
+      var currentData = this.bookList[i].title + " " + this.bookList[i].author + " " + this.bookList[i].numPages + " " + this.bookList[i].pubDate;
+      $('table tr').append("<td><div class='card bg-transparent'><div class='card-body'> " + currentData + "</div></div></td>");
   };
 };
 //Book Instance
