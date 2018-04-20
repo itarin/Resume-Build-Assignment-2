@@ -131,7 +131,7 @@ Library.prototype.storeLocal = function(){
   var retrievedObject = JSON.parse(localStorage.getItem('gLibKey'));
   console.log('retrievedObject: ', retrievedObject);
 };
-// Add a more robust search function to your app to allow you to filter by one or more book properties ○the search function should return an array of book instances ●Make your library a singleton ○A prototyped book class should also be made, with each ‘book’ in your li-brary being an instance of the book class.
+// Add a more robust search function to your app
 Library.prototype.searchLibrary = function(searchValue){
   var matched = [];
   for( var i = 0; i < this.bookList.length; i++) {
@@ -143,11 +143,12 @@ Library.prototype.searchLibrary = function(searchValue){
   }
   return matched;
 };
-
+//CREATE A NEW BOOK
 Library.prototype.newBook = function(title, author, numPages, pubDate){
   var bookCreated = new Book( title, author, numPages, pubDate);
-  this.addBooks(bookCreated);
+  this.addBook(bookCreated);
 };
+//User Interface to enter and simultaneously display books
 Library.prototype.displayBook = function() {
   dataTitle = document.getElementById("titleInput").value;
   dataAuthor = document.getElementById("authorInput").value;
@@ -155,18 +156,89 @@ Library.prototype.displayBook = function() {
   dataPubDate = document.getElementById("pubDateInput").value;
   gLib.newBook(dataTitle, dataAuthor, dataNumPages, dataPubDate);
 
-  //Display Book
+//Display Book
   document.getElementById("bookTitle").innerHTML = "Title : " + dataTitle;
   document.getElementById("bookAuthor").innerHTML = "Author : " + dataAuthor;
   document.getElementById("bookNumPages").innerHTML ="Total Pgs : " + dataNumPages;
   document.getElementById("bookPubDate").innerHTML = "Publication Date : " + dataPubDate;
+  this.populateUiLibrary();
 };
+//displays the books in the library to user
 Library.prototype.populateUiLibrary = function(){
-  for(var i = 0; i<this.bookList.length; i++){
-      var currentData = this.bookList[i].title + " " + this.bookList[i].author + " " + this.bookList[i].numPages + " " + this.bookList[i].pubDate;
-      $('table tr').append("<td><div class='card bg-transparent'><div class='card-body'> " + currentData + "</div></div></td>");
+  var currentData= [];
+  for(var i = 0; i <this.bookList.length; i++){
+      currentData=this.bookList[i].title + " " + this.bookList[i].author + " " + this.bookList[i].numPages + " " + this.bookList[i].pubDate;
+      $('table tr').append("<td><div class='card bg-transparent'><div class='card-body bg-dark'> " + currentData + "</div></div></td>");
   };
 };
+//displays the books in the library to user
+Library.prototype.orgLibrary = function(){
+  var currentData= [];
+  for(var i = 0; i <this.bookList.length; i++){
+      currentData =  "<tr class='flex-wrap align-content-between'>" +
+                      "<td>" + this.bookList[i].title + "</td>" +
+                      "<td>" +  this.bookList[i].author + "</td>" +
+                      "<td>" + this.bookList[i].numPages + "</td>" +
+                      "<td>" + this.bookList[i].pubDate + "</td>" +
+                    "</tr>";
+      $('#orgTable').append( currentData );
+  };
+};
+Library.prototype.sortOrgTable = function (n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = $("#orgTable");
+  switching = true;
+  // Set the sorting direction to ascending:
+  dir = "asc";
+  /* Make a loop that will continue until
+  no switching has been done: */
+  while (switching) {
+    // Start by saying: no switching is done:
+    switching = false;
+    rows = table.getElementsByTagName("TD");
+    /* Loop through all table rows (except the
+    first, which contains table headers): */
+    for (i = 1; i < (rows.length - 1); i++) {
+      // Start by saying there should be no switching:
+      shouldSwitch = false;
+      /* Get the two elements you want to compare,
+      one from current td and one from the next: */
+      x = rows[i].$("td")[n];
+      y = rows[i + 1].$("td")[n];
+      /* Check if the two rows should switch place,
+      based on the direction, asc or desc: */
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /* If a switch has been marked, make the switch
+      and mark that a switch has been done: */
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      // Each time a switch is done, increase this count by 1:
+      switchcount ++;
+    } else {
+      /* If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again. */
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+}
 //Book Instance
 var gIT = new Book("IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
 var gCatcherIntheRye = new Book("Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');

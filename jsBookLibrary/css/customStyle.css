@@ -1,0 +1,17 @@
+/* These styles over-ride BootSrap Quatro */
+.bg-dark{
+  background-color: rgba(47, 51, 60, .4) !important;
+}
+.bg-info, .bttn-info{
+  /* background-color: #6e94be; */
+  background-color: #6e94be !important;
+}
+.text-info{
+  color: #6e94be !important;
+}
+.bg-light, .bttn-light{
+  background-color: #f4fdff !important;
+}
+.text-light{
+  color: #f4fdff !important;
+}
