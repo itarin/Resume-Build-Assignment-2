@@ -203,8 +203,8 @@ Library.prototype.sortOrgTable = function (n) {
       shouldSwitch = false;
       /* Get the two elements you want to compare,
       one from current td and one from the next: */
-      x = rows[i].$("td")[n];
-      y = rows[i + 1].$("td")[n];
+      x = rows[i].$("td").eq(n);
+      y = rows[i + 1].$("td").eq(n);
       /* Check if the two rows should switch place,
       based on the direction, asc or desc: */
       if (dir == "asc") {
@@ -238,7 +238,7 @@ Library.prototype.sortOrgTable = function (n) {
     }
   }
 }
-}
+
 //Book Instance
 var gIT = new Book("IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
 var gCatcherIntheRye = new Book("Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');
