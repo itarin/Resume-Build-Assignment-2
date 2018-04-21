@@ -7,31 +7,48 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/customStyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
   </head>
   <body class="bg-info">
     <div class="container-fluid">
+      <div class="row h-25">
+        <div class="col-12 pixelax">
+          <div class="col-4 offset-4 bg-dark text-center border border-light round-0 p-0 mt-2">
+            <h2 class="card-title text-center text-light border border-0 container-fluid p-1 font-monospace lilOpacity">
+              <strong>Welcome</strong><br>
+              to the <br>
+              <strong>Techtonic Library</strong><br>
+              <i class="fa fa-book mt-2" aria-hidden="true"></i>
+            </h2>
+          </div>
+        </div>
+        <div class="col-12 pixelax h-25">
+          <div class="col-4 offset-1 bg-dark text-center border border-light p-0">
+            <!-- Add Books -->
+          </div>
+        </div>
+      </div>
       <div class="row">
-        <div class="col-3 offset-9 fixed-top align-items-end border-0 p-2">
+        <div class="col-3 offset-9 fixed-top align-items-end border-0">
           <div class="card bg-dark text-white mt-5 ml-5 border-bottom">
             <h2 class="card-heading">
               <i class="fa fa-book fa-pulse grow-6 ml-4 mr-2" aria-hidden="true"></i>
               Menu
             </h2>
           </div>
-          <nav class="navbar navbar-dark bg-transparent mt-3 ml-5">
+          <nav class="navbar navbar-dark bg-transparent mt-1 ml-4">
             <form class="form-inline">
               <input id="searchLib" class="form-control mr-sm-2 border rounded-0" type="search" placeholder="Search Library" aria-label="Search">
-              <button class="btn bg-light btn-outline-success my-2 my-sm-0 border rounded-0 ml-4" type="submit">
-                Search
-                <i class="fas fa-search text-info ml-2"></i>
+              <button class="btn bg-light btn-outline-success my-2 my-sm-0 border rounded-0" type="submit">
+                <i class="fas fa-search text-info m-1"></i>
               </button>
             </form>
           </nav>
           <div class="btn-group ml-5 align-items-end">
-            <button type="button" class="btn btn-light btn-lg  dropdown-toggle-split mt-5 mb-4 rounded-bottom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-light btn-lg  dropdown-toggle-split mt-1 mb-4 rounded-bottom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="far fa-folder-open"></i>
               Open Library
             </button>
@@ -75,49 +92,45 @@
             </div>
           </div>
         </div>
-        <div class="col-4 offset-4 bg-dark text-center border border-light mt-5">
-          <h1 class="card-title text-center text-light border border-0 container-fluid p-4 mt-5 font-monospace">
-            <strong>Welcome</strong><br>
-            to the <br>
-            <strong>Techtonic Library</strong><br>
-            <i class="fa fa-book mt-2" aria-hidden="true"></i>
-          </h1>
-
+        <div class="col-10 offset-2 h-50 mt-0 mb-0">
+            <img class="w-75 h-75 text-center" src="assets/nightLib.jpg" alt="">
         </div>
-        <div class="col-8 offset-3 mt-5 mb-5">
-            <img class="w-75 text-center" src="assets/nightLib.jpg" alt="">
-        </div>
-        <div class="col-8 offset-2 mt-5">
-          <div class="card-deck bg-transparent border-light ">
-              <div class="card bg-transparent border-bottom border-light ">
-                <div class="card-body text-white text-left align-middle">
-                  <i class="fas fa-quote-left"></i>
+        <div class="col-10 offset-1">
+          <div class="parallax border border-light">
+            <div class="col-9 offset-1 mt-5">
+              <div class="card-deck bg-transparent border-light mh-100 ">
+                  <div class="prallax card bg-transparent border-bottom border-light rounded-0">
+                    <div class="card-body text-white text-left align-middle">
+                      <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="card-body text-white border-light mb-2 lilOpacity">
+                      <h2 class="card-title">Music is the movement of sound to reach the soul for the education of its virtue.</h2>
+                    </div>
+                    <div class="card-body text-right text-white align-middle mt-0">
+                      <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="card-body mt-0">
+                      <h2 class="text-white">
+                       - Plato
+                     </h2>
+                    </div>
+                  </div>
+                  <div class="card  w-75 h-100 bg-transparent border-0">
+                    <div class="card-body bg-transparent">
+                      <img class="card-img-top w-75" src="assets/plato.jpg" alt="">
+                    </div>
+                  </div>
+                  <div class="card h-100 bg-transparent border-0 mt-5 ">
+                    <div class="card-body bg-transparent">
+                       <img class="w-75" src="assets/tree.jpg" alt="">
+                  </div>
                 </div>
-                <div class="card-body text-white border-light mb-0">
-                  <h2 class="card-title">Music is the movement of sound to reach the soul for the education of its virtue.</h2>
-                </div>
-                <div class="card-body text-right text-white align-middle mt-0">
-                  <i class="fas fa-quote-right"></i>
-                </div>
-                <div class="card-body">
-                  <h3 class="text-white">
-                   - Plato
-                 </h3>
-                </div>
-              </div>
-              <div class="card  w-75 h-100 bg-transparent border-0">
-                <div class="card-body bg-transparent">
-                  <img class="card-img-top w-75" src="assets/plato.jpg" alt="">
-                </div>
-              </div>
-              <div class="card h-100 bg-transparent border-0 mt-5 ">
-                <div class="card-body bg-transparent">
-                   <img class="w-75" src="assets/tree.jpg" alt="">
               </div>
             </div>
           </div>
         </div>
-        <div class="col-6 offset-3 mt-5 mb-3">
+
+        <div class="col-6 offset-3 mt-5 mb-3 prallax3">
           <div class="card text-center text-white bg-transparent border-0">
             <div class="card-body">
               <h1>
@@ -135,7 +148,7 @@
                <div class="card-body jumbotron-fluid">
                  <div class="container-fluid">
                    <div class="card-body">
-                     <ul class="list-group list-group-flush col-3">
+                     <ul class="list-group list-group-flush col-4 ">
                       <li class="list-group-item">
                         <div class="input-group input-group-lg">
                           <div class="input-group-prepend">
@@ -188,6 +201,11 @@
                  </div>
                </div>
             </div>
+            <div class="col-12 pixelax h-25">
+              <div class="col-4 offset-1 bg-dark text-center border border-light p-0">
+                <!-- Add Books -->
+              </div>
+            </div>
             <div class="col-12 mt-3">
               <div class="card bg-transparent border-light">
                 <div class="card-body text-light" id="newBookModule">
@@ -204,8 +222,8 @@
                   </p>
                 </div>
               </div>
+            </div>
       <!--END NEW BOOK -->
-        </div>
         </div>
         <div class="row">
           <div class="col-5 offset-2 text-light ">
@@ -261,12 +279,12 @@
               Anti-Eye Strain
             </button>
           </div>
-          <div class="col-7 offset-7">
+          <div class="col-5 offset-5 ">
             <div class="card bg-dark mb-2">
               <h2 class="card-heading text-white text-center">Current Book</h2>
             </div>
           </div>
-          <div class="col-8 offset-7">
+          <div class="col-8 offset-4">
             <div class="img-fluid w-auto h-auto" id="viewerCanvas"  style="height:52rem; width: 38rem;">
             </div>
           </div>
