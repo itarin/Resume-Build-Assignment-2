@@ -31,11 +31,7 @@
             </h2>
           </div>
         </div>
-        <div class="col-12 pixelax h-25 mt-3">
-          <div class="col-4 offset-1 bg-dark text-center border border-light p-0">
-            <!-- Add Books -->
-          </div>
-        </div>
+
       </div>
       <div class="row">
         <div class="col-3 offset-9 fixed-top align-items-end border-0">
@@ -48,7 +44,8 @@
           <nav class="navbar navbar-dark bg-transparent mt-1 ml-4">
             <form class="form-inline">
               <input id="searchLib" class="form-control mr-sm-2 border rounded-0" type="search" placeholder="Search Library" aria-label="Search">
-              <button class="btn bg-light btn-outline-success my-2 my-sm-0 border rounded-0" type="submit">
+
+              <button id="submitSearch" class="btn bg-light btn-outline-success my-2 my-sm-0 border rounded-0" type="submit">
                 <i class="fas fa-search text-info m-1"></i>
               </button>
             </form>
@@ -95,6 +92,17 @@
               <a class="dropdown-item" href="#removeBookByAuthor">
                 Delete By Author
               </a>
+            </div>
+          </div>
+          <div class="card bg-transparent border-0">
+            <img class="card-img-top img-fluid w-75 ml-5 pl-2" src="assets/kidReading.jpg" alt="Card image cap">
+            <h3 class="card-title bg-transparent font-monospace text-white text-center  border-0 mt-3">
+              Address
+            </h3>
+          </div>
+          <div class="col-10 offset-2 pixelax h-25 mt-3">
+            <div class="col-4 offset-1 bg-dark text-center border border-light p-0">
+              <!-- Add Books -->
             </div>
           </div>
         </div>
@@ -211,8 +219,8 @@
                  </div>
               </div>
 <!--ADD MORE BOOKS UI, hidden by d-none  -->
-          <div class=" col-9 card-group mt-5 pb-0" id="addMoreCopy">
-            <!-- <div class="card">
+          <div class=" col-8 card-group mt-5 pb-0" id="addMoreCopy">
+            <div class="card">
               <div class="card-body">
                  <ul class="list-group list-group-flush">
                   <li class="list-group-item">
@@ -349,7 +357,7 @@
                   </li>
                 </ul>
                 </div>
-            </div> -->
+            </div>
           <!-- END addMoreCopys -->
           </div>
         <!-- End 'row'& END PARALLAX  -->
@@ -396,29 +404,27 @@
               </table>
             </div>
           </div>
+        </div>
 <!-- UI Table F(x)'s -->
 <!-- START TABLE -->
-          <div class="row">
-            <div class="col-5 offset-2 text-light ">
-              <h1 class="text-light bg-dark text-center">
-                Display Books
-              </h1>
-              <div class="table-responsive">
-                <table class="table align-content-between bg-dark border-0" id="uiTable">
-                  <tbody class="table-hover">
-                    <!-- Books added by JS func populateUiLibrary -->
-                    <!-- <tr class="flex-wrap align-content-between">
+      <div class="row">
+          <div class="col-6 offset-3 text-light ">
+            <h1 class="text-light bg-dark text-center">
+              Display Books
+            </h1>
+            <div class="table-responsive">
+              <table class="table align-content-between bg-dark border-0" id="uiTable">
+                <tbody class="table-hover">
+                  <!-- Books added by JS func populateUiLibrary -->
+                  <!-- <tr class="flex-wrap align-content-between">
 
-                    </tr> -->
-                  </tbody>
-                </table>
-              </div>
+                  </tr> -->
+                </tbody>
+              </table>
             </div>
-            <div class="col-4 card bg-transparent border-0">
-              <img class="card-img-top img-fluid w-50" src="assets/kidReading.jpg" alt="Card image cap">
-              <h3 class="card-title bg-info font-monospace text-white text-center rounded-0 border-dark mt-3">
-            </div>
-<!-- END ROW -->
+          </div>
+
+<!-- END DIsplayBOOksROW -->
       </div>
       <div class="row">
           <div class="col-3 ml-5 mt-5">

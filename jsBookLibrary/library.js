@@ -213,6 +213,12 @@ gLib.addBook( book1 );
 
 $(document).ready(function(){
     gLib.orgLibrary();//Stor HERE ONLY FOR BUILD************************************
+    //Menu F(x)'s
+    $('#submitSearch').on( 'click', function(){
+      var userSearched = $( '#searchLib' ).val();
+      gLib.searchLibrary( userSearched );
+    });
+
     //TABLE F(x)'s
     //Sort TABLE f(x)
     function sortTable(n) {
@@ -294,11 +300,11 @@ $(document).ready(function(){
   //OnClick of Menu Display .addMore UI to ADD ONE Book
   $('#moreBooks2Add').on('click', function(event){
     event.preventDefault();
-    $('#addOne').addClass('d-none');
+    $('#addOne').remove();
     $('#addMoreCopy').removeClass('d-none');
+    //if(#addMoreCopy){}
     var addMore = $('#addMoreCopy').clone().html();
     $('row parallax3').append(addMore);
-    console.log(addMore);
   });
 });
 //GOOGLE BOOKS API
