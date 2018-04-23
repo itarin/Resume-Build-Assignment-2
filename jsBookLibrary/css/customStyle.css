@@ -39,9 +39,9 @@ input[type=text]:focus {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.parallax {
+.parallax3 {
     /* The image used */
-    background-image: url("../assets/nightlib.jpg");
+    background-image: url("../assets/library5.jpg");
 
     /* Set a specific height */
     min-height: 500px;

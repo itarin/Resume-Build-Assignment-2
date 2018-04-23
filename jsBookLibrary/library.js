@@ -1,3 +1,5 @@
+//Library constructor and functions bellow:
+
 //Library Constructor and Main Obj Creation
 var Library;
 
@@ -143,25 +145,29 @@ Library.prototype.searchLibrary = function(searchValue){
   }
   return matched;
 };
-//CREATE A NEW BOOK
+//CREATE A NEW BOOK F(x)
 Library.prototype.newBook = function(title, author, numPages, pubDate){
   var bookCreated = new Book( title, author, numPages, pubDate);
   this.addBook(bookCreated);
 };
+//Display Book in Window
+Library.prototype.displayAdded = function(){
+    document.getElementById("bookTitle").innerHTML = "Title : " + dataTitle;
+    document.getElementById("bookAuthor").innerHTML = "Author : " + dataAuthor;
+    document.getElementById("bookNumPages").innerHTML ="Total Pgs : " + dataNumPages;
+    document.getElementById("bookPubDate").innerHTML = "Publication Date : " + dataPubDate;
+    this.populateUiLibrary();
+}
+
 //User Interface to enter and simultaneously display books
 Library.prototype.displayBook = function() {
   dataTitle = document.getElementById("titleInput").value;
   dataAuthor = document.getElementById("authorInput").value;
   dataNumPages = document.getElementById("numPagesInput").value;
-  dataPubDate = document.getElementById("pubDateInput").value;
+  dataPubDate = $("pubDateInput").val();
   gLib.newBook(dataTitle, dataAuthor, dataNumPages, dataPubDate);
 
-//Display Book
-  document.getElementById("bookTitle").innerHTML = "Title : " + dataTitle;
-  document.getElementById("bookAuthor").innerHTML = "Author : " + dataAuthor;
-  document.getElementById("bookNumPages").innerHTML ="Total Pgs : " + dataNumPages;
-  document.getElementById("bookPubDate").innerHTML = "Publication Date : " + dataPubDate;
-  this.populateUiLibrary();
+  this.displayAdded();
 };
 //displays the books in the library to user
 Library.prototype.populateUiLibrary = function(){
@@ -254,6 +260,21 @@ gLib.addBook( gCatcherIntheRye );
 gLib.addBook( gCatInTheHat );
 gLib.addBook( book1 );
 
+//Display .addOne UI to ADD ONE Book
+$('#addOneBttn').on('click', function(){
+  $('#addOne').removeClass('d-none');
+});
+//OnClick of Menu Display .addMore UI to ADD ONE Book
+$('#addMoreBttn').on('click', function(){
+  $('#addMore').removeClass('d-none');
+});
+//OnClick of Menu Display .addMore UI to ADD ONE Book
+$('#addMoreRow').on('click', function(event){
+  event.preventDefault();
+  $('#addMoreCopy').removeClass('d-none');
+  var addMore = $('#addMore').html();
+  $('#addMoreCopy').append('#addMoreCopy');
+});
 //GOOGLE BOOKS API
 google.books.load();
 
