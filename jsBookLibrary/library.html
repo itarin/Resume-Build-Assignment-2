@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/customStyle.css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
     <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
@@ -71,7 +73,7 @@
               <a class="dropdown-item" id="addOneBttn" href="#newBook">
                 Add A Book
               </a>
-              <a class="dropdown-item" id="addMoreBttn" href="#newBook">
+              <a class="dropdown-item" id="addMultBooksBttn" href="#newBook">
                 Add Multiple Books
               </a>
               <a class="dropdown-item" href="#viewerCanvas #getRandomBook">
@@ -131,175 +133,29 @@
           </div>
         <!-- EndRow -->
         </div>
-        <div class="row">
-          <div class="col-12 parallax3">
-            <div class="col-6 offset-3 mt-5 mb-3">
-              <div class="card text-center text-white bg-transparent border-0">
-                <div class="card-body">
-                  <h1>
-                    NEW BOOK
-                    <i class="fas fa-plus ml-2"></i>
-                  </h1>
-                </div>
+        <div class="row parallax3"id="newBook">
+          <div class="col-1">
+            <button id="moreBooks2Add" type="button" class="btn btn-warning btn-lg text-dark border-dark">
+              <i class="fas fa-plus-circle ml-2 "></i>
+              <h5>
+                More Books to Add?
+              </h5>
+            </button>
+          </div>
+          <!-- ****New Book Title Commented Out********* -->
+          <!-- <div class="col-6 offset-3 mt-5 mb-3">
+            <div class="card text-center text-white bg-transparent border-0">
+              <div class="card-body">
+                <h1>
+                  NEW BOOK
+                  <i class="fas fa-plus ml-2"></i>
+                </h1>
               </div>
             </div>
-            <div class="col-8" id="newBook">
+          </div> -->
 <!-- ADD ONE BOOK, hidden by d-none -->
-              <div class="d-none col-4 offset-md-4 card mt-5 mb-0" id="addOne">
-                   <div class="card">
-                     <div class="container-fluid">
-                       <div class="card-body">
-                         <ul class="list-group list-group-flush">
-                          <li class="list-group-item">
-                            <div class="input-group input-group-lg">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                  <i class="fas fa-book"></i>
-                                </span>
-                              </div>
-                              <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="titleInput" placeholder="Book Title">
-                            </div>
-                          </li>
-                          <li class="list-group-item">
-                            <div class="input-group input-group-lg">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                  <i class="far fa-address-book"></i>
-                                </span>
-                              </div>
-                              <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="authorInput" placeholder="Book Author">
-                            </div>
-                          </li>
-                          <li class="list-group-item">
-                            <div class="input-group input-group-lg">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                  <i class="far fa-file"></i>
-                                </span>
-                              </div>
-                              <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="numPagesInput" placeholder="Page Total">
-                            </div>
-                          </li>
-                          <li class="list-group-item">
-                            <div class="input-group input-group-lg">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                  <i class="far fa-calendar-alt"></i>
-                                </span>
-                              </div>
-                              <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="pubDateInput" placeholder="Date Published">
-                            </div>
-                          </li>
-                          <li class="list-group-item text-center">
-                            <button onclick="gLib.displayBook()" type="button" class="btn btn-warning btn-lg text-dark border-dark">
-                              Add Book
-                              <i class="fas fa-plus-circle ml-2 "></i>
-                            </button>
-                          </li>
-                        </ul>
-                       </div>
-                     </div>
-                   </div>
-                </div>
-<!--ADD MORE BOOKS UI, hidden by d-none  -->
-              <div class="d-none card-group mt-5 mb-0" id="addMore">
-                 <div class="card jumbotron-fluid">
-                   <div class="container-fluid">
-                     <div class="card-body">
-                       <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="fas fa-book"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="titleInput" placeholder="Book Title">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-address-book"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="authorInput" placeholder="Book Author">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-file"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="numPagesInput" placeholder="Page Total">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-calendar-alt"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="pubDateInput" placeholder="Date Published">
-                          </div>
-                        </li>
-                      </ul>
-                     </div>
-                   </div>
-                 </div>
-                 <div class="card jumbotron-fluid">
-                   <div class="container-fluid">
-                     <div class="card-body">
-                       <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="fas fa-book"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="titleInput" placeholder="Book Title">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-address-book"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="authorInput" placeholder="Book Author">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-file"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="numPagesInput" placeholder="Page Total">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-calendar-alt"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="pubDateInput" placeholder="Date Published">
-                          </div>
-                        </li>
-                      </ul>
-                     </div>
-                   </div>
-                 </div>
-                 <div class="card jumbotron-fluid">
+          <div class=" col-4 card mt-5 mb-0" id="addOne">
+                 <div class="card">
                    <div class="container-fluid">
                      <div class="card-body">
                        <ul class="list-group list-group-flush">
@@ -344,174 +200,159 @@
                           </div>
                         </li>
                         <li class="list-group-item text-center">
-                          <button id="addMoreRow" type="button" class="btn btn-warning btn-lg text-dark border-dark">
+                          <button onclick="gLib.displayBook()" type="button" class="btn btn-warning btn-lg text-dark border-dark">
+                            Add Book
                             <i class="fas fa-plus-circle ml-2 "></i>
-                            <h5>
-                              More Books to Add?
-                            </h5>
                           </button>
                         </li>
                       </ul>
                      </div>
                    </div>
                  </div>
-             <!-- END addMore -->
               </div>
-              <div class="d-none mw-100 w-100 card-group mt-5 mb-0" id="addMoreCopy">
-                 <div class="card jumbotron-fluid">
-                   <div class="container-fluid">
-                     <div class="card-body">
-                       <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="fas fa-book"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="titleInput" placeholder="Book Title">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-address-book"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="authorInput" placeholder="Book Author">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-file"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="numPagesInput" placeholder="Page Total">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-calendar-alt"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="pubDateInput" placeholder="Date Published">
-                          </div>
-                        </li>
-                      </ul>
-                     </div>
-                   </div>
-                 </div>
-                 <div class="card jumbotron-fluid">
-                   <div class="container-fluid">
-                     <div class="card-body">
-                       <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="fas fa-book"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="titleInput" placeholder="Book Title">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-address-book"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="authorInput" placeholder="Book Author">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-file"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="numPagesInput" placeholder="Page Total">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-calendar-alt"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="pubDateInput" placeholder="Date Published">
-                          </div>
-                        </li>
-                      </ul>
-                     </div>
-                   </div>
-                 </div>
-                 <div class="card jumbotron-fluid">
-                   <div class="container-fluid">
-                     <div class="card-body">
-                       <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="fas fa-book"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="titleInput" placeholder="Book Title">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-address-book"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="authorInput" placeholder="Book Author">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-file"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="numPagesInput" placeholder="Page Total">
-                          </div>
-                        </li>
-                        <li class="list-group-item">
-                          <div class="input-group input-group-lg">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                <i class="far fa-calendar-alt"></i>
-                              </span>
-                            </div>
-                            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="pubDateInput" placeholder="Date Published">
-                          </div>
-                        </li>
-                      </ul>
-                     </div>
-                   </div>
-                 </div>
-             <!-- END addMoreCopys -->
+<!--ADD MORE BOOKS UI, hidden by d-none  -->
+          <div class=" col-9 card-group mt-5 pb-0" id="addMoreCopy">
+            <!-- <div class="card">
+              <div class="card-body">
+                 <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <div class="input-group input-group-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                          <i class="fas fa-book"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="titleInput" placeholder="Book Title">
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="input-group input-group-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                          <i class="far fa-address-book"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="authorInput" placeholder="Book Author">
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="input-group input-group-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                          <i class="far fa-file"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="numPagesInput" placeholder="Page Total">
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="input-group input-group-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                          <i class="far fa-calendar-alt"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="pubDateInput" placeholder="Date Published">
+                    </div>
+                  </li>
+                </ul>
               </div>
-
-
-
-            <!--END NEW BOOK -->
             </div>
-          <!-- END PARALLAX -->
+            <div class="card">
+              <div class="card-body">
+                 <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <div class="input-group input-group-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                          <i class="fas fa-book"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="titleInput" placeholder="Book Title">
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="input-group input-group-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                          <i class="far fa-address-book"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="authorInput" placeholder="Book Author">
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="input-group input-group-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                          <i class="far fa-file"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="numPagesInput" placeholder="Page Total">
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="input-group input-group-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                          <i class="far fa-calendar-alt"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="pubDateInput" placeholder="Date Published">
+                    </div>
+                  </li>
+                </ul>
+                </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                 <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <div class="input-group input-group-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                          <i class="fas fa-book"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="titleInput" placeholder="Book Title">
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="input-group input-group-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                          <i class="far fa-address-book"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="authorInput" placeholder="Book Author">
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="input-group input-group-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                          <i class="far fa-file"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="numPagesInput" placeholder="Page Total">
+                    </div>
+                  </li>
+                  <li class="list-group-item">
+                    <div class="input-group input-group-lg">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                          <i class="far fa-calendar-alt"></i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="pubDateInput" placeholder="Date Published">
+                    </div>
+                  </li>
+                </ul>
+                </div>
+            </div> -->
+          <!-- END addMoreCopys -->
           </div>
-        <!-- End 'row' -->
+        <!-- End 'row'& END PARALLAX  -->
         </div>
         <div class="row">
           <!-- BOOK ADDED DISPLAY -->
@@ -540,10 +381,11 @@
               <table class="table align-content-between bg-dark border-0" id="orgTable">
                 <thead>
                   <tr>
-                    <th scope="col" onclick="gLib.sortOrgTable(0)">Title</th>
-                    <th scope="col" onclick="gLib.sortOrgTable(1)">Author</th>
+                    <th id="titleSort" scope="col">Title</th>
+                    <th scope="col">Author</th>
                     <th scope="col">Pages Total</th>
                     <th scope="col">Publish Date</th>
+                    <th scope="col">Delete</th>
                   </tr>
                 </thead>
                 <tbody class="table-hover">
@@ -586,7 +428,7 @@
               Anti-Eye Strain
             </button>
           </div>
-          <div class="col-5 offset-5 ">
+          <div class="col-5 offset-4 ">
             <div class="card bg-dark mb-2">
               <h2 class="card-heading text-white text-center">Current Book</h2>
             </div>

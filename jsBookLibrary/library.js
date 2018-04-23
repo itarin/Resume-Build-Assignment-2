@@ -173,8 +173,13 @@ Library.prototype.displayBook = function() {
 Library.prototype.populateUiLibrary = function(){
   var currentData= [];
   for(var i = 0; i <this.bookList.length; i++){
-      currentData=this.bookList[i].title + " " + this.bookList[i].author + " " + this.bookList[i].numPages + " " + this.bookList[i].pubDate;
-      $('table tr').append("<td><div class='card bg-transparent'><div class='card-body bg-dark'> " + currentData + "</div></div></td>");
+      currentData=  this.bookList[i].title + " " +
+                    this.bookList[i].author + " " +
+                    this.bookList[i].numPages + " " +
+                    this.bookList[i].pubDate;
+
+// Cards that populateUILib
+      // $('table tr').append("<td><div class='card bg-transparent'><div class='card-body bg-dark'> " + currentData + "</div></div></td>");
   };
 };
 //displays the books in the library to user
@@ -182,69 +187,15 @@ Library.prototype.orgLibrary = function(){
   var currentData= [];
   for(var i = 0; i <this.bookList.length; i++){
       currentData =  "<tr class='flex-wrap align-content-between'>" +
-                      "<td>" + this.bookList[i].title + "</td>" +
+                      "<td id='getTitle'>" + this.bookList[i].title + "</td>" +
                       "<td>" +  this.bookList[i].author + "</td>" +
                       "<td>" + this.bookList[i].numPages + "</td>" +
                       "<td>" + this.bookList[i].pubDate + "</td>" +
+                      "<td id='delete'>" + "<i class='material-icons text-dark'>cancel</i>" + "</td>"
                     "</tr>";
       $('#orgTable').append( currentData );
   };
 };
-Library.prototype.sortOrgTable = function (n) {
-  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-  table = $("#orgTable");
-  switching = true;
-  // Set the sorting direction to ascending:
-  dir = "asc";
-  /* Make a loop that will continue until
-  no switching has been done: */
-  while (switching) {
-    // Start by saying: no switching is done:
-    switching = false;
-    rows = table.getElementsByTagName("TD");
-    /* Loop through all table rows (except the
-    first, which contains table headers): */
-    for (i = 1; i < (rows.length - 1); i++) {
-      // Start by saying there should be no switching:
-      shouldSwitch = false;
-      /* Get the two elements you want to compare,
-      one from current td and one from the next: */
-      x = rows[i].$("td").eq(n);
-      y = rows[i + 1].$("td").eq(n);
-      /* Check if the two rows should switch place,
-      based on the direction, asc or desc: */
-      if (dir == "asc") {
-        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-          // If so, mark as a switch and break the loop:
-          shouldSwitch= true;
-          break;
-        }
-      } else if (dir == "desc") {
-        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-          // If so, mark as a switch and break the loop:
-          shouldSwitch= true;
-          break;
-        }
-      }
-    }
-    if (shouldSwitch) {
-      /* If a switch has been marked, make the switch
-      and mark that a switch has been done: */
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-      switching = true;
-      // Each time a switch is done, increase this count by 1:
-      switchcount ++;
-    } else {
-      /* If no switching has been done AND the direction is "asc",
-      set the direction to "desc" and run the while loop again. */
-      if (switchcount == 0 && dir == "asc") {
-        dir = "desc";
-        switching = true;
-      }
-    }
-  }
-}
-
 //Book Instance
 var gIT = new Book("IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
 var gCatcherIntheRye = new Book("Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');
@@ -260,20 +211,95 @@ gLib.addBook( gCatcherIntheRye );
 gLib.addBook( gCatInTheHat );
 gLib.addBook( book1 );
 
-//Display .addOne UI to ADD ONE Book
-$('#addOneBttn').on('click', function(){
-  $('#addOne').removeClass('d-none');
-});
-//OnClick of Menu Display .addMore UI to ADD ONE Book
-$('#addMoreBttn').on('click', function(){
-  $('#addMore').removeClass('d-none');
-});
-//OnClick of Menu Display .addMore UI to ADD ONE Book
-$('#addMoreRow').on('click', function(event){
-  event.preventDefault();
-  $('#addMoreCopy').removeClass('d-none');
-  var addMore = $('#addMore').html();
-  $('#addMoreCopy').append('#addMoreCopy');
+$(document).ready(function(){
+    gLib.orgLibrary();//Stor HERE ONLY FOR BUILD************************************
+    //TABLE F(x)'s
+    //Sort TABLE f(x)
+    function sortTable(n) {
+    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+    table = document.getElementById("orgTable");
+    switching = true;
+    //Set the sorting direction to ascending:
+    dir = "asc";
+    /*Make a loop that will continue until
+    no switching has been done:*/
+    while (switching) {
+      //start by saying: no switching is done:
+      switching = false;
+      rows = table.getElementsByTagName("TR");
+      /*Loop through all table rows (except the
+      first, which contains table headers):*/
+      for (i = 1; i < (rows.length - 1); i++) {
+        //start by saying there should be no switching:
+        shouldSwitch = false;
+        /*Get the two elements you want to compare,
+        one from current row and one from the next:*/
+        x = rows[i].getElementsByTagName("TD")[n];
+        y = rows[i + 1].getElementsByTagName("TD")[n];
+        /*check if the two rows should switch place,
+        based on the direction, asc or desc:*/
+        if (dir == "asc") {
+          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+            //if so, mark as a switch and break the loop:
+            shouldSwitch= true;
+            break;
+          }
+        } else if (dir == "desc") {
+          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+            //if so, mark as a switch and break the loop:
+            shouldSwitch= true;
+            break;
+          }
+        }
+      }
+      if (shouldSwitch) {
+        /*If a switch has been marked, make the switch
+        and mark that a switch has been done:*/
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+        //Each time a switch is done, increase this count by 1:
+        switchcount ++;
+      } else {
+        /*If no switching has been done AND the direction is "asc",
+        set the direction to "desc" and run the while loop again.*/
+        if (switchcount == 0 && dir == "asc") {
+          dir = "desc";
+          switching = true;
+        }
+      }
+    }
+  }
+  //Sort When Table Title Clicked
+  $('#orgTable').on('click','#titleSort', function(){
+    sortTable(0);
+  });
+  //Delete from table and remove from library
+  $('tbody').on('click', '#delete', function(){
+    $('#delete').parent().remove();
+    var bTitle=$('#getTitle').text();
+    gLib.removeBookByTitle(bTitles);
+  });
+
+  //INPUT UI F(x)'s
+  //Display .addOne UI to ADD ONE Book
+  $('#addOneBttn').on('click', function(){
+    $('#addOne').removeClass('d-none');
+  });
+  //OnClick of Menu Display .addMore UI to ADD ONE Book
+  $('#addMultBooksBttn').on('click', function(){
+    event.preventDefault();
+    $('#addOne').remove();
+    $('#addMoreCopy').removeClass('d-none');
+  });
+  //OnClick of Menu Display .addMore UI to ADD ONE Book
+  $('#moreBooks2Add').on('click', function(event){
+    event.preventDefault();
+    $('#addOne').addClass('d-none');
+    $('#addMoreCopy').removeClass('d-none');
+    var addMore = $('#addMoreCopy').clone().html();
+    $('row parallax3').append(addMore);
+    console.log(addMore);
+  });
 });
 //GOOGLE BOOKS API
 google.books.load();
