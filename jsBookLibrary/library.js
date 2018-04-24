@@ -15,7 +15,8 @@ var Library;
   }
 })();
 //Book Object Constructor
-var Book = function(title, author, numPages, pubDate, isbn){
+var Book = function(cover, title, author, numPages, pubDate, isbn){
+  this.cover = cover;
   this.title = title;
   this.author = author;
   this.numbPages = numPages;
@@ -182,17 +183,30 @@ Library.prototype.populateUiLibrary = function(){
       // $('table tr').append("<td><div class='card bg-transparent'><div class='card-body bg-dark'> " + currentData + "</div></div></td>");
   };
 };
-//displays the books in the library to user
+//displays the books in the library table to user
 Library.prototype.orgLibrary = function(){
   var currentData= [];
   for(var i = 0; i <this.bookList.length; i++){
       currentData =  "<tr class='flex-wrap align-content-between'>" +
-                      "<td id='getTitle'>" + this.bookList[i].title + "</td>" +
-                      "<td>" +  this.bookList[i].author + "</td>" +
-                      "<td>" + this.bookList[i].numPages + "</td>" +
-                      "<td>" + this.bookList[i].pubDate + "</td>" +
-                      "<td id='delete'>" + "<i class='material-icons text-dark'>cancel</i>" + "</td>"
-                    "</tr>";
+                        "<td id='getTitle'>" +
+                          this.bookList[i].cover +
+                        "</td>" +
+                        "<td id='getTitle'>" +
+                          this.bookList[i].title +
+                        "</td>" +
+                        "<td>" +
+                          this.bookList[i].author +
+                        "</td>" +
+                        "<td>" +
+                          this.bookList[i].numPages +
+                        "</td>" +
+                        "<td>" +
+                          this.bookList[i].pubDate +
+                        "</td>" +
+                        "<td id='delete'class='text-right'>" +
+                          "<i class='material-icons text-light'>cancel</i>" +
+                        "</td>"
+                      "</tr>";
       $('#orgTable').append( currentData );
   };
 };
@@ -214,10 +228,22 @@ gLib.addBook( book1 );
 $(document).ready(function(){
     gLib.orgLibrary();//Stor HERE ONLY FOR BUILD************************************
     //Menu F(x)'s
+
+    //Search Library, works in console, on:'click' does not
     $('#submitSearch').on( 'click', function(){
       var userSearched = $( '#searchLib' ).val();
-      gLib.searchLibrary( userSearched );
+      var results = gLib.searchLibrary( userSearched );
+      gLib.orgTable(results);
     });
+    //Select Delete by Author from menu
+    //Clones and Adds Input
+    $('#deleteAuthor').on( 'click', function(){
+      $('#searchLib').clone().appendTo('.form-inline')
+        .attr('placeholder', 'Delete Author');
+      $('#submitSearch').clone().appendTo('.form-inline')
+        .html('<i class="material-icons text-dark">cancel</i>');
+    });
+    $('')
 
     //TABLE F(x)'s
     //Sort TABLE f(x)
@@ -294,8 +320,9 @@ $(document).ready(function(){
   //OnClick of Menu Display .addMore UI to ADD ONE Book
   $('#addMultBooksBttn').on('click', function(){
     event.preventDefault();
-    $('#addOne').remove();
-    $('#addMoreCopy').removeClass('d-none');
+    var clonedAddBook = $('#addOne').clone();
+    $('#addOne').append(clonedAddBook);
+    // $('#addMoreCopy').removeClass('d-none');
   });
   //OnClick of Menu Display .addMore UI to ADD ONE Book
   $('#moreBooks2Add').on('click', function(event){
@@ -306,13 +333,22 @@ $(document).ready(function(){
     var addMore = $('#addMoreCopy').clone().html();
     $('row parallax3').append(addMore);
   });
+  //tableSorter plugin setOnLoadCallback
+  // $(function(){
+  //   $('#orgTable').tablesorter();
+  // });
+  $('table').tablesort();
+  //GOOGLE BOOKS API
+  google.books.load();
+
+  function initialize() {
+    var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+    viewer.load('ISBN:0521093597');
+  }
+
+  google.books.setOnLoadCallback(initialize);
+
 });
-//GOOGLE BOOKS API
-google.books.load();
-
-function initialize() {
-  var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
-  viewer.load('ISBN:0521093597');
-}
-
-google.books.setOnLoadCallback(initialize);
+$(function() {
+  $("#orgTable").tablesorter();
+});
