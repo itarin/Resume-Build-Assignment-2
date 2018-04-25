@@ -153,20 +153,23 @@ Library.prototype.newBook = function(title, author, numPages, pubDate){
 };
 //Display Book in Window
 Library.prototype.displayAdded = function(){
-    document.getElementById("bookTitle").innerHTML = "Title : " + dataTitle;
-    document.getElementById("bookAuthor").innerHTML = "Author : " + dataAuthor;
-    document.getElementById("bookNumPages").innerHTML ="Total Pgs : " + dataNumPages;
-    document.getElementById("bookPubDate").innerHTML = "Publication Date : " + dataPubDate;
-    this.populateUiLibrary();
+  $('#bookCover').attr('src', dataCover);
+  document.getElementById("bookTitle").innerHTML = "Title : " + dataTitle;
+  document.getElementById("bookAuthor").innerHTML = "Author : " + dataAuthor;
+  document.getElementById("bookNumPages").innerHTML ="Total Pgs : " + dataNumPages;
+  document.getElementById("bookPubDate").innerHTML = "Publication Date : " + dataPubDate;
+  gLib.newBook(dataCover, dataTitle, dataAuthor, dataNumPages, dataPubDate, isbn);
+  this.orgLibrary();
 }
 
-//User Interface to enter and simultaneously display books
+//User Interface to enter into gLib.bookList arrayand simultaneously display books
 Library.prototype.displayBook = function() {
+  dataCover = document.getElementById("coverInput").value;
   dataTitle = document.getElementById("titleInput").value;
   dataAuthor = document.getElementById("authorInput").value;
   dataNumPages = document.getElementById("numPagesInput").value;
   dataPubDate = $("pubDateInput").val();
-  gLib.newBook(dataTitle, dataAuthor, dataNumPages, dataPubDate);
+  gLib.newBook(dataCover, dataTitle, dataAuthor, dataNumPages, dataPubDate, isbn);
 
   this.displayAdded();
 };
@@ -188,13 +191,13 @@ Library.prototype.orgLibrary = function(){
   var currentData= [];
   for(var i = 0; i <this.bookList.length; i++){
       currentData =  "<tr class='flex-wrap align-content-between'>" +
-                        "<td id='getTitle'>" +
-                          this.bookList[i].cover +
+                        "<td>" +
+                          "<img class='img-thumbnail w-50 p-0 ml-5 border-0' src='" + this.bookList[i].cover + "'>"  +
                         "</td>" +
                         "<td id='getTitle'>" +
                           this.bookList[i].title +
                         "</td>" +
-                        "<td>" +
+                        "<td id='getAuthor'>" +
                           this.bookList[i].author +
                         "</td>" +
                         "<td>" +
@@ -211,13 +214,13 @@ Library.prototype.orgLibrary = function(){
   };
 };
 //Book Instance
-var gIT = new Book("IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
-var gCatcherIntheRye = new Book("Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');
-var gCatInTheHat = new Book("Cat In The Hat", "Dr.Sues", 20, 'December 17, 1995 03:24:00' );
-var book1 = new Book("one", "Stephen King", 3, 'December 17, 1995 03:24:00');
-var quixote= new Book("Don Quixote", "Miguel de Cervantes Saavedra", 234, 'Dec 31, 1999');
-var q= new Book("Don te", "Miguel vantesra", 23, 'Dec 1, 1999');
-var q1= new Book("Don te1", "Miguel11 vantesra", 213, 'Dec 111, 1999');
+var gIT = new Book("assets/readingBook.jpg", "IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
+var gCatcherIntheRye = new Book("assets/readingBook.jpg", "Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');
+var gCatInTheHat = new Book("assets/readingBook.jpg", "Cat In The Hat", "Dr.Sues", 20, 'December 17, 1995 03:24:00' );
+var book1 = new Book("assets/readingBook.jpg", "one", "Stephen King", 3, 'December 17, 1995 03:24:00');
+var quixote= new Book("assets/readingBook.jpg", "Don Quixote", "Miguel de Cervantes Saavedra", 234, 'Dec 31, 1999');
+var q= new Book("assets/readingBook.jpg", "Don te", "Miguel vantesra", 23, 'Dec 1, 1999');
+var q1= new Book("assets/readingBook.jpg", "Don te1", "Miguel11 vantesra", 213, 'Dec 111, 1999');
 var bookArray = [quixote, q, q1];
 //Books added to Array for testing for faster testing
 gLib.addBook( gIT );
@@ -226,117 +229,76 @@ gLib.addBook( gCatInTheHat );
 gLib.addBook( book1 );
 
 $(document).ready(function(){
-    gLib.orgLibrary();//Stor HERE ONLY FOR BUILD************************************
+    gLib.orgLibrary();//Store HERE ONLY FOR BUILD************************************
     //Menu F(x)'s
 
-    //Search Library, works in console, on:'click' does not
+    //Search Library
     $('#submitSearch').on( 'click', function(){
       var userSearched = $( '#searchLib' ).val();
       var results = gLib.searchLibrary( userSearched );
-      gLib.orgTable(results);
+      $('#newBookModule h3').text('Search Results');
+      $(results).each(function( index, element ) {
+        $('#newBookModule #bookCover').attr( 'src', element.cover);
+        $('#newBookModule #bookTitle').after( element.title + "--------");
+        $('#newBookModule #bookAuthor').after( element.author + "--------");
+        $('#newBookModule #bookNumPages').after( element.numPages + "--------");
+        $('#newBookModule #bookPubDate').after( element.pubDate + "--------");
+      });
+      gLib.orgLibrary();
+    });
+    //Get and show Random Book getRandomBook
+    $('#getRandomBook').on( 'click', function(){
+      var results = gLib.getRandomBook();
+      $('#newBookModule h3').text('Book Shuffle');
+      $(results).each(function( index, element ) {
+        $('#newBookModule #bookCover').attr( 'src', element.cover);
+        $('#newBookModule #bookTitle').after( element.title + "--------");
+        $('#newBookModule #bookAuthor').after( element.author + "--------");
+        $('#newBookModule #bookNumPages').after( element.numPages + "--------");
+        $('#newBookModule #bookPubDate').after( element.pubDate + "--------");
+      });
     });
     //Select Delete by Author from menu
     //Clones and Adds Input
     $('#deleteAuthor').on( 'click', function(){
       $('#searchLib').clone().appendTo('.form-inline')
-        .attr('placeholder', 'Delete Author');
+        .attr('placeholder', 'Enter Author to Delete')
+        .attr('id','deleteAuthInput');
       $('#submitSearch').clone().appendTo('.form-inline')
-        .html('<i class="material-icons text-dark">cancel</i>');
+        .html('<i class="material-icons text-dark">cancel</i>')
+        .attr('id','deleteAuth');
     });
-    $('')
+    $('#deleteAuth').on('click', function(){
+      var deleteByAuth = $('#deleteAuth').val();
+      window.gLib.removeBookByAuthor(deleteAuth);
+    });
+    //INPUT UI F(x)'s
+    //OnClick of Menu Display .addMore UI to ADD ONE Book
+    $('#moreBooks2Add').on('click', function(event){
+      event.preventDefault();
 
-    //TABLE F(x)'s
-    //Sort TABLE f(x)
-    function sortTable(n) {
-    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-    table = document.getElementById("orgTable");
-    switching = true;
-    //Set the sorting direction to ascending:
-    dir = "asc";
-    /*Make a loop that will continue until
-    no switching has been done:*/
-    while (switching) {
-      //start by saying: no switching is done:
-      switching = false;
-      rows = table.getElementsByTagName("TR");
-      /*Loop through all table rows (except the
-      first, which contains table headers):*/
-      for (i = 1; i < (rows.length - 1); i++) {
-        //start by saying there should be no switching:
-        shouldSwitch = false;
-        /*Get the two elements you want to compare,
-        one from current row and one from the next:*/
-        x = rows[i].getElementsByTagName("TD")[n];
-        y = rows[i + 1].getElementsByTagName("TD")[n];
-        /*check if the two rows should switch place,
-        based on the direction, asc or desc:*/
-        if (dir == "asc") {
-          if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-            //if so, mark as a switch and break the loop:
-            shouldSwitch= true;
-            break;
-          }
-        } else if (dir == "desc") {
-          if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-            //if so, mark as a switch and break the loop:
-            shouldSwitch= true;
-            break;
-          }
-        }
-      }
-      if (shouldSwitch) {
-        /*If a switch has been marked, make the switch
-        and mark that a switch has been done:*/
-        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-        switching = true;
-        //Each time a switch is done, increase this count by 1:
-        switchcount ++;
-      } else {
-        /*If no switching has been done AND the direction is "asc",
-        set the direction to "desc" and run the while loop again.*/
-        if (switchcount == 0 && dir == "asc") {
-          dir = "desc";
-          switching = true;
-        }
-      }
-    }
-  }
-  //Sort When Table Title Clicked
-  $('#orgTable').on('click','#titleSort', function(){
-    sortTable(0);
+    });
+    //Modal, save changes
+    $('#addBookSubmit').on('click', function(){
+
+      gLib.displayBook()
+    });
+//TABLE F(x)'s
+  //Delete from table and remove from library
+  $('tbody').on('click', '#delete', function(){
+    event.preventDefault();
+    $('#delete').parent().remove();
+    var bTitle=$('#getTitle').text();
+    gLib.removeBookByTitle(bTitle);
   });
   //Delete from table and remove from library
   $('tbody').on('click', '#delete', function(){
+    event.preventDefault();
     $('#delete').parent().remove();
     var bTitle=$('#getTitle').text();
     gLib.removeBookByTitle(bTitles);
   });
-
-  //INPUT UI F(x)'s
-  //Display .addOne UI to ADD ONE Book
-  $('#addOneBttn').on('click', function(){
-    $('#addOne').removeClass('d-none');
-  });
-  //OnClick of Menu Display .addMore UI to ADD ONE Book
-  $('#addMultBooksBttn').on('click', function(){
-    event.preventDefault();
-    var clonedAddBook = $('#addOne').clone();
-    $('#addOne').append(clonedAddBook);
-    // $('#addMoreCopy').removeClass('d-none');
-  });
-  //OnClick of Menu Display .addMore UI to ADD ONE Book
-  $('#moreBooks2Add').on('click', function(event){
-    event.preventDefault();
-    $('#addOne').remove();
-    $('#addMoreCopy').removeClass('d-none');
-    //if(#addMoreCopy){}
-    var addMore = $('#addMoreCopy').clone().html();
-    $('row parallax3').append(addMore);
-  });
   //tableSorter plugin setOnLoadCallback
-  // $(function(){
-  //   $('#orgTable').tablesorter();
-  // });
   $('table').tablesort();
   //GOOGLE BOOKS API
   google.books.load();
@@ -348,7 +310,4 @@ $(document).ready(function(){
 
   google.books.setOnLoadCallback(initialize);
 
-});
-$(function() {
-  $("#orgTable").tablesorter();
 });

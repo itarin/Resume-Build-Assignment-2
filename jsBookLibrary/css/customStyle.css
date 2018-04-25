@@ -28,10 +28,10 @@ input[type=text]:focus {
 }
 .pixelax{
   /* The image used */
-  background-image: url("../assets/background-close-up-colors-953212.jpg");
+  background-image: url("../assets/archive-beautiful-book-stack-256455.jpg");
 
   /* Set a specific height */
-  min-height: 110px;
+  min-height: 280px;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
