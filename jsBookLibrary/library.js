@@ -15,18 +15,19 @@ var Library;
   }
 })();
 //Book Object Constructor
-var Book = function(cover, title, author, numPages, pubDate, isbn){
+var Book = function(cover, title, author, numPages, pubDate){
   this.cover = cover;
   this.title = title;
   this.author = author;
   this.numbPages = numPages;
   this.pubDate = new Date(pubDate);
-  this.isbn = isbn;
+//  this.isbn = isbn;
 };
 //Add a New Book to the Library
 Library.prototype.addBook = function ( book ) {
   for( var i = 0; i < this.bookList.length; i++){
       if( book.title === this.bookList[i].title ){
+        $('#bookTitle').text('Book cannot be added, it is already in Library.')
         return false; //If added return false
       }
     }
@@ -147,32 +148,31 @@ Library.prototype.searchLibrary = function(searchValue){
   return matched;
 };
 //CREATE A NEW BOOK F(x)
-Library.prototype.newBook = function(title, author, numPages, pubDate){
-  var bookCreated = new Book( title, author, numPages, pubDate);
+Library.prototype.newBook = function(cover, title, author, numPages, pubDate){
+  var bookCreated = new Book( cover, title, author, numPages, pubDate);
   this.addBook(bookCreated);
 };
-//Display Book in Window
-Library.prototype.displayAdded = function(){
-  $('#bookCover').attr('src', dataCover);
-  document.getElementById("bookTitle").innerHTML = "Title : " + dataTitle;
-  document.getElementById("bookAuthor").innerHTML = "Author : " + dataAuthor;
-  document.getElementById("bookNumPages").innerHTML ="Total Pgs : " + dataNumPages;
-  document.getElementById("bookPubDate").innerHTML = "Publication Date : " + dataPubDate;
-  gLib.newBook(dataCover, dataTitle, dataAuthor, dataNumPages, dataPubDate, isbn);
-  this.orgLibrary();
-}
-
 //User Interface to enter into gLib.bookList arrayand simultaneously display books
 Library.prototype.displayBook = function() {
-  dataCover = document.getElementById("coverInput").value;
-  dataTitle = document.getElementById("titleInput").value;
-  dataAuthor = document.getElementById("authorInput").value;
-  dataNumPages = document.getElementById("numPagesInput").value;
-  dataPubDate = $("pubDateInput").val();
-  gLib.newBook(dataCover, dataTitle, dataAuthor, dataNumPages, dataPubDate, isbn);
+  var cover1 = document.getElementById("coverInput").value;
+  var title1 = document.getElementById("titleInput").value;
+  var author1 = document.getElementById("authorInput").value;
+  var numPages1 = document.getElementById("numPagesInput").value;
+  var pubDate1 = $("pubDateInput").val();
 
-  this.displayAdded();
+  this.newBook(cover1, title1, author1, numPages1, pubDate1);
+  this.displayAdded(cover1, title1, author1, numPages1, pubDate1);
+  $('#coverInput, #titleInput, #authorInput, #numPagesInput').val();
 };
+//Display Book Cards in Window
+Library.prototype.displayAdded = function(cover1, title1, author1, numPages1, pubDate1){
+  $('#bookCover').attr('src', cover1);
+  document.getElementById("bookTitle").innerHTML = "Title : " + title1;
+  document.getElementById("bookAuthor").innerHTML = "Author : " + author1;
+  document.getElementById("bookNumPages").innerHTML = "Total Pgs : " + numPages1;
+  document.getElementById("bookPubDate").innerHTML = "Publication Date : " + pubDate1;
+  this.orgLibrary(cover1, title1, author1, numPages1, pubDate1);
+}
 //displays the books in the library to user
 Library.prototype.populateUiLibrary = function(){
   var currentData= [];
@@ -186,10 +186,10 @@ Library.prototype.populateUiLibrary = function(){
       // $('table tr').append("<td><div class='card bg-transparent'><div class='card-body bg-dark'> " + currentData + "</div></div></td>");
   };
 };
-//displays the books in the library table to user
-Library.prototype.orgLibrary = function(){
+//displays the books in the library table
+Library.prototype.orgLibrary = function(cover1, title1, author1, numPages1, pubDate1){
   var currentData= [];
-  for(var i = 0; i <this.bookList.length; i++){
+  for(var i = 0; i < this.bookList.length; i++){
       currentData =  "<tr class='flex-wrap align-content-between'>" +
                         "<td>" +
                           "<img class='img-thumbnail w-50 p-0 ml-5 border-0' src='" + this.bookList[i].cover + "'>"  +
@@ -213,6 +213,7 @@ Library.prototype.orgLibrary = function(){
       $('#orgTable').append( currentData );
   };
 };
+
 //Book Instance
 var gIT = new Book("assets/readingBook.jpg", "IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
 var gCatcherIntheRye = new Book("assets/readingBook.jpg", "Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');
@@ -258,30 +259,46 @@ $(document).ready(function(){
         $('#newBookModule #bookPubDate').after( element.pubDate + "--------");
       });
     });
-    //Select Delete by Author from menu
-    //Clones and Adds Input
-    $('#deleteAuthor').on( 'click', function(){
-      $('#searchLib').clone().appendTo('.form-inline')
-        .attr('placeholder', 'Enter Author to Delete')
-        .attr('id','deleteAuthInput');
-      $('#submitSearch').clone().appendTo('.form-inline')
-        .html('<i class="material-icons text-dark">cancel</i>')
-        .attr('id','deleteAuth');
+    //Get and show Authors, from .getAuthors returned array of strings
+    $('#getAuthors').on( 'click', function(){
+      console.log('works');
+      var results = gLib.getAuthors();
+      $('#newBookModule h3').text('Authors in Library');
+      $(results).each(function( index, element ) {
+        //$('#newBookModule #bookCover').attr( 'src', element.cover);
+        //$('#newBookModule #bookTitle').after( element.title + "--------");
+        $('#newBookModule #bookAuthor').after( element + "--------");
+        //$('#newBookModule #bookNumPages').after( element.numPages + "--------");
+        //$('#newBookModule #bookPubDate').after( element.pubDate + "--------");
+      });
     });
+
+    //Select Delete by Author from menu
+    //Clones search input and button and changes it to delete & appends
+    // $('#deleteAuthor').on( 'click', function(){
+    //   $('#searchLib').clone().appendTo('.form-inline')
+    //     .attr('placeholder', 'Enter Author to Delete')
+    //     .attr('id','deleteAuthInput');
+    //   $('#submitSearch').clone().appendTo('.form-inline')
+    //     .html('<i class="material-icons text-dark">cancel</i>')
+    //     .attr('id','deleteAuth');
+    // });
+
+    //deletes from gLib.bookList, must be full match 
     $('#deleteAuth').on('click', function(){
-      var deleteByAuth = $('#deleteAuth').val();
-      window.gLib.removeBookByAuthor(deleteAuth);
+      console.log('works');
+      var deleteByAuth = $('#deleteAuthInput').val();
+      gLib.removeBookByAuthor(deleteByAuth);
     });
     //INPUT UI F(x)'s
     //OnClick of Menu Display .addMore UI to ADD ONE Book
     $('#moreBooks2Add').on('click', function(event){
       event.preventDefault();
-
+      gLib.displayBook();
     });
     //Modal, save changes
     $('#addBookSubmit').on('click', function(){
-
-      gLib.displayBook()
+      gLib.displayBook();
     });
 //TABLE F(x)'s
   //Delete from table and remove from library
