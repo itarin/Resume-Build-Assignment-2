@@ -152,7 +152,7 @@ Library.prototype.newBook = function(cover, title, author, numPages, pubDate){
   var bookCreated = new Book( cover, title, author, numPages, pubDate);
   this.addBook(bookCreated);
 };
-//User Interface to enter into gLib.bookList arrayand simultaneously display books
+//Gets user input values to enter into gLib.bookList array and simultaneously display books by calling display Added
 Library.prototype.displayBook = function() {
   var cover1 = document.getElementById("coverInput").value;
   var title1 = document.getElementById("titleInput").value;
@@ -164,7 +164,7 @@ Library.prototype.displayBook = function() {
   this.displayAdded(cover1, title1, author1, numPages1, pubDate1);
   $('#coverInput, #titleInput, #authorInput, #numPagesInput').val();
 };
-//Display Book Cards in Window
+//Display Book attribute in card above table
 Library.prototype.displayAdded = function(cover1, title1, author1, numPages1, pubDate1){
   $('#bookCover').attr('src', cover1);
   document.getElementById("bookTitle").innerHTML = "Title : " + title1;
@@ -186,7 +186,7 @@ Library.prototype.populateUiLibrary = function(){
       // $('table tr').append("<td><div class='card bg-transparent'><div class='card-body bg-dark'> " + currentData + "</div></div></td>");
   };
 };
-//displays the books in the library table
+//displays the books in the library table RENDERS ROWS
 Library.prototype.orgLibrary = function(cover1, title1, author1, numPages1, pubDate1){
   var currentData= [];
   for(var i = 0; i < this.bookList.length; i++){
@@ -194,10 +194,10 @@ Library.prototype.orgLibrary = function(cover1, title1, author1, numPages1, pubD
                         "<td>" +
                           "<img class='img-thumbnail w-50 p-0 ml-5 border-0' src='" + this.bookList[i].cover + "'>"  +
                         "</td>" +
-                        "<td id='getTitle'>" +
+                        "<td class='getTitle'>" +
                           this.bookList[i].title +
                         "</td>" +
-                        "<td id='getAuthor'>" +
+                        "<td class='getAuthor'>" +
                           this.bookList[i].author +
                         "</td>" +
                         "<td>" +
@@ -264,11 +264,7 @@ $(document).ready(function(){
       var results = gLib.getAuthors();
       $('#newBookModule h3').text('Authors in Library');
       $(results).each(function( index, element ) {
-        //$('#newBookModule #bookCover').attr( 'src', element.cover);
-        //$('#newBookModule #bookTitle').after( element.title + "--------");
         $('#newBookModule #bookAuthor').after( element + "--------");
-        //$('#newBookModule #bookNumPages').after( element.numPages + "--------");
-        //$('#newBookModule #bookPubDate').after( element.pubDate + "--------");
       });
     });
 
@@ -308,14 +304,14 @@ $(document).ready(function(){
   $('tbody').on('click', '#delete', function(){
     event.preventDefault();
     $('#delete').parent().remove();
-    var bTitle=$('#getTitle').text();
+    var bTitle=$('.getTitle').text();
     gLib.removeBookByTitle(bTitle);
   });
   //Delete from table and remove from library
   $('tbody').on('click', '#delete', function(){
     event.preventDefault();
     $('#delete').parent().remove();
-    var bTitle=$('#getTitle').text();
+    var bTitle=$('.getTitle').text();
     gLib.removeBookByTitle(bTitles);
   });
   //tableSorter plugin setOnLoadCallback
