@@ -261,7 +261,6 @@ $(document).ready(function(){
     });
     //Get and show Authors, from .getAuthors returned array of strings
     $('#getAuthors').on( 'click', function(){
-      console.log('works');
       var results = gLib.getAuthors();
       $('#newBookModule h3').text('Authors in Library');
       $(results).each(function( index, element ) {
@@ -284,7 +283,7 @@ $(document).ready(function(){
     //     .attr('id','deleteAuth');
     // });
 
-    //deletes from gLib.bookList, must be full match 
+    //deletes from gLib.bookList, must be full match
     $('#deleteAuth').on('click', function(){
       console.log('works');
       var deleteByAuth = $('#deleteAuthInput').val();
@@ -292,12 +291,16 @@ $(document).ready(function(){
     });
     //INPUT UI F(x)'s
     //OnClick of Menu Display .addMore UI to ADD ONE Book
+    // 1)click::works! 2) Submit to table/bookList::works 3) reOpen modal::works!
+    // 4)clear input values
     $('#moreBooks2Add').on('click', function(event){
       event.preventDefault();
       gLib.displayBook();
+      //$('#addModal').modal('show');
     });
     //Modal, save changes
     $('#addBookSubmit').on('click', function(){
+      event.preventDefault();
       gLib.displayBook();
     });
 //TABLE F(x)'s
