@@ -188,6 +188,7 @@ Library.prototype.populateUiLibrary = function(){
 };
 //displays the books in the library table RENDERS ROWS
 Library.prototype.orgLibrary = function(cover1, title1, author1, numPages1, pubDate1){
+  $("#orgTable tr").remove()
   var currentData= [];
   for(var i = 0; i < this.bookList.length; i++){
       currentData =  "<tr class='flex-wrap align-content-between'>" +
