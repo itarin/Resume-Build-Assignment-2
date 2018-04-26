@@ -125,16 +125,18 @@ Library.prototype.getRandomAuthorName = function() {
 var gLib = new Library();
 
 //Use localstorage (http://www.w3schools.com/html/html5_webstorage.asp) and JSON.stringify to save the state of your library ●
-Library.prototype.storeLocal = function(){
+Library.prototype.storeLocal = function(gLibKey){
 
   for(var i=0; i<this.bookList.length; i++){
     // Put the object into storage
-    localStorage.setItem('gLibKey', JSON.stringify(gLib) );
+    localStorage.setItem('gLibKey', JSON.stringify(gLibKey) );
   }
+};
+Library.prototype.getLocal = function(gLibKey){
   // Retrieve the object from storage
   var retrievedObject = JSON.parse(localStorage.getItem('gLibKey'));
   console.log('retrievedObject: ', retrievedObject);
-};
+}
 // Add a more robust search function to your app
 Library.prototype.searchLibrary = function(searchValue){
   var matched = [];
@@ -188,8 +190,8 @@ Library.prototype.populateUiLibrary = function(){
 };
 //displays the books in the library table RENDERS ROWS
 Library.prototype.orgLibrary = function(cover1, title1, author1, numPages1, pubDate1){
-  $("#orgTable tr").remove()
-  var currentData= [];
+  $("#orgTable tbody tr").remove();
+  var currentData;
   for(var i = 0; i < this.bookList.length; i++){
       currentData =  "<tr class='flex-wrap align-content-between'>" +
                         "<td>" +
@@ -207,7 +209,7 @@ Library.prototype.orgLibrary = function(cover1, title1, author1, numPages1, pubD
                         "<td>" +
                           this.bookList[i].pubDate +
                         "</td>" +
-                        "<td id='delete'class='text-right'>" +
+                        "<td id='delete'class='text-right lilOpacity'>" +
                           "<i class='material-icons text-light'>cancel</i>" +
                         "</td>"
                       "</tr>";
@@ -285,6 +287,8 @@ $(document).ready(function(){
       console.log('works');
       var deleteByAuth = $('#deleteAuthInput').val();
       gLib.removeBookByAuthor(deleteByAuth);
+      $("#orgTable tbody tr").remove();
+      gLib.orgLibrary();
     });
     //INPUT UI F(x)'s
     //OnClick of Menu Display .addMore UI to ADD ONE Book
@@ -301,20 +305,15 @@ $(document).ready(function(){
       gLib.displayBook();
     });
 //TABLE F(x)'s
-  //Delete from table and remove from library
+  //Delete from table by Clicking X and remove from library
   $('tbody').on('click', '#delete', function(){
     event.preventDefault();
     $('#delete').parent().remove();
     var bTitle=$('.getTitle').text();
     gLib.removeBookByTitle(bTitle);
+    gLib.orgTable();
   });
-  //Delete from table and remove from library
-  $('tbody').on('click', '#delete', function(){
-    event.preventDefault();
-    $('#delete').parent().remove();
-    var bTitle=$('.getTitle').text();
-    gLib.removeBookByTitle(bTitles);
-  });
+
   //tableSorter plugin setOnLoadCallback
   $('table').tablesort();
   //GOOGLE BOOKS API
