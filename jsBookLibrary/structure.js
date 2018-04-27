@@ -1,4 +1,6 @@
 //Library constructor and functions bellow:
+
+//Library Constructor and Main Obj Creation
 var Library;
 
 (function(){
@@ -118,10 +120,6 @@ Library.prototype.getRandomAuthorName = function() {
     return this.bookList[ randomIndex ].author;
   }
 };
-
-//Library instance to store
-var gLib = new Library();
-
 //Use localstorage (http://www.w3schools.com/html/html5_webstorage.asp) and JSON.stringify to save the state of your library ●
 Library.prototype.storeLocal = function(gLibKey){
 
@@ -215,105 +213,115 @@ Library.prototype.orgLibrary = function(cover1, title1, author1, numPages1, pubD
   };
 };
 
-//Book Instance
-var gIT = new Book("assets/readingBook.jpg", "IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
-var gCatcherIntheRye = new Book("assets/readingBook.jpg", "Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');
-var gCatInTheHat = new Book("assets/readingBook.jpg", "Cat In The Hat", "Dr.Sues", 20, 'December 17, 1995 03:24:00' );
-var book1 = new Book("assets/readingBook.jpg", "one", "Stephen King", 3, 'December 17, 1995 03:24:00');
-var quixote= new Book("assets/readingBook.jpg", "Don Quixote", "Miguel de Cervantes Saavedra", 234, 'Dec 31, 1999');
-var q= new Book("assets/readingBook.jpg", "Don te", "Miguel vantesra", 23, 'Dec 1, 1999');
-var q1= new Book("assets/readingBook.jpg", "Don te1", "Miguel11 vantesra", 213, 'Dec 111, 1999');
-var bookArray = [quixote, q, q1];
-//Books added to Array for testing for faster testing
-gLib.addBook( gIT );
-gLib.addBook( gCatcherIntheRye );
-gLib.addBook( gCatInTheHat );
-gLib.addBook( book1 );
 
-$(document).ready(function(){
-    gLib.orgLibrary();//Store HERE ONLY FOR BUILD************************************
-    //Menu F(x)'s
+/////////////////////////Architecture
 
-    //BINDING:Search Library
-    $('#submitSearch').on( 'click', function(){
-      var userSearched = $( '#searchLib' ).val();
-      var results = gLib.searchLibrary( userSearched );
-      $('#newBookModule h3').text('Search Results');
-      $(results).each(function( index, element ) {
-        $('#newBookModule #bookCover').attr( 'src', element.cover);
-        $('#newBookModule #bookTitle').after( element.title + "--------");
-        $('#newBookModule #bookAuthor').after( element.author + "--------");
-        $('#newBookModule #bookNumPages').after( element.numPages + "--------");
-        $('#newBookModule #bookPubDate').after( element.pubDate + "--------");
-      });
-      gLib.orgLibrary();
-    });
-    //BINDING: Get and show Random Book getRandomBook
-    $('#getRandomBook').on( 'click', function(){
-      var results = gLib.getRandomBook();
-      $('#newBookModule h3').text('Book Shuffle');
-      $(results).each(function( index, element ) {
-        $('#newBookModule #bookCover').attr( 'src', element.cover);
-        $('#newBookModule #bookTitle').after( element.title + "--------");
-        $('#newBookModule #bookAuthor').after( element.author + "--------");
-        $('#newBookModule #bookNumPages').after( element.numPages + "--------");
-        $('#newBookModule #bookPubDate').after( element.pubDate + "--------");
-      });
-    });
-    //BINDING: Get and show Authors, from .getAuthors returned array of strings
-    $('#getAuthors').on( 'click', function(){
-      var results = gLib.getAuthors();
-      $('#newBookModule h3').text('Authors in Library');
-      $(results).each(function( index, element ) {
-        $('#newBookModule #bookAuthor').after( element + "--------");
-      });
-    });
+Library.prototype.init = function(){
+  this._bindEvents();
+  this.renderTable();
+  //tableSorter plugin setOnLoadCallback
+  //local localStorage
+  //tablesort
+  $('table').tablesort();
 
-    //Select Delete by Author from menu
-    //Clones search input and button and changes it to delete & appends
-    // $('#deleteAuthor').on( 'click', function(){
-    //   $('#searchLib').clone().appendTo('.form-inline')
-    //     .attr('placeholder', 'Enter Author to Delete')
-    //     .attr('id','deleteAuthInput');
-    //   $('#submitSearch').clone().appendTo('.form-inline')
-    //     .html('<i class="material-icons text-dark">cancel</i>')
-    //     .attr('id','deleteAuth');
-    // });
+  //Initializing Jquery Selectors
+  this.$submitSearch = $('#submitSearch');
+  this.$getRandomBook = $('#getRandomBook');
+  this.$getAuthors = $('#getAuthors');
+  this.$deleteAuth = $('#deleteAuth');
+  this.$moreBooks2Add = $('#moreBooks2Add');
+  this.$addBookSubmit = $('#addBookSubmit');
+  this.$deleteFromTable = $('#orgTableBody');
+};
+//MY BINDS
+Library.prototype._bindEvents = function() {
+  this.$submitSearch.on( 'click', $.proxy(this._handleSubmitSearch, this) );
 
-    //BINDING: deletes from gLib.bookList, must be full match
-    $('#deleteAuth').on('click', function(){
-      console.log('works');
-      var deleteByAuth = $('#deleteAuthInput').val();
-      gLib.removeBookByAuthor(deleteByAuth);
-      $("#orgTable tbody tr").remove();
-      gLib.orgLibrary();
+  this.$getRandomBook.on( 'click', $.proxy(this._handleGetRandomBook, this) );
+
+  this.$getAuthors.on( 'click', $.proxy(this._handleGetAuthors, this) );
+
+  this.$deleteAuth.on('click', $.proxy(this._handleDeleteAuth, this) );
+
+  this.$moreBooks2Add.on('click', $.proxy(this._handleMoreBooks2Add, this) );
+
+  this.$addBookSubmit.on('click', $.proxy(this._handleAddBookSubmit, this) );
+
+  this.$deleteFromTable.on('click', '#delete', $.proxy(this._handleDeleteFromTable, this) );
+};
+
+  //BINDING:Search Library******
+  Library.prototype._handleSubmitSearch = function(){
+    var userSearched = $( '#searchLib' ).val();
+    var results = this.searchLibrary( userSearched );
+    $('#newBookModule h3').text('Search Results');
+    $(results).each(function( index, element ) {
+      $('#newBookModule #bookCover').attr( 'src', element.cover);
+      $('#newBookModule #bookTitle').after( element.title + "--------");
+      $('#newBookModule #bookAuthor').after( element.author + "--------");
+      $('#newBookModule #bookNumPages').after( element.numPages + "--------");
+      $('#newBookModule #bookPubDate').after( element.pubDate + "--------");
     });
-    //INPUT UI F(x)'s
-    //OnClick of Menu Display .addMore UI to ADD ONE Book
-    // 1)click::works! 2) Submit to table/bookList::works 3) reOpen modal::works!
-    // 4)clear input values
-    $('#moreBooks2Add').on('click', function(event){
-      event.preventDefault();
-      gLib.displayBook();
-      //$('#addModal').modal('show');
-    });
-    //Modal, save changes
-    $('#addBookSubmit').on('click', function(){
-      event.preventDefault();
-      gLib.displayBook();
-    });
+    this.orgLibrary();
+  };
+};//END HANDLE SUBMIT SEARCH
+//BINDING: Get and show Random Book getRandomBook
+Library.prototype._handleGetRandomBook =  function(){
+  var results = this.getRandomBook();
+  $('#newBookModule h3').text('Book Shuffle');
+  $(results).each(function( index, element ) {
+    $('#newBookModule #bookCover').attr( 'src', element.cover);
+    $('#newBookModule #bookTitle').after( element.title + "--------");
+    $('#newBookModule #bookAuthor').after( element.author + "--------");
+    $('#newBookModule #bookNumPages').after( element.numPages + "--------");
+    $('#newBookModule #bookPubDate').after( element.pubDate + "--------");
+  });
+};//END HANDLE GET RANDOM BOOK
+//BINDING: Get and show Authors, from .getAuthors returned array of strings
+Library.prototype._handleGetAuthors = function(){
+  var results = gLib.getAuthors();
+  $('#newBookModule h3').text('Authors in Library');
+  $(results).each( function( index, element ) {
+    $('#newBookModule #bookAuthor').after( element + "--------");
+  });
+};//END HANDLE GET RANDOM AUTHOR
+//deletes from gLib.bookList, must be full match
+Library.prototype._handleDeleteAuth = function(){
+  console.log('works');
+  var deleteByAuth = $('#deleteAuthInput').val();
+  this.removeBookByAuthor(deleteByAuth);
+  $("#orgTable tbody tr").remove();
+  this.orgLibrary();
+});//END HANDLE GET DELETE AUTHOR
+
+//INPUT UI F(x)'s
+//Add more than one book
+Library.prototype._handleMoreBooks2Add = function(event){
+  event.preventDefault();
+  this.displayBook();
+  //$('#addModal').modal('show');
+});
+//Modal, save changes
+Library.prototype._handleAddBookSubmit = function(){
+  event.preventDefault();
+  this.displayBook();
+});
 //TABLE F(x)'s
   //Delete from table by Clicking X and remove from library
-  $('tbody').on('click', '#delete', function(){
+  Library.prototype._handleDeleteFromTable = function(){
     event.preventDefault();
     $('#delete').parent().remove();
     var bTitle=$('.getTitle').text();
-    gLib.removeBookByTitle(bTitle);
-    gLib.orgTable();
+    this.removeBookByTitle(bTitle);
+    this.orgTable();
   });
 
-  //tableSorter plugin setOnLoadCallback
-  $('table').tablesort();
+
+$(function(){
+  window.gLib = new library();
+  window.gLib.init();
+  //local localStorage
+  //tablesort
   //GOOGLE BOOKS API
   google.books.load();
 
@@ -323,5 +331,22 @@ $(document).ready(function(){
   }
 
   google.books.setOnLoadCallback(initialize);
+
+
+
+  //Book Instance
+  var gIT = new Book("assets/readingBook.jpg", "IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
+  var gCatcherIntheRye = new Book("assets/readingBook.jpg", "Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');
+  var gCatInTheHat = new Book("assets/readingBook.jpg", "Cat In The Hat", "Dr.Sues", 20, 'December 17, 1995 03:24:00' );
+  var book1 = new Book("assets/readingBook.jpg", "one", "Stephen King", 3, 'December 17, 1995 03:24:00');
+  var quixote= new Book("assets/readingBook.jpg", "Don Quixote", "Miguel de Cervantes Saavedra", 234, 'Dec 31, 1999');
+  var q= new Book("assets/readingBook.jpg", "Don te", "Miguel vantesra", 23, 'Dec 1, 1999');
+  var q1= new Book("assets/readingBook.jpg", "Don te1", "Miguel11 vantesra", 213, 'Dec 111, 1999');
+  var bookArray = [quixote, q, q1];
+  //Books added to Array for testing for faster testing
+  gLib.addBook( gIT );
+  gLib.addBook( gCatcherIntheRye );
+  gLib.addBook( gCatInTheHat );
+  gLib.addBook( book1 );
 
 });
