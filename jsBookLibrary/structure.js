@@ -26,13 +26,13 @@ var Book = function(cover, title, author, numPages, pubDate){
 //Add a New Book to the Library
 Library.prototype.addBook = function ( book ) {
   for( var i = 0; i < this.bookList.length; i++){
-      if( book.title === this.bookList[i].title ){
-        $('#bookTitle').text('Book cannot be added, it is already in Library.')
-        return false; //If added return false
-      }
+    if( book.title === this.bookList[i].title ){
+      $('#bookTitle').text('Book cannot be added, it is already in Library.')
+      return false; //If added return false
     }
-    this.bookList.push( book );
-    return true;
+  }
+  this.bookList.push( book );
+  return true;
 };
 //Remove Book By title
 Library.prototype.removeBookByTitle = function( title ) {
@@ -59,7 +59,7 @@ Library.prototype.getRandomBook = function() {
   if(this.bookList === []){
     return null
   } else {
-    randomIndex = Math.floor( Math.random()*this.bookList.length ) ;
+    randomIndex = Math.floor( Math.random() * this.bookList.length ) ;
     return this.bookList[ randomIndex ];
   }
 };
@@ -98,9 +98,8 @@ Library.prototype.addBooks = function( books ) {
     return numBooks;
   }
 };
-
 //getAuthors()Purpose: Find the distinct authors’ names from all books in your library. Return: array of strings the names of all distinct authors, empty array if no books exist or if no authors exist
-Library.prototype.getAuthors = function(){
+Library.prototype.getAuthors = function() {
   var matched = [];
   for( var i = 1; i < this.bookList.length; i++) {
    //same as: authorInLibrary = /currentAuthor\;
@@ -163,7 +162,7 @@ Library.prototype.displayBook = function() {
   $('#coverInput, #titleInput, #authorInput, #numPagesInput').val();
 };
 //Display Book attribute in card above table
-Library.prototype.displayAdded = function(cover1, title1, author1, numPages1, pubDate1){
+Library.prototype.displayAdded = function(cover1, title1, author1, numPages1, pubDate1) {
   $('#bookCover').attr('src', cover1);
   document.getElementById("bookTitle").innerHTML = "Title : " + title1;
   document.getElementById("bookAuthor").innerHTML = "Author : " + author1;
@@ -172,9 +171,9 @@ Library.prototype.displayAdded = function(cover1, title1, author1, numPages1, pu
   this.orgLibrary(cover1, title1, author1, numPages1, pubDate1);
 }
 //displays the books in the library to user
-Library.prototype.populateUiLibrary = function(){
+Library.prototype.populateUiLibrary = function() {
   var currentData= [];
-  for(var i = 0; i <this.bookList.length; i++){
+  for(var i = 0; i <this.bookList.length; i++) {
       currentData=  this.bookList[i].title + " " +
                     this.bookList[i].author + " " +
                     this.bookList[i].numPages + " " +
@@ -185,10 +184,10 @@ Library.prototype.populateUiLibrary = function(){
   };
 };
 //displays the books in the library table RENDERS ROWS
-Library.prototype.orgLibrary = function(cover1, title1, author1, numPages1, pubDate1){
+Library.prototype.orgLibrary = function(cover1, title1, author1, numPages1, pubDate1) {
   $("#orgTable tbody tr").remove();
   var currentData;
-  for(var i = 0; i < this.bookList.length; i++){
+  for(var i = 0; i < this.bookList.length; i++) {
       currentData =  "<tr class='flex-wrap align-content-between'>" +
                         "<td>" +
                           "<img class='img-thumbnail w-50 p-0 ml-5 border-0' src='" + this.bookList[i].cover + "'>"  +
@@ -213,16 +212,13 @@ Library.prototype.orgLibrary = function(cover1, title1, author1, numPages1, pubD
   };
 };
 
-
 /////////////////////////Architecture
 
-Library.prototype.init = function(){
-  this._bindEvents();
-  this.renderTable();
+Library.prototype.init = function() {
   //tableSorter plugin setOnLoadCallback
-  //local localStorage
-  //tablesort
   $('table').tablesort();
+  //local localStorage
+  //this.localStore(gLib);
 
   //Initializing Jquery Selectors
   this.$submitSearch = $('#submitSearch');
@@ -232,8 +228,11 @@ Library.prototype.init = function(){
   this.$moreBooks2Add = $('#moreBooks2Add');
   this.$addBookSubmit = $('#addBookSubmit');
   this.$deleteFromTable = $('#orgTableBody');
+
+  this._bindEvents();
+  this.orgLibrary();
 };
-//MY BINDS
+  //LIBRARY BINDS
 Library.prototype._bindEvents = function() {
   this.$submitSearch.on( 'click', $.proxy(this._handleSubmitSearch, this) );
 
@@ -249,24 +248,22 @@ Library.prototype._bindEvents = function() {
 
   this.$deleteFromTable.on('click', '#delete', $.proxy(this._handleDeleteFromTable, this) );
 };
-
-  //BINDING:Search Library******
-  Library.prototype._handleSubmitSearch = function(){
-    var userSearched = $( '#searchLib' ).val();
-    var results = this.searchLibrary( userSearched );
-    $('#newBookModule h3').text('Search Results');
-    $(results).each(function( index, element ) {
-      $('#newBookModule #bookCover').attr( 'src', element.cover);
-      $('#newBookModule #bookTitle').after( element.title + "--------");
-      $('#newBookModule #bookAuthor').after( element.author + "--------");
-      $('#newBookModule #bookNumPages').after( element.numPages + "--------");
-      $('#newBookModule #bookPubDate').after( element.pubDate + "--------");
-    });
-    this.orgLibrary();
-  };
+  //Search Library******
+Library.prototype._handleSubmitSearch = function() {
+  var userSearched = $( '#searchLib' ).val();
+  var results = this.searchLibrary( userSearched );
+  $('#newBookModule h3').text('Search Results');
+  $(results).each(function( index, element ) {
+    $('#newBookModule #bookCover').attr( 'src', element.cover);
+    $('#newBookModule #bookTitle').after( element.title + "--------");
+    $('#newBookModule #bookAuthor').after( element.author + "--------");
+    $('#newBookModule #bookNumPages').after( element.numPages + "--------");
+    $('#newBookModule #bookPubDate').after( element.pubDate + "--------");
+  });
+  this.orgLibrary();
 };//END HANDLE SUBMIT SEARCH
-//BINDING: Get and show Random Book getRandomBook
-Library.prototype._handleGetRandomBook =  function(){
+//Get and show Random Book getRandomBook
+Library.prototype._handleGetRandomBook =  function() {
   var results = this.getRandomBook();
   $('#newBookModule h3').text('Book Shuffle');
   $(results).each(function( index, element ) {
@@ -277,51 +274,49 @@ Library.prototype._handleGetRandomBook =  function(){
     $('#newBookModule #bookPubDate').after( element.pubDate + "--------");
   });
 };//END HANDLE GET RANDOM BOOK
-//BINDING: Get and show Authors, from .getAuthors returned array of strings
-Library.prototype._handleGetAuthors = function(){
-  var results = gLib.getAuthors();
+//Get and show Authors, from .getAuthors returned array of strings
+Library.prototype._handleGetAuthors = function() {
+  var results = this.getAuthors();
   $('#newBookModule h3').text('Authors in Library');
   $(results).each( function( index, element ) {
     $('#newBookModule #bookAuthor').after( element + "--------");
   });
 };//END HANDLE GET RANDOM AUTHOR
 //deletes from gLib.bookList, must be full match
-Library.prototype._handleDeleteAuth = function(){
-  console.log('works');
+Library.prototype._handleDeleteAuth = function() {
   var deleteByAuth = $('#deleteAuthInput').val();
   this.removeBookByAuthor(deleteByAuth);
   $("#orgTable tbody tr").remove();
   this.orgLibrary();
-});//END HANDLE GET DELETE AUTHOR
+};//END HANDLE GET DELETE AUTHOR
 
 //INPUT UI F(x)'s
 //Add more than one book
-Library.prototype._handleMoreBooks2Add = function(event){
+Library.prototype._handleMoreBooks2Add = function(event) {
   event.preventDefault();
   this.displayBook();
   //$('#addModal').modal('show');
-});
+};
 //Modal, save changes
-Library.prototype._handleAddBookSubmit = function(){
+Library.prototype._handleAddBookSubmit = function() {
   event.preventDefault();
   this.displayBook();
-});
+};
 //TABLE F(x)'s
   //Delete from table by Clicking X and remove from library
-  Library.prototype._handleDeleteFromTable = function(){
+  Library.prototype._handleDeleteFromTable = function() {
     event.preventDefault();
     $('#delete').parent().remove();
     var bTitle=$('.getTitle').text();
     this.removeBookByTitle(bTitle);
-    this.orgTable();
-  });
+    this.orgLibrary();
+  };
 
-
-$(function(){
-  window.gLib = new library();
+$(document).ready( function() {
+  //initialize Library
+  window.gLib = new Library();
   window.gLib.init();
-  //local localStorage
-  //tablesort
+
   //GOOGLE BOOKS API
   google.books.load();
 
@@ -331,8 +326,6 @@ $(function(){
   }
 
   google.books.setOnLoadCallback(initialize);
-
-
 
   //Book Instance
   var gIT = new Book("assets/readingBook.jpg", "IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
