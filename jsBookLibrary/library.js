@@ -181,7 +181,6 @@ Library.prototype.populateUiLibrary = function(){
                     this.bookList[i].author + " " +
                     this.bookList[i].numPages + " " +
                     this.bookList[i].pubDate;
-
 // Cards that populateUILib
       // $('table tr').append("<td><div class='card bg-transparent'><div class='card-body bg-dark'> " + currentData + "</div></div></td>");
   };
