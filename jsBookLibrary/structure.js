@@ -4,13 +4,14 @@
 var Library;
 (function(){
   var libInstance;
-  Library = function () {
+  Library = function (instance) {
     //return instance if it already exists
     if(libInstance) {
       return libInstance;
     }
     libInstance = this;
     this.bookList = [];
+    this.instance = instance;
   }
 })();
 //Book Object Constructor
@@ -77,15 +78,6 @@ Library.prototype._handleGetRandomBook =  function() {
   this.showUserInput(results);
   return true;
 };
-Library.prototype.showUserInput = function (results) {
-  $(results).each(function( index, element ) {
-    $('#newBookModule #bookCover').attr( 'src', element.cover);
-    $('#newBookModule #bookTitle').after( element.title + "--------");
-    $('#newBookModule #bookAuthor').after( element.author + "--------");
-    $('#newBookModule #bookNumPages').after( element.numPages + "--------");
-    $('#newBookModule #bookPubDate').after( element.pubDate + "--------");
-  });
-};
 //Get and show Authors, from .getAuthors returned array of strings
 Library.prototype._handleGetAuthors = function() {
   var results = this.getAuthors();
@@ -127,7 +119,7 @@ Library.prototype._handleDeleteFromTable = function(e) {
   $tr.remove();
   return true;
 };
-//F(x)'s from previous CL requirments
+//F(x)'s from previous CL requirments and .handleers assist f(x)'s'
 //Add a New Book to the Library
 Library.prototype.addBook = function ( book ) {
   for( var i = 0; i < this.bookList.length; i++){
@@ -137,6 +129,7 @@ Library.prototype.addBook = function ( book ) {
     }
   }
   this.bookList.push( book );
+  this.storeLocal();
   return true;
 };
 //Remove Book By title
@@ -224,19 +217,6 @@ Library.prototype.getRandomAuthorName = function() {
     return this.bookList[ randomIndex ].author;
   }
 };
-//Use localstorage (http://www.w3schools.com/html/html5_webstorage.asp) and JSON.stringify to save the state of your library ●
-Library.prototype.storeLocal = function(gLibKey){
-  for(var i=0; i<this.bookList.length; i++){
-    // Put the object into storage
-    localStorage.setItem('gLibKey', JSON.stringify(gLibKey) );
-  }
-};
-Library.prototype.getLocal = function(gLibKey){
-  // Retrieve the object from storage
-  var retrievedObject = JSON.parse(localStorage.getItem('gLibKey'));
-  console.log('retrievedObject: ', retrievedObject);
-  return true;
-}
 // Add a more robust search function to your app
 Library.prototype.searchLibrary = function(searchValue){
   var matched = [];
@@ -248,6 +228,16 @@ Library.prototype.searchLibrary = function(searchValue){
     }
   }
   return matched;
+};
+//.searchLib and .getRandomBook assist f(x)
+Library.prototype.showUserInput = function (results) {
+  $(results).each(function( index, element ) {
+    $('#newBookModule #bookCover').attr( 'src', element.cover);
+    $('#newBookModule #bookTitle').after( element.title + "--------");
+    $('#newBookModule #bookAuthor').after( element.author + "--------");
+    $('#newBookModule #bookNumPages').after( element.numPages + "--------");
+    $('#newBookModule #bookPubDate').after( element.pubDate + "--------");
+  });
 };
 //CREATE A NEW BOOK F(x)
 Library.prototype.newBook = function(cover, title, author, numPages, pubDate){
@@ -294,7 +284,14 @@ Library.prototype.populateUiLibrary = function() {
 };
 //displays the books in the library table RENDERS ROWS
 Library.prototype.orgLibrary = function(cover1, title1, author1, numPages1, pubDate1) {
-  $("#orgTable tbody tr").remove();
+  // $("#orgTable tbody tr").remove();
+  // if(!this.getLocal(gLibKey)){
+  //
+  // }
+  this.addRow();
+};
+//Build table rows
+Library.prototype.addRow = function () {
   var currentData;
   for(var i = 0; i < this.bookList.length; i++) {
       currentData =  "<tr class='flex-wrap align-content-between' >" +
@@ -321,7 +318,7 @@ Library.prototype.orgLibrary = function(cover1, title1, author1, numPages1, pubD
   };
 };
 //Preset Books so Library isn't empty on load
-Library.prototype.presetBooks = function() {
+Library.prototype.presetBooks = function () {
   var gIT = new Book("assets/readingBook.jpg", "IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
   var gCatcherIntheRye = new Book("assets/readingBook.jpg", "Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');
   var gCatInTheHat = new Book("assets/readingBook.jpg", "Cat In The Hat", "Dr.Sues", 20, 'December 17, 1995 03:24:00' );
@@ -336,15 +333,27 @@ Library.prototype.presetBooks = function() {
   this.addBook( gCatInTheHat );
   this.addBook( book1 );
 }
+//Use localstorage (http://www.w3schools.com/html/html5_webstorage.asp) and JSON.stringify to save the state of your library ●
+Library.prototype.storeLocal = function () {
+  var storeBookList = JSON.stringify( this.bookList );
+  return localStorage.setItem(this.instance, storeBookList);
+
+};
+Library.prototype.getLocal = function () {
+  // Retrieve the object from storage
+  var retrievedObject = JSON.parse(localStorage.getItem(this.instance));
+  this.bookList = retrievedObject;
+  return true;
+};
 //*********************//
 //Doc.Ready
 $(document).ready( function() {
   //initialize Library
-  window.gLib = new Library();
+  window.gLib = new Library("gLib");
   window.gLib.orgLibrary();
   window.gLib.init();
   //local localStorage
-  window.gLib.storeLocal(gLib);
+  window.gLib.storeLocal();
   //GOOGLE BOOKS API
   google.books.load();
 
