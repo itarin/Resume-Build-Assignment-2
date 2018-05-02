@@ -29,6 +29,7 @@ var Book = function (cover, title, author, numPages, pubDate) {
 //Initialize preset books, load table, init sort f(x),
 //jQuery selectors, and call binds
 Library.prototype.init = function () {
+  this.tempArray = [];
   this.presetBooks();
   this.orgLibrary();
   //tableSorter plugin setOnLoadCallback
@@ -108,18 +109,18 @@ Library.prototype._handleAddBookSubmit = function () {
   this.displayBook();
   return true;
 };
-//**************
-//TABLE F(x)'s
 //Delete from table by Clicking X and remove from library
 Library.prototype._handleDeleteFromTable = function (e) {
   event.preventDefault();
   var $tr = $(e.currentTarget).parent("tr");
   var getTitle = $(e.currentTarget).siblings(".getTitle").text();
-  this.removeBookByTitle(getTitle);
+  this.removeBookByTitle(getTitle);//implements local storage
   $tr.remove();
   return true;
 };
-//F(x)'s from previous CL requirments and .handleers assist f(x)'s'
+//**************
+//TABLE F(x)'s
+//...F(x)'s from previous CL requirments and .handlers assist f(x)'s'
 //Add a New Book to the Library
 Library.prototype.addBook = function ( book ) {
   for( var i = 0; i < this.bookList.length; i++){
@@ -132,11 +133,23 @@ Library.prototype.addBook = function ( book ) {
   this.storeLocal();
   return true;
 };
+//addBooks(books)Purpose: Takes multiple books, in the form of an array of book objects, and adds the objects to your books array, not used at the moment
+Library.prototype.addBooks = function ( books ) {
+  var numBooks = 0;
+  if( books.length>0 ){
+    numBooks = books.length;
+    this.bookList = this.bookList.concat( books );
+    return this.bookList;
+  }else{
+    return numBooks;
+  }
+};
 //Remove Book By title
 Library.prototype.removeBookByTitle = function ( title ) {
   for( var i = this.bookList.length - 1 ; i >= 0; i--){
       if( title.toLowerCase() === this.bookList[i].title.toLowerCase() ){
         this.bookList.splice( i, 1 );//remove matched book
+        this.storeLocal();
         return true;
       }
     }
@@ -147,6 +160,7 @@ Library.prototype.removeBookByAuthor = function ( authorName ) {
   for( var i = this.bookList.length - 1 ; i >= 0; i--){
       if( authorName.toLowerCase() === this.bookList[i].author.toLowerCase() ){
         this.bookList.splice( i, 1 );//remove matched book
+        this.storeLocal();
         return true;
       }
     }
@@ -185,17 +199,6 @@ Library.prototype.getBooksByAuthor = function ( authorName ) {
   }
   return matched;
 };
-//addBooks(books)Purpose: Takes multiple books, in the form of an array of book objects, and adds the objects to your books array
-Library.prototype.addBooks = function ( books ) {
-  var numBooks = 0;
-  if( books.length>0 ){
-    numBooks = books.length;
-    this.bookList = this.bookList.concat( books );
-    return this.bookList;
-  }else{
-    return numBooks;
-  }
-};
 //getAuthors()Purpose: Find the distinct authors’ names from all books in your library. Return: array of strings the names of all distinct authors, empty array if no books exist or if no authors exist
 Library.prototype.getAuthors = function () {
   var matched = [];
@@ -217,7 +220,7 @@ Library.prototype.getRandomAuthorName = function () {
     return this.bookList[ randomIndex ].author;
   }
 };
-// Add a more robust search function to your app
+// A more robust search function
 Library.prototype.searchLibrary = function ( searchValue ){
   var matched = [];
   for( var i = 0; i < this.bookList.length; i++) {
@@ -229,7 +232,7 @@ Library.prototype.searchLibrary = function ( searchValue ){
   }
   return matched;
 };
-//.searchLib and .getRandomBook assist f(x)
+//.searchLib and .getRandomBook assist f(x) that displays results to user
 Library.prototype.showUserInput = function ( results ) {
   $(results).each(function( index, element ) {
     $('#newBookModule #bookCover').attr( 'src', element.cover);
@@ -245,7 +248,18 @@ Library.prototype.newBook = function( cover, title, author, numPages, pubDate ){
   this.addBook(bookCreated);
   return true;
 };
+//Queue to store multiple books in an array while user adds them
+Library.prototype.queueBooks = function (cover, title, author, numPages, pubDate) {
+  //clear input
+  $('#coverInput, #titleInput, #authorInput, #numPagesInput, #pubDateInput').val("");
+  //Inside queue, create a book on each click
+  var bookCreated = new Book( cover, title, author, numPages, pubDate);
+  this.tempArray.push( bookCreated );
+  $('#addBooksFooter').text('You have added' + tempArray.length + 'books.');
+  return tempArray;
+};
 //Gets user input values to enter into gLib.bookList array and simultaneously display books by calling display Added
+//
 Library.prototype.displayBook = function () {
   var cover1 = document.getElementById("coverInput").value;
   var title1 = document.getElementById("titleInput").value;
@@ -253,11 +267,30 @@ Library.prototype.displayBook = function () {
   var numPages1 = document.getElementById("numPagesInput").value;
   var pubDate1 = $("pubDateInput").val();
 
-  this.newBook( cover1, title1, author1, numPages1, pubDate1 );
+  let bookArray = this.queueBooks(cover1, title1, author1, numPages1, pubDate1);
+  this.addBooks( bookArray );
+
+  //this.newBook( cover1, title1, author1, numPages1, pubDate1 );
   this.displayAdded( cover1, title1, author1, numPages1, pubDate1 );
   $('#coverInput, #titleInput, #authorInput, #numPagesInput, #pubDateInput').val("");
+
+  this.storeLocal();
+
+  this.addBookQ( cover1, title1, author1, numPages1, pubDate1);
   return true;
 };
+//
+Library.prototype.addBookQ = function (cover, title, author, numPages, pubDate) {
+  let bookArray = this.queueBooks(cover, title, author, numPages, pubDate);
+  this.addBooks( bookArray );
+
+  //this.newBook( cover1, title1, author1, numPages1, pubDate1 );
+  this.displayAdded( cover1, title1, author1, numPages1, pubDate1 );
+  $('#coverInput, #titleInput, #authorInput, #numPagesInput, #pubDateInput').val("");
+
+  this.storeLocal();
+  return true;
+}
 //Display Book attribute in card above table
 Library.prototype.displayAdded = function ( cover1, title1, author1, numPages1, pubDate1 ) {
   $('#bookCover').attr('src', cover1);
@@ -268,7 +301,7 @@ Library.prototype.displayAdded = function ( cover1, title1, author1, numPages1, 
   this.orgLibrary(cover1, title1, author1, numPages1, pubDate1);
   return true;
 }
-//Not using at the moment as Client requested a table for proof of concept
+//*******Not using at the moment as Client requested a table for proof of concept
 //displays the books in the library to user as cards
 Library.prototype.populateUiLibrary = function () {
   var currentData= [];
@@ -286,8 +319,9 @@ Library.prototype.populateUiLibrary = function () {
 Library.prototype.orgLibrary = function ( cover1, title1, author1, numPages1, pubDate1 ) {
   this.addRow();
 };
-//Build table rows
+//Build table rows, .orgLibrary assist f(x)
 Library.prototype.addRow = function () {
+  $('#orgTable tr').remove();
   var currentData;
   for(var i = 0; i < this.bookList.length; i++) {
       currentData =  "<tr class='flex-wrap align-content-between' >" +
@@ -329,12 +363,13 @@ Library.prototype.presetBooks = function () {
   this.addBook( gCatInTheHat );
   this.addBook( book1 );
 }
-//Use localstorage (http://www.w3schools.com/html/html5_webstorage.asp) and JSON.stringify to save the state of your library ●
+//Local Storage set f(x)
 Library.prototype.storeLocal = function () {
   var storeBookList = JSON.stringify( this.bookList );
   return window.localStorage.setItem(this.instance, storeBookList);
 
 };
+//Local Storage get f(x)
 Library.prototype.getLocal = function () {
   // Retrieve the object from storage
   var retrievedObject = JSON.parse(window.localStorage.getItem(this.instance));
