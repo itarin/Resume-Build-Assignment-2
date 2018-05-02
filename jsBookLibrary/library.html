@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Library App</title>
+    <!-- <link rel="stylesheet" href="css/library.css"> -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/customStyle.css">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+  </head>
+  <body class="bg-info">
+    <div class="container-fluid">
+      <div class="row h-25">
+        <div class="col-12 pixelax">
+          <div class="col-4 offset-4 bg-dark text-center border border-light round-0 p-0 mt-2">
+            <h2 class="card-title text-center text-light border border-0 container-fluid p-1 font-monospace lilOpacity">
+                <strong>Welcome</strong>
+              <br>
+                <strong>to the</strong>
+              <br>
+                <strong>Techtonic Library</strong>
+              <br>
+            </h2>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-3 offset-9 fixed-top align-items-end border-0">
+          <div id="Menu" class="card bg-dark text-white mt-5 ml-5 border-bottom">
+            <h2 class="card-heading">
+              <i class="fa fa-book grow-6 ml-4 mr-2" aria-hidden="true"></i>
+              Menu
+            </h2>
+          </div>
+          <nav class="navbar navbar-dark bg-transparent mt-1 ml-4">
+            <!-- Search Input -->
+            <form class="form-inline">
+              <input id="searchLib" class="form-control mr-2 border rounded-0" type="search" placeholder="Search Library" aria-label="Search">
+
+              <button href="#newBookModule" id="submitSearch" class="btn bg-light btn-outline-success my-2 my-sm-0 border rounded-0" type="submit">
+                <i class="fas fa-search text-info m-1"></i>
+              </button>
+            </form>
+            <!--Delete form items  -->
+            <form class="form-inline">
+              <input id="deleteAuthInput" class="form-control mr-2 border rounded-0" type="search" placeholder="Delete from Library" aria-label="Search">
+
+              <button href="#newBookModule" id="deleteAuth" class="btn bg-light btn-outline-success my-2 my-sm-0 border rounded-0" type="submit">
+                <i class="material-icons text-dark">cancel</i>
+              </button>
+            </form>
+          </nav>
+          <div class="btn-group ml-5 align-items-end">
+            <button type="button" class="btn btn-light btn-lg  dropdown-toggle-split mt-1 mb-4 rounded-bottom" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="far fa-folder-open"></i>
+              Access Library
+            </button>
+            <div class="dropdown-menu">
+              <h6 class="dropdown-header font-weight-bold">
+                <i class="fas fa-sliders-h mr-2"></i>
+                Modify Library
+              </h6>
+              <a class="dropdown-item" href="#viewerCanvas">
+                <i class="fas fa-dot-circle"></i>
+                Current Book
+              </a>
+              <a class="dropdown-item" href="#newBookModule" id="getAuthors">
+                Authors in Library
+              </a>
+              <a class="dropdown-item" id="addOneBttn" data-toggle="modal" data-target="#addModal" href="#newBookModule">
+                Add A Book
+              </a>
+              <a class="dropdown-item" href="#newBookModule" id="getRandomBook">
+                Get A Random Book
+              </a>
+              <h6 class="dropdown-header font-weight-bold">
+                <i class="fas fa-trash mr-2"></i>
+                Delete From Library
+              </h6>
+              <a class="dropdown-item" id="deleteAuthor" href="#orgTable">
+                Delete By Author
+              </a>
+            </div>
+          </div>
+          <div class="card bg-transparent border-0">
+            <img class="card-img-top img-fluid w-75 ml-5 pl-2" src="assets/kidReading.jpg" alt="Card image cap">
+            <h5 class="card-title bg-transparent font-monospace text-white  border-0 mt-3 ml-5 lilOpacity">
+              Address:</br>
+              2000 Central Ave. Ste. 100</br>
+              Boulder, CO 80301</br>
+              (303) 440-8772</br>
+            </h5>
+          </div>
+          <div class="col-10 offset-2 pixelax h-25 mt-3">
+            <div class="col-4 offset-1 bg-dark text-center border border-light p-0">
+              <!-- Add Books -->
+            </div>
+          </div>
+        </div>
+        <div class="col-10 offset-3 h-50 mt-0 mb-0">
+            <img class="w-50 text-center lilOpacity mt-2" src="assets/nightLib.jpg" alt="">
+        </div>
+        <div class="col-12 parallax">
+          <div class="col-9 card-deck bg-transparent border-light mh-100 ">
+              <div class="prallax card bg-transparent bg-dark border-bottom border-light rounded-0">
+                <div class="card-body text-white text-left align-middle">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <div class="card-body text-white border-light mb-2 lilOpacity">
+                  <h2 class="card-title">
+                    Music is the movement of sound to reach the soul for the education of its virtue.
+                  </h2>
+                </div>
+                <div class="card-body text-right text-white align-middle mt-0">
+                  <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="card-body mt-0">
+                  <h2 class="text-white">
+                   - Plato
+                 </h2>
+                </div>
+              </div>
+              <div class="card  w-75 h-100 bg-transparent border-0">
+                <div class="card-body bg-transparent">
+                  <img class="card-img-top w-75 ml-5 mt-5" src="assets/plato.jpg" alt="">
+                </div>
+                </div>
+                <div class="card h-100 bg-transparent border-0 mt-5 ">
+                  <div class="card-body bg-transparent">
+                    <img class="w-75" src="assets/tree.jpg" alt="">
+                    <img class="w-75 mt-3" src="assets/archive-beautiful-book-stack-256455.jpg" alt="">
+                 </div>
+              </div>
+            </div>
+          </div>
+        <!-- EndRow -->
+        </div>
+        <div class="row parallax3"id="newBook">
+<!-- MODAL -->
+          <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content container-fluid">
+              <div class="modal-header">
+                <h5 class="modal-title text-info" id="exampleModalLongTitle">
+                  Add Books to Your Library
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  <!-- ADD ONE BOOK, hidden by d-none -->
+                  <div class="row">
+                    <div class="col-10 card-group addingBookz">
+                      <div class="card mt-5 mb-0" id="addOne">
+                         <div class="card">
+                           <div class="container-fluid">
+                             <div class="card-body">
+                               <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                   <div class="input-group input-group-lg">
+                                     <div class="input-group-prepend">
+                                       <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                                         <i class="material-icons">add_a_photo</i>
+                                       </span>
+                                     </div>
+                                     <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="coverInput" placeholder="Cover Image URL">
+                                   </div>
+                                 </li>
+                                <li class="list-group-item">
+                                  <div class="input-group input-group-lg">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                                        <i class="fas fa-book"></i>
+                                      </span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="titleInput" placeholder="Book Title">
+                                  </div>
+                                </li>
+                                <li class="list-group-item">
+                                  <div class="input-group input-group-lg">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                                        <i class="far fa-address-book"></i>
+                                      </span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="authorInput" placeholder="Book Author">
+                                  </div>
+                                </li>
+                                <li class="list-group-item">
+                                  <div class="input-group input-group-lg">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                                        <i class="far fa-file"></i>
+                                      </span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="numPagesInput" placeholder="Page Total">
+                                  </div>
+                                </li>
+                                <li class="list-group-item">
+                                  <div class="input-group input-group-lg">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
+                                        <i class="far fa-calendar-alt"></i>
+                                      </span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="pubDateInput" placeholder="Date Published">
+                                  </div>
+                                </li>
+                              </ul>
+                             </div>
+                             <div class="card-footer bg-transparent border-success" id="addBooksFooter"></div>
+                           </div>
+                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer container">
+                <button id="moreBooks2Add" type="button" class="btn btn-info  text-dark border-dark mb-1">
+                  <i class="fas fa-plus-circle ml-2"></i>
+                  Add Another Book?
+                </button>
+                <button id="addBookSubmit" type="button" class="btn btn-warning" data-dismiss="modal">
+                  Save Library
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- MODAL END  -->
+          </div>
+          <!-- BOOK ADDED DISPLAY -->
+          <div class="col-9 mt-3 lilOpacity">
+            <div class="card bg-transparent bg-dark border-light" id="newBookModule">
+              <img class="card-img-top img-thumbnail w-25 p-0 ml-5 border-0" src=" " id="bookCover">
+              <div class="card-body text-light">
+                <h3 class="card-title text-light">
+                  Book Added
+                </h3>
+                <h5 class="card-title text-light" id="bookTitle">
+                </h5>
+                <p class="card-text" id="bookAuthor">
+                </p>
+                <p class="card-text" id="bookNumPages">
+                </p>
+                <p class="card-text" id="bookPubDate">
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-8 offset-1 text-light ">
+            <h1 class="text-light bg-dark text-center border-0">
+              Organize Library
+            </h1>
+            <div class="table-responsive">
+              <table class="table align-content-left bg-dark border-0" id="orgTable">
+                <thead class="lilOpacity">
+                  <tr>
+                    <th scope="col" class="ml-5">Cover</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Pages Total</th>
+                    <th scope="col">Publish Date</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="orgTableBody" class="table-hover">
+                  <tr class="flex-wrap align-content-between">
+                    <!-- Books added by JS func populateUiLibrary -->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        <!-- End 'row'& END PARALLAX  -->
+        </div>
+<!-- UI Table F(x)'s -->
+<!-- START TABLE -->
+      <div class="row">
+          <div class="col-6 offset-3 text-light ">
+            <h1 class="text-light bg-dark text-center">
+              Display Books
+            </h1>
+            <div class="table-responsive">
+              <table class="table align-content-between bg-dark border-0" id="uiTable">
+                <tbody class="table-hover">
+                  <!-- Books added by JS func populateUiLibrary -->
+                  <!-- <tr class="flex-wrap align-content-between">
+
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+<!-- END DIsplayBOOksROW -->
+      </div>
+      <div class="row">
+          <div class="col-3 ml-5 mt-5">
+            <button type="button" class="btn btn-large
+            button-light mt-5" name="button">
+              <i class="fas fa-eye-slash"></i>
+              Anti-Eye Strain
+            </button>
+          </div>
+          <div class="col-5 ">
+            <div class="card bg-dark mb-2">
+              <h2 class="card-heading text-white text-center">Current Book</h2>
+            </div>
+          </div>
+          <div class="col-8 offset-3">
+            <div class="img-fluid w-auto h-auto" id="viewerCanvas"  style="height:52rem; width: 38rem;">
+            </div>
+          </div>
+          <div class="card bg-transparent border-0">
+            <img class="card-img-top img-fluid" src="assets/library5.jpg" alt="Card image cap">
+          </div>
+      </div>
+      <script  src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" type="text/javascript">
+      </script>
+      <!-- JQUERY, TableSort-plugin, googleBooks-->
+      <script  type="text/javascript" src="assets/js/jqueryV331.js">
+      </script>
+      <script  type="text/javascript" src="assets/js/jquery.tablesort.min.js">
+      </script>
+      <script  type="text/javascript" src="https://www.google.com/books/jsapi.js">
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous">
+      </script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
+      </script>
+      <script type="text/javascript" src="structure.js">
+      </script>
+  </body>
+</html>
+<!-- Pictures obtained from pexel.com, icons from fontawesome -->
