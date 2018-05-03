@@ -47,8 +47,8 @@ class Library {
   //HANDLERS
   //Search Library
   _handleSubmitSearch () {
-    var userSearched = $( '#searchLib' ).val();
-    var results = this.searchLibrary( userSearched );
+    let userSearched = $( '#searchLib' ).val();
+    let results = this.searchLibrary( userSearched );
     $('#newBookModule h3').text('Search Results');
     this.showUserInput(results);
     this.makeTable();
@@ -56,23 +56,22 @@ class Library {
   }
   //Get and show Random Book getRandomBook
   _handleGetRandomBook () {
-    var results = this.getRandomBook();
+    let results = this.getRandomBook();
     $('#newBookModule h3').text('Book Shuffle');
     this.showUserInput(results);
     return true;
   }
   //Get and show Authors, from .getAuthors returned array of strings
   _handleGetAuthors () {
-    var results = this.getAuthors();
+    let results = this.getAuthors();
     $('#newBookModule h3').text('Authors in Library');
-    $(results).each( function( index, element ) {
-      $('#newBookModule #bookAuthor').after( element + "--------");
-    });
+    $(results).each( ( index, element ) =>
+      $('#newBookModule #bookAuthor').after( element + "--------") );
     return true;
   }
   //deletes from gLib.bookList, must be full match
   _handleDeleteAuth () {
-    var deleteByAuth = $('#deleteAuthInput').val();
+    let deleteByAuth = $('#deleteAuthInput').val();
     this.removeBookByAuthor(deleteByAuth);
     $("#orgTable tbody tr").remove();
     this.makeTable();
@@ -95,8 +94,8 @@ class Library {
   //Delete from table by Clicking X and remove from library
   _handleDeleteFromTable (e) {
     event.preventDefault();
-    var $tr = $(e.currentTarget).parent("tr");
-    var getTitle = $(e.currentTarget).siblings(".getTitle").text();
+    let $tr = $(e.currentTarget).parent("tr");
+    let getTitle = $(e.currentTarget).siblings(".getTitle").text();
     this.removeBookByTitle(getTitle);//implements local storage
     $tr.remove();
     return true;
@@ -107,7 +106,7 @@ class Library {
   //Add a New Book to the Library
   addBook ( book ) {
     console.log(book);
-    for( var i = 0; i < this.bookList.length; i++){
+    for( let i = 0; i < this.bookList.length; i++){
       if( book.title === this.bookList[i].title ){
         $('#bookTitle').text('Book cannot be added, it is already in Library.')
         return false; //If added return false
@@ -119,8 +118,8 @@ class Library {
   }
   //addBooks(books)Purpose: Takes multiple books, in the form of an array of book objects, and adds the objects to your books array, not used at the moment
   addBooks ( array ) {
-    var count=0
-    for(var i = 0; i< array.length; i++){
+    let count=0
+    for(let i = 0; i< array.length; i++){
       if(this.addBook(array[i])){
         count++;
       }
@@ -129,7 +128,7 @@ class Library {
   }
   //Remove Book By title
   removeBookByTitle ( title ) {
-    for( var i = this.bookList.length - 1 ; i >= 0; i--){
+    for( let i = this.bookList.length - 1 ; i >= 0; i--){
         if( title.toLowerCase() === this.bookList[i].title.toLowerCase() ){
           this.bookList.splice( i, 1 );//remove matched book
           this.storeLocal();
@@ -140,7 +139,7 @@ class Library {
   }
   //Remove Book By authorName
   removeBookByAuthor ( authorName ) {
-    for( var i = this.bookList.length - 1 ; i >= 0; i--){
+    for( let i = this.bookList.length - 1 ; i >= 0; i--){
         if( authorName.toLowerCase() === this.bookList[i].author.toLowerCase() ){
           this.bookList.splice( i, 1 );//remove matched book
           this.storeLocal();
@@ -160,10 +159,10 @@ class Library {
   }
   //Get Book by Title, return all that match title whole/partially
   getBookByTitle ( title ) {
-    var matched = [];
-    for( var i = 0; i < this.bookList.length; i++) {
+    let matched = [];
+    for( let i = 0; i < this.bookList.length; i++) {
       //same as: authorInLibrary = /currentAuthor\;
-      var titleRegEx = new RegExp(title, "i","g", "\S");
+      let titleRegEx = new RegExp(title, "i","g", "\S");
       if( titleRegEx.test(this.bookList[i].title) ) {
         matched.push( this.bookList[i] );
       }
@@ -172,10 +171,10 @@ class Library {
   }
   //Get Book by Title, return all that match title whole/partially
   getBooksByAuthor ( authorName ) {
-    var matched = [];
-    for( var i = 0; i < this.bookList.length; i++) {
+    let matched = [];
+    for( let i = 0; i < this.bookList.length; i++) {
       //same as: authorInLibrary = /currentAuthor\;
-      var authorRegEx = new RegExp(authorName, "i", "g", "\S");
+      let authorRegEx = new RegExp(authorName, "i", "g", "\S");
       if( authorRegEx.test(this.bookList[i].author) ) {
         matched.push( this.bookList[i] );
       }
@@ -184,10 +183,10 @@ class Library {
   }
   //getAuthors()Purpose: Find the distinct authors’ names from all books in your library. Return: array of strings the names of all distinct authors, empty array if no books exist or if no authors exist
   getAuthors () {
-    var matched = [];
-    for( var i = 1; i < this.bookList.length; i++) {
+    let matched = [];
+    for( let i = 1; i < this.bookList.length; i++) {
      //same as: authorInLibrary = /currentAuthor\;
-     var authorRegEx = new RegExp(this.bookList[i].author, "i", "g", "\S");
+     let authorRegEx = new RegExp(this.bookList[i].author, "i", "g", "\S");
      if( !authorRegEx.test(this.bookList[i-1].author) ) {
        matched.push( this.bookList[i].author );
      }
@@ -205,10 +204,10 @@ class Library {
   }
   // A more robust search function
   searchLibrary ( searchValue ){
-    var matched = [];
-    for( var i = 0; i < this.bookList.length; i++) {
+    let matched = [];
+    for( let i = 0; i < this.bookList.length; i++) {
       //same as: authorInLibrary = /currentAuthor\;
-      var authorRegEx = new RegExp(searchValue, "i", "g", "\S");
+      let authorRegEx = new RegExp(searchValue, "i", "g", "\S");
       if( authorRegEx.test(this.bookList[i].author)||authorRegEx.test(this.bookList[i].title)||authorRegEx.test(this.bookList[i].numPages)||authorRegEx.test(this.bookList[i].pubDate) ) {
         matched.push( this.bookList[i] );
       }
@@ -217,7 +216,7 @@ class Library {
   }
   //.searchLib and .getRandomBook assist f(x) that displays results to user
   showUserInput ( results ) {
-    $(results).each(function( index, element ) {
+    $(results).each(( index, element ) => {
       $('#newBookModule #bookCover').attr( 'src', element.cover);
       $('#newBookModule #bookTitle').after( element.title + "--------");
       $('#newBookModule #bookAuthor').after( element.author + "--------");
@@ -227,18 +226,18 @@ class Library {
   }
   //CREATE A NEW BOOK F(x)
   newBook ( cover, title, author, numPages, pubDate ) {
-    var bookCreated = new Book( cover, title, author, numPages, pubDate);
+    let bookCreated = new Book( cover, title, author, numPages, pubDate);
     this.addBook(bookCreated);
     return true;
   }
   //Gets user input values to enter into gLib.bookList array and simultaneously display books by calling display Added
   userInputValues () {
     //get user values
-    var cover = $("#coverInput").val();
-    var title = $("#titleInput").val();
-    var author = $("#authorInput").val();
-    var numPages = $("#numPagesInput").val();
-    var pubDate = $("#pubDateInput").val();
+    let cover = $("#coverInput").val();
+    let title = $("#titleInput").val();
+    let author = $("#authorInput").val();
+    let numPages = $("#numPagesInput").val();
+    let pubDate = $("#pubDateInput").val();
     if(!cover || !title || !author || !numPages || !pubDate){
       $('#addBooksFooter').text('Enter All Fields');
       return false;
@@ -252,7 +251,7 @@ class Library {
   //and tells user how many books they have added so far.
   addBookQ (cover, title, author, numPages, pubDate) {
     //Inside queue, create a book on each click
-    var bookCreated = new Book( cover, title, author, numPages, pubDate );
+    let bookCreated = new Book( cover, title, author, numPages, pubDate );
     this.tempArray.push( bookCreated );
 
     //display # of books added to user in modal
@@ -274,8 +273,8 @@ class Library {
   //*******Not using at the moment as Client requested a table for proof of concept
   //displays the books in the library to user as cards
   populateUiLibrary () {
-    var currentData= [];
-    for(var i = 0; i <this.bookList.length; i++) {
+    let currentData= [];
+    for(let i = 0; i < this.bookList.length; i++) {
         currentData=  this.bookList[i].title + " " +
                       this.bookList[i].author + " " +
                       this.bookList[i].numPages + " " +
@@ -292,8 +291,8 @@ class Library {
   //Build table rows, .makeTable assist f(x)
   addRow () {
     $('#orgTable tr').remove();
-    var currentData;
-    for(var i = 0; i < this.bookList.length; i++) {
+    let currentData;
+    for(let i = 0; i < this.bookList.length; i++) {
         currentData =  "<tr class='flex-wrap align-content-between' >" +
                           "<td>" +
                             "<img class='img-thumbnail w-50 p-0 ml-5 border-0' src='" + this.bookList[i].cover + "'>"  +
@@ -319,14 +318,14 @@ class Library {
   }
   //Preset Books so Library isn't empty on load
   presetBooks () {
-    var gIT = new Book("assets/readingBook.jpg", "IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
-    var gCatcherIntheRye = new Book("assets/readingBook.jpg", "Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');
-    var gCatInTheHat = new Book("assets/readingBook.jpg", "Cat In The Hat", "Dr.Sues", 20, 'December 17, 1995 03:24:00' );
-    var book1 = new Book("assets/readingBook.jpg", "one", "Stephen King", 3, 'December 17, 1995 03:24:00');
-    var quixote= new Book("assets/readingBook.jpg", "Don Quixote", "Miguel de Cervantes Saavedra", 234, 'Dec 31, 1999');
-    var q= new Book("assets/readingBook.jpg", "Don te", "Miguel vantesra", 23, 'Dec 1, 1999');
-    var q1= new Book("assets/readingBook.jpg", "Don te1", "Miguel11 vantesra", 213, 'Dec 111, 1999');
-    var bookArray = [quixote, q, q1];
+    let gIT = new Book("assets/readingBook.jpg", "IT", "Stephen King", 800, 'December 17, 1995 03:24:00');
+    let gCatcherIntheRye = new Book("assets/readingBook.jpg", "Catcher In The Rye", "JD Salinger", 200, 'December 25, 1987 03:24:00');
+    let gCatInTheHat = new Book("assets/readingBook.jpg", "Cat In The Hat", "Dr.Sues", 20, 'December 17, 1995 03:24:00' );
+    let book1 = new Book("assets/readingBook.jpg", "one", "Stephen King", 3, 'December 17, 1995 03:24:00');
+    let quixote= new Book("assets/readingBook.jpg", "Don Quixote", "Miguel de Cervantes Saavedra", 234, 'Dec 31, 1999');
+    let q= new Book("assets/readingBook.jpg", "Don te", "Miguel vantesra", 23, 'Dec 1, 1999');
+    let q1= new Book("assets/readingBook.jpg", "Don te1", "Miguel11 vantesra", 213, 'Dec 111, 1999');
+    let bookArray = [quixote, q, q1];
     //Books added to Array for testing for faster testing
     this.addBook( gIT );
     this.addBook( gCatcherIntheRye );
@@ -335,30 +334,31 @@ class Library {
   }
   //Local Storage set f(x)
   storeLocal () {
-    var storeBookList = JSON.stringify( this.bookList );
+    let storeBookList = JSON.stringify( this.bookList );
     return window.localStorage.setItem(this.instance, storeBookList);
   }
   //Local Storage get f(x)
   getLocal () {
     // Retrieve the object from storage
-    var retrievedObject = JSON.parse(window.localStorage.getItem(this.instance));
+    let retrievedObject = JSON.parse(window.localStorage.getItem(this.instance));
     this.bookList = retrievedObject;
     return retrievedObject;
   }
 };//End Library Class
 //Book Object Constructor
-class Book extends Library{
+class Book{
   constructor (cover, title, author, numPages, pubDate) {
   this.cover = cover;
   this.title = title;
   this.author = author;
   this.numbPages = numPages;
   this.pubDate = new Date(pubDate);
-//  this.isbn = isbn;
+  //  this.isbn = isbn;
+  }
 };
 //*********************//
 //Doc.Ready
-$(document).ready( function () {
+$(document).ready( () => {
   //initialize Library
   let gLib = new Library("gLib");
   gLib.makeTable();
@@ -367,9 +367,8 @@ $(document).ready( function () {
   gLib.storeLocal();
   //GOOGLE BOOKS API
   google.books.load();
-
   function initialize () {
-    var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+    let viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
     viewer.load('ISBN:0521093597');
   }
 
