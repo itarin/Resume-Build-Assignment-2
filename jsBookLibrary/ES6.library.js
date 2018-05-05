@@ -51,7 +51,8 @@ class Library {
   _handleSubmitSearch () {
     let userSearched = $( '#searchLib' ).val();
     let results = this.searchLibrary( userSearched );
-    $('#newBookModule h3').text('Search Results');
+    $('#userDisplay').toggle();
+    $('#userDisplayHeading').text('Search Results');
     this.showUserInput(results);
     this.makeTable();
     return true;
@@ -59,7 +60,8 @@ class Library {
   //Get and show Random Book getRandomBook
   _handleGetRandomBook () {
     let results = this.getRandomBook();
-    $('#newBookModule h3').text('Book Shuffle');
+    $('#userDisplay').toggle();
+    $('#userDisplayHeading').text('Book Shuffle');
     this.showUserInput(results);
     return true;
   }
@@ -67,8 +69,9 @@ class Library {
   _handleGetAuthors () {
     let results = this.getAuthors();
     let authorIcon ="<i class='far fa-user'></i> " + " ";
-    $('#newBookModule h3').text('Authors in Library');
-    $(results).each( (index, element ) =>$('#newBookModule #bookAuthor').append("<h5>"+authorIcon+element+"</h5>") );
+    //$('#userDisplay').toggle();
+    $('#userDisplayHeading').toggle().text('Authors in Library');
+    $(results).each( (index, element ) => $('#newBookModule').append('<h4 class="card-title text-light bg-dark text-center">'+authorIcon+element+'</h4>') );
     return true;
   }
   //displays the delete author input and submitSearch
