@@ -51,7 +51,7 @@ class Library {
   _handleSubmitSearch () {
     let userSearched = $( '#searchLib' ).val();
     let results = this.searchLibrary( userSearched );
-    $('#userDisplay').toggle();
+    $('#userDisplay, #userDisplayHeading').toggle();
     $('#userDisplayHeading').text('Search Results');
     this.showUserInput(results);
     this.makeTable();
@@ -60,7 +60,7 @@ class Library {
   //Get and show Random Book getRandomBook
   _handleGetRandomBook () {
     let results = this.getRandomBook();
-    $('#userDisplay').toggle();
+    $('#userDisplay').toggle().text('Random Book Generator');
     $('#userDisplayHeading').text('Book Shuffle');
     this.showUserInput(results);
     return true;
@@ -69,8 +69,8 @@ class Library {
   _handleGetAuthors () {
     let results = this.getAuthors();
     let authorIcon ="<i class='far fa-user'></i> " + " ";
-    //$('#userDisplay').toggle();
     $('#userDisplayHeading').toggle().text('Authors in Library');
+    $('#userDisplay').toggle();
     $(results).each( (index, element ) => $('#newBookModule').append('<h4 class="card-title text-light bg-dark text-center">'+authorIcon+element+'</h4>') );
     return true;
   }
@@ -158,6 +158,7 @@ class Library {
   }
   //Get Random Book and Return, otherwise return null
   getRandomBook () {
+    let randomIndex;
     if(this.bookList === []){
       return null
     } else {
