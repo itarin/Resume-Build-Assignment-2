@@ -240,11 +240,6 @@ class Library {
            '</div>'+
         '</div>'
       );
-      // $('#newBookModule #bookCover').attr( 'src', element.cover);
-      // $('#newBookModule #bookTitle').after( element.title + "--------");
-      // $('#newBookModule #bookAuthor').after( element.author + "--------");
-      // $('#newBookModule #bookNumPages').after( element.numPages + "--------");
-      // $('#newBookModule #bookPubDate').after( element.pubDate + "--------");
     });
   }
   //CREATE A NEW BOOK F(x)
@@ -253,7 +248,7 @@ class Library {
     this.addBook(bookCreated);
     return true;
   }
-  //Gets user input values to enter into gLib.bookList array and simultaneously display books by calling display Added
+  //Gets user input values to enter into gLib.bookList array and simultaneously display books by calling .addBookQ to add to Book Queue
   userInputValues () {
     //get user values
     let cover = $("#coverInput").val();
@@ -279,6 +274,7 @@ class Library {
 
     //display # of books added to user in modal
     $('#addBooksFooter').text('You have added: ' + this.tempArray.length + ' book(s).');
+    this.showUserInput(this.tempArray);
     return this.tempArray;
     this.displayAdded( cover, title, author, numPages, pubDate );
     this.storeLocal();
