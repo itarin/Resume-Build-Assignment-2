@@ -5,6 +5,7 @@ class meetUp {
     this.key = "334b5e73304273452557536a49276852";
     this.$submitButton = $('#submit');
     this.refreshDataUrl = "https://api.meetup.com/2/cities";
+    this.places = [];
   }
   //*******Architecture
   init () {
@@ -34,15 +35,15 @@ class meetUp {
     $.ajax( this.inputObject()
       ).done($.proxy(this._refreshDataSuccess, this)).fail($.proxy(this._refreshDataFail, this));
   }//end refreshData
-
   //HTTP request Success
   _refreshDataSuccess (response) {
+    console.log("outside"+this.places);
+
     if (response) {
       //update data points
       $(response.results).each(( i, element ) => {
         //capture lattitude and longitude for googleMaps API
-        var lat[i] = response.results[i].lat;
-        var lon[i] = response.results[i].lon;
+        this.places.push({lat:response.results[i].lat, lng: response.results[i].lon});
         $('#showResults').append(
          '<div class="card bg-dark text-light border-0" style="max-width: 18rem;">' +
            '<div class="card-body">' +
@@ -59,13 +60,17 @@ class meetUp {
         );//.append
       });//.each
     }//end if statment for the response
-
   }//end _refreshDataSuccess
   //HTTP Fail
   _refreshDataFail () {
     console.log("fail");
   }
 }//end class meetUp
+$(document).ready( () => {
+  window.newMeetUp = new meetUp();
+  window.newMeetUp.init();
+});//End Doc.Ready
+console.log(gmeetUp.places);
 //Google Maps Api Call Back F(x)
 function initMap() {
   var uluru = {lat: -25.363, lng: 131.044};
@@ -73,12 +78,9 @@ function initMap() {
     zoom: 4,
     center: uluru
   });
+
   var marker = new google.maps.Marker({
     position: uluru,
     map: map
   });
 }
-$(document).ready( () => {
-  window.meetUp = new meetUp();
-  window.meetUp.init();
-});//End Doc.Ready
