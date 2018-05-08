@@ -3,7 +3,7 @@
 class meetUp {
   constructor () {
     this.$submitButton = $('#submit');
-    this.refreshDataUrl = "https://api.meetup.com/2/cities?key=334b5e73304273452557536a49276852";
+    this.refreshDataUrl = "https://api.meetup.com/2/cities";
   }
   //*******Architecture
   init () {
@@ -12,68 +12,52 @@ class meetUp {
   bindEvents () {
     this.$submitButton.on('click', $.proxy(this.refreshData, this));
   }
-  // requestObject () {
-  //   {
-  //     dataType: 'jsonp',
-  //     type:"GET",
-  //     url: this.refreshDataUrl,
-  //     data: {
-  //       country: "US",
-  //       state: "CO",
-  //       page: "20"
-  //     }
-  //   }
-  // }
+  inputObject () {
+    this.$countryInput = $('#countryInput').val();
+    this.$stateInput = $('#stateInput').val();
+    this.$numResultsInput = $('#numResultsInput').val();
+    return {
+              dataType: "jsonp",
+              type:"GET",
+              url: this.refreshDataUrl,
+              data: {
+                key: "334b5e73304273452557536a49276852",
+                country: `${this.$countryInput}`,
+                state: `${this.$stateInput}`,
+                page: `${this.$numResultsInput}`
+              }
+          }
+  }
   refreshData () {
     event.preventDefault();
-    console.log("event : " + event);
-    $.ajax({
-        dataType: 'jsonp',
-        type:"GET",
-        url:"https://api.meetup.com/2/cities?key=334b5e73304273452557536a49276852",
-        data: {country: "US", state: "ID", page: "20"}
-      }).done(function(response){
-        console.log(response);
-      }).fail(function(){
-        console.log("fail");
-      })
-
-  //   $.ajax(
-  //     {
-  //         dataType: 'jsonp',
-  //         type:"GET",
-  //         url: this.refreshDataUrl,
-  //         data: {
-  //           country: "US",
-  //           state: "CO",
-  //           page: "20"
-  //         }
-  //       }
-  //     ).done($.proxy(this._refreshDataSuccess, this)).fail($.proxy(this._refreshDataFail, this));
+    $.ajax( this.inputObject()
+      ).done($.proxy(this._refreshDataSuccess, this)).fail($.proxy(this._refreshDataFail, this));
   }//end refreshData
 
-  //Success
+  //HTTP request Success
   _refreshDataSuccess (response) {
-    console.log("response :" +response);
     if (response) {
       //update data points
-      $(response.results).each(( index, element ) => {
+      $(response.results).each(( i, element ) => {
+        console.log(response.results[i]);
         $('#showResults').append(
          '<div class="card bg-dark text-light border-0" style="min-width: 18rem;">' +
            '<div class="card-body">' +
-             '<p class="card-title">' +`City : ${this.results.city}`+'</p>'+
-             '<p class="card-text">' + `Zip : ${this.results.zip}`+  '</p>'+
-             '<p class="card-text">' + `State : ${this.results.state}`+  '</p>'+
-             '<p class="card-text">' + `Country : ${this.results.country}`+  '</p>'+
-             '<p class="card-text">' + `Ranking  : ${this.results.ranking}`+  '</p>'+
-             '<p class="card-text">' + `Member Count : ${this.results.member_count}`+  '</p>'+
+             '<ul class="list-group list-group-flush bg-dark">' +
+                 '<li class="list-group-item card-title bg-dark">' +`City : ${response.results[i].city}`+'</li>'+
+                 '<li class="list-group-item bg-dark">' + `Zip : ${response.results[i].zip}`+  '</li>'+
+                 '<li class="list-group-item bg-dark">' + `State : ${response.results[i].state}`+  '</li>'+
+                 '<li class="list-group-item bg-dark">' + `Country : ${response.results[i].country}`+  '</li>'+
+                 '<li class="list-group-item bg-dark">' + `Ranking  : ${response.results[i].ranking}`+  '</li>'+
+                 '<li class="list-group-item bg-dark">' + `Member Count : ${response.results[i].member_count}`+  '</li>'+
+               '</ul>' +
              '</div>'+
           '</div>'
         );//.append
       });//.each
     }//end if statment for the response
   }//end _refreshDataSuccess
-  //fail
+  //HTTP Fail
   _refreshDataFail () {
     console.log("fail");
   }
