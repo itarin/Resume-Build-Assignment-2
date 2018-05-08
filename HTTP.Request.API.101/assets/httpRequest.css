@@ -1,0 +1,11 @@
+body{
+  height: 100%;
+}
+#map {
+  height: 55vh;
+  width: 55vh;
+  box-sizing: content-box;
+ }
+#gMaps{
+   box-sizing: content-box;
+ }

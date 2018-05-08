@@ -2,6 +2,7 @@
 //API key: 334b5e73304273452557536a49276852
 class meetUp {
   constructor () {
+    this.key = "334b5e73304273452557536a49276852";
     this.$submitButton = $('#submit');
     this.refreshDataUrl = "https://api.meetup.com/2/cities";
   }
@@ -21,7 +22,7 @@ class meetUp {
               type:"GET",
               url: this.refreshDataUrl,
               data: {
-                key: "334b5e73304273452557536a49276852",
+                key: this.key,
                 country: `${this.$countryInput}`,
                 state: `${this.$stateInput}`,
                 page: `${this.$numResultsInput}`
@@ -39,9 +40,11 @@ class meetUp {
     if (response) {
       //update data points
       $(response.results).each(( i, element ) => {
-        console.log(response.results[i]);
+        //capture lattitude and longitude for googleMaps API
+        var lat[i] = response.results[i].lat;
+        var lon[i] = response.results[i].lon;
         $('#showResults').append(
-         '<div class="card bg-dark text-light border-0" style="min-width: 18rem;">' +
+         '<div class="card bg-dark text-light border-0" style="max-width: 18rem;">' +
            '<div class="card-body">' +
              '<ul class="list-group list-group-flush bg-dark">' +
                  '<li class="list-group-item card-title bg-dark">' +`City : ${response.results[i].city}`+'</li>'+
@@ -56,13 +59,25 @@ class meetUp {
         );//.append
       });//.each
     }//end if statment for the response
+
   }//end _refreshDataSuccess
   //HTTP Fail
   _refreshDataFail () {
     console.log("fail");
   }
 }//end class meetUp
-
+//Google Maps Api Call Back F(x)
+function initMap() {
+  var uluru = {lat: -25.363, lng: 131.044};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: uluru
+  });
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+  });
+}
 $(document).ready( () => {
   window.meetUp = new meetUp();
   window.meetUp.init();
