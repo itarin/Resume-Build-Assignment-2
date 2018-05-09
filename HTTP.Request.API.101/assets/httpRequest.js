@@ -1,11 +1,16 @@
 //country,state, location get from request
-//API key: 334b5e73304273452557536a49276852
+//API key: AIzaSyAOldbHH9qclwt4heyE9CdKIiFEEeUO9QI
 class meetUp {
   constructor () {
     this.key = "334b5e73304273452557536a49276852";
     this.$submitButton = $('#submit');
     this.refreshDataUrl = "https://api.meetup.com/2/cities";
-    this.places = [];
+    //temp array holds vals to prevent error from google API
+    this.places =  [
+                      {lat: -31.563910, lng: 147.154312},
+                      {lat: -33.718234, lng: 150.363181},
+                      {lat: -33.727111, lng: 150.371124}
+                    ]
   }
   //*******Architecture
   init () {
@@ -37,8 +42,7 @@ class meetUp {
   }//end refreshData
   //HTTP request Success
   _refreshDataSuccess (response) {
-    console.log("outside"+this.places);
-
+    this.places = [];
     if (response) {
       //update data points
       $(response.results).each(( i, element ) => {
@@ -46,6 +50,7 @@ class meetUp {
         this.places.push({lat:response.results[i].lat, lng: response.results[i].lon});
         $('#showResults').append(
          '<div class="card bg-dark text-light border-0" style="max-width: 18rem;">' +
+           '<iframe id='+`"frame${i}"`+'></iframe>' +
            '<div class="card-body">' +
              '<ul class="list-group list-group-flush bg-dark">' +
                  '<li class="list-group-item card-title bg-dark">' +`City : ${response.results[i].city}`+'</li>'+
@@ -57,8 +62,15 @@ class meetUp {
                '</ul>' +
              '</div>'+
           '</div>'
-        );//.append
-      });//.each
+        );//.append the card
+        var selectFrame = `#frame${i}`;
+        var sauce = `https://www.google.com/maps/embed/v1/place?key=AIzaSyAOldbHH9qclwt4heyE9CdKIiFEEeUO9QI&q=${response.results[i].city}&center=${response.results[i].lat},${response.results[i].lon}&zoom=8`;
+        $(selectFrame).attr('width', '288');
+        $(selectFrame).attr('height', '250');
+        $(selectFrame).attr('framborder', '0');
+        $(selectFrame).attr('style', 'border:0');
+        $(selectFrame).attr('src', sauce);
+      });//End.each
     }//end if statment for the response
   }//end _refreshDataSuccess
   //HTTP Fail
@@ -70,17 +82,3 @@ $(document).ready( () => {
   window.newMeetUp = new meetUp();
   window.newMeetUp.init();
 });//End Doc.Ready
-console.log(gmeetUp.places);
-//Google Maps Api Call Back F(x)
-function initMap() {
-  var uluru = {lat: -25.363, lng: 131.044};
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: uluru
-  });
-
-  var marker = new google.maps.Marker({
-    position: uluru,
-    map: map
-  });
-}
