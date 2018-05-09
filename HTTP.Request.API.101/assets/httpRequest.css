@@ -9,3 +9,9 @@ body{
 .text-light{
   color:#ee1c41 !important;
 }
+.bg-secondary{
+  background-color: rgb(197, 247, 214) !important;
+}
+.bg-dark{
+  background-color: rgb(224, 123, 123) !important;
+}

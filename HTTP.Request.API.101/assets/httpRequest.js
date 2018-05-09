@@ -49,8 +49,8 @@ class meetUp {
         //capture lattitude and longitude for googleMaps API
         this.places.push({lat:response.results[i].lat, lng: response.results[i].lon});
         $('#showResults').append(
-         '<div class="card bg-dark text-light border-0" style="max-width: 18rem;">' +
-           '<iframe id='+`"frame${i}"`+'></iframe>' +
+         '<div class="card bg-dark text-dark border-0" style="max-width: 18rem;">' +
+           '<iframe class="embed-responsive-item" id='+`"frame${i}"`+'></iframe>' +
            '<div class="card-body">' +
              '<ul class="list-group list-group-flush bg-dark">' +
                  '<li class="list-group-item card-title bg-dark">' +`City : ${response.results[i].city}`+'</li>'+
@@ -67,7 +67,6 @@ class meetUp {
         var sauce = `https://www.google.com/maps/embed/v1/place?key=AIzaSyAOldbHH9qclwt4heyE9CdKIiFEEeUO9QI&q=${response.results[i].city}&center=${response.results[i].lat},${response.results[i].lon}&zoom=8`;
         $(selectFrame).attr('width', '288');
         $(selectFrame).attr('height', '250');
-        $(selectFrame).attr('framborder', '0');
         $(selectFrame).attr('style', 'border:0');
         $(selectFrame).attr('src', sauce);
       });//End.each
