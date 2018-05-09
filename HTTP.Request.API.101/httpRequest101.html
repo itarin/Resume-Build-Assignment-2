@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>HTTP Request 101, Web API</title>
+    <!-- FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -13,10 +15,10 @@
   <body class=" ">
     <div class="container-fluid w-100 h-100 bg-secondary">
       <div class="row">
-        <div class="col-10 offset-2 text-light mt-4">
+        <div class="col-8 offset-2 bg-light mt-4">
           <h1>
-            <i class="fab fa-meetup"></i>
-            <img src="assets/images/meetup_logo.png" class="w-25">
+            <img src="assets/images/meetup_logo.png" class="w-25 mr-3">
+            MeetUp Cities Finder
           </h1>
         </div>
         <div class="col-3">
@@ -25,6 +27,7 @@
         <div class="card col-5 bg-dark rounded-0 ">
           <div class="card-body">
             <h2 class="card-title text-dark">
+              <i class="fab fa-meetup text-light bg-light rounded-circle"></i>
               Find MeetUps in Your Area
             </h2>
             <form>
@@ -41,6 +44,7 @@
                 <input type="text" class="form-control rounded-0" id="numResultsInput" placeholder="Enter Number of Results">
               </div>
                <button type="submit" class="btn btn-warning rounded-0" id="submit">Submit</button>
+               <button type="button" class="btn btn-outline-warning rounded-0" id="localStoreButton">Use Local Data?</button>
             </form>
           </div>
         </div>

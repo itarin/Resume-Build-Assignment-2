@@ -4,20 +4,19 @@ class meetUp {
   constructor () {
     this.key = "334b5e73304273452557536a49276852";
     this.$submitButton = $('#submit');
+    this.$localStoreButton = $('#localStoreButton');
     this.refreshDataUrl = "https://api.meetup.com/2/cities";
-    //temp array holds vals to prevent error from google API
-    this.places =  [
-                      {lat: -31.563910, lng: 147.154312},
-                      {lat: -33.718234, lng: 150.363181},
-                      {lat: -33.727111, lng: 150.371124}
-                    ]
   }
   //*******Architecture
   init () {
+    //clear resusts div
+    $('#showResults').empty();
     this.bindEvents();
+    this.useLocalData();
   }
   bindEvents () {
     this.$submitButton.on('click', $.proxy(this.refreshData, this));
+    this.$localStoreButton.on('click', $.proxy(this.useLocalData, this));
   }
   inputObject () {
     this.$countryInput = $('#countryInput').val();
@@ -42,12 +41,12 @@ class meetUp {
   }//end refreshData
   //HTTP request Success
   _refreshDataSuccess (response) {
-    this.places = [];
+    this.storeLocally(response);
     if (response) {
+      //clear DIV before appending data
+      $('#showResults').empty();
       //update data points
       $(response.results).each(( i, element ) => {
-        //capture lattitude and longitude for googleMaps API
-        this.places.push({lat:response.results[i].lat, lng: response.results[i].lon});
         $('#showResults').append(
          '<div class="card bg-dark text-dark border-0" style="max-width: 18rem;">' +
            '<iframe class="embed-responsive-item" id='+`"frame${i}"`+'></iframe>' +
@@ -64,7 +63,7 @@ class meetUp {
           '</div>'
         );//.append the card
         var selectFrame = `#frame${i}`;
-        var sauce = `https://www.google.com/maps/embed/v1/place?key=AIzaSyAOldbHH9qclwt4heyE9CdKIiFEEeUO9QI&q=${response.results[i].city}&center=${response.results[i].lat},${response.results[i].lon}&zoom=8`;
+        var sauce = `https://www.google.com/maps/embed/v1/place?key=AIzaSyAOldbHH9qclwt4heyE9CdKIiFEEeUO9QI&q=${response.results[i].city}&center=${response.results[i].lat},${response.results[i].lon}&zoom=10`;
         $(selectFrame).attr('width', '288');
         $(selectFrame).attr('height', '250');
         $(selectFrame).attr('style', 'border:0');
@@ -75,6 +74,18 @@ class meetUp {
   //HTTP Fail
   _refreshDataFail () {
     console.log("fail");
+  }
+  useLocalData () {
+    let response = this.getLocalStorage();
+    this._refreshDataSuccess(response);
+  }
+  storeLocally (response) {
+    var storedObj = JSON.stringify(response)
+    return window.localStorage.setItem('response', storedObj);
+  }
+  getLocalStorage () {
+    let response = JSON.parse( window.localStorage.getItem('response') );
+    return response;
   }
 }//end class meetUp
 $(document).ready( () => {

@@ -1,5 +1,6 @@
 body{
-  height: 260rem;
+  min-height: 260rem;
+  font-family: 'Questrial', sans-serif;
 }
 #map {
   height: 100%;
