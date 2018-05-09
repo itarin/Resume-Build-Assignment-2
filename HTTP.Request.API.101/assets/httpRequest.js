@@ -34,7 +34,7 @@ class meetUp {
               }
           }
   }
-  refreshData () {
+  refreshData (event) {
     event.preventDefault();
     $.ajax( this.inputObject()
       ).done($.proxy(this._refreshDataSuccess, this)).fail($.proxy(this._refreshDataFail, this));
@@ -52,12 +52,12 @@ class meetUp {
            '<iframe class="embed-responsive-item" id='+`"frame${i}"`+'></iframe>' +
            '<div class="card-body">' +
              '<ul class="list-group list-group-flush bg-dark">' +
-                 '<li class="list-group-item card-title bg-dark">' +`City : ${response.results[i].city}`+'</li>'+
-                 '<li class="list-group-item bg-dark">' + `Zip : ${response.results[i].zip}`+  '</li>'+
-                 '<li class="list-group-item bg-dark">' + `State : ${response.results[i].state}`+  '</li>'+
-                 '<li class="list-group-item bg-dark">' + `Country : ${response.results[i].country}`+  '</li>'+
-                 '<li class="list-group-item bg-dark">' + `Ranking  : ${response.results[i].ranking}`+  '</li>'+
-                 '<li class="list-group-item bg-dark">' + `Member Count : ${response.results[i].member_count}`+  '</li>'+
+                 '<li class="list-group-item card-title bg-dark"><i class="fas fa-building mr-1"></i>' +`City : ${response.results[i].city}`+'</li>'+
+                 '<li class="list-group-item bg-dark"><i class="fas fa-map-signs mr-1"></i>' + `Zip : ${response.results[i].zip}` +  '</li>'+
+                 '<li class="list-group-item bg-dark"><i class="fas fa-map mr-1"></i>' + `State : ${response.results[i].state}` +  '</li>'+
+                 '<li class="list-group-item bg-dark"><i class="fas fa-globe mr-1"></i>' + `Country : ${response.results[i].country}`+  '</li>'+
+                 '<li class="list-group-item bg-dark"><i class="fas fa-star mr-1"></i>' + `Ranking  : ${response.results[i].ranking}`+  '</li>'+
+                 '<li class="list-group-item bg-dark"><i class="fas fa-users mr-1"></i>' + `Member Count : ${response.results[i].member_count}`+  '</li>'+
                '</ul>' +
              '</div>'+
           '</div>'
