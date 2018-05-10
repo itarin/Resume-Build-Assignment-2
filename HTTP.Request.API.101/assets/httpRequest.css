@@ -1,0 +1,30 @@
+body{
+  min-height: 260rem;
+  font-family: 'Questrial', sans-serif;
+}
+#map {
+  height: 100%;
+  width: 55vh;
+  box-sizing: content-box;
+ }
+.text-light{
+  color:#ee1c41 !important;
+}
+.text-dark{
+  color: #003847 !important;
+  text-shadow: 0.1px .05px #00cbff;
+}
+.bg-secondary{
+  background-color: rgb(197, 247, 214) !important;
+}
+.bg-dark{
+  background-color: rgb(224, 123, 123) !important;
+}
+
+.btn-warning{
+  background-color: #ff901a;
+}
+.btn-outline-warning{
+  border-color: #ff901a;
+  color: #ff901a;
+}
