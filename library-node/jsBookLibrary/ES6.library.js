@@ -60,14 +60,18 @@ class Library {
   //Get and show Random Book getRandomBook
   _handleGetRandomBook () {
     let results = this.getRandomBook();
+
+    //Change display heading to reflect random authors
     $('#userDisplay').toggle().text('Random Book Generator');
     $('#userDisplayHeading').text('Book Shuffle');
     this.showUserInput(results);
     return true;
   }
   //Get and show Authors, from .getAuthors returned array of strings
+  //******
   _handleGetAuthors () {
     let results = this.getAuthors();
+
     let authorIcon ="<i class='far fa-user'></i> " + " ";
     $('#userDisplayHeading').toggle().text('Authors in Library');
     $('#userDisplay').toggle();
@@ -107,6 +111,13 @@ class Library {
     this.removeBookByTitle(getTitle);//implements local storage
     $tr.remove();
     return true;
+  }
+  //AJAX functions*************
+  _ajaxGetAuth () {
+
+  }
+  _ajaxDataFail () {
+    console.log( "failed to retreive data" );
   }
   //**************
   //TABLE F(x)'s
@@ -178,7 +189,7 @@ class Library {
     }
     return matched;
   }
-  //Get Book by Title, return all that match title whole/partially
+  //Get Book by Author, return all that match title whole/partially
   getBooksByAuthor ( authorName ) {
     let matched = [];
     for( let i = 0; i < this.bookList.length; i++) {
@@ -191,7 +202,13 @@ class Library {
     return matched;
   }
   //getAuthors()Purpose: Find the distinct authors’ names from all books in your library. Return: array of strings the names of all distinct authors, empty array if no books exist or if no authors exist
-  getAuthors () {
+  getAuthors (event) {
+
+    event.preventDefault();
+    //***********
+    $.ajax( this._ajaxGetAuthCall ).done( $.proxy(this._ajaxGetAuthWin, this) ).fail($.proxy(this._ajaxDataFail, this) );
+
+
     let matched = [];
     for( let i = 1; i < this.bookList.length; i++) {
      //same as: authorInLibrary = /currentAuthor\;
