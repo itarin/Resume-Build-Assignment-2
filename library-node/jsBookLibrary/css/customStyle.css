@@ -1,0 +1,73 @@
+.body{
+  font-family: 'Josefin Sans', sans-serif !important;
+}
+input[type=text] {
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+/* These styles over-ride BootSrap Quatro */
+.bg-dark{
+  background-color: rgba(47, 51, 60, .7) !important;
+}
+.bg-info, .bttn-info{
+  /* background-color: #6e94be; */
+  background-color: #6e94be !important;
+}
+.text-info{
+  color: #6e94be !important;
+}
+.bg-light, .bttn-light{
+  background-color: #f4fdff !important;
+}
+.text-light{
+  color: #f4fdff !important;
+}
+.pixelax{
+  /* The image used */
+  background-image: url("../assets/archive-beautiful-book-stack-256455.jpg");
+
+  /* Set a specific height */
+  min-height: 280px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.parallax3 {
+    /* The image used */
+    background-image: url("../assets/library5.jpg");
+
+    /* Set a specific height */
+    min-height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax {
+    /* The image used */
+    background-image: url("../assets/nightlib.jpg");
+
+    /* Set a specific height */
+    min-height: 100px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.lilOpacity{
+  text-shadow: .12rem .12rem rgba(47, 51, 60, .4);
+}
+.hide, #userDisplayHeading, #userDisplay{
+  display: none;
+}
