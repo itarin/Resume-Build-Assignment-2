@@ -4,7 +4,6 @@ class Library {
     this.bookList = [];
     //local storage key
     this.instance = instance;
-    //this.refreshLibURL = "http://localhost:3000/Library";
     this.refreshLibURL = "http://127.0.0.1:3000/Library/";
   }
   //************
@@ -107,7 +106,7 @@ class Library {
   }
   //Delete from table by Clicking X and remove from library
   _handleDeleteFromTable (e) {
-    event.preventDefault();
+    e.preventDefault();
     let $tr = $(e.currentTarget).parent("tr");
     let getTitle = $(e.currentTarget).siblings(".getTitle").text();
     this.removeBookByTitle(getTitle);//implements local storage
@@ -124,12 +123,12 @@ class Library {
       type: "GET",
       url: this.refreshLibURL,
       data: {
-        // _id: this._id,
-        // cover: `${this.cover}`,
-        // title: `${this.title}`,
-        // author: `${this.author}`,
-        // pubDate: `${this.pubDate}`,
-        // numPages: `${this.numPages}`
+        _id: this._id,
+        cover: `${this.cover}`,
+        title: `${this.title}`,
+        author: `${this.author}`,
+        pubDate: `${this.pubDate}`,
+        numPages: `${this.numPages}`
       }
     }
   }
@@ -140,7 +139,8 @@ class Library {
   }
   _refreshLibSuccess (response) {
     if(response){
-      console.log(response);
+      this.addBooks(response);
+      this.makeTable()
     }
   }
   _refreshFail () {
@@ -164,13 +164,13 @@ class Library {
   }
   //addBooks(books)Purpose: Takes multiple books, in the form of an array of book objects, and adds the objects to your books array, not used at the moment
   addBooks ( array ) {
-    let count=0
+    let booksAdded=0
     for(let i = 0; i< array.length; i++){
       if(this.addBook(array[i])){
-        count++;
+        booksAdded++;
       }
     }
-    return count;
+    return booksAdded;
   }
   //Remove Book By title
   removeBookByTitle ( title ) {
