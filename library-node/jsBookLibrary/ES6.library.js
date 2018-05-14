@@ -4,6 +4,8 @@ class Library {
     this.bookList = [];
     //local storage key
     this.instance = instance;
+    //this.refreshLibURL = "http://localhost:3000/Library";
+    this.refreshLibURL = "http://127.0.0.1:3000/Library/";
   }
   //************
   //Architecture
@@ -41,7 +43,7 @@ class Library {
 
     this.$moreBooks2Add.on('click', $.proxy(this._handleMoreBooks2Add, this) );
 
-    this.$addBookSubmit.on('click', $.proxy(this._handleAddBookSubmit, this) );
+    this.$addBookSubmit.on('click', $.proxy(this._handleAddBookSubmit, this) ).on('click', $.proxy(this.refreshLibrary, this) );
 
     this.$deleteFromTable.on('click', '#delete', $.proxy(this._handleDeleteFromTable, this) );
   }
@@ -98,7 +100,7 @@ class Library {
   }
   //Modal, save changes
   _handleAddBookSubmit () {
-    event.preventDefault();
+    //event.preventDefault();
     this.userInputValues();
     this.addBooks( this.tempArray );
     return true;
@@ -116,26 +118,31 @@ class Library {
   //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   //ajax call parameters
   _getLibParams () {
+
     return {
       dataType: "json",
       type: "GET",
-      url: this.refreshLibraryURL,
+      url: this.refreshLibURL,
       data: {
-        _id: this._id,
-        cover: `${this.cover}`,
-        title: `${this.title}`,
-        author: `${this.author}`,
-        pubDate: `${this.pubDate}`,
-        numPages: `${this.numPages}`
+        // _id: this._id,
+        // cover: `${this.cover}`,
+        // title: `${this.title}`,
+        // author: `${this.author}`,
+        // pubDate: `${this.pubDate}`,
+        // numPages: `${this.numPages}`
       }
     }
   }
   refreshLibrary (event) {
     event.preventDefault();
     //***********
-    $.ajax( this._getLibParams ).done( $.proxy(this._getSuccess, this) ).fail($.proxy(this._refreshFail, this) );
+    $.ajax( this._getLibParams() ).done( $.proxy(this._refreshLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
-
+  _refreshLibSuccess (response) {
+    if(response){
+      console.log(response);
+    }
+  }
   _refreshFail () {
     console.log( "failed to retreive data" );
   }
@@ -310,9 +317,9 @@ class Library {
 
     //display # of books added to user in modal
     $('#addBooksFooter').text('You have added: ' + this.tempArray.length + ' book(s).');
-    return this.tempArray;
     this.displayAdded( cover, title, author, numPages, pubDate );
     this.storeLocal();
+    return this.tempArray;
   }
   //Display Book attribute in card above table
   displayAdded ( cover1, title1, author1, numPages1, pubDate1 ) {
