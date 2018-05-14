@@ -25,6 +25,12 @@ class Library {
     this.$moreBooks2Add = $('#moreBooks2Add');
     this.$addBookSubmit = $('#addBookSubmit');
     this.$deleteFromTable = $('#orgTable');
+    //User Input selectors
+    this.$coverInput = $('#coverInput');
+    this.$titleInput = $('#titleInput');
+    this.$authorInput = $('#authorInput');
+    this.$numPagesInput = $('#numPagesInput');
+    this.$pubDateInput = $('#pubDateInput');
 
     this._bindEvents();
   }
@@ -49,7 +55,8 @@ class Library {
   //************
   //HANDLERS
   //Search Library
-  _handleSubmitSearch () {
+  _handleSubmitSearch (event) {
+    event.preventDefault();
     let userSearched = $( '#searchLib' ).val();
     let results = this.searchLibrary( userSearched );
     $('#userDisplay, #userDisplayHeading').toggle();
@@ -76,6 +83,7 @@ class Library {
     let authorIcon ="<i class='far fa-user'></i> " + " ";
     $('#userDisplayHeading').toggle().text('Authors in Library');
     $('#userDisplay').toggle();
+    $('#newBookModule').empty();
     $(results).each( (index, element ) => $('#newBookModule').append('<h4 class="card-title text-light bg-dark text-center">'+authorIcon+element+'</h4>') );
     return true;
   }
@@ -94,12 +102,14 @@ class Library {
   //Add more than one book
   _handleMoreBooks2Add (event) {
     event.preventDefault();
+    this.postLibrary();
     this.userInputValues();
     return true;
   }
   //Modal, save changes
   _handleAddBookSubmit () {
     //event.preventDefault();
+    this.postLibrary();
     this.userInputValues();
     this.addBooks( this.tempArray );
     return true;
@@ -122,23 +132,40 @@ class Library {
       dataType: "json",
       type: "GET",
       url: this.refreshLibURL,
+    }
+
+  }
+  _postLibParams () {
+
+    return {
+      dataType: "json",
+      type: "POST",
+      url: this.refreshLibURL,
       data: {
-        _id: this._id,
-        cover: `${this.cover}`,
-        title: `${this.title}`,
-        author: `${this.author}`,
-        pubDate: `${this.pubDate}`,
-        numPages: `${this.numPages}`
+        cover: this.$coverInput.val(),
+        title: this.$titleInput.val(),
+        author: this.$authorInput.val(),
+        numPages: this.$numPagesInput.val(),
+        pubDate: this.$pubDateInput.val()
       }
     }
+
+  }
+  postLibrary () {
+    $.ajax( this._postLibParams() ).done( $.proxy(this._postLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
   refreshLibrary (event) {
     event.preventDefault();
-    //***********
     $.ajax( this._getLibParams() ).done( $.proxy(this._refreshLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
+  _postLibSuccess (response) {
+    if (response){
+      console.log(response);
+    }
+
+  }
   _refreshLibSuccess (response) {
-    if(response){
+    if (response){
       this.addBooks(response);
       this.makeTable()
     }
@@ -294,11 +321,11 @@ class Library {
   //Gets user input values to enter into gLib.bookList array and simultaneously display books by calling display Added
   userInputValues () {
     //get user values
-    let cover = $("#coverInput").val();
-    let title = $("#titleInput").val();
-    let author = $("#authorInput").val();
-    let numPages = $("#numPagesInput").val();
-    let pubDate = $("#pubDateInput").val();
+    let cover = this.$coverInput.val();
+    let title = this.$titleInput.val();
+    let author = this.$authorInput.val();
+    let numPages = this.$numPagesInput.val();
+    let pubDate = this.$pubDateInput.val();
     if(!cover || !title || !author || !numPages || !pubDate){
       $('#addBooksFooter').text('Enter All Fields');
       return false;
@@ -317,20 +344,20 @@ class Library {
 
     //display # of books added to user in modal
     $('#addBooksFooter').text('You have added: ' + this.tempArray.length + ' book(s).');
-    this.displayAdded( cover, title, author, numPages, pubDate );
+    //this.displayAdded( cover, title, author, numPages, pubDate );
     this.storeLocal();
     return this.tempArray;
   }
-  //Display Book attribute in card above table
-  displayAdded ( cover1, title1, author1, numPages1, pubDate1 ) {
-    $('#bookCover').attr('src', cover1);
-    document.getElementById("bookTitle").innerHTML = "Title : " + title1;
-    document.getElementById("bookAuthor").innerHTML = "Author : " + author1;
-    document.getElementById("bookNumPages").innerHTML = "Total Pgs : " + numPages1;
-    document.getElementById("bookPubDate").innerHTML = "Publication Date : " + pubDate1;
-    this.makeTable(cover1, title1, author1, numPages1, pubDate1);
-    return true;
-  }
+  // //Display Book attribute in card above table
+  // displayAdded ( cover1, title1, author1, numPages1, pubDate1 ) {
+  //   $('#bookCover').attr('src', cover1);
+  //   document.getElementById("bookTitle").innerHTML = "Title : " + title1;
+  //   document.getElementById("bookAuthor").innerHTML = "Author : " + author1;
+  //   document.getElementById("bookNumPages").innerHTML = "Total Pgs : " + numPages1;
+  //   document.getElementById("bookPubDate").innerHTML = "Publication Date : " + pubDate1;
+  //   this.makeTable(cover1, title1, author1, numPages1, pubDate1);
+  //   return true;
+  // }
   //displays the books in the library table RENDERS ROWS
   makeTable ( cover1, title1, author1, numPages1, pubDate1 ) {
     this.addRow();
@@ -395,13 +422,13 @@ class Library {
 };//End Library Class
 //Book Object Constructor
 class Book{
-  constructor (cover, title, author, numPages, pubDate) {
+  constructor (cover, title, author, numPages, pubDate, id) {
   this.cover = cover;
   this.title = title;
   this.author = author;
   this.numPages = numPages;
   this.pubDate = new Date(pubDate).toLocaleDateString("en-us", { year: "numeric"});
-  //  this.isbn = isbn;
+  this.id =  id;
   }
 };
 //*********************//
