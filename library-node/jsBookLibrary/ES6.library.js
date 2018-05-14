@@ -112,11 +112,31 @@ class Library {
     $tr.remove();
     return true;
   }
-  //AJAX functions*************
-  _ajaxGetAuth () {
-
+  //**********************AJAX functions*************
+  //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  //ajax call parameters
+  _getLibParams () {
+    return {
+      dataType: "json",
+      type: "GET",
+      url: this.refreshLibraryURL,
+      data: {
+        _id: this._id,
+        cover: `${this.cover}`,
+        title: `${this.title}`,
+        author: `${this.author}`,
+        pubDate: `${this.pubDate}`,
+        numPages: `${this.numPages}`
+      }
+    }
   }
-  _ajaxDataFail () {
+  refreshLibrary (event) {
+    event.preventDefault();
+    //***********
+    $.ajax( this._getLibParams ).done( $.proxy(this._getSuccess, this) ).fail($.proxy(this._refreshFail, this) );
+  }
+
+  _refreshFail () {
     console.log( "failed to retreive data" );
   }
   //**************
@@ -202,13 +222,7 @@ class Library {
     return matched;
   }
   //getAuthors()Purpose: Find the distinct authors’ names from all books in your library. Return: array of strings the names of all distinct authors, empty array if no books exist or if no authors exist
-  getAuthors (event) {
-
-    event.preventDefault();
-    //***********
-    $.ajax( this._ajaxGetAuthCall ).done( $.proxy(this._ajaxGetAuthWin, this) ).fail($.proxy(this._ajaxDataFail, this) );
-
-
+  getAuthors () {
     let matched = [];
     for( let i = 1; i < this.bookList.length; i++) {
      //same as: authorInLibrary = /currentAuthor\;
