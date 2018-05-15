@@ -13,7 +13,7 @@ class Library {
   //jQuery selectors, and call binds
   init () {
     this.tempArray = [];
-    this.presetBooks();
+    //this.presetBooks(); formerly used in static
     this.makeTable();
 
     //Initializing Jquery Selectors
@@ -33,10 +33,11 @@ class Library {
     this.$pubDateInput = $('#pubDateInput');
 
     this._bindEvents();
+    this.refreshLibrary();
   }
   //LIBRARY BINDS
   _bindEvents () {
-    this.$submitSearch.on( 'click', $.proxy(this._handleSubmitSearch, this) );
+    this.$submitSearch.on( 'click', $.proxy(this._handleSubmitSearch, this) ).on( 'click', this._deleteItem() );
 
     this.$getRandomBook.on( 'click', $.proxy(this._handleGetRandomBook, this) );
 
@@ -151,11 +152,22 @@ class Library {
     }
 
   }
+  _deleteItemParams () {
+    let id = "5afa44a8b5cd6630ecec07a5";
+    return {
+      dataType: "json",
+      type: "DELETE",
+      url: this.refreshLibURL + id,
+    }
+
+  }
+  _deleteItem () {
+    $.ajax( this._deleteItemParams() ).done( $.proxy(this._postLibSuccess, this) ).fail( $.proxy(this._refreshFail, this) );
+  }
   postLibrary () {
     $.ajax( this._postLibParams() ).done( $.proxy(this._postLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
-  refreshLibrary (event) {
-    event.preventDefault();
+  refreshLibrary () {
     $.ajax( this._getLibParams() ).done( $.proxy(this._refreshLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
   _postLibSuccess (response) {
@@ -171,7 +183,7 @@ class Library {
     }
   }
   _refreshFail () {
-    console.log( "failed to retreive data" );
+    console.log( "failed to retreive data");
   }
   //**************
   //TABLE F(x)'s
@@ -391,22 +403,22 @@ class Library {
     };
   }
   //Preset Books so Library isn't empty on load
-  presetBooks () {
-    let gIT = new Book("assets/readingBook.jpg", "IT", "Stephen King", "800", 'December 17, 1995 03:24:00');
-    let gCatcherIntheRye = new Book("assets/readingBook.jpg", "Catcher In The Rye", "JD Salinger", "200", 'December 25, 1987 03:24:00');
-    let gCatInTheHat = new Book("assets/readingBook.jpg", "Cat In The Hat", "Dr.Sues", "20", 'December 17, 1995 03:24:00' );
-    let book1 = new Book("assets/readingBook.jpg", "one", "Stephen King", "3", 'December 17, 1995 03:24:00');
-    let quixote= new Book("assets/readingBook.jpg", "Don Quixote", "Miguel de Cervantes Saavedra", "234", 'Dec 31, 1999');
-    let q= new Book("assets/readingBook.jpg", "Don te", "Miguel vantesra", "23", 'Dec 1, 1999');
-    let q1= new Book("assets/readingBook.jpg", "Don te1", "Miguel11 vantesra", "213", 'Dec 11, 1999');
-    let bookArray = [quixote, q, q1];
-    //Books added to Array for testing for faster testing
-    this.addBook( gIT );
-    this.addBook( gCatcherIntheRye );
-    this.addBook( gCatInTheHat );
-    this.addBook( book1 );
-    this.addBooks( bookArray );
-  }
+  // presetBooks () {
+  //   let gIT = new Book("assets/readingBook.jpg", "IT", "Stephen King", "800", 'December 17, 1995 03:24:00');
+  //   let gCatcherIntheRye = new Book("assets/readingBook.jpg", "Catcher In The Rye", "JD Salinger", "200", 'December 25, 1987 03:24:00');
+  //   let gCatInTheHat = new Book("assets/readingBook.jpg", "Cat In The Hat", "Dr.Sues", "20", 'December 17, 1995 03:24:00' );
+  //   let book1 = new Book("assets/readingBook.jpg", "one", "Stephen King", "3", 'December 17, 1995 03:24:00');
+  //   let quixote= new Book("assets/readingBook.jpg", "Don Quixote", "Miguel de Cervantes Saavedra", "234", 'Dec 31, 1999');
+  //   let q= new Book("assets/readingBook.jpg", "Don te", "Miguel vantesra", "23", 'Dec 1, 1999');
+  //   let q1= new Book("assets/readingBook.jpg", "Don te1", "Miguel11 vantesra", "213", 'Dec 11, 1999');
+  //   let bookArray = [quixote, q, q1];
+  //   //Books added to Array for testing for faster testing
+  //   this.addBook( gIT );
+  //   this.addBook( gCatcherIntheRye );
+  //   this.addBook( gCatInTheHat );
+  //   this.addBook( book1 );
+  //   this.addBooks( bookArray );
+  // }
   //Local Storage set f(x)
   storeLocal () {
     let storeBookList = JSON.stringify( this.bookList );
