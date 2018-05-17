@@ -68,6 +68,6 @@ input[type=text]:focus {
 .lilOpacity{
   text-shadow: .12rem .12rem rgba(47, 51, 60, .4);
 }
-.hide, #userDisplayHeading, #userDisplay{
+.hide, #userDisplayHeading, #userDisplay,#newBookModule{
   display: none;
 }

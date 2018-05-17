@@ -4,7 +4,7 @@ class Library {
     this.bookList = [];
     //local storage key
     this.instance = instance;
-    this.refreshLibURL = "http://127.0.0.1:3000/Library/";
+    this.refreshLibURL = "http://localhost:3000/library/";
   }
   //************
   //Architecture
@@ -33,12 +33,11 @@ class Library {
     this.$pubDateInput = $('#pubDateInput');
 
     this._bindEvents();
-    this.refreshLibrary();
+    this._refreshLibrary();
   }
   //LIBRARY BINDS
   _bindEvents () {
-    this.$submitSearch.on( 'click', $.proxy(this._handleSubmitSearch, this) ).on( 'click', this._deleteItem() );
-
+    this.$submitSearch.on( 'click', $.proxy(this._handleSubmitSearch, this) );
     this.$getRandomBook.on( 'click', $.proxy(this._handleGetRandomBook, this) );
 
     this.$getAuthors.on( 'click', $.proxy(this._handleGetAuthors, this) );
@@ -49,7 +48,7 @@ class Library {
 
     this.$moreBooks2Add.on('click', $.proxy(this._handleMoreBooks2Add, this) );
 
-    this.$addBookSubmit.on('click', $.proxy(this._handleAddBookSubmit, this) ).on('click', $.proxy(this.refreshLibrary, this) );
+    this.$addBookSubmit.on('click', $.proxy(this._handleAddBookSubmit, this) );
 
     this.$deleteFromTable.on('click', '#delete', $.proxy(this._handleDeleteFromTable, this) );
   }
@@ -68,17 +67,17 @@ class Library {
   }
   //Get and show Random Book getRandomBook
   _handleGetRandomBook () {
-    let results = this.getRandomBook();
-
+    this._randomBookLib();
     //Change display heading to reflect random authors
-    $('#userDisplay').toggle().text('Random Book Generator');
-    $('#userDisplayHeading').text('Book Shuffle');
-    this.showUserInput(results);
+    $('#userDisplay').toggle().html('<p class="text-light">Random Book Generator</p>');
+    $('#userDisplayHeading').toggle().text('Book Shuffle');
+    $('#newBookModule').toggle();
+
     return true;
   }
   //Get and show Authors, from .getAuthors returned array of strings
   //******
-  _handleGetAuthors () {
+  _handleGetAuthors (element) {
     let results = this.getAuthors();
 
     let authorIcon ="<i class='far fa-user'></i> " + " ";
@@ -101,17 +100,17 @@ class Library {
     return true;
   }
   //Add more than one book
-  _handleMoreBooks2Add (event) {
-    event.preventDefault();
-    this.postLibrary();
-    this.userInputValues();
+  _handleMoreBooks2Add () {
+    //event.preventDefault();
+    this._postLibrary();
+    //this.userInputValues();
     return true;
   }
   //Modal, save changes
   _handleAddBookSubmit () {
     //event.preventDefault();
-    this.postLibrary();
-    this.userInputValues();
+    this._postLibrary();
+    //this.userInputValues();
     this.addBooks( this.tempArray );
     return true;
   }
@@ -130,8 +129,8 @@ class Library {
   _getLibParams () {
 
     return {
-      dataType: "json",
-      type: "GET",
+      dataType: 'json',
+      type: 'GET',
       url: this.refreshLibURL,
     }
 
@@ -140,46 +139,71 @@ class Library {
 
     return {
       dataType: "json",
-      type: "POST",
+      method: "POST",
       url: this.refreshLibURL,
       data: {
         cover: this.$coverInput.val(),
         title: this.$titleInput.val(),
         author: this.$authorInput.val(),
-        numPages: this.$numPagesInput.val(),
-        pubDate: this.$pubDateInput.val()
+        numPages: this.$numPagesInput.val()
       }
     }
 
   }
-  _deleteItemParams () {
-    let id = "5afa44a8b5cd6630ecec07a5";
+  _deleteItemParams (book) {
+    let bookId = book._id;
+
     return {
-      dataType: "json",
-      type: "DELETE",
-      url: this.refreshLibURL + id,
+      dataType: 'json',
+      type: 'DELETE',
+      url: this.refreshLibURL+bookId,
+      data: {
+        _id: bookId
+      }
     }
 
   }
-  _deleteItem () {
-    $.ajax( this._deleteItemParams() ).done( $.proxy(this._postLibSuccess, this) ).fail( $.proxy(this._refreshFail, this) );
+  _putParams () {
+
+    return {
+      dataType: 'json',
+      type: 'PUT',
+      url: this.refreshLibURL+bookId,
+      data: {
+        _id: bookId
+      }
+    }
+
   }
-  postLibrary () {
+  //AJAX funcitons
+  _deleteItem (book) {
+    $.ajax( this._deleteItemParams(book) ).fail( $.proxy(this._refreshFail, this) );
+  }
+  _postLibrary () {
     $.ajax( this._postLibParams() ).done( $.proxy(this._postLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
-  refreshLibrary () {
+  _refreshLibrary () {
     $.ajax( this._getLibParams() ).done( $.proxy(this._refreshLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
-  _postLibSuccess (response) {
-    if (response){
-      console.log(response);
+  _randomBookLib () {
+    $.ajax( this._getLibParams() ).done( $.proxy(this._randomLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
+  }
+  _putBookVals () {
+    $.ajax( this._putParams() ).done( $.proxy(this._randomLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
+  }
+  // AJAX callback response/fails
+  _postLibSuccess () {
+    console.log('test')
+  }
+  _randomLibSuccess (response) {
+    if (response) {
+    this.getRandomBook(response);
     }
-
   }
   _refreshLibSuccess (response) {
     if (response){
       this.addBooks(response);
-      this.makeTable()
+      this.makeTable();
     }
   }
   _refreshFail () {
@@ -190,7 +214,6 @@ class Library {
   //...F(x)'s from previous CL requirments and .handlers assist f(x)'s'
   //Add a New Book to the Library
   addBook ( book ) {
-    console.log(book);
     for( let i = 0; i < this.bookList.length; i++){
       if( book.title === this.bookList[i].title ){
         $('#bookTitle').text('Book cannot be added, it is already in Library.')
@@ -198,7 +221,7 @@ class Library {
       }
     }
     this.bookList.push( book );
-    this.storeLocal();
+    //this.storeLocal();
     return true;
   }
   //addBooks(books)Purpose: Takes multiple books, in the form of an array of book objects, and adds the objects to your books array, not used at the moment
@@ -215,6 +238,7 @@ class Library {
   removeBookByTitle ( title ) {
     for( let i = this.bookList.length - 1 ; i >= 0; i--){
         if( title.toLowerCase() === this.bookList[i].title.toLowerCase() ){
+          this._deleteItem( this.bookList[i]);
           this.bookList.splice( i, 1 );//remove matched book
           this.storeLocal();
           return true;
@@ -223,9 +247,10 @@ class Library {
     return false;//No match
   }
   //Remove Book By authorName
-  removeBookByAuthor ( authorName ) {
+  removeBookByAuthor ( book ) {
+    this._deleteItem(book);
     for( let i = this.bookList.length - 1 ; i >= 0; i--){
-        if( authorName.toLowerCase() === this.bookList[i].author.toLowerCase() ){
+        if( book.authorName.toLowerCase() === this.bookList[i].author.toLowerCase() ){
           this.bookList.splice( i, 1 );//remove matched book
           this.storeLocal();
           return true;
@@ -234,13 +259,26 @@ class Library {
     return false;//No match
   }
   //Get Random Book and Return, otherwise return null
-  getRandomBook () {
-    let randomIndex;
-    if(this.bookList === []){
+  getRandomBook (array) {
+    var randomIndex;
+    if(array === []){
       return null
     } else {
-      randomIndex = Math.floor( Math.random() * this.bookList.length ) ;
-      return this.bookList[ randomIndex ];
+      randomIndex = Math.floor( Math.random() * array.length ) ;
+      let result= array[ randomIndex ];
+
+      $('#userDisplay').append(
+         '<div class="card bg-dark text-light border-0" style="min-width: 18rem;">' +
+            '<img class="card-img-top img-thumbnail w-25 p-0" src="' +`${result.cover}`+ ' " alt="Card image cap">' +
+           '<div class="card-body bg-dark">' +
+             '<h5 class="card-title text-center">'+`${result.title}`+'</h5>'+
+             '<p class="card-text">'+ `Author : ${result.author}`+  '</p>'+
+             '<p class="card-text">'+ `Total Pages : ${result.numPages}`+  '</p>'+
+             '<p class="card-text">'+ `Published  : ${result.pubDate}`+  '</p>'+
+           '</div>'+
+        '</div>'
+      );
+
     }
   }
   //Get Book by Title, return all that match title whole/partially
@@ -307,7 +345,7 @@ class Library {
       $('#newBookModule').append(
          '<div class="card bg-dark text-light border-0" style="min-width: 18rem;">' +
             '<img class="card-img-top img-thumbnail mw-75 p-0" src="' +`${element.cover}`+ ' " alt="Card image cap">' +
-           '<div class="card-body">' +
+           '<div class="card-body bg-dark">' +
              '<h5 class="card-title text-center">'+`${element.title}`+'</h5>'+
              '<p class="card-text">'+ `Author : ${element.author}`+  '</p>'+
              '<p class="card-text">'+ `Total Pages : ${element.numPages}`+  '</p>'+
@@ -332,6 +370,7 @@ class Library {
   }
   //Gets user input values to enter into gLib.bookList array and simultaneously display books by calling display Added
   userInputValues () {
+
     //get user values
     let cover = this.$coverInput.val();
     let title = this.$titleInput.val();
@@ -356,8 +395,9 @@ class Library {
 
     //display # of books added to user in modal
     $('#addBooksFooter').text('You have added: ' + this.tempArray.length + ' book(s).');
+    this.addBooks(this.tempArray)
     //this.displayAdded( cover, title, author, numPages, pubDate );
-    this.storeLocal();
+    //this.storeLocal(); will store added books to book array
     return this.tempArray;
   }
   // //Display Book attribute in card above table
@@ -440,7 +480,7 @@ class Book{
   this.author = author;
   this.numPages = numPages;
   this.pubDate = new Date(pubDate).toLocaleDateString("en-us", { year: "numeric"});
-  this.id =  id;
+  this._id =  id;
   }
 };
 //*********************//
