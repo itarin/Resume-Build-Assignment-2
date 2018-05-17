@@ -163,7 +163,7 @@ class Library {
     }
 
   }
-  _putParams () {
+  _putParams (book) {
 
     return {
       dataType: 'json',
@@ -189,7 +189,7 @@ class Library {
     $.ajax( this._getLibParams() ).done( $.proxy(this._randomLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
   _putBookVals () {
-    $.ajax( this._putParams() ).done( $.proxy(this._randomLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
+    $.ajax( this._putParams(book) ).done( $.proxy(this._randomLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
   // AJAX callback response/fails
   _postLibSuccess () {
