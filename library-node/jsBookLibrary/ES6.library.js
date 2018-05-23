@@ -34,6 +34,15 @@ class Library {
 
     this._bindEvents();
     this._refreshLibrary();
+    //enable popovers everywhere
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    });
+    $(function () {
+      $('.example-popover').popover({
+        container: 'body'
+      })
+    });
   }
   //LIBRARY BINDS
   _bindEvents () {
@@ -164,7 +173,8 @@ class Library {
 
   }
   _putParams (book) {
-
+    let bookId = book._id;
+    
     return {
       dataType: 'json',
       type: 'PUT',
@@ -176,15 +186,16 @@ class Library {
 
   }
   //AJAX funcitons
+  _refreshLibrary () {
+    $.ajax( this._getLibParams() ).done( $.proxy(this._refreshLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
+  }
   _deleteItem (book) {
     $.ajax( this._deleteItemParams(book) ).fail( $.proxy(this._refreshFail, this) );
   }
   _postLibrary () {
     $.ajax( this._postLibParams() ).done( $.proxy(this._postLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
-  _refreshLibrary () {
-    $.ajax( this._getLibParams() ).done( $.proxy(this._refreshLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
-  }
+
   _randomBookLib () {
     $.ajax( this._getLibParams() ).done( $.proxy(this._randomLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
@@ -281,6 +292,7 @@ class Library {
 
     }
   }
+  //Library Functions
   //Get Book by Title, return all that match title whole/partially
   getBookByTitle ( title ) {
     let matched = [];
@@ -421,6 +433,7 @@ class Library {
     for(let i = 0; i < this.bookList.length; i++) {
         currentData =  "<tr class='flex-wrap align-content-between' >" +
                           "<td>" +
+                            "<button type='button' class='btn btn-secondary btn-sm' data-toggle='popover' title='Popover title' data-content='And here some amazing content. It very engaging. Right?'>"+"Click to toggle popover"+"</button>" +
                             "<img class='img-thumbnail w-50 p-0 ml-5 border-0' src='" + this.bookList[i].cover + "'>"  +
                           "</td>" +
                           "<td class='getTitle'>" +
