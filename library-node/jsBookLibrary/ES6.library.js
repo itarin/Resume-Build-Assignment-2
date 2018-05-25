@@ -24,16 +24,18 @@ class Library {
     this.$deleteAuth = $('#deleteAuth'); //delete author submit button
     this.$moreBooks2Add = $('#moreBooks2Add');
     this.$addBookSubmit = $('#addBookSubmit');
-    this.$deleteFromTable = $('#orgTable');
+    this.$deleteFromTable = $('#libTable');
     //User Input selectors
     this.$coverInput = $('#coverInput');
     this.$titleInput = $('#titleInput');
     this.$authorInput = $('#authorInput');
     this.$numPagesInput = $('#numPagesInput');
     this.$pubDateInput = $('#pubDateInput');
-
+    this.$libTable = $('#libTable');
     this._bindEvents();
     this._refreshLibrary();
+    //make content editable
+    this.$libTable.attr('contenteditable', 'true');
     //enable popovers everywhere
     $(function () {
       $('[data-toggle="popover"]').popover()
@@ -46,6 +48,7 @@ class Library {
   }
   //LIBRARY BINDS
   _bindEvents () {
+    this.$libTable.on( 'focusout', this._putBookVals(event) );
     this.$submitSearch.on( 'click', $.proxy(this._handleSubmitSearch, this) );
     this.$getRandomBook.on( 'click', $.proxy(this._handleGetRandomBook, this) );
 
@@ -104,7 +107,7 @@ class Library {
   _handleDeleteAuth () {
     let deleteByAuth = $('#deleteAuthInput').val();
     this.removeBookByAuthor(deleteByAuth);
-    $("#orgTable tbody tr").remove();
+    $("#libTable tbody tr").remove();
     this.makeTable();
     return true;
   }
@@ -134,6 +137,23 @@ class Library {
   }
   //**********************AJAX functions*************
   //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  //AJAX funcitons, parameters bellow
+  _refreshLibrary () {
+    $.ajax( this._getLibParams() ).done( $.proxy(this._refreshLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
+  }
+  _deleteItem (book) {
+    $.ajax( this._deleteItemParams(book) ).fail( $.proxy(this._refreshFail, this) );
+  }
+  _postLibrary () {
+    $.ajax( this._postLibParams() ).done( $.proxy(this._postLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
+  }
+
+  _randomBookLib () {
+    $.ajax( this._getLibParams() ).done( $.proxy(this._randomLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
+  }
+  _putBookVals (book) {
+    $.ajax( this._putParams(book) ).done( $.proxy(this._postLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
+  }
   //ajax call parameters
   _getLibParams () {
 
@@ -174,37 +194,25 @@ class Library {
   }
   _putParams (book) {
     let bookId = book._id;
-    
+
     return {
       dataType: 'json',
       type: 'PUT',
       url: this.refreshLibURL+bookId,
       data: {
+        cover: this.$coverInput.val(),
+        title: this.$titleInput.val(),
+        author: this.$authorInput.val(),
+        numPages: this.$numPagesInput.val(),
         _id: bookId
       }
     }
 
   }
-  //AJAX funcitons
-  _refreshLibrary () {
-    $.ajax( this._getLibParams() ).done( $.proxy(this._refreshLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
-  }
-  _deleteItem (book) {
-    $.ajax( this._deleteItemParams(book) ).fail( $.proxy(this._refreshFail, this) );
-  }
-  _postLibrary () {
-    $.ajax( this._postLibParams() ).done( $.proxy(this._postLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
-  }
 
-  _randomBookLib () {
-    $.ajax( this._getLibParams() ).done( $.proxy(this._randomLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
-  }
-  _putBookVals () {
-    $.ajax( this._putParams(book) ).done( $.proxy(this._randomLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
-  }
   // AJAX callback response/fails
   _postLibSuccess () {
-    console.log('test')
+    console.log('success')
   }
   _randomLibSuccess (response) {
     if (response) {
@@ -428,12 +436,11 @@ class Library {
   }
   //Build table rows, .makeTable assist f(x)
   addRow () {
-    $('#orgTable tr td').remove();
+    $('#libTable tr td').remove();
     let currentData;
     for(let i = 0; i < this.bookList.length; i++) {
         currentData =  "<tr class='flex-wrap align-content-between' >" +
                           "<td>" +
-                            "<button type='button' class='btn btn-secondary btn-sm' data-toggle='popover' title='Popover title' data-content='And here some amazing content. It very engaging. Right?'>"+"Click to toggle popover"+"</button>" +
                             "<img class='img-thumbnail w-50 p-0 ml-5 border-0' src='" + this.bookList[i].cover + "'>"  +
                           "</td>" +
                           "<td class='getTitle'>" +
@@ -452,7 +459,7 @@ class Library {
                             "<i class='material-icons text-light'>cancel</i>" +
                           "</td>"
                         "</tr>";
-        $('#orgTable').append( currentData );
+        $('#libTable').append( currentData );
     };
   }
   //Preset Books so Library isn't empty on load
