@@ -54,7 +54,7 @@ class Library {
     //make content editable
     this.$orgTable.attr('contenteditable', 'true');
 
-    this.$orgTableRows.on('focusout', this._handlePut(event) );
+    this.$orgTableRows.on('focusout', function(event){this._handlePut(event);}  );
 
     this.$submitSearch.on( 'click', $.proxy(this._handleSubmitSearch, this) );
 
@@ -165,9 +165,9 @@ class Library {
   _randomBookLib () {
     $.ajax( this._getLibParams() ).done( $.proxy(this._randomLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
-  // _putBookVals (book) {
-  //   $.ajax( this._putParams(book) ).done( $.proxy(this._postLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
-  // }
+  _putBookVals (book) {
+    $.ajax( this._putParams(book) ).done( $.proxy(this._postLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
+  }
   //ajax call parameters
   _getLibParams () {
 
@@ -206,23 +206,23 @@ class Library {
     }
 
   }
-  // _putParams (book) {
-  //   let bookId = book._id;
-  //
-  //   return {
-  //     dataType: 'json',
-  //     type: 'PUT',
-  //     url: this.refreshLibURL+bookId,
-  //     data: {
-  //       // cover: this.$coverInput.val(),
-  //       // title: this.$titleInput.val(),
-  //       // author: this.$authorInput.val(),
-  //       // numPages: this.$numPagesInput.val(),
-  //       _id: bookId
-  //     }
-  //   }
-  //
-  // }
+  _putParams (book) {
+    let bookId = book._id;
+
+    return {
+      dataType: 'json',
+      type: 'PUT',
+      url: this.refreshLibURL+bookId,
+      data: {
+        // cover: this.$coverInput.val(),
+        // title: this.$titleInput.val(),
+        // author: this.$authorInput.val(),
+        // numPages: this.$numPagesInput.val(),
+        _id: bookId
+      }
+    }
+
+  }
 
   // AJAX callback response/fails
   _postLibSuccess () {
@@ -374,9 +374,12 @@ class Library {
     }
     return matched;
   }
+  //************* UI TABLE FUNCTIONS****************
   //displays the books in the library table RENDERS ROWS
   makeTable ( ) {
     this.addRow();
+
+    document.getElementById("orgTable").style.cursor = "pointer";
   }
   //Build table rows, .makeTable assist f(x)
   addRow () {
@@ -385,6 +388,11 @@ class Library {
     for(let i = 0; i < this.bookList.length; i++) {
         currentData =
         "<tr class='flex-wrap align-content-between' data-id ='" + this.bookList[i]._id + "'>" +
+        "<td class=''>" +
+          "<div id='save' class ='border border-light p-1'>" +
+            "<i class='far fa-save fa-lg'></i> Save Edit" +
+            "</div>" +
+        "</td>" +
           "<td>" +
             "<img class='img-thumbnail w-50 p-0 ml-5 border-0' src='" + this.bookList[i].cover + "'>"  +
           "</td>" +
@@ -465,8 +473,6 @@ class Library {
 
 };//End Library Class
 
-
-
 //*********************//
 //Doc.Ready
 $(document).ready( () => {
@@ -474,8 +480,7 @@ $(document).ready( () => {
   let gLib = new Library("gLib");
   gLib.makeTable();
   gLib.init();
-  //local localStorage
-  gLib.storeLocal();
+
   //GOOGLE BOOKS API
   google.books.load();
   function initialize () {
