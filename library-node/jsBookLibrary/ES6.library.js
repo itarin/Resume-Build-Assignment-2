@@ -1,22 +1,35 @@
+//Book Object Constructor
+class Book{
+  constructor (cover, title, author, numPages, pubDate, id) {
+  this.cover = cover;
+  this.title = title;
+  this.author = author;
+  this.numPages = numPages;
+  this.pubDate = new Date(pubDate).toLocaleDateString("en-us", { year: "numeric"});
+  this._id =  id;
+  }
+};
 //Library Constructor and Main Obj Creation
 class Library {
   constructor(instance) {
     this.bookList = [];
-    //local storage key
+    // local storage key
     this.instance = instance;
     this.refreshLibURL = "http://localhost:3000/library/";
   }
   //************
-  //Architecture
+  // Architecture
 
-  //Initialize preset books, load table, init sort f(x),
-  //jQuery selectors, and call binds
+  // Initialize preset books, load table, init sort f(x),
+  // jQuery selectors, and call binds
   init () {
     this.tempArray = [];
     //this.presetBooks(); formerly used in static
     this.makeTable();
 
-    //Initializing Jquery Selectors
+    // Initializing Jquery Selectors
+    this.$orgTable = $('#orgTable');
+    this.$orgTableRows = $('#orgTable tr');
     this.$submitSearch = $('#submitSearch');
     this.$getRandomBook = $('#getRandomBook');
     this.$getAuthors = $('#getAuthors');
@@ -24,32 +37,27 @@ class Library {
     this.$deleteAuth = $('#deleteAuth'); //delete author submit button
     this.$moreBooks2Add = $('#moreBooks2Add');
     this.$addBookSubmit = $('#addBookSubmit');
-    this.$deleteFromTable = $('#libTable');
-    //User Input selectors
+    this.$deleteFromTable = $('#orgTable');
+    // User Input selectors
     this.$coverInput = $('#coverInput');
     this.$titleInput = $('#titleInput');
     this.$authorInput = $('#authorInput');
     this.$numPagesInput = $('#numPagesInput');
     this.$pubDateInput = $('#pubDateInput');
-    this.$libTable = $('#libTable');
+
     this._bindEvents();
     this._refreshLibrary();
-    //make content editable
-    this.$libTable.attr('contenteditable', 'true');
-    //enable popovers everywhere
-    $(function () {
-      $('[data-toggle="popover"]').popover()
-    });
-    $(function () {
-      $('.example-popover').popover({
-        container: 'body'
-      })
-    });
+
   }
   //LIBRARY BINDS
   _bindEvents () {
-    this.$libTable.on( 'focusout', this._putBookVals(event) );
+    //make content editable
+    this.$orgTable.attr('contenteditable', 'true');
+
+    this.$orgTableRows.on('focusout', this._handlePut(event) );
+
     this.$submitSearch.on( 'click', $.proxy(this._handleSubmitSearch, this) );
+
     this.$getRandomBook.on( 'click', $.proxy(this._handleGetRandomBook, this) );
 
     this.$getAuthors.on( 'click', $.proxy(this._handleGetAuthors, this) );
@@ -67,6 +75,12 @@ class Library {
   //************
   //HANDLERS
   //Search Library
+  _handlePut (event) {
+    //_putBookVals(e);
+    console.log(  "clicked: " + event );
+
+  //  console.log(  "clicked: " + $(this).val() );
+  }
   _handleSubmitSearch (event) {
     event.preventDefault();
     let userSearched = $( '#searchLib' ).val();
@@ -107,7 +121,7 @@ class Library {
   _handleDeleteAuth () {
     let deleteByAuth = $('#deleteAuthInput').val();
     this.removeBookByAuthor(deleteByAuth);
-    $("#libTable tbody tr").remove();
+    $("#orgTable tbody tr").remove();
     this.makeTable();
     return true;
   }
@@ -151,9 +165,9 @@ class Library {
   _randomBookLib () {
     $.ajax( this._getLibParams() ).done( $.proxy(this._randomLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
-  _putBookVals (book) {
-    $.ajax( this._putParams(book) ).done( $.proxy(this._postLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
-  }
+  // _putBookVals (book) {
+  //   $.ajax( this._putParams(book) ).done( $.proxy(this._postLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
+  // }
   //ajax call parameters
   _getLibParams () {
 
@@ -192,23 +206,23 @@ class Library {
     }
 
   }
-  _putParams (book) {
-    let bookId = book._id;
-
-    return {
-      dataType: 'json',
-      type: 'PUT',
-      url: this.refreshLibURL+bookId,
-      data: {
-        cover: this.$coverInput.val(),
-        title: this.$titleInput.val(),
-        author: this.$authorInput.val(),
-        numPages: this.$numPagesInput.val(),
-        _id: bookId
-      }
-    }
-
-  }
+  // _putParams (book) {
+  //   let bookId = book._id;
+  //
+  //   return {
+  //     dataType: 'json',
+  //     type: 'PUT',
+  //     url: this.refreshLibURL+bookId,
+  //     data: {
+  //       // cover: this.$coverInput.val(),
+  //       // title: this.$titleInput.val(),
+  //       // author: this.$authorInput.val(),
+  //       // numPages: this.$numPagesInput.val(),
+  //       _id: bookId
+  //     }
+  //   }
+  //
+  // }
 
   // AJAX callback response/fails
   _postLibSuccess () {
@@ -216,7 +230,7 @@ class Library {
   }
   _randomLibSuccess (response) {
     if (response) {
-    this.getRandomBook(response);
+      this.getRandomBook(response);
     }
   }
   _refreshLibSuccess (response) {
@@ -231,6 +245,16 @@ class Library {
   //**************
   //TABLE F(x)'s
   //...F(x)'s from previous CL requirments and .handlers assist f(x)'s'
+  //addBooks(books)Purpose: Takes multiple books, in the form of an array of book objects, and adds the objects to your books array, not used at the moment
+  addBooks ( array ) {
+    let booksAdded=0
+    for(let i = 0; i< array.length; i++){
+      if(this.addBook(array[i])){
+        booksAdded++;
+      }
+    }
+    return booksAdded;
+  }
   //Add a New Book to the Library
   addBook ( book ) {
     for( let i = 0; i < this.bookList.length; i++){
@@ -243,16 +267,7 @@ class Library {
     //this.storeLocal();
     return true;
   }
-  //addBooks(books)Purpose: Takes multiple books, in the form of an array of book objects, and adds the objects to your books array, not used at the moment
-  addBooks ( array ) {
-    let booksAdded=0
-    for(let i = 0; i< array.length; i++){
-      if(this.addBook(array[i])){
-        booksAdded++;
-      }
-    }
-    return booksAdded;
-  }
+
   //Remove Book By title
   removeBookByTitle ( title ) {
     for( let i = this.bookList.length - 1 ; i >= 0; i--){
@@ -431,35 +446,36 @@ class Library {
   //   return true;
   // }
   //displays the books in the library table RENDERS ROWS
-  makeTable ( cover1, title1, author1, numPages1, pubDate1 ) {
+  makeTable ( ) {
     this.addRow();
   }
   //Build table rows, .makeTable assist f(x)
   addRow () {
-    $('#libTable tr td').remove();
+    $('#orgTable tr td').remove();
     let currentData;
     for(let i = 0; i < this.bookList.length; i++) {
-        currentData =  "<tr class='flex-wrap align-content-between' >" +
-                          "<td>" +
-                            "<img class='img-thumbnail w-50 p-0 ml-5 border-0' src='" + this.bookList[i].cover + "'>"  +
-                          "</td>" +
-                          "<td class='getTitle'>" +
-                            this.bookList[i].title +
-                          "</td>" +
-                          "<td class='getAuthor'>" +
-                            this.bookList[i].author +
-                          "</td>" +
-                          "<td>" +
-                            this.bookList[i].numPages +
-                          "</td>" +
-                          "<td>" +
-                            this.bookList[i].pubDate +
-                          "</td>" +
-                          "<td id='delete' class='text-right lilOpacity'>" +
-                            "<i class='material-icons text-light'>cancel</i>" +
-                          "</td>"
-                        "</tr>";
-        $('#libTable').append( currentData );
+        currentData =
+        "<tr class='flex-wrap align-content-between' data-id ='" + this.bookList[i]._id + "'>" +
+          "<td>" +
+            "<img class='img-thumbnail w-50 p-0 ml-5 border-0' src='" + this.bookList[i].cover + "'>"  +
+          "</td>" +
+          "<td class='getTitle'>" +
+            this.bookList[i].title +
+          "</td>" +
+          "<td class='getAuthor'>" +
+            this.bookList[i].author +
+          "</td>" +
+          "<td>" +
+            this.bookList[i].numPages +
+          "</td>" +
+          "<td>" +
+            this.bookList[i].pubDate +
+          "</td>" +
+          "<td id='delete' class='text-right lilOpacity'>" +
+            "<i class='material-icons text-light'>cancel</i>" +
+          "</td>"
+        "</tr>";
+        $('#orgTable').append( currentData );
     };
   }
   //Preset Books so Library isn't empty on load
@@ -492,17 +508,7 @@ class Library {
     return retrievedObject;
   }
 };//End Library Class
-//Book Object Constructor
-class Book{
-  constructor (cover, title, author, numPages, pubDate, id) {
-  this.cover = cover;
-  this.title = title;
-  this.author = author;
-  this.numPages = numPages;
-  this.pubDate = new Date(pubDate).toLocaleDateString("en-us", { year: "numeric"});
-  this._id =  id;
-  }
-};
+
 //*********************//
 //Doc.Ready
 $(document).ready( () => {

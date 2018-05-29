@@ -31,6 +31,7 @@
 
       </div>
       <div class="row">
+        // Main Menu
         <div class="col-3 offset-9 fixed-top align-items-end border-0">
           <div id="Menu" class="card bg-dark text-white mt-5 ml-5 border-bottom">
             <h2 class="card-heading">
@@ -103,7 +104,10 @@
           </div>
           <div class="col-10 offset-2 pixelax h-25 mt-3">
             <div class="col-4 offset-1 bg-dark text-center border border-light p-0">
-              <!-- Add Books -->
+              <button  id="saveLibrary" class="btn bg-dark btn-outline-success my-2 my-sm-0 border rounded-0 mt-5" type="submit">
+                <i class="far fa-save fa-2x"></i>
+                Save Library
+              </button>
             </div>
           </div>
         </div>
@@ -252,73 +256,6 @@
 
             </div>
           </div>
-          <div class="container-fluid">
-            <!-- ADD ONE BOOK, hidden by d-none -->
-            <div class="row">
-              <div class="col-10 card-group addingBookz">
-                <div class="card mt-5 mb-0" id="addOne">
-                   <div class="card">
-                     <div class="container-fluid">
-                       <div class="card-body">
-                         <ul class="list-group list-group-flush">
-                          <li class="list-group-item">
-                             <div class="input-group input-group-lg">
-                               <div class="input-group-prepend">
-                                 <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                   <i class="material-icons">add_a_photo</i>
-                                 </span>
-                               </div>
-                               <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="coverInput" placeholder="Cover Image URL">
-                             </div>
-                           </li>
-                          <li class="list-group-item">
-                            <div class="input-group input-group-lg">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                  <i class="fas fa-book"></i>
-                                </span>
-                              </div>
-                              <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="titleInput" placeholder="Book Title">
-                            </div>
-                          </li>
-                          <li class="list-group-item">
-                            <div class="input-group input-group-lg">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                  <i class="far fa-address-book"></i>
-                                </span>
-                              </div>
-                              <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="authorInput" placeholder="Book Author">
-                            </div>
-                          </li>
-                          <li class="list-group-item">
-                            <div class="input-group input-group-lg">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                  <i class="far fa-file"></i>
-                                </span>
-                              </div>
-                              <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="numPagesInput" placeholder="Page Total">
-                            </div>
-                          </li>
-                          <li class="list-group-item">
-                            <div class="input-group input-group-lg">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text rounded-0 bg-info text-white" id="inputGroup-sizing-lg">
-                                  <i class="far fa-calendar-alt"></i>
-                                </span>
-                              </div>
-                              <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" id="pubDateInput" placeholder="Date Published">
-                            </div>
-                          </li>
-                        </ul>
-                       </div>
-                     </div>
-                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div class="col-8 offset-1 text-light mt-3">
             <h1 class="text-light bg-dark text-center border-0">
@@ -328,7 +265,9 @@
               <table class="table align-content-left bg-dark border-0 sortable" id="orgTable">
                 <thead class="lilOpacity">
                   <tr>
-                    <th scope="col" class="ml-5 "></th>
+                    <th scope="col" class="ml-5 ">
+
+                    </th>
                     <th scope="col">Title</th>
                     <th scope="col">Author</th>
                     <th class="sorttable_numeric" scope="col">Pages Total</th>

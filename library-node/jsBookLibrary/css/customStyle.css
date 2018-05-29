@@ -11,13 +11,13 @@ input[type=text]:focus {
 }
 /* These styles over-ride BootSrap Quatro */
 .bg-dark{
-  background-color: rgba(47, 51, 60, .7) !important;
+  background-color: rgba(47, 51, 60, .84) !important;
 }
 .bg-info, .bttn-info{
   /* background-color: #6e94be; */
   background-color: #6e94be !important;
 }
-.text-info{
+.text-info, .fa-save{
   color: #6e94be !important;
 }
 .bg-light, .bttn-light{
