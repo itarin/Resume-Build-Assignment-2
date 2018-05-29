@@ -77,7 +77,7 @@ class Library {
   //Search Library
   _handlePut (event) {
     //_putBookVals(e);
-    console.log(  "clicked: " + event );
+    console.log(  "clicked: " + this );
 
   //  console.log(  "clicked: " + $(this).val() );
   }
@@ -151,7 +151,7 @@ class Library {
   }
   //**********************AJAX functions*************
   //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  //AJAX funcitons, parameters bellow
+  //AJAX funcitons in this section, parameters bellow in next section
   _refreshLibrary () {
     $.ajax( this._getLibParams() ).done( $.proxy(this._refreshLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
@@ -374,77 +374,6 @@ class Library {
     }
     return matched;
   }
-  //.searchLib and .getRandomBook assist f(x) that displays results to user
-  showUserInput ( results ) {
-    $(results).each(( index, element ) => {
-      $('#newBookModule').append(
-         '<div class="card bg-dark text-light border-0" style="min-width: 18rem;">' +
-            '<img class="card-img-top img-thumbnail mw-75 p-0" src="' +`${element.cover}`+ ' " alt="Card image cap">' +
-           '<div class="card-body bg-dark">' +
-             '<h5 class="card-title text-center">'+`${element.title}`+'</h5>'+
-             '<p class="card-text">'+ `Author : ${element.author}`+  '</p>'+
-             '<p class="card-text">'+ `Total Pages : ${element.numPages}`+  '</p>'+
-             '<p class="card-text">'+ `Published  : ${element.pubDate}`+  '</p>'+
-        //     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        //     <a href="#" class="btn btn-primary">Go to Book</a>
-           '</div>'+
-        '</div>'
-      );
-      // $('#newBookModule #bookCover').attr( 'src', element.cover);
-      // $('#newBookModule #bookTitle').after( element.title + "--------");
-      // $('#newBookModule #bookAuthor').after( element.author + "--------");
-      // $('#newBookModule #bookNumPages').after( element.numPages + "--------");
-      // $('#newBookModule #bookPubDate').after( element.pubDate + "--------");
-    });
-  }
-  //CREATE A NEW BOOK F(x)
-  newBook ( cover, title, author, numPages, pubDate ) {
-    let bookCreated = new Book( cover, title, author, numPages, pubDate);
-    this.addBook(bookCreated);
-    return true;
-  }
-  //Gets user input values to enter into gLib.bookList array and simultaneously display books by calling display Added
-  userInputValues () {
-
-    //get user values
-    let cover = this.$coverInput.val();
-    let title = this.$titleInput.val();
-    let author = this.$authorInput.val();
-    let numPages = this.$numPagesInput.val();
-    let pubDate = this.$pubDateInput.val();
-    if(!cover || !title || !author || !numPages || !pubDate){
-      $('#addBooksFooter').text('Enter All Fields');
-      return false;
-    }
-    //clear input
-    $('#coverInput, #titleInput, #authorInput, #numPagesInput, #pubDateInput').val("");
-    //add book to queue array
-    this.addBookQ( cover, title, author, numPages, pubDate);
-  }
-  //get .userInputValues and add them to the book queue array, display added books
-  //and tells user how many books they have added so far.
-  addBookQ (cover, title, author, numPages, pubDate) {
-    //Inside queue, create a book on each click
-    let bookCreated = new Book( cover, title, author, numPages, pubDate );
-    this.tempArray.push( bookCreated );
-
-    //display # of books added to user in modal
-    $('#addBooksFooter').text('You have added: ' + this.tempArray.length + ' book(s).');
-    this.addBooks(this.tempArray)
-    //this.displayAdded( cover, title, author, numPages, pubDate );
-    //this.storeLocal(); will store added books to book array
-    return this.tempArray;
-  }
-  // //Display Book attribute in card above table
-  // displayAdded ( cover1, title1, author1, numPages1, pubDate1 ) {
-  //   $('#bookCover').attr('src', cover1);
-  //   document.getElementById("bookTitle").innerHTML = "Title : " + title1;
-  //   document.getElementById("bookAuthor").innerHTML = "Author : " + author1;
-  //   document.getElementById("bookNumPages").innerHTML = "Total Pgs : " + numPages1;
-  //   document.getElementById("bookPubDate").innerHTML = "Publication Date : " + pubDate1;
-  //   this.makeTable(cover1, title1, author1, numPages1, pubDate1);
-  //   return true;
-  // }
   //displays the books in the library table RENDERS ROWS
   makeTable ( ) {
     this.addRow();
@@ -478,36 +407,65 @@ class Library {
         $('#orgTable').append( currentData );
     };
   }
-  //Preset Books so Library isn't empty on load
-  // presetBooks () {
-  //   let gIT = new Book("assets/readingBook.jpg", "IT", "Stephen King", "800", 'December 17, 1995 03:24:00');
-  //   let gCatcherIntheRye = new Book("assets/readingBook.jpg", "Catcher In The Rye", "JD Salinger", "200", 'December 25, 1987 03:24:00');
-  //   let gCatInTheHat = new Book("assets/readingBook.jpg", "Cat In The Hat", "Dr.Sues", "20", 'December 17, 1995 03:24:00' );
-  //   let book1 = new Book("assets/readingBook.jpg", "one", "Stephen King", "3", 'December 17, 1995 03:24:00');
-  //   let quixote= new Book("assets/readingBook.jpg", "Don Quixote", "Miguel de Cervantes Saavedra", "234", 'Dec 31, 1999');
-  //   let q= new Book("assets/readingBook.jpg", "Don te", "Miguel vantesra", "23", 'Dec 1, 1999');
-  //   let q1= new Book("assets/readingBook.jpg", "Don te1", "Miguel11 vantesra", "213", 'Dec 11, 1999');
-  //   let bookArray = [quixote, q, q1];
-  //   //Books added to Array for testing for faster testing
-  //   this.addBook( gIT );
-  //   this.addBook( gCatcherIntheRye );
-  //   this.addBook( gCatInTheHat );
-  //   this.addBook( book1 );
-  //   this.addBooks( bookArray );
-  // }
-  //Local Storage set f(x)
-  storeLocal () {
-    let storeBookList = JSON.stringify( this.bookList );
-    return window.localStorage.setItem(this.instance, storeBookList);
+  //Gets user input values to enter into gLib.bookList array and simultaneously display books by calling display Added
+  userInputValues () {
+
+    //get user values
+    let cover = this.$coverInput.val();
+    let title = this.$titleInput.val();
+    let author = this.$authorInput.val();
+    let numPages = this.$numPagesInput.val();
+    let pubDate = this.$pubDateInput.val();
+    if(!cover || !title || !author || !numPages || !pubDate){
+      $('#addBooksFooter').text('Enter All Fields');
+      return false;
+    }
+    //clear input
+    $('#coverInput, #titleInput, #authorInput, #numPagesInput, #pubDateInput').val("");
+    //add book to queue array
+    this.addBookQ( cover, title, author, numPages, pubDate);
   }
-  //Local Storage get f(x)
-  getLocal () {
-    // Retrieve the object from storage
-    let retrievedObject = JSON.parse(window.localStorage.getItem(this.instance));
-    this.bookList = retrievedObject;
-    return retrievedObject;
+  //.searchLib and .getRandomBook assist f(x) that displays results to user
+  showUserInput ( results ) {
+    $(results).each(( index, element ) => {
+      $('#newBookModule').append(
+         '<div class="card bg-dark text-light border-0" style="min-width: 18rem;">' +
+            '<img class="card-img-top img-thumbnail mw-75 p-0" src="' +`${element.cover}`+ ' " alt="Card image cap">' +
+           '<div class="card-body bg-dark">' +
+             '<h5 class="card-title text-center">'+`${element.title}`+'</h5>'+
+             '<p class="card-text">'+ `Author : ${element.author}`+  '</p>'+
+             '<p class="card-text">'+ `Total Pages : ${element.numPages}`+  '</p>'+
+             '<p class="card-text">'+ `Published  : ${element.pubDate}`+  '</p>'+
+           '</div>'+
+        '</div>'
+      );
+    });
   }
+  //CREATE A NEW BOOK F(x)
+  newBook ( cover, title, author, numPages, pubDate ) {
+    let bookCreated = new Book( cover, title, author, numPages, pubDate);
+    this.addBook(bookCreated);
+    return true;
+  }
+
+  //get .userInputValues and add them to the book queue array, display added books
+  //and tells user how many books they have added so far.
+  addBookQ (cover, title, author, numPages, pubDate) {
+    //Inside queue, create a book on each click
+    let bookCreated = new Book( cover, title, author, numPages, pubDate );
+    this.tempArray.push( bookCreated );
+
+    //display # of books added to user in modal
+    $('#addBooksFooter').text('You have added: ' + this.tempArray.length + ' book(s).');
+    this.addBooks(this.tempArray)
+    //this.displayAdded( cover, title, author, numPages, pubDate );
+    //this.storeLocal(); will store added books to book array
+    return this.tempArray;
+  }
+
 };//End Library Class
+
+
 
 //*********************//
 //Doc.Ready
