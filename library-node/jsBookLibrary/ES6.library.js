@@ -1,3 +1,46 @@
+// document.addEventListener('DOMContentLoaded',function(event){
+//   // array with texts to type in typewriter
+//   var dataText = [ "Amsterdam.", "Full Service.", "Webdevelopment.", "Wij zijn Occhio!"];
+//
+//   // type one text in the typwriter
+//   // keeps calling itself until the text is finished
+//   function typeWriter(text, i, fnCallback) {
+//     // chekc if text isn't finished yet
+//     if (i < (text.length)) {
+//       // add next character to h1
+//      document.querySelector('.typewriter').innerHTML = text.substring(0, i+1) + "<span aria-hidden='true'></span>";
+//
+//       // wait for a while and call this function again for next character
+//       setTimeout(function() {
+//         typeWriter(text, i + 1, fnCallback)
+//       }, 100);
+//     }
+//     // text finished, call callback if there is a callback function
+//     else if (typeof fnCallback == 'function') {
+//       // call callback after timeout
+//       setTimeout(fnCallback, 700);
+//     }
+//   }
+//   // start a typewriter animation for a text in the dataText array
+//    function StartTextAnimation(i) {
+//      if (typeof dataText[i] == 'undefined'){
+//         setTimeout(function() {
+//           StartTextAnimation(0);
+//         }, 20000);
+//      }
+//      // check if dataText[i] exists
+//     if (i < dataText[i].length) {
+//       // text exists! start typewriter animation
+//      typeWriter(dataText[i], 0, function(){
+//        // after callback (and whole text has been animated), start next text
+//        StartTextAnimation(i + 1);
+//      });
+//     }
+//   }
+//   // start the text animation
+//   StartTextAnimation(0);
+// });
+
 //Book Object Constructor
 class Book{
   constructor (cover, title, author, numPages, pubDate, id) {
@@ -29,7 +72,7 @@ class Library {
 
     // Initializing Jquery Selectors
     this.$orgTable = $('#orgTable');
-    this.$orgTableRows = $('#orgTable tr');
+    this.$orgTableRows = $('#orgTable tbody tr td');
     this.$submitSearch = $('#submitSearch');
     this.$getRandomBook = $('#getRandomBook');
     this.$getAuthors = $('#getAuthors');
@@ -51,10 +94,10 @@ class Library {
   }
   //LIBRARY BINDS
   _bindEvents () {
-    //make content editable
+    //make content in #orgTable editable
     this.$orgTable.attr('contenteditable', 'true');
 
-    this.$orgTableRows.on('focusout', function(event){this._handlePut(event);}  );
+    this.$orgTableRows.on('click', ()=> {this._handlePut();}  );
 
     this.$submitSearch.on( 'click', $.proxy(this._handleSubmitSearch, this) );
 
@@ -74,13 +117,15 @@ class Library {
   }
   //************
   //HANDLERS
-  //Search Library
-  _handlePut (event) {
-    //_putBookVals(e);
-    console.log(  "clicked: " + this );
 
-  //  console.log(  "clicked: " + $(this).val() );
+  _handlePut () {
+    console.log('asdf');
+    console.log( this );
+
+    //_putBookVals();
+    //_refreshLibrary ();
   }
+  //Search Library
   _handleSubmitSearch (event) {
     event.preventDefault();
     let userSearched = $( '#searchLib' ).val();
@@ -214,7 +259,7 @@ class Library {
       type: 'PUT',
       url: this.refreshLibURL+bookId,
       data: {
-        // cover: this.$coverInput.val(),
+        // cover: .$coverInput.val(),
         // title: this.$titleInput.val(),
         // author: this.$authorInput.val(),
         // numPages: this.$numPagesInput.val(),
@@ -389,8 +434,8 @@ class Library {
         currentData =
         "<tr class='flex-wrap align-content-between' data-id ='" + this.bookList[i]._id + "'>" +
         "<td class=''>" +
-          "<div id='save' class ='border border-light p-1'>" +
-            "<i class='far fa-save fa-lg'></i> Save Edit" +
+          "<div id='save' class ='border border-light text-light text-center p-1' contenteditable = 'false'>" +
+            "<i class='far fa-save fa-lg text-light'></i> Save Edit" +
             "</div>" +
         "</td>" +
           "<td>" +

@@ -1,5 +1,7 @@
 .body{
   font-family: 'Josefin Sans', sans-serif !important;
+
+  letter-spacing: 4 rem !important;
 }
 input[type=text] {
     -webkit-transition: width 0.4s ease-in-out;
@@ -8,6 +10,13 @@ input[type=text] {
 
 input[type=text]:focus {
     width: 100%;
+}
+/* S*H*A*D*E & C*O*LO*R**/
+}Opacity{
+  text-shadow: .12rem .12rem rgba(47, 51, 60, .4);
+}
+.hide, #userDisplayHeading, #userDisplay,#newBookModule{
+  display: none;
 }
 /* These styles over-ride BootSrap Quatro */
 .bg-dark{
@@ -65,9 +74,12 @@ input[type=text]:focus {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.lilOpacity{
-  text-shadow: .12rem .12rem rgba(47, 51, 60, .4);
+typewriter {
+  border-right: .05em solid;
+  animation: caret 1s steps(1) infinite;
 }
-.hide, #userDisplayHeading, #userDisplay,#newBookModule{
-  display: none;
-}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
