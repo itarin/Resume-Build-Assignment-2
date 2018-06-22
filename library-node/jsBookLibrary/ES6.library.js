@@ -1,46 +1,3 @@
-// document.addEventListener('DOMContentLoaded',function(event){
-//   // array with texts to type in typewriter
-//   var dataText = [ "Amsterdam.", "Full Service.", "Webdevelopment.", "Wij zijn Occhio!"];
-//
-//   // type one text in the typwriter
-//   // keeps calling itself until the text is finished
-//   function typeWriter(text, i, fnCallback) {
-//     // chekc if text isn't finished yet
-//     if (i < (text.length)) {
-//       // add next character to h1
-//      document.querySelector('.typewriter').innerHTML = text.substring(0, i+1) + "<span aria-hidden='true'></span>";
-//
-//       // wait for a while and call this function again for next character
-//       setTimeout(function() {
-//         typeWriter(text, i + 1, fnCallback)
-//       }, 100);
-//     }
-//     // text finished, call callback if there is a callback function
-//     else if (typeof fnCallback == 'function') {
-//       // call callback after timeout
-//       setTimeout(fnCallback, 700);
-//     }
-//   }
-//   // start a typewriter animation for a text in the dataText array
-//    function StartTextAnimation(i) {
-//      if (typeof dataText[i] == 'undefined'){
-//         setTimeout(function() {
-//           StartTextAnimation(0);
-//         }, 20000);
-//      }
-//      // check if dataText[i] exists
-//     if (i < dataText[i].length) {
-//       // text exists! start typewriter animation
-//      typeWriter(dataText[i], 0, function(){
-//        // after callback (and whole text has been animated), start next text
-//        StartTextAnimation(i + 1);
-//      });
-//     }
-//   }
-//   // start the text animation
-//   StartTextAnimation(0);
-// });
-
 //Book Object Constructor
 class Book{
   constructor (cover, title, author, numPages, pubDate, id) {
@@ -72,6 +29,7 @@ class Library {
 
     // Initializing Jquery Selectors
     this.$orgTable = $('#orgTable');
+    this.$edit = $('#editMe');
     this.$orgTableRows = $('#orgTable tbody tr td');
     this.$submitSearch = $('#submitSearch');
     this.$getRandomBook = $('#getRandomBook');
@@ -95,9 +53,8 @@ class Library {
   //LIBRARY BINDS
   _bindEvents () {
     //make content in #orgTable editable
-    this.$orgTable.attr('contenteditable', 'true');
-
-    this.$orgTableRows.on('click', ()=> {this._handlePut();}  );
+    //this.$orgTable.attr('contenteditable', 'true');
+    this.$edit.on( 'click', console.log('clcda') );
 
     this.$submitSearch.on( 'click', $.proxy(this._handleSubmitSearch, this) );
 
@@ -118,9 +75,9 @@ class Library {
   //************
   //HANDLERS
 
-  _handlePut () {
-    console.log('asdf');
-    console.log( this );
+  _handleEdit (element) {
+    console.log(element);
+    // $.ajax( this._putParams(book) ).done( $.proxy(this._postLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
 
     //_putBookVals();
     //_refreshLibrary ();
@@ -211,7 +168,7 @@ class Library {
     $.ajax( this._getLibParams() ).done( $.proxy(this._randomLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
   _putBookVals (book) {
-    $.ajax( this._putParams(book) ).done( $.proxy(this._postLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
+    // $.ajax( this._putParams(book) ).done( $.proxy(this._postLibSuccess, this) ).fail($.proxy(this._refreshFail, this) );
   }
   //ajax call parameters
   _getLibParams () {
@@ -433,10 +390,10 @@ class Library {
     for(let i = 0; i < this.bookList.length; i++) {
         currentData =
         "<tr class='flex-wrap align-content-between' data-id ='" + this.bookList[i]._id + "'>" +
-        "<td class=''>" +
-          "<div id='save' class ='border border-light text-light text-center p-1' contenteditable = 'false'>" +
-            "<i class='far fa-save fa-lg text-light'></i> Save Edit" +
-            "</div>" +
+        "<td >" +
+          "<button id='editMe' class ='border border-light bg-transparent text-light text-center p-1'>" +
+              "<i class='far fa-save fa-lg text-dark'></i> Edit" +
+            "</button>" +
         "</td>" +
           "<td>" +
             "<img class='img-thumbnail w-50 p-0 ml-5 border-0' src='" + this.bookList[i].cover + "'>"  +
