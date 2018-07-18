@@ -3,7 +3,9 @@ import time
 
 
 
-for x in range(20):
+for x in range(2):
     for y in range(20):
         print(emoji.emojize(':alien:'*y))
-        time.sleep(.09)
+        print(emoji.emojize(':neckbeard:'))
+        time.sleep(.02)
+
