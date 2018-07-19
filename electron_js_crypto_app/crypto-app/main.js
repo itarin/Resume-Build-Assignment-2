@@ -10,7 +10,11 @@ const ipc = require('electron').ipcMain // Communicate asynchronously from the m
 
   function createWindow () {
     // Create the browser window.
-    win = new BrowserWindow({width: 800, height: 600})
+    win = new BrowserWindow({
+      width: 822, 
+      height: 390,
+      resizable: false //set the window to a fixed size
+    })
 
     // and load the index.html of the app.
     // win.loadFile('src/index.html')
@@ -22,7 +26,7 @@ const ipc = require('electron').ipcMain // Communicate asynchronously from the m
     }))
 
     // Open the DevTools.
-    win.webContents.openDevTools()
+    //win.webContents.openDevTools()
 
     // Emitted when the window is closed.
     win.on('closed', () => {
