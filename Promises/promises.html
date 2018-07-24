@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JS Promises</title>
+  </head>
+  <body>
+    <h1>
+      JS Promises
+    </h1>
+    <p>
+      JavaScript is single threaded which means that functions run one at a time. This means that functions run one after the other. When one function is running it will delay whatever function comes afterwards.
+    </p>
+    <p>
+      At their must basic promises are like event listeners except
+    </p>
+    <ul>
+      <li>
+        A promise can only succeed or fail once. It cannot succeed or fail twice, neither can it switch from success to failure or vice versa.
+      </li>
+      <li>
+        If a promise has succeded or failed and you later add a success/failure callback, the correct callback will be called, even though the event took place earlier.
+      </li>
+    </ul>
+    <p>
+      This is very useful for success and failure in asynchrnoicity because there you are most interested in reacting to an outcome.
+    </p>
+    <p>
+      A promise can be:
+    </p>
+    <ul>
+      <li>
+        Fullfilled - The action related to the promise succeeded.
+      </li>
+      <li>
+        Rejected - The action relating to the promise failed.
+      </li>
+      <li>
+        Pending - Hasn't fullfilled or rejected.
+      </li>
+      <li>
+        Settled - Has fullfilled or rejected.
+      </li>
+    </ul>
+
+</html>
