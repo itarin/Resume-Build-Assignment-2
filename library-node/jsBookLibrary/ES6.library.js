@@ -54,6 +54,7 @@ class Library {
   _bindEvents () {
     //make content in #orgTable editable
     //this.$orgTable.attr('contenteditable', 'true');
+
     this.$edit.on( 'click', console.log('clcda') );
 
     this.$submitSearch.on( 'click', $.proxy(this._handleSubmitSearch, this) );
