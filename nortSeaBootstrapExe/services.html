@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>NortSea Services</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Open+Sans" rel="stylesheet">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  </head>
+  <body>
+<!-- FIRST SECTION -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 logo pt-4">
+        <img src="assets/nortsea.png" alt="">
+      </div>
+<!-- TOP NAVIGATION LOWER (1) ie-home, about us etc. -->      
+      <div class="col-md-9 topBar pt-4">
+        <ul class="nav .d-none .d-sm-none col-md-12">
+          <li class="nav-item col-md-3">
+            <i class="fas fa-envelope"></i>
+            info@hellohelp.com
+          </li>
+          <li class="nav-item col-md-3">
+            <i class="fas fa-phone-volume" data-fa-transform="rotate--45"></i>
+            +440 875369208
+          </li>     
+
+          <li class="nav-item col">
+            <div class="btn-toolbar" role="group" aria-label="Button group with nested dropdown">
+              <div class="btn-group ">
+                 <div class="input-group">
+                  <input type="text" class="form-control" placeholder="LOG IN" aria-label="Input group example" aria-describedby="btnGroupAddon">
+                </div> 
+              </div>
+                         
+              <div class="btn-group enSelect" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle enSelect btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="pr-5">EN</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <a class="dropdown-item" href="#">Dropdown link</a>
+                  <a class="dropdown-item" href="#">Dropdown link</a>
+                </div>
+              </div>
+              <div class=" btn-group topIcons nav-item border rounded-0 text-center" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary">
+                  <i class="fab fa-facebook"></i>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  <i class="fab fa-twitter"></i>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  <i class="fab fa-instagram"></i>
+                </button>
+                <button type="button" class="btn btn-secondary">
+                  <i class="fas fa-envelope"></i>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+<!-- TOP NAVIGATION LOWER (2) ie-home, about us etc. -->
+        
+        <div class="col-12 mt-3">
+          <ul class="nav nav-tabs homeBar col-md-12 pb-0">
+            <li class="nav-item col">
+              <a class="nav-link" href="#">
+                Home
+              </a>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link active pb-5" href="#">
+                About Us
+              </a>
+            </li>
+            <!-- 1st DROPDOWN -->
+            <li class="nav-item dropdown col">
+              <a class="nav-link dropdown-toggle hide" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown col">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Products
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link" href="#">Gallery</a>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item col">
+              <a class="nav-link" href="#">
+                <i class="fas fa-search"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+<!-- END .topBar col-MD-9 -->
+      </div>
+
+      <div class="col-md-2">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item" aria-current="page">
+              About Us
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <div class="col-md-10 text-right">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#">
+                Home
+              </a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="#">
+                Pages
+              </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              About Us
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <!-- MAIN TEXT and HEADER -->
+      <div class="col-md-8 offset-md-2 align-content-center">
+        <h2 class="mainHeading text-center">
+          P R E F E R E N C E S
+        </h2>
+        <p class="text-center font-weight- pt-5">
+          This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis
+        </p>
+        <p class="text-center font">
+          Nom nec telllus a odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conumbianostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nune. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+        </p>      
+      </div>
+<!-- HOTEL FACILITITES -->
+<div class="col-md-8 offset-md-2 align-content-center">
+        <h2 class="mainHeading text-center pt-5 pb-3">
+          Hotel Facilities
+        </h2>
+        <div class="card-group">
+          <div class="card border-0 text-center">
+            <ul class="list-group list-group-flush text-center">
+              <li class="list-group-item">
+                <button type="button" class="btn facilityBttn rounded-0 mr-2">
+                  <i class="fas fa-wifi"></i>
+                </button>
+                High-speed Internet
+              </li>
+              <li class="list-group-item">
+                <button type="button" class="btn facilityBttn rounded-0 mr-2">
+                  <i class="fas fa-snowflake"></i>
+                </button>                
+                Air conditioning
+              </li>
+              <li class="list-group-item">
+                <button type="button" class="btn facilityBttn rounded-0 mr-2 p-2">
+                  <i class="material-icons">pool</i>
+                </button>                
+                Swimming pool
+              </li>
+              <li class="list-group-item">
+                <button type="button" class="btn facilityBttn rounded-0 mr-2">
+                  <i class="fas fa-child"></i>
+                </button>                
+                Childcare
+              </li>
+              <li class="list-group-item">
+                <button type="button" class="btn facilityBttn rounded-0 mr-2">
+                  <i class="material-icons">fitness_center</i>
+                </button>
+                Fitness equipment
+              </li>
+            </ul>
+          </div>
+          <div class="card border-0 text-center">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                 <button type="button" class="btn facilityBttn rounded-0 mr-2">
+                  <i class="fas fa-archive"></i>
+                </button>
+                Fridge
+              </li>
+              <li class="list-group-item">
+                <button type="button" class="btn facilityBttn rounded-0 mr-2">
+                  <i class="material-icons">local_laundry_service</i>
+                </button>                
+                Washing machine
+              </li>
+              <li class="list-group-item">
+                <button type="button" class="btn facilityBttn rounded-0 mr-2">
+                  <i class="material-icons">room_service</i>
+                </button>
+                Room service
+              </li>
+              <li class="list-group-item">
+                <button type="button" class="btn facilityBttn rounded-0 mr-2">
+                  <i class="material-icons">child_friendly</i>
+                </button>
+                Even More Childcare
+              </li>
+              <li class="list-group-item">
+                <button type="button" class="btn facilityBttn rounded-0 mr-2">
+                  <i class="fas fa-archive"></i>
+                </button>
+                Reception Safe
+              </li>
+            </ul>
+          </div>
+          <div class="card border-0 text-center">
+            <li class="list-group-item">
+              <button type="button" class="btn facilityBttn rounded-0 mr-2">
+                  <i class="material-icons">
+                    <i class="fas fa-utensils"></i>
+                  </i>
+                </button>
+                Free breakfast
+              </li>
+              <li class="list-group-item">
+                <button type="button" class="btn facilityBttn rounded-0 mr-2">
+                  <i class="material-icons">directions_car</i>
+                </button>
+                Free parking
+              </li>
+              <li class="list-group-item">
+                <button type="button" class="btn facilityBttn rounded-0 mr-2">
+                  <i class="material-icons">child_friendly</i>
+                </button>
+                Hair dryer
+              </li>
+              <li class="list-group-item">
+                <button type="button" class="btn facilityBttn rounded-0 mr-2">
+                  <i class="material-icons">local_bar</i>
+                </button>
+                Bar
+              </li>
+              <li class="list-group-item">
+                <button type="button" class="btn facilityBttn rounded-0 mr-2 text-center">
+                  <i class="fas fa-tv"></i>
+                </button>
+                TV
+              </li>
+          </div>
+        </div>      
+      </div>
+
+<!-- END 1st MAIN ROW -->
+    </div>
+
+    <div class="row footer mt-4">
+      <div class="card-group col-md-8">
+        <div class="card col-md-4">
+          <div class="card-body">
+            <h5 class="card-title">NortSea About</h5>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            </p>
+          </div>
+        </div>
+        <div class="card col-md-2">
+          <div class="card-body">
+            <h5 class="card-title">NortSea Hotel</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">About Us</li>
+              <li class="list-group-item">Services</li>
+              <li class="list-group-item">Contact</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-deck">
+          <h5 class="col-md-12">Contact us</h5>
+          <div class="card   col-4 ">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <span class="contactTitle">
+                  <i class="fas fa-map-marker-alt"></i>
+                  Address:
+                </span>
+              </li>
+              <li class="list-group-item">
+                <span class="contactTitle">
+                  <i class="fas fa-phone" data-fa-transform="flip-h"></i>
+                  Phone:
+                </span>
+              </li>
+              <li class="list-group-item">
+                <span class="contactTitle">
+                  <i class="fas fa-paper-plane"></i>
+                  Email:
+                </span>
+              </li>
+              <li class="list-group-item">
+                <span class="contactTitle">
+                  <i class="fas fa-compass"></i>
+                  GPS:
+                </span>
+              </li>
+            </ul>
+          </div>
+            <div class="card col-8 text-left">
+              <ul class="list-group list-group-flush" >
+                <li class="list-group-item">
+                  <span class="contactInfo">
+                    1100 Pico Blvd<br>
+                    Santa Monica, CA 90405<br>
+                    United States
+                  </span>
+                </li>
+                <li class="list-group-item">
+                  <span class="contactInfo">
+                    +440 1233123208
+                  </span>
+                </li>
+                <li class="list-group-item">
+                  <span class="contactInfo">
+                    support@nortsea.com
+                  </span>
+                </li>
+                <li class="list-group-item">
+                  <span class="contactInfo">
+                    12.021211-118.469009
+                  </span>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-4 logoFooter">
+        <img src="assets/nortseaFooter.png" alt="">
+      </div>
+      <div class="col-md-12">
+        <ul class="nav footNav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              Copyright <i class="far fa-copyright"></i> 2015 NORTSEA |
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              About NORTSEA |
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Contact Support |
+            </a>
+          </li>
+          <li class="nav-item faith34">
+            <a class="nav-link" href="#">
+              Designed by Faith34
+            </a>
+          </li>
+        </ul>
+      </div>
+
+<!--  END ROW .footer-->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+</html>
+<!-- BATMAN IMG PROVIDED BY: By Source, Fair use, https://en.wikipedia.org/w/index.php?curid=11316087 -->
