@@ -1,3 +1,162 @@
-.test{
-  color: blue;
+/*  MAIN TAGS
+*/
+body{
+  background: linear-gradient(#e8e8e8,#d1d1d1, #b7b7b7, #918f8f, #636363,#333333);
+  padding: 0;
+  padding-bottom: 15px;
+  margin: 0;
+  font-family: 'Jaldi', sans-serif;
+}
+img{
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 110px;
+    border: #101f38 3px solid;
+}
+hr{
+  color:black;
+  margin-top: 0px;
+}
+h1{
+  text-align: center;
+  color: #101f38;
+}
+h2{
+  margin: 0.5px 1px;
+  background-color:#fcfcfc;
+  box-shadow: 0.3px 0.1px #101f38;
+  border-radius: 1.5px;
+}
+h4{
+  margin: 0px;
+}
+ul{
+  line-height: 1.5;
+  background-color: #fdfff7;
+  list-style-type: circle;
+  list-style-position: inside;
+  padding-left: 15px;
+  padding-right: 50px;
+  margin: 8px 0;
+}
+li{
+  background-color: #f7fdff;
+  line-height: 15px;
+  margin: 5px 0px;
+  padding-right: 1px;
+}
+/* PAGE CONTAINER WHITE SPACE */
+.pageContainer{
+  margin: auto;
+  padding: 5px 45px;
+  border-radius: 3.5px;
+  box-shadow: 8.5px 1.5px #101f38;
+  width: 45%;
+  background-color: white;
+  opacity: 0.8;
+}
+/* HEADER DIV STYLES */
+.headStyle{
+  background-color:#fcfcfc;
+  border-radius: 3.5px;
+  box-shadow: 0.1px 0.2px #101f38;
+  height: 15%;
+  width: 41%;
+  padding: 1px 0;
+  margin: 5px auto;
+}
+/*  CONTACT INFO DIV*/
+.contactInfo{
+  margin: 4px 10px;
+  padding-bottom: 0px;
+  box-shadow: 0.1px 0.2px #101f38;
+  background-color:#fcfcfc;
+  color: #101f38;
+}
+.degree{
+  padding-left: 15px;
+}
+/* HR BREAKING SECTION TITLES */
+.hrStyles{
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  color: #bf0d33;
+  border-radius: 15px;
+}
+.educationBox{
+    width: 35%;
+}
+.languageBox{
+  width: 50%;
+}
+.experienceBox{
+  width:62%;
+}
+.educationHR{
+  width: 35%;
+}
+.languagesHR{
+  width: 50%;
+}
+.recentExperienceHR{
+  width: 62%;
+}
+/* TEXT ALIGNMENT */
+
+.gradYear{
+  padding-left: 285px;
+}
+.centerSpaceEmail{
+  padding:0 95px;
+  color: DodgerBlue;
+  text-decoration:  underline;
+}
+.centerSpaceBLG{
+  padding:0 51px;
+}
+.centerSpaceCls{
+  padding:0 40px;
+}
+.centerSpaceBs{
+  padding:0 86px;
+}
+.centerSpaceTrla{
+  padding:0 28px;
+}
+.centerSpaceWfs{
+  padding:0 15px;
+}
+.centerSpaceAc{
+  padding:0 126px;
+}
+/* ICONS */
+.fa-user{
+  color: #101f38;
+  padding-right: 5px;
+}
+.fa-envelope{
+  color: #101f38;
+  padding-right: 5px;
+}
+.fa-phone-volume{
+  color: #101f38;
+  padding-right: 2.5px;
+}
+.fa-graduation-cap{
+  margin-left: 3px;
+  padding: 0 3px;
+  color: #101f38;
+}
+.fa-language{
+  margin-left: 3px;
+  padding: 0 3px;
+  color: #101f38;
+}
+.fa-address-card{
+  margin-left: 3px;
+  padding: 0 3px;
+  color: #101f38;
 }
