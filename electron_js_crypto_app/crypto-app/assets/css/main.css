@@ -8,6 +8,7 @@ body {
     margin: 0;
     border: solid #b600ff;
     border-width: 0 .1em .5em .1em;
+    overflow: hidden;
 }
 .topDiv{
   margin-bottom:  0;
@@ -58,7 +59,7 @@ img {
 .circleDiv{
     padding-top: 3%;
 }
-svg{  
+svg{
   clear: both;
 }
 circle {
