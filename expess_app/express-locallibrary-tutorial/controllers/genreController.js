@@ -1,7 +1,7 @@
 var Genre = require('../models/genre');
 var Book = require('../models/book');
 var async = require('async');
-// var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 const { body,validationResult } = require('express-validator/check');
 const { sanitizeBody } = require('express-validator/filter');
@@ -19,9 +19,9 @@ exports.genre_list = function(req, res, next) {
 };
 
 // Display detail page for a specific Genre.
-// Display detail page for a specific Genre.
 exports.genre_detail = function(req, res, next) {
-  // var id = mongoose.Types.ObjectId(req.params.id);
+    var id = mongoose.Types.ObjectId(req.params.id);
+    
     async.parallel({
         genre: function(callback) {
             Genre.findById(req.params.id)
@@ -104,8 +104,24 @@ exports.genre_create_post =  [
 ];
 
 // Display Genre delete form on GET.
-exports.genre_delete_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: Genre delete GET');
+exports.genre_delete_get = function(req, res, next) {
+
+  async.parallel({
+        genre: function(callback) {
+            Genre.findById(req.params.id).exec(callback)
+        },
+        authors_books: function(callback) {
+          Book.find({ 'author': req.params.id }).exec(callback)
+        },
+    }, function(err, results) {
+        if (err) { return next(err); }
+        if (results.author==null) { // No results.
+            res.redirect('/catalog/genre');
+        }
+        // Successful, so render.
+        res.render('genre_delete', { title: 'Delete Genre', author: results.genre, author_books: results.author_books } );
+    });
+
 };
 
 // Handle Genre delete on POST.
