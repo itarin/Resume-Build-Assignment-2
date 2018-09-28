@@ -1,0 +1,418 @@
+ALTER_PUBLICATION(7)     - change the definition of a publication
+CREATE_PUBLICATION(7)    - define a new publication
+DEALLOCATE(7)            - deallocate a prepared statement
+DROP_PUBLICATION(7)      - remove a publication
+LISTEN(7)                - listen for a notification
+NOTIFY(7)                - generate a notification
+SPI_freetuple(3)         - free a row allocated in the upper executor context
+SPI_palloc(3)            - allocate memory in the upper executor context
+SPI_repalloc(3)          - reallocate memory in the upper executor context
+TRUNCATE(7)              - empty a table or set of tables
+UNLISTEN(7)              - stop listening for a notification
+dblink_get_notify(3)     - retrieve async notifications on a connection
+git-cat-file(1)          - Provide content or type and size information for repository objects
+npm-dedupe(1)            - Reduce duplication
+npm-deprecate(1)         - Deprecate a version of a package
+npm-disputes(7)          - Handling Module Name Disputes This document describes the steps that you should take to resolve module name disputes with other npm publishers. It also describes special steps you should take about names you think infringe your trademarks. This document is a clarification of the acceptable behavior outlined in the npm Code of Conduct https://www.npmjs.com/policies/conduct, and nothing in this document should be interpreted to contradict any aspect of the npm Code of Conduct
+npm-shrinkwrap(1)        - Lock down dependency versions for publication
+npm-token(1)             - Manage your authentication tokens
+APR::BucketAlloc(3pm)    - Perl API for Bucket Allocation
+Apache2::Access(3pm)     - A Perl API for Apache request object: Access, Authentication and Authorization
+Apache2::Build(3pm)      - Methods for locating and parsing bits of Apache source code
+Apache2::compat(3pm)     - -- 1.0 backward compatibility functions deprecated in 2.0
+App::Packer::PAR(3pm)    - Pack applications in a single executable file
+Archive::Zip::Tree(3pm)  - (DEPRECATED) methods for adding/extracting trees using Archive::Zip
+Authen::SASL(3pm)        - SASL Authentication framework
+Authen::SASL::Perl(3pm)  - -- Perl implementation of the SASL Authentication framework
+Authen::SASL::Perl::ANONYMOUS(3pm) - Anonymous Authentication class
+Authen::SASL::Perl::CRAM_MD5(3pm) - CRAM MD5 Authentication class
+Authen::SASL::Perl::DIGEST_MD5(3pm) - Digest MD5 Authentication class
+Authen::SASL::Perl::EXTERNAL(3pm) - External Authentication class
+Authen::SASL::Perl::GSSAPI(3pm) - GSSAPI (Kerberosv5) Authentication class
+Authen::SASL::Perl::LOGIN(3pm) - Login Authentication class
+Authen::SASL::Perl::PLAIN(3pm) - Plain Login Authentication class
+B::Lint::Debug(3pm)      - Adds debugging stringification to B::
+CPAN::Meta::Spec(3pm)    - specification for CPAN distribution metadata
+CPANPLUS::Internals::Source::Memory(3pm) - In memory implementation n .SS "$cb->_|_memory_retrieve_source(name => $name, [path => $path, uptodate => BOOL, verbose => BOOL])" .SS "$cb->_|_memory_retrieve_source(name => $name, [path => $path, uptodate => BOOL, verbose => BOOL])" Subsection "$cb->__memory_retrieve_source(name => $name, [path => $path, uptodate => BOOL, verbose => BOOL])" This method retrieves a storabled tree identified by $name. It takes the following arguments: name" 4 Item "name" The internal name for the source file to retrieve. uptodate" 4 Item "uptodate" A flag indicating whether the file-cache is up-to-date or not. path" 4 Item "path" The absolute path to the directory holding the source files. verbose" 4 Item "verbose" A boolean flag indicating whether or not to be verbose. Will get information from the config file by default. Returns a tree on success, false on failure. n .SS "$cb->_|_memory_save_source([verbose => BOOL, path => $path])" .SS "$cb->_|_memory_save_source([verbose => BOOL, path => $path])" Subsection "$cb->__memory_save_source([verbose => BOOL, path => $path])" This method saves all the parsed trees in storabled format if Storable is available. It takes the following arguments: path" 4 Item "path" The absolute path to the directory holding the source files. verbose" 4 Item "verbose" A boolean flag indicating whether or not to be verbose. Will get information from the config file by default. Returns true on success, false on failure
+CURLINFO_CERTINFO(3)     - get the TLS certificate chain
+CURLINFO_HTTPAUTH_AVAIL(3) - get available HTTP authentication methods
+CURLINFO_PROXYAUTH_AVAIL(3) - get available HTTP proxy authentication methods
+CURLINFO_PROXY_SSL_VERIFYRESULT(3) - get the result of the proxy certificate verification
+CURLINFO_SSL_VERIFYRESULT(3) - get the result of the certificate verification
+CURLOPT_CAINFO(3)        - path to Certificate Authority (CA) bundle
+CURLOPT_CAPATH(3)        - specify directory holding CA certificates
+CURLOPT_CERTINFO(3)      - request SSL certificate information
+CURLOPT_CRLFILE(3)       - specify a Certificate Revocation List file
+CURLOPT_FILETIME(3)      - get the modification time of the remote resource
+CURLOPT_FOLLOWLOCATION(3) - follow HTTP 3xx redirects
+CURLOPT_HTTPAUTH(3)      - set HTTP server authentication methods to try
+CURLOPT_ISSUERCERT(3)    - issuer SSL certificate filename
+CURLOPT_MAIL_AUTH(3)     - SMTP authentication address
+CURLOPT_PASSWORD(3)      - password to use in authentication
+CURLOPT_PROXYAUTH(3)     - set HTTP proxy authentication methods to try
+CURLOPT_PROXYPASSWORD(3) - password to use with proxy authentication
+CURLOPT_PROXYUSERNAME(3) - user name to use for proxy authentication
+CURLOPT_PROXYUSERPWD(3)  - user name and password to use for proxy authentication
+CURLOPT_PROXY_CAINFO(3)  - path to proxy Certificate Authority (CA) bundle
+CURLOPT_PROXY_CAPATH(3)  - specify directory holding proxy CA certificates
+CURLOPT_PROXY_CRLFILE(3) - specify a proxy Certificate Revocation List file
+CURLOPT_PROXY_SERVICE_NAME(3) - proxy authentication service name
+CURLOPT_PROXY_SSLCERT(3) - set SSL proxy client certificate
+CURLOPT_PROXY_SSLCERTTYPE(3) - specify type of the proxy client SSL certificate
+CURLOPT_PROXY_SSL_VERIFYHOST(3) - verify the proxy certificate's name against host
+CURLOPT_PROXY_SSL_VERIFYPEER(3) - verify the proxy's SSL certificate
+CURLOPT_PROXY_TLSAUTH_PASSWORD(3) - password to use for proxy TLS authentication
+CURLOPT_PROXY_TLSAUTH_TYPE(3) - set proxy TLS authentication methods
+CURLOPT_PROXY_TLSAUTH_USERNAME(3) - user name to use for proxy TLS authentication
+CURLOPT_SERVICE_NAME(3)  - authentication service name
+CURLOPT_SOCKS5_GSSAPI_SERVICE(3) - SOCKS5 proxy authentication service name
+CURLOPT_SSLCERT(3)       - set SSL client certificate
+CURLOPT_SSLCERTTYPE(3)   - specify type of the client SSL certificate
+CURLOPT_SSL_VERIFYHOST(3) - verify the certificate's name against host
+CURLOPT_SSL_VERIFYPEER(3) - verify the peer's SSL certificate
+CURLOPT_SSL_VERIFYSTATUS(3) - verify the certificate's status
+CURLOPT_TLSAUTH_PASSWORD(3) - password to use for TLS authentication
+CURLOPT_TLSAUTH_TYPE(3)  - set TLS authentication methods
+CURLOPT_TLSAUTH_USERNAME(3) - user name to use for TLS authentication
+CURLOPT_USERNAME(3)      - user name to use in authentication
+CURLOPT_USERPWD(3)       - user name and password to use in authentication
+Class::MOP::Deprecated(3pm) - Manages deprecation warnings for Class::MOP
+Class::MOP::MiniTrait(3pm) - Extremely limited trait application
+CoreLocationAgent(8)     - manages location authorization prompts
+DBD::Gofer(3pm)          - A stateless-proxy driver for communicating with a remote DBI
+DBIx::Class::DB(3pm)     - (DEPRECATED) classdata schema component
+DBIx::Class::InflateColumn::File(3pm) - DEPRECATED (superseded by DBIx::Class::InflateColumn::FS)
+DBIx::Class::Manual::Glossary(3pm) - Clarification of terms used
+DBIx::Class::Manual::Troubleshooting(3pm) - Got a problem? Shoot it. n .SS """Can't locate storage blabla""" .SS "``Can't locate storage blabla''" Subsection "Can't locate storage blabla" You're trying to make a query on a non-connected schema. Make sure you got the current resultset from $schema->resultset('Artist') on a schema object you got back from connect()
+DBIx::Class::Optional::Dependencies(3pm) - Optional module dependency specifications (for module authors)
+DBIx::Class::PK::Auto::DB2(3pm) - (DEPRECATED) Automatic primary key class for DB2
+DBIx::Class::PK::Auto::MSSQL(3pm) - (DEPRECATED) Automatic primary key class for MSSQL
+DBIx::Class::PK::Auto::MySQL(3pm) - (DEPRECATED) Automatic primary key class for MySQL
+DBIx::Class::PK::Auto::Oracle(3pm) - (DEPRECATED) Automatic primary key class for Oracle
+DBIx::Class::PK::Auto::Pg(3pm) - (DEPRECATED) Automatic primary key class for Pg
+DBIx::Class::PK::Auto::SQLite(3pm) - (DEPRECATED) Automatic primary key class for SQLite
+DBIx::Class::Storage::DBI::Replicated(3pm) - BETA Replicated database support
+DBIx::Class::Storage::DBI::Replicated::Balancer(3pm) - A Software Load Balancer
+DBIx::Class::Storage::DBI::Replicated::Balancer::First(3pm) - Just get the First Balancer
+DBIx::Class::Storage::DBI::Replicated::Balancer::Random(3pm) - A 'random' Balancer
+DBIx::Class::Storage::DBI::Replicated::Introduction(3pm) - Minimum Need to Know
+DBIx::Class::Storage::DBI::Replicated::Pool(3pm) - Manage a pool of replicants
+DBIx::Class::Storage::DBI::Replicated::Replicant(3pm) - A replicated DBI Storage Role
+DBIx::Class::Storage::DBI::Replicated::WithDSN(3pm) - A DBI Storage Role with DSN information in trace output
+DBIx::Class::Storage::DBI::Sybase::MSSQL(3pm) - (DEPRECATED) Legacy storage class for MSSQL via DBD::Sybase
+DBIx::Class::UTF8Columns(3pm) - Force UTF8 (Unicode) flag on columns (DEPRECATED)
+DateTime::Locale::Catalog(3pm) - Provides a list of all valid locale names
+DateTime::LocaleCatalog(3pm) - renamed to DateTime::Locale::Catalog
+DateTime::TimeZone::Catalog(3pm) - Provides a list of all valid time zone names
+Digest::HMAC(3pm)        - Keyed-Hashing for Message Authentication
+Digest::HMAC_MD5(3pm)    - Keyed-Hashing for Message Authentication
+Digest::HMAC_SHA1(3pm)   - Keyed-Hashing for Message Authentication
+ExtUtils::Embed(3pm)     - Utilities for embedding Perl in C/C++ applications
+FindBin(3pm)             - Locate directory of original perl script
+HTML::Parse(3pm)         - Deprecated, a wrapper around HTML::TreeBuilder
+IO::Socket(3pm)          - Object interface to socket communications
+IO::Socket::SSL::Utils(3pm) - -- loading, storing, creating certificates and keys
+IO::Tty(3pm)             - Low-level allocate a pseudo-Tty, import constants
+Keychain Circle Notification(8) - part of iCloud Keychain syncing
+LWP::Authen::Ntlm(3pm)   - Library for enabling NTLM authentication (Microsoft) in LWP
+LWP::Debug(3pm)          - deprecated
+List::Util::XS(3pm)      - Indicate if List::Util was compiled with a C compiler
+Locale::Codes::Country(3pm) - standard codes for country identification
+Locale::Codes::Currency(3pm) - standard codes for currency identification
+Locale::Codes::LangExt(3pm) - standard codes for language extension identification
+Locale::Codes::LangFam(3pm) - standard codes for language extension identification
+Locale::Codes::LangVar(3pm) - standard codes for language variation identification
+Locale::Codes::Language(3pm) - standard codes for language identification
+Locale::Codes::Script(3pm) - standard codes for script identification
+Locale::Country(3pm)     - standard codes for country identification
+Locale::Currency(3pm)    - standard codes for currency identification
+Locale::Language(3pm)    - standard codes for language identification
+Locale::Maketext::Guts(3pm) - Deprecated module to load Locale::Maketext utf8 code
+Locale::Maketext::GutsLoader(3pm) - Deprecated module to load Locale::Maketext utf8 code
+Locale::Maketext::Lexicon(3pm) - Use other catalog formats in Maketext
+Locale::Maketext::Lexicon::Msgcat(3pm) - Msgcat catalog parser Maketext
+Locale::Script(3pm)      - standard codes for script identification
+MIME::WordDecoder(3pm)   - decode RFC 2047 encoded words to a local representation WARNING: Most of this module is deprecated and may disappear.  The only function you should use for MIME decoding is "mime_to_perl_string"
+MPSImageAllocator -p(3), <MPSImageAllocator(3) - >
+Mac::Apps::Launch(3pm)   - Mac module to launch /quit applications
+Mac::MoreFiles(3pm)      - Sophisticated file management routines
+Mac::Notification(3pm)   - Macintosh Toolbox Interface to Notification Manager
+ManagedClientAgent(8)    - -- Device enrollment and ManagedClient process notification daemon
+Module::Build::ModuleInfo(3pm) - DEPRECATED
+Module::Build::Version(3pm) - DEPRECATED
+Module::Build::YAML(3pm) - DEPRECATED
+Module::Find(3pm)        - Find and use installed modules in a (sub)category
+Moose::Cookbook::Basics::BinaryTree_AttributeFeatures(3pm) - Demonstrates various attribute features including lazy, predicates, weak refs, and more
+Moose::Cookbook::Roles::ApplicationToInstance(3pm) - Applying a role to an object instance
+Moose::Deprecated(3pm)   - Manages deprecation warnings for Moose
+Moose::Meta::Role::Application(3pm) - A base class for role application
+Moose::Meta::Role::Application::RoleSummation(3pm) - Combine two or more roles
+Moose::Meta::Role::Application::ToClass(3pm) - Compose a role into a class
+Moose::Meta::Role::Application::ToInstance(3pm) - Compose a role into an instance
+Moose::Meta::Role::Application::ToRole(3pm) - Compose a role into another role
+MooseX::ClassAttribute::Trait::Application(3pm) - A trait that supports role application for roles with class attributes
+MooseX::ClassAttribute::Trait::Application::ToClass(3pm) - A trait that supports applying class attributes to classes
+MooseX::ClassAttribute::Trait::Application::ToRole(3pm) - A trait that supports applying class attributes to roles
+MooseX::Declare::Syntax::RoleApplication(3pm) - Handle user specified roles
+NSSystemDirectories(3), -(3) - The NSSystemDirectories API has been deprecated and replaced by sysdir(3) API
+Net::LDAP::Control::EntryChange(3pm) - LDAPv3 Entry Change Notification control object
+OSAtomicAdd32(3), OSAtomicAdd32Barrier(3), OSAtomicIncrement32(3), OSAtomicIncrement32Barrier(3), OSAtomicDecrement32(3), OSAtomicDecrement32Barrier(3), OSAtomicOr32(3), OSAtomicOr32Barrier(3), OSAtomicOr32Orig(3), OSAtomicOr32OrigBarrier(3), OSAtomicAnd32(3), OSAtomicAnd32Barrier(3), OSAtomicAnd32Orig(3), OSAtomicAnd32OrigBarrier(3), OSAtomicXor32(3), OSAtomicXor32Barrier(3), OSAtomicXor32Orig(3), OSAtomicXor32OrigBarrier(3), OSAtomicAdd64(3), OSAtomicAdd64Barrier(3), OSAtomicIncrement64(3), OSAtomicIncrement64Barrier(3), OSAtomicDecrement64(3), OSAtomicDecrement64Barrier(3), OSAtomicCompareAndSwapInt(3), OSAtomicCompareAndSwapIntBarrier(3), OSAtomicCompareAndSwapLong(3), OSAtomicCompareAndSwapLongBarrier(3), OSAtomicCompareAndSwapPtr(3), OSAtomicCompareAndSwapPtrBarrier(3), OSAtomicCompareAndSwap32(3), OSAtomicCompareAndSwap32Barrier(3), OSAtomicCompareAndSwap64(3), OSAtomicCompareAndSwap64Barrier(3), OSAtomicTestAndSet(3), OSAtomicTestAndSetBarrier(3), OSAtomicTestAndClear(3), OSAtomicTestAndClearBarrier(3), OSMemoryBarrier(3) - deprecated atomic add, increment, decrement, or, and, xor, compare and swap, test and set, test and clear, and memory barrier
+OSSpinLockTry(3), OSSpinLockLock(3), OSSpinLockUnlock(3) - deprecated atomic spin lock synchronization primitives
+PAR::Filter::Obfuscate(3pm) - Obfuscating filter
+PPI::Document::File(3pm) - A Perl Document located in a specific file
+Package::DeprecationManager(3pm) - Manage deprecation warnings for your distribution
+Params::Classify(3pm)    - argument type classification
+Path::Class(3pm)         - Cross-platform path specification manipulation
+SASL(3)                  - SASL authentication library
+SLIST_EMPTY(3), SLIST_ENTRY(3), SLIST_FIRST(3), SLIST_FOREACH(3), SLIST_FOREACH_SAFE(3), SLIST_HEAD(3), SLIST_HEAD_INITIALIZER(3), SLIST_INIT(3), SLIST_INSERT_AFTER(3), SLIST_INSERT_HEAD(3), SLIST_NEXT(3), SLIST_REMOVE_HEAD(3), SLIST_REMOVE(3), STAILQ_CONCAT(3), STAILQ_EMPTY(3), STAILQ_ENTRY(3), STAILQ_FIRST(3), STAILQ_FOREACH(3), STAILQ_FOREACH_SAFE(3), STAILQ_HEAD(3), STAILQ_HEAD_INITIALIZER(3), STAILQ_INIT(3), STAILQ_INSERT_AFTER(3), STAILQ_INSERT_HEAD(3), STAILQ_INSERT_TAIL(3), STAILQ_LAST(3), STAILQ_NEXT(3), STAILQ_REMOVE_HEAD(3), STAILQ_REMOVE(3), LIST_EMPTY(3), LIST_ENTRY(3), LIST_FIRST(3), LIST_FOREACH(3), LIST_FOREACH_SAFE(3), LIST_HEAD(3), LIST_HEAD_INITIALIZER(3), LIST_INIT(3), LIST_INSERT_AFTER(3), LIST_INSERT_BEFORE(3), LIST_INSERT_HEAD(3), LIST_NEXT(3), LIST_REMOVE(3), TAILQ_CONCAT(3), TAILQ_EMPTY(3), TAILQ_ENTRY(3), TAILQ_FIRST(3), TAILQ_FOREACH(3), TAILQ_FOREACH_SAFE(3), TAILQ_FOREACH_REVERSE(3), TAILQ_FOREACH_REVERSE_SAFE(3), TAILQ_HEAD(3), TAILQ_HEAD_INITIALIZER(3), TAILQ_INIT(3), TAILQ_INSERT_AFTER(3), TAILQ_INSERT_BEFORE(3), TAILQ_INSERT_HEAD(3), TAILQ_INSERT_TAIL(3), TAILQ_LAST(3), TAILQ_NEXT(3), TAILQ_PREV(3), TAILQ_REMOVE(3) - implementations of singly-linked lists, singly-linked tail queues, lists and tail queues
+SafariNotificationAgent(8) - Safari Push Notification Agent
+ScreensharingAgent(8)    - communicates with screensharingd to provide access to a user session
+Sub::Exporter(3pm)       - a sophisticated exporter for custom-built routines
+Tcl_Alloc(3tcl), Tcl_Free(3tcl), Tcl_Realloc(3tcl), Tcl_AttemptAlloc(3tcl), Tcl_AttemptRealloc(3tcl), ckalloc(3tcl), ckfree(3tcl), ckrealloc(3tcl), attemptckalloc(3tcl), attemptckrealloc(3tcl) - allocate or free heap memory
+Tcl_AppInit(3tcl)        - perform application-specific initialization
+Tcl_Concat(3tcl)         - concatenate a collection of strings
+Tcl_CreateChannel(3tcl), Tcl_GetChannelInstanceData(3tcl), Tcl_GetChannelType(3tcl), Tcl_GetChannelName(3tcl), Tcl_GetChannelHandle(3tcl), Tcl_GetChannelMode(3tcl), Tcl_GetChannelBufferSize(3tcl), Tcl_SetChannelBufferSize(3tcl), Tcl_NotifyChannel(3tcl), Tcl_BadChannelOption(3tcl), Tcl_ChannelName(3tcl), Tcl_ChannelVersion(3tcl), Tcl_ChannelBlockModeProc(3tcl), Tcl_ChannelCloseProc(3tcl), Tcl_ChannelClose2Proc(3tcl), Tcl_ChannelInputProc(3tcl), Tcl_ChannelOutputProc(3tcl), Tcl_ChannelSeekProc(3tcl), Tcl_ChannelWideSeekProc(3tcl), Tcl_ChannelTruncateProc(3tcl), Tcl_ChannelSetOptionProc(3tcl), Tcl_ChannelGetOptionProc(3tcl), Tcl_ChannelWatchProc(3tcl), Tcl_ChannelGetHandleProc(3tcl), Tcl_ChannelFlushProc(3tcl), Tcl_ChannelHandlerProc(3tcl), Tcl_ChannelThreadActionProc(3tcl), Tcl_IsChannelShared(3tcl), Tcl_IsChannelRegistered(3tcl), Tcl_CutChannel(3tcl), Tcl_SpliceChannel(3tcl), Tcl_IsChannelExisting(3tcl), Tcl_ClearChannelHandlers(3tcl), Tcl_GetChannelThread(3tcl), Tcl_ChannelBuffered(3tcl) - procedures for creating and manipulating channels
+Tcl_DumpActiveMemory(3tcl), Tcl_InitMemory(3tcl), Tcl_ValidateAllMemory(3tcl) - Validated memory allocation interface
+Tcl_Exit(3tcl), Tcl_Finalize(3tcl), Tcl_CreateExitHandler(3tcl), Tcl_DeleteExitHandler(3tcl), Tcl_ExitThread(3tcl), Tcl_FinalizeThread(3tcl), Tcl_CreateThreadExitHandler(3tcl), Tcl_DeleteThreadExitHandler(3tcl), Tcl_SetExitProc(3tcl) - end the application or thread (and invoke exit handlers)
+Tcl_FindExecutable(3tcl), Tcl_GetNameOfExecutable(3tcl) - identify or return the name of the binary file containing the application
+Tcl_Main(3tcl), Tcl_SetMainLoop(3tcl) - main program and event loop definition for Tcl-based applications
+Tcl_NewObj(3tcl), Tcl_DuplicateObj(3tcl), Tcl_IncrRefCount(3tcl), Tcl_DecrRefCount(3tcl), Tcl_IsShared(3tcl), Tcl_InvalidateStringRep(3tcl) - manipulate Tcl objects
+Tcl_NewStringObj(3tcl), Tcl_NewUnicodeObj(3tcl), Tcl_SetStringObj(3tcl), Tcl_SetUnicodeObj(3tcl), Tcl_GetStringFromObj(3tcl), Tcl_GetString(3tcl), Tcl_GetUnicodeFromObj(3tcl), Tcl_GetUnicode(3tcl), Tcl_GetUniChar(3tcl), Tcl_GetCharLength(3tcl), Tcl_GetRange(3tcl), Tcl_AppendToObj(3tcl), Tcl_AppendUnicodeToObj(3tcl), Tcl_AppendObjToObj(3tcl), Tcl_AppendStringsToObj(3tcl), Tcl_AppendStringsToObjVA(3tcl), Tcl_AppendLimitedToObj(3tcl), Tcl_Format(3tcl), Tcl_AppendFormatToObj(3tcl), Tcl_ObjPrintf(3tcl), Tcl_AppendPrintfToObj(3tcl), Tcl_SetObjLength(3tcl), Tcl_AttemptSetObjLength(3tcl), Tcl_ConcatObj(3tcl) - manipulate Tcl objects as strings
+Tcl_OpenFileChannel(3tcl), Tcl_OpenCommandChannel(3tcl), Tcl_MakeFileChannel(3tcl), Tcl_GetChannel(3tcl), Tcl_GetChannelNames(3tcl), Tcl_GetChannelNamesEx(3tcl), Tcl_RegisterChannel(3tcl), Tcl_UnregisterChannel(3tcl), Tcl_DetachChannel(3tcl), Tcl_IsStandardChannel(3tcl), Tcl_Close(3tcl), Tcl_ReadChars(3tcl), Tcl_Read(3tcl), Tcl_GetsObj(3tcl), Tcl_Gets(3tcl), Tcl_WriteObj(3tcl), Tcl_WriteChars(3tcl), Tcl_Write(3tcl), Tcl_Flush(3tcl), Tcl_Seek(3tcl), Tcl_Tell(3tcl), Tcl_TruncateChannel(3tcl), Tcl_GetChannelOption(3tcl), Tcl_SetChannelOption(3tcl), Tcl_Eof(3tcl), Tcl_InputBlocked(3tcl), Tcl_InputBuffered(3tcl), Tcl_OutputBuffered(3tcl), Tcl_Ungets(3tcl), Tcl_ReadRaw(3tcl), Tcl_WriteRaw(3tcl) - buffered I/O facilities using channels
+Tcl_UniCharIsAlnum(3tcl), Tcl_UniCharIsAlpha(3tcl), Tcl_UniCharIsControl(3tcl), Tcl_UniCharIsDigit(3tcl), Tcl_UniCharIsGraph(3tcl), Tcl_UniCharIsLower(3tcl), Tcl_UniCharIsPrint(3tcl), Tcl_UniCharIsPunct(3tcl), Tcl_UniCharIsSpace(3tcl), Tcl_UniCharIsUpper(3tcl), Tcl_UniCharIsWordChar(3tcl) - routines for classification of Tcl_UniChar characters
+Tk_GetColormap(3tcl), Tk_PreserveColormap(3tcl), Tk_FreeColormap(3tcl) - allocate and free colormaps
+Tk_GetHINSTANCE(3tcl)    - retrieve the global application instance handle
+Tk_GetJustifyFromObj(3tcl), Tk_GetJustify(3tcl), Tk_NameOfJustify(3tcl) - translate between strings and justification styles
+Tk_GetPixmap(3tcl), Tk_FreePixmap(3tcl) - allocate and free pixmaps
+Tk_GetVRootGeometry(3tcl) - Get location and size of virtual root for window
+Tk_Grab(3tcl), Tk_Ungrab(3tcl) - manipulate grab state in an application
+Tk_Init(3tcl), Tk_SafeInit(3tcl) - add Tk to an interpreter and make a new Tk application
+Tk_Main(3tcl)            - main program for Tk-based applications
+Tk_SetAppName(3tcl)      - Set the name of an application for 'send' commands
+Tk_SetCaretPos(3tcl)     - set the display caret location
+Try::Tiny(3pm)           - minimal try/catch with proper preservation of $@
+URI::URL(3pm)            - Uniform Resource Locators
+URI::ldap(3pm)           - LDAP Uniform Resource Locators
+XML::SAX::DocumentLocator(3pm) - Helper class for document locators
+acl_dup(3)               - duplicate an ACL
+alloca(3)                - memory allocator
+alloca(3), calloc(3), free(3), malloc(3), mmap(3), realloc(3) - general memory allocation operations
+ansi_cattr(n), term::ansi::code::attr(n) - ANSI attribute sequences
+apsd(8)                  - Apple Push Notification service daemon
+asl(3), asl_add_log_file(3), asl_add_outout_file(3), asl_append(3), asl_close(3), asl_close_auxiliary_file(3), asl_count(3), asl_create_auxiliary_file(3), asl_decode_buffer(3), asl_encode_buffer(3), asl_fetch_key_val_op(3), asl_format(3), asl_free(3), asl_get(3), asl_get_index(3), asl_get_type(3), asl_key(3), asl_log(3), asl_log_auxiliary_location(3), asl_log_descriptor(3), asl_match(3), asl_new(3), asl_next(3), asl_open(3), asl_open_from_file(3), asl_open_path(3), asl_prepend(3), asl_prev(3), asl_release(3), asl_remove_index(3), asl_remove_log_file(3), asl_reset_iteration(3), asl_retain(3), asl_search(3), asl_send(3), asl_set(3), asl_set_filter(3), asl_set_output_file_filter(3), asl_set_query(3), asl_unset(3), asl_vlog(3), aslresponse_free(3), aslresponse_next(3) - system log message sending and searching functions
+assert(3)                - expression verification macro
+au_free_token(3)         - deallocate a token_t created by any of the au_to_*() BSM API functions
+autoproxy(n)             - Automatic HTTP proxy usage and authentication
+ber_int_t(3), ber_uint_t(3), ber_len_t(3), ber_slen_t(3), ber_tag_t(3), struct berval(3), BerValue(3), BerVarray(3), BerElement(3), ber_bvfree(3), ber_bvecfree(3), ber_bvecadd(3), ber_bvarray_free(3), ber_bvarray_add(3), ber_bvdup(3), ber_dupbv(3), ber_bvstr(3), ber_bvstrdup(3), ber_str2bv(3), ber_alloc_t(3), ber_init(3), ber_init2(3), ber_free(3) - OpenLDAP LBER types and allocation functions
+bzip2(1), bunzip2(1)     - a block-sorting file compressor, v1.0.6 bzcat - decompresses files to stdout bzip2recover - recovers data from damaged bzip2 files
+calloc(3), free(3), malloc(3), realloc(3), reallocf(3), valloc(3) - memory allocation
+casin(3)                 - complex inverse sine function .br catan complex inverse tangent function
+cat(1)                   - concatenate and print files
+catanh(3)                - complex inverse hyperbolic tangent function
+catch(ntcl)              - Evaluate script and trap exceptional returns
+catclose(3)              - close message catalog
+catgets(3)               - retrieve string from message catalog
+catopen(3)               - open message catalog
+certtool(1)              - create key pairs, certificates and certificate signing requests for use with Keychains
+comm(n)                  - A remote communication facility for Tcl (8.3 and later)
+concat(ntcl)             - Join lists together
+coreautha(8)             - LocalAuthentication user interface agent
+coreauthd(8)             - LocalAuthentication daemon and agent
+coresymbolicationd(8)    - daemon to manage debug symbols cache
+cupstestdsc(1)           - test conformance of postscript files (deprecated)
+dbmmanage(1)             - Manage user authentication files in DBM format
+deprecate(3pm)           - Perl pragma for deprecating the core version of a module
+digittoint(3), isalnum(3), isalpha(3), isascii(3), isblank(3), iscntrl(3), isdigit(3), isgraph(3), ishexnumber(3), isideogram(3), islower(3), isnumber(3), isphonogram(3), isprint(3), ispunct(3), isrune(3), isspace(3), isspecial(3), isupper(3), isxdigit(3), toascii(3), tolower(3), toupper(3) - character classification macros
+digittoint_l(3), isalnum_l(3), isalpha_l(3), isascii_l(3), isblank_l(3), iscntrl_l(3), isdigit_l(3), isgraph_l(3), ishexnumber_l(3), isideogram_l(3), islower_l(3), isnumber_l(3), isphonogram_l(3), isprint_l(3), ispunct_l(3), isrune_l(3), isspace_l(3), isspecial_l(3), isupper_l(3), isxdigit_l(3), toascii_l(3), tolower_l(3), toupper_l(3) - character classification macros
+dispatch_data_create(3), dispatch_data_create_concat(3), dispatch_data_create_subrange(3), dispatch_data_create_map(3), dispatch_data_apply(3), dispatch_data_copy_region(3), dispatch_data_get_size(3) - create and manipulate dispatch data objects
+distnoted(8)             - distributed notification server
+dup(2), dup2(2)          - duplicate an existing file descriptor
+duplocale(3)             - Duplicate existing locale
+exit(ntcl)               - End the application
+form_field_userptr(3x)   - associate application data with a form field
+form_hook(3x)            - set hooks for automatic invocation by applications
+form_userptr(3x)         - associate application data with a form item
+freelocale(3)            - Frees an allocated locale
+ftruncate(2), truncate(2) - truncate or extend a file to a specified length
+futimens(2), utimensat(2) - set file access and modification times
+futimes(2), utimes(2)    - set file access and modification times
+gencat(1)                - NLS catalog compiler
+getaudit_addr(2), getaudit(NOW DEPRECATED)(2) - retrieve audit session state
+getdirentriesattr(2), getdirentriesattr(NOW DEPRECATED)(2) - get file system attributes for multiple directory entries
+getegid(2), getgid(2)    - get group process identification
+geteuid(2), getuid(2)    - get user identification
+getpid(2), getppid(2)    - get parent or calling process identification
+glBindAttribLocation(3G) - Associates a generic vertex attribute index with a named attribute variable
+glBindFragDataLocation(3G) - bind a user-defined varying out variable to a fragment shader color number
+glBindFragDataLocationIndexed(3G) - bind a user-defined varying out variable to a fragment shader color number and index
+glFlushMappedBufferRange(3G) - indicate modifications to a range of a mapped buffer
+glGetAttribLocation(3G)  - Returns the location of an attribute variable
+glGetFragDataLocation(3G) - query the bindings of color numbers to user-defined varying out variables
+glGetMultisamplefv(3G)   - retrieve the location of a sample
+glGetUniformLocation(3G) - Returns the location of a uniform variable
+glutWarpPointer(3)       - warps the pointer's location
+heap(1)                  - List all the malloc-allocated buffers in the process's heap
+hotspot.d(1m)            - print disk event by location. Uses DTrace
+htdigest(1)              - manage user files for digest authentication
+htpasswd(1)              - Manage user files for basic authentication
+iconv_close(3)           - deallocate descriptor for character set conversion
+iconv_open(3)            - allocate descriptor for character set conversion
+index(3), rindex(3)      - locate character in string
+index(3), rindex(3), stpcpy(3), strcasecmp(3), strcat(3), strchr(3), strcmp(3), strcpy(3), strcspn(3), strerror(3), strlen(3), strncasecmp(3), strncat(3), strncmp(3), strncpy(3), strpbrk(3), strrchr(3), strsep(3), strspn(3), strstr(3), strtok(3) - string specific functions
+ipcs(1)                  - report System V interprocess communication facilities status
+ipsec_dump_policy(3), ipsec_get_policylen(3), ipsec_set_policy(3) - manipulate IPsec policy specification structure from human-readable policy string
+isalnum_l(3), isalpha_l(3), isblank_l(3), iscntrl_l(3), isdigit_l(3), isgraph_l(3), ishexnumber_l(3), isideogram_l(3), islower_l(3), isnumber_l(3), isphonogram_l(3), isprint_l(3), ispunct_l(3), isrune_l(3), isspace_l(3), isspecial_l(3), isupper_l(3), isxdigit_l(3) - character classification utilities
+iswalnum(3), iswalpha(3), iswascii(3), iswblank(3), iswcntrl(3), iswdigit(3), iswgraph(3), iswhexnumber(3), iswideogram(3), iswlower(3), iswnumber(3), iswphonogram(3), iswprint(3), iswpunct(3), iswrune(3), iswspace(3), iswspecial(3), iswupper(3), iswxdigit(3) - wide character classification utilities
+iswalnum_l(3), iswalpha_l(3), iswblank_l(3), iswcntrl_l(3), iswdigit_l(3), iswgraph_l(3), iswhexnumber_l(3), iswideogram_l(3), iswlower_l(3), iswnumber_l(3), iswphonogram_l(3), iswprint_l(3), iswpunct_l(3), iswrune_l(3), iswspace_l(3), iswspecial_l(3), iswupper_l(3), iswxdigit_l(3) - wide character classification utilities
+jarsigner(1)             - JAR signing and verification tool
+java(1)                  - Java application launcher
+keytool(1)               - key and certificate management tool
+kqueue(2), kevent(2), kevent64(2) - and kevent_qos kernel event notification mechanism
+krb5_appdefault(3), krb5_appdefault_boolean(3), krb5_appdefault_string(3), krb5_appdefault_time(3) - get application configuration value
+kuncd(8)                 - The Kernel User Notification Center daemon
+last(1)                  - indicate last logins of users and ttys
+lber-memory(3), ber_memalloc(3), ber_memcalloc(3), ber_memrealloc(3), ber_memfree(3), ber_memvfree(3) - OpenLDAP LBER memory allocators
+ldap_dup(3), ldap_destroy(3) - Duplicate and destroy LDAP session handles
+ldap_is_ldap_url(3), ldap_url_parse(3), ldap_free_urldesc(3) - LDAP Uniform Resource Locator routines
+ldap_memfree(3), ldap_memvfree(3), ldap_memalloc(3), ldap_memcalloc(3), ldap_memrealloc(3), ldap_strdup(3) - LDAP memory allocation routines
+ldap_sort_entries(3), ldap_sort_values(3), ldap_sort_strcasecmp(3) - LDAP sorting routines (deprecated)
+link_addr(3), link_ntoa(3) - elementary address specification routines for link level access
+locate(1)                - find filenames quickly
+locate.code(8), locate.bigram(8) - sorted list compressor
+locate.updatedb(8)       - update locate database
+locationd(8)             - location services daemon
+log(n)                   - Procedures to log messages of libraries and applications
+login(3), logout(3), logwtmp(3) - login utility functions (DEPRECATED)
+lsappinfo(8)             - Control and query CoreApplicationServices about the app state on the system
+lutimes(3)               - set file access and modification times of symlink
+malloc_create_zone(3), malloc_destroy_zone(3), malloc_default_zone(3), malloc_zone_from_ptr(3), malloc_zone_malloc(3), malloc_zone_calloc(3), malloc_zone_valloc(3), malloc_zone_realloc(3), malloc_zone_memalign(3), malloc_zone_free(3) - zone-based memory allocation
+malloc_good_size(3), malloc_size(3) - memory allocation information
+malloc_history(1)        - Show the malloc allocations that the process has performed
+mapspushd(8)             - Maps application services daemon
+matherr(3)               - deprecated floating-point error-reporting function
+mbbackgrounduseragent(8) - helper for the Setup Assistant application
+mbfloagent(8)            - helper for the Setup Assistant application
+mbsystemadministration(8) - helper for the Setup Assistant application
+mbuseragent(8)           - helper for the Setup Assistant application
+mbusertrampoline(8)      - helper for the Setup Assistant application
+mcxalr(1)                - Managed Client application launch restriction tool and agent
+memchr(3)                - locate byte in byte string
+memmem(3)                - locate a byte substring in a byte string
+menu_hook(3x)            - set hooks for automatic invocation by applications
+menu_userptr(3x)         - associate application data with a menu item
+mitem_userptr(3x)        - associate application data with a menu item
+mmap(2)                  - allocate memory, or map files or devices into memory
+msgcat(ntcl)             - Tcl message catalog
+msgcat_c(n), doctools::msgcat::toc::c(n) - Message catalog for the doctoc parser (C)
+msgcat_de(n), doctools::msgcat::toc::de(n) - Message catalog for the doctoc parser (DE)
+msgcat_en(n), doctools::msgcat::toc::en(n) - Message catalog for the doctoc parser (EN)
+msgcat_fr(n), doctools::msgcat::toc::fr(n) - Message catalog for the doctoc parser (FR)
+multi(n), fileutil::multi(n) - Multi-file operation, scatter/gather, standard object
+multiop(n), fileutil::multi::op(n) - Multi-file operation, scatter/gather
+multiplexer(n)           - One-to-many communication with sockets
+netsnmp_agent_api(3)     - embedding an agent into a external application
+notifier(7)              - cups notification interface
+notifyd(8)               - notification server
+notifyutil(1)            - notification command line utility
+ntalkd(8), talkd(8)      - remote user communication server
+openpam_borrow_cred(3), openpam_free_data(3), openpam_free_envlist(3), openpam_get_option(3), openpam_log(3), openpam_nullconv(3), openpam_readline(3), openpam_restore_cred(3), openpam_set_option(3), openpam_ttyconv(3), pam_error(3), pam_get_authtok(3), pam_info(3), pam_prompt(3), pam_setenv(3), pam_unsetenv(3), pam_verror(3), pam_vinfo(3), pam_vprompt(3) - Pluggable Authentication Modules Library
+orbd(1)                  - The Object Request Broker Daemon orbd is used to enable clients to transparently locate and invoke persistent objects on servers in the CORBA environment
+pam_acct_mgmt(3), pam_authenticate(3), pam_chauthtok(3), pam_close_session(3), pam_end(3), pam_get_data(3), pam_get_item(3), pam_get_user(3), pam_getenv(3), pam_getenvlist(3), pam_open_session(3), pam_putenv(3), pam_set_data(3), pam_set_item(3), pam_setcred(3), pam_start(3), pam_strerror(3) - Pluggable Authentication Modules Library
+pam_authenticate(3)      - perform authentication within the PAM framework
+pam_get_authtok(3)       - retrieve authentication token
+pam_set_item(3)          - set authentication information
+pam_setcred(3)           - modify / delete user credentials for an authentication service
+pam_sm_authenticate(3)   - service module implementation for pam_authenticate
+perlipc(1)               - Perl interprocess communication (signals, fifos, pipes, safe subprocesses, sockets, and semaphores)
+perlivp(1)               - Perl Installation Verification Procedure
+perlpodspec(1)           - Plain Old Documentation: format specification and notes
+pipe(2)                  - create descriptor pair for interprocess communication
+pkg::create(ntcl)        - Construct an appropriate 'package ifneeded' command for a given package specification
+platform(ntcl)           - System identification support code and utilities
+platform::shell(ntcl)    - System identification support code and utilities
+posix_memalign(3)        - aligned memory allocation
+postcat(1)               - show Postfix queue file contents
+ppdc(1)                  - cups ppd compiler (deprecated)
+ppdhtml(1)               - cups html summary generator (deprecated)
+ppdi(1)                  - import ppd files (deprecated)
+ppdmerge(1)              - merge ppd files (deprecated)
+ppdpo(1)                 - ppd message catalog generator (deprecated)
+pt(n)                    - Parser Tools Application
+pt_param(n), pt::param(n) - PackRat Machine Specification
+pt_peg_container_peg(n), pt::peg::container::peg(n) - PEG Storage. Canned PEG grammar specification
+pthread_mutex_destroy(3) - free resources allocated for a mutex
+querylocale(3)           - Get locale name for a specified category
+relocated(5)             - Postfix relocated table format
+rindex(3)                - locate character in string
+routined(8)              - A daemon that learns the historical location patterns of a user
+sandbox-exec(1)          - execute within a sandbox (DEPRECATED)
+sandbox_init(3), sandbox_free_error(3) - set process sandbox (DEPRECATED)
+sasl_client_init(3)      - SASL client authentication initialization
+sasl_client_new(3)       - Create a new client authentication object
+sasl_client_start(3)     - Begin an authentication negotiation
+sasl_client_step(3)      - Perform a step in the authentication negotiation
+sasl_encode(3)           - Encode data for transport to authenticated host
+sasl_getpath_t(3)        - The SASL callback to indicate location of the mechanism drivers
+sasl_server_init(3)      - SASL server authentication initialization
+sasl_server_new(3)       - Create a new server authentication object
+sasl_server_start(3)     - Begin an authentication negotiation
+sasl_server_step(3)      - Perform a step in the authentication negotiation
+sasl_server_userdb_checkpass_t(3) - Plaintext Password Verification Callback
+sasl_verifyfile_t(3)     - The SASL file verification
+schemagen(1)             - Java(TM) Architecture for XML Binding Schema Generator Specification Version: 2.0 Reference Implementation (RI) Version: 2.0 ea3 l
+scselect(8)              - Select system configuration location
+send(ntcl)               - Execute a command in a different application
+servertool(1)            - The Java(TM) IDL Server Tool servertool provides an ease-of-use interface for application programmers to register, unregister, startup and shutdown a server
+setaudit_addr(2), setaudit(NOW DEPRECATED)(2) - set audit session state
+signpost_notificationd(8) - Distributes os_signpost events notifications
+slapcat(8)               - SLAPD database to LDIF utility
+snmp.conf(5)             - configuration files for the Net-SNMP applications
+snmpbulkget(1)           - communicates with a network entity using SNMP GETBULK requests
+snmpget(1)               - communicates with a network entity using SNMP GET requests
+snmpgetnext(1)           - communicates with a network entity using SNMP GETNEXT requests
+snmpset(1)               - communicates with a network entity using SNMP SET requests
+snmptest(1)              - communicates with a network entity using SNMP requests
+snmptrap(1), snmpinform(1) - sends an SNMP notification to a manager
+snmptrapd.conf(5)        - configuration file for the Net-SNMP notification receiver
+socket(2)                - create an endpoint for communication
+socketfilterfw(8)        - Application Firewall daemon
+ssh-add(1)               - adds private key identities to the authentication agent
+ssh-agent(1)             - authentication agent
+ssh-keygen(1)            - authentication key generation, management and conversion
+ssh-keysign(8)           - ssh helper program for host-based authentication
+strcat(3), strncat(3)    - concatenate strings
+strchr(3), strrchr(3)    - locate character in string
+stringdups(1)            - Identify duplicate strings or other objects in malloc blocks of a target process
+strlcpy(3), strlcat(3)   - size-bounded string copying and concatenation
+strpbrk(3)               - locate multiple characters in string
+strstr(3), strcasestr(3), strnstr(3) - locate a substring in a string
+tcllib_msgcat(n), doctools::msgcat(n) - Message catalog management for the various document parsers
+tm(ntcl)                 - Facilities for locating and loading of Tcl Modules
+touch(1)                 - change file access and modification times
+trunc(3)                 - truncate to integer value
+uname(3)                 - get system identification
+utmp(5), wtmp(5), lastlog(5) - login records (DEPRECATED)
+verify(8)                - Postfix address verification server
+vmmap(1)                 - Display the virtual memory regions allocated in a process
+wcpcpy(3), wcpncpy(3), wcscasecmp(3), wcscat(3), wcschr(3), wcscmp(3), wcscpy(3), wcscspn(3), wcsdup(3), wcslcat(3), wcslcpy(3), wcslen(3), wcsncasecmp(3), wcsncat(3), wcsncmp(3), wcsncpy(3), wcsnlen(3), wcspbrk(3), wcsrchr(3), wcsspn(3), wcsstr(3), wmemchr(3), wmemcmp(3), wmemcpy(3), wmemmove(3), wmemset(3) - wide character string manipulation operations
+whereis(1)               - locate programs
+which(1)                 - locate a program file in the user's path
+wm(ntcl)                 - Communicate with window manager
+xmlcatalog(1)            - Command line tool to parse and manipulate XML or SGML catalog files
+xpc(3)                   - a structured, asynchronous interprocess communication library
+ypcat(1)                 - print the values of all keys in a YP database
+zshroadmap(1)            - informal introduction to the zsh manual The Zsh Manual, like the shell itself, is large and often complicated. This section of the manual provides some pointers to areas of the shell that are likely to be of particular interest to new users, and indicates where in the rest of the manual the documentation is to be found
+BuildStrings(1), /usr/bin/BuildStrings(1) - Generate header (.h) or resource (.r) file from text files (DEPRECATED)
+CpMac(1), /usr/bin/CpMac(1) - copy files preserving metadata and forks (DEPRECATED)
+DeRez(1)                 - decompiles resources (DEPRECATED)
+GetFileInfo(1), /usr/bin/GetFileInfo(1) - get attributes of files and directories (DEPRECATED)
+MvMac(1), /usr/bin/MvMac(1) - move files while preserving metadata and forks (DEPRECATED)
+Rez(1)                   - compiles resources (DEPRECATED)
+RezDet(1)                - Resource Detective (DEPRECATED)
+RezWack(1), /usr/bin/RezWack(1) - Combines resource and data forks of a file into a flattened file. (DEPRECATED)
+SetFile(1), /usr/bin/SetFile(1) - set attributes of files and directories (DEPRECATED)
+SplitForks(1), /usr/bin/SplitForks(1) - Divide a two-fork HFS file into AppleDouble format resource and data files. (DEPRECATED)
+UnRezWack(1), /usr/bin/UnRezWack(1) - Split a RezWack file into separate data and resource files. (DEPRECATED)
+codesign_allocate(1)     - add code signing data to a Mach-O file
+git-cat-file(1)          - Provide content or type and size information for repository objects
+xcrun(1)                 - Run or locate development tools and properties. rst2man-indent-level 0 1 rstReportMargin \$1 \n[an-margin] level \n[rst2man-indent-level] level margin: \n[rst2man-indent\n[rst2man-indent-level]] - \n[rst2man-indent0] \n[rst2man-indent1] \n[rst2man-indent2] . 1 INDENT RS \$1 nr rst2man-indent\n[rst2man-indent-level] \n[an-margin] nr rst2man-indent-level +1 . UNINDENT RE rst2man-indent-level -1 \n[rst2man-indent\n[rst2man-indent-level]]u
