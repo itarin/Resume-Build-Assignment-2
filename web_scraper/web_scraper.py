@@ -64,6 +64,6 @@ for result in results:
     rows.append([rank, company, webpage, description, location, yearend, salesrise, sales, staff, comments])
 
 #Create csv and write rows to output file
-with open('techtrack100.csv', 'w', newline='') as f_output:
+with open('outputFile.csv', 'w', newline='') as f_output:
     csv_output = csv.writer(f_output)
     csv_output.writerows(rows)
