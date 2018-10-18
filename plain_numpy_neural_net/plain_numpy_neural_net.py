@@ -162,3 +162,8 @@ def train(X, Y, nn_architecture, epochs, learning_rate):
         cost_history.append(cost)
         accuracy = get_accuracy_value(Y_hat, Y)
         accuracy_history.append(accuracy)
+
+        grads_values = full_backward_propagation(Y_hat, Y, cashe, params_values, nn_architecture)
+        params_values = update(params_values, grads_values, nn_architecture, learning_rate)
+
+    return params_values, cost_history, accuracy_history
