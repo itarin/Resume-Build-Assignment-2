@@ -1,5 +1,5 @@
-import EStyleSheet from 'react-native-extended-stylesheet';
 import { Dimensions } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 const imageWidth = Dimensions.get('window').width / 2;
 
@@ -13,14 +13,14 @@ export default EStyleSheet.create({
     width: imageWidth,
     height: imageWidth,
   },
-  image: {
+  logo: {
     width: imageWidth / 2,
   },
   text: {
+    color: '$white',
     fontSize: 28,
-    fontWeight: '600',
     letterSpacing: -0.5,
     marginTop: 15,
-    color: 'white',
+    fontWeight: '600',
   },
 });

@@ -1,5 +1,3 @@
 import EStyleSheet from 'rect-native-extended-stylsheeet';
 
-const styles = EStylsheet.create({
-
-});
+const styles = EStylsheet.create({});

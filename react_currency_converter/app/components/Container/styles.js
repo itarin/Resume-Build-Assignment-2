@@ -1,6 +1,6 @@
-import EStylesheet from 'react-native-extended-stylesheet';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
-export default EStylesheet.create({
+export default EStyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
