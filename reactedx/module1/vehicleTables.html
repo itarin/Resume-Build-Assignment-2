@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset='UTF-8'>
+      <script src='https://unpkg.com/react@15/dist/react.min.js'></script>
+      <script src='https://unpkg.com/react-dom@15/dist/react-dom.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js'></script>
+ 
+  </head>
+  <body>
+    <div id='root'></div>
+    <script type='text/babel'>
+      function SingleRow(props) {
+        const rowStyle={
+              background: '#fff', 
+              fontWeight: 'bold',
+              border: '1px solid grey',
+              textAlign: 'left',
+              }
+        return (
+          <tr>
+            <td style={rowStyle}>{props.year}</td>
+            <td style={rowStyle}>{props.model}</td>
+            <td style={rowStyle}>{props.price}</td>
+            <td style={rowStyle}><button type='button'>Buy Now</button></td>
+          </tr>
+        )
+      }
+
+      function TableHeaderRow(props) {
+        const thStyle = {
+              background: '#eee', 
+              fontWeight: 'bold',
+              border: '1px solid grey',
+              textAlign: 'left',
+              }
+        return (
+          <tr style={{
+              background: '#eee', 
+              fontWeight: 'bold',
+              border: '1px solid grey',
+              textAlign: 'left',
+              }}
+          >
+            <th style={thStyle}>Year</th>
+            <th style={thStyle}>Model</th>
+            <th style={thStyle}>Price</th>
+            <th style={thStyle}>Buy</th>
+          </tr>
+        )
+      }
+
+      function Table(props) {
+        const makeRow = (rowData) => {
+          console.log('makeRow works!', rowData)
+          const oneRow=rowData.map(row => {
+           return (
+             <SingleRow 
+              year={row.year}
+              model={row.model}
+              price={row.price}
+            />
+           ) 
+          });
+          return oneRow
+        }
+        return (
+          <div>
+            <h3>{props.title}</h3>
+            <table style={{
+              width: '100%', 
+              }}
+            >
+              <tbody>
+                <TableHeaderRow/>
+                {makeRow(props.rows)}
+              </tbody>
+            </table>
+          </div>
+        )
+      }
+      function VehicleApp(props) {
+
+        return (
+          <div>
+            <form>
+              <label>
+                New Only:
+                <input type="checkbox" name="name" />
+              </label>
+              <p></p>
+              <select>
+                <option value="all">All</option>
+                <option value="cars">Cars</option>
+                <option selected value="Trucks">Trucks</option>
+                <option value="convertibles">Convertibles</option>
+              </select>
+            </form>
+            <Table title='Cars' 
+            rows={[
+            {year: '2013', model: 'A', price: '$3200'}, 
+            {year: '2011', model: 'B', price: '$4400'}, 
+            {year: '2016', model: 'B', price: '$15500'}
+            ]}
+            />
+            <Table title='Trucks' 
+            rows={[
+            {year: '2014', model: 'D', price: '$18000'}, 
+            {year: '2013', model: 'E', price: '$5200'},
+            ]}
+            />
+            <Table title='Convertibles' 
+            rows={[
+            {year: '2009', model: 'F', price: '$2000'}, 
+            {year: '2010', model: 'G', price: '$6000'},
+            {year: '2012', model: 'H', price: '$12500'},
+            {year: '2017', model: 'M', price: '$50000'},
+            ]}
+            />
+          </div>
+        )
+      }
+      ReactDOM.render(
+            <VehicleApp/>,
+            document.getElementById('root')
+        )
+    </script>
+  </body>
+</html>
