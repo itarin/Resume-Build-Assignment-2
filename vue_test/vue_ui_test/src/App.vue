@@ -16,19 +16,18 @@
     </v-toolbar>
 
     <v-content>
-      <DarkLayout/>
+      <HelloWorld/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld'
-import DarkLayout from './components/DarkLayout'
+import HelloWorld from './components/HelloWorld'
 
 export default {
   name: 'App',
   components: {
-    DarkLayout
+    HelloWorld
   },
   data () {
     return {
