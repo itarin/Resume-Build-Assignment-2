@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> HTTP Request 101, Web API </title>
+    <!-- FONTS -->
+        <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+        <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/httpRequest.css">
+  </head>
+  <body class="bg-secondary">
+    <div class="container-fluid w-100 h-100 bg-secondary">
+      <div class="row">
+        <div class="col-8 border-top-0 offset-2 bg-light mt-4">
+          <div class="text-light font-weight-bold">
+            <img src="assets/images/meetup_logo.png" class="w-25 mt-2 mr-3 border d-inline ">
+              <h2 class="border d-inline p-2 bg-white">
+                <i class="fas fa-search"></i>
+                :: Cities Finder
+              </h2>
+          </div>
+          <h6 class="text-right text-info">
+            Small interface uses meetup.com v2 API </br>
+            to display meetup information for requested cities.
+          </h6>
+        </div>
+        <div class="col-3 mt-3">
+          <img src="assets/images/meetup_monogram_animated.gif" alt="meetUp animated gif" class="w-75 mt-4 rounded-circle">
+        </div>
+        <div class="card col-5 bg-dark rounded-0 mt-3">
+          <div class="card-body">
+            <h2 class="card-title text-dark">
+              <i class="fab fa-meetup fa-3x text-light bg-light rounded-circle"></i>
+              MeetUp in Your State
+            </h2>
+            <form>
+              <div class="form-group">
+                <label for="formGroupExampleInput">Country</label>
+                <input type="text" class="form-control rounded-0" id="countryInput" placeholder="Enter Country">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">State</label>
+                <input type="text" class="form-control rounded-0" id="stateInput" placeholder="Enter State">
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Results Per Page</label>
+                <input type="text" class="form-control rounded-0" id="numResultsInput" placeholder="Enter Number of Results">
+              </div>
+               <button type="submit" class="btn btn-warning rounded-0" id="submit">Submit</button>
+               <button type="button" class="btn btn-outline-warning rounded-0" id="localStoreButton">Use Local Data?</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-4 mt-4">
+          <img class="w-75" src="assets/images/adult-boy-child-325521.jpg" alt="">
+          <img class="w-75 mt-3" src="assets/images/adult-casual-clothes-296881.jpg" alt="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10 offset-1">
+          <div class="card-columns   mt-3" id="showResults">
+            <!-- AJAX Request Results Viewer -->
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- pictures from pexels.com -->
+<!-- JS Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="assets/httpRequest.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+  </html>
